@@ -85,7 +85,7 @@ export default class Fix {
 	 * @param lon Longitude in DMS
 	 * @param lat Latitude in DMS
 	 */
-	public static fromDMS(lon: string, lat: string): Fix {
+	public static fromDMS(lon: string, lat: string, ..._: any[]): Fix {
 		return new Fix(this.parseDMS(lon), this.parseDMS(lat));
 	}
 
