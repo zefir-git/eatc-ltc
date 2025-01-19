@@ -1,0 +1,61 @@
+import NamedFix from "./NamedFix.js";
+
+/**
+ * A beacon is a visible named fix in the airspace. Has optional holding
+ * pattern. All aircraft can DCT (direct) to this beacon.
+ */
+export default class Beacon extends NamedFix {
+
+	/**
+	 * Holding pattern for the beacon.
+	 */
+	public readonly holdingPattern?: {
+		/**
+		 * Left-hand turns. Inbound leg heading in decimal degrees.
+		 */
+		left: number
+	} | {
+		/**
+		 * Right-hand turns. Inbound leg heading in decimal degrees.
+		 */
+		right: number
+	};
+
+	/**
+	 * @param name Name and identifier of the beacon.
+	 * @param pronunciation Pronunciation of the beacon name.
+	 * @param latitude Latitude in decimal degrees.
+	 * @param longitude Longitude in decimal degrees.
+	 * @param [holdingPattern] Holding pattern for the beacon.
+	 */
+	public constructor(
+		/**
+		 * Name and identifier of the beacon.
+		 */
+		name: string,
+		/**
+		 * Pronunciation of the beacon name.
+		 */
+		pronunciation: string,
+		latitude: number,
+		longitude: number,
+		holdingPattern?: {left: number} | {right: number} | number
+	) {
+		super(name, pronunciation, latitude, longitude);
+		this.holdingPattern = typeof holdingPattern === "number"
+							  ? holdingPattern >= 0
+								? {right: holdingPattern}
+								: {left: holdingPattern}
+							  : holdingPattern;
+	}
+
+	public override clone(): Beacon {
+		return new Beacon(
+			this.name,
+			this.pronunciation,
+			this.latitude,
+			this.longitude,
+			this.holdingPattern
+		);
+	}
+}
