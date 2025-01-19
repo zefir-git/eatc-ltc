@@ -231,7 +231,7 @@ export default class Runway {
 			this.name,
 			this.position,
 			this.heading,
-			this.length,
+			Math.round(this.length * 100) / 100,
 			this.displacedThreshold,
 			this.reverseDisplacedThreshold,
 			this.elevation,
