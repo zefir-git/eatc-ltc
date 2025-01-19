@@ -31,8 +31,8 @@ export default class NamedFix extends Fix {
 		);
 	}
 
-	public static override fromDMS(lon: string, lat: string, name: string, pronunciation: string): NamedFix {
-		const fix = super.fromDMS(lon, lat);
+	public static override fromDMS(lat: string, lon: string, name: string, pronunciation: string): NamedFix {
+		const fix = super.fromDMS(lat, lon);
 		return new NamedFix(name, pronunciation, fix.latitude, fix.longitude);
 	}
 }
