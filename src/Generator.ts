@@ -2,6 +2,8 @@ import Airspace from "./Airspace.js";
 import Airport from "./Airport.js";
 import Beacon from "./Beacon.js";
 import NamedFix from "./NamedFix.js";
+import RunwayConfiguration from "./RunwayConfiguration.js";
+import Runway from "./Runway.js";
 
 export default class Generator {
 	#airspace: Airspace | null = null;
@@ -65,6 +67,31 @@ export default class Generator {
 		return this;
 	}
 
+	readonly #configurations: RunwayConfiguration[][] = [];
+
+	/**
+	 * Get a runway by identifier.
+	 * @param id Runway ID.
+	 */
+	public runway(id: string): Runway;
+	public runway(config: RunwayConfiguration[]): typeof this;
+	public runway(arg: string | RunwayConfiguration[]): any {
+		if (typeof arg === "string") {
+			for (const airport of this.#airports.values()) {
+				const runway = airport.runways.get(arg);
+				if (runway !== undefined)
+					return runway;
+			}
+			throw new Error(`Runway ${arg} not found`);
+		}
+		this.#configurations.push(arg
+			.sort((a, b) =>
+				a.score - b.score
+			)
+		);
+		return this;
+	}
+
 	/**
 	 * Get a fix by name/identifier.
 	 */
@@ -89,8 +116,19 @@ export default class Generator {
 			header?.trim() ?? null,
 			this.airspace().toString(),
 			Array.from(this.#airports.values())
-				 .map((airport, i) => `[airport${i + 1}]\n${airport.toString()}`)
-				 .join("\n")
+				 .map((airport, i) =>
+					 `[airport${i + 1}]\n` +
+					 airport.toString()
+				 )
+				 .join("\n"),
+
+			this.#configurations.length === 0 ? null : "[configurations]\n" +
+				this.#configurations.map(
+					(config, i) =>
+						`config${i + 1} = \n` +
+						config.map(c => "\t" + c.toString())
+							  .join("\n")
+				).join("\n"),
 		].filter(l => l !== null).join("\n\n");
 	}
 }
