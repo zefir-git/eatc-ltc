@@ -205,7 +205,7 @@ export default class Runway {
 				this.heading,
 				(
 					this.length
-					+ this.displacedThreshold
+					- this.displacedThreshold
 					- this.reverseDisplacedThreshold
 				) * Fix.FT / Fix.NMI
 			),
