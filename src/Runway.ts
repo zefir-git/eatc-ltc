@@ -218,10 +218,10 @@ export default class Runway {
 			this.initialFix,
 			this.frequency,
 			this.tower,
-			this.reverseLocalizer,
-			this.reverseGlideslope,
 			this.localizer,
 			this.glideslope,
+			this.reverseLocalizer,
+			this.reverseGlideslope,
 		);
 	}
 
