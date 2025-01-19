@@ -5,8 +5,8 @@ import Fix from "./Fix.js";
  */
 export default class NamedFix extends Fix {
 	/**
-	 * @param name Name and identifier of the beacon.
-	 * @param pronunciation Pronunciation of the beacon name.
+	 * @param name Name and identifier of the fix.
+	 * @param pronunciation Pronunciation of the fix name.
 	 * @param latitude Latitude in decimal degrees.
 	 * @param longitude Longitude in decimal degrees.
 	 */
