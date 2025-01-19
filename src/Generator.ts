@@ -45,7 +45,7 @@ export default class Generator {
 					.filter(n => n !== undefined) as Beacon[];
 	}
 
-	#airports: Map<string, Airport> = new Map();
+	#airports = new Map<string, Airport>;
 
 	/**
 	 * Get airport.
