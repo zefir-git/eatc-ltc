@@ -6,6 +6,7 @@ import Beacon from "../src/Beacon.js";
 import Polygon from "../src/Polygon.js";
 import RunwayConfiguration from "../src/RunwayConfiguration.js";
 import EGLL from "./EGLL.js";
+import EGKK from "./EGKK.js";
 
 const atc = new Generator();
 
@@ -102,23 +103,28 @@ atc.airspace(
 );
 
 new EGLL(atc);
+new EGKK(atc);
 
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 ]);
 
