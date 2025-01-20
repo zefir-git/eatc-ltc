@@ -4,6 +4,7 @@ import Beacon from "./Beacon.js";
 import NamedFix from "./NamedFix.js";
 import RunwayConfiguration from "./RunwayConfiguration.js";
 import Runway from "./Runway.js";
+import STAR from "./STAR.js";
 import Fix from "./Fix.js";
 import StarFix from "./StarFix.js";
 
@@ -195,6 +196,22 @@ export default class Generator {
 						config.map(c => "\t" + c.toString())
 							  .join("\n")
 				).join("\n"),
+
+			Array.from(this.#arrivals.entries())
+				 .flatMap(([rwy, beacons]) =>
+					 Array.from(beacons.entries())
+						  .map(([beacon, stars]) =>
+							  [
+								  "runway = " + rwy,
+								  "beacon = " + (
+									  this.airspace().beacons.has(beacon)
+									  ? beacon
+									  : stars[0]!.beacon.beaconString()
+								  ),
+								  stars.map((star, i) => `route${i + 1} =\n${star.routeString()}`).join("\n"),
+							  ].join("\n")
+						  )
+				 ).map((e, i) => `[approach${i + 1}]\n${e}`).join("\n\n")
 		].filter(l => l !== null).join("\n\n");
 	}
 }
