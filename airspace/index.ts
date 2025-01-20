@@ -36,15 +36,25 @@ atc.airspace(
 		atc.fix("LON", "512914N", "0002800W"),
 		0,
 		[
+			// Default beacon
 			Beacon.from("LON", "London", atc.fix("LON")),
+
+			// Manoeuvring/misc beacons
+			Beacon.fromDMS("510102N", "0000658E", "MAY", "Mayfield", {left: 87}),
+			//new Beacon("BKY", "Barkway", 51.989722, 0.061944),
+
+			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
 			Beacon.fromDMS("511951.15N", "0000205.32E", "BIG", "Biggin", 302),
 			Beacon.fromDMS("511818.17N", "0002649.86W", "OCK", "Ockham", 328),
 			Beacon.fromDMS("514334.19N", "0003259.10W", "BNN", "Bovingdon", 116),
-			//new Beacon("BKY", "Barkway", 51.989722, 0.061944),
+			Beacon.fromDMS("505643.99N", "0001542.25E", "TIMBA", "Timba", 308),
+			Beacon.fromDMS("505905.88N", "0001130.30W", "WILLO", "Willo", {left: 283}),
 
+			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
 			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
+			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -62,6 +72,14 @@ atc.airspace(
 			Beacon.fromDMS("514451.32N", "0013642.58E", "LOGAN", "Logan", {left: 289}),
 			Beacon.fromDMS("510019.03N", "0005904.06W", "HAZEL", "Hazel"),
 			Beacon.fromDMS("512036.17N", "0013358.89W", "SIRIC", "Siric"),
+			Beacon.fromDMS("512920.30N", "0013643.00E", "TEBRA", "Tebra"),
+			Beacon.fromDMS("504027.90N", "0004746.38E", "AMDUT", "Amdut", 312),
+			Beacon.fromDMS("503948.10N", "0012013.93W", "ELDER", "Elder"),
+			Beacon.fromDMS("503931.38N", "0010257.16W", "DISVO", "Disvo"),
+			Beacon.fromDMS("504839.92N", "0004517.69W", "TELTU", "Teltu"),
+			Beacon.fromDMS("514617.00N", "0012140.87W", "KIDLI", "Kidli"),
+			Beacon.fromDMS("503828.94N", "0011029.05W", "ABSAV", "Absav"),
+			Beacon.fromDMS("505118.79N", "0004524.25W", "GWC", "Goodwood", {left: 175}),
 		],
 		new Map([
 			[180, {callsign: "London Control", pronunciation: "London Control", frequency: 129.425}],

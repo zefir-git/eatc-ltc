@@ -2,10 +2,12 @@ import Generator from "../src/Generator.js";
 import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
+import STAR from "../src/STAR.js";
 
 export default class EGKK {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
+		this.star();
 	}
 
 	private airport() {
@@ -46,5 +48,256 @@ export default class EGKK {
 				this.atc.beacon("LON")
 			)
 		);
+	}
+
+	private star() {
+		this.atc.arrival(new STAR(
+			...STAR.named("BARMI1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("TEBRA"),
+			228,
+			[
+				this.atc.beacon("TEBRA"),
+				this.atc.fix("ABTUM", "512603.66N", "0012228.98E", 14000),
+				this.atc.beacon("ARNUN"),
+				this.atc.fix("KKE63", "505856.70N", "0004051.78E", void 0, 250),
+				this.atc.fix("LARCK", "505441.83N", "0002647.93E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("TEBRA2G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("TEBRA"),
+			0,
+			[
+				this.atc.beacon("TEBRA"),
+				this.atc.fix("ABTUM", "512603.66N", "0012228.98E", 14000),
+				this.atc.beacon("ARNUN"),
+				this.atc.fix("KKE63", "505856.70N", "0004051.78E", void 0, 250),
+				this.atc.fix("LARCK", "505441.83N", "0002647.93E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		/**
+		 * This arrival is to enable continuation on BARMI 1G TEBRA 2G if
+		 * interrupted with HOLD at ARNUN. Since the original STAR was
+		 * interrupted, it’s not possible to continue with the same name.
+		 * Continuation after interruption at ARNUN will show as TEBRA 2G.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("TEBRA2G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("ARNUN"),
+			216,
+			[
+				this.atc.beacon("ARNUN"),
+				this.atc.fix("KKE63", "505856.70N", "0004051.78E", void 0, 250),
+				this.atc.fix("LARCK", "505441.83N", "0002647.93E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("KONAN2G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("ARNUN"),
+			264,
+			[
+				this.atc.beacon("ARNUN"),
+				this.atc.fix("KKE63", "505856.70N", "0004051.78E", void 0, 250),
+				this.atc.fix("LARCK", "505441.83N", "0002647.93E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		// MID 1X omitted (MID→TIMBA)
+
+		this.atc.arrival(new STAR(
+			...STAR.named("NEVIL1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("AMDUT"),
+			25,
+			[
+				this.atc.beacon("AMDUT"),
+				this.atc.fix("KKE64", "504915.77N", "0003030.52E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("KUNAV1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("AMDUT"),
+			312,
+			[
+				this.atc.beacon("AMDUT", 16000),
+				this.atc.fix("KKE64", "504915.77N", "0003030.52E", void 0, 250),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("OTMET1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("ELDER"),
+			91,
+			[
+				this.atc.beacon("ELDER"),
+				this.atc.fix("TELTU", "504839.92N", "0004517.69W", 13000, 250),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("VASUX1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("DISVO"),
+			39,
+			[
+				this.atc.beacon("DISVO"),
+				this.atc.fix("TELTU", "504839.92N", "0004517.69W", 13000, 250),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		// AMDUT 1G omitted (AMDUT→WILLO)
+		// ARNUN 1G omitted (ARNUN→WILLO)
+
+		this.atc.arrival(new STAR(
+			...STAR.named("TELTU1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("TELTU"),
+			void 0,
+			[
+				this.atc.beacon("TELTU", void 0, 250),
+				this.atc.fix("SFD", "504538.48N", "0000718.89E", void 0, 220),
+				this.atc.beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("DISIT1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("KIDLI"),
+			146,
+			[
+				this.atc.beacon("KIDLI", 15000),
+				this.atc.fix("MID", "510314.23N", "0003730.01W"),
+				this.atc.fix("TUFOZ", "510101.01N", "0003024.31W", void 0, 250),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("KIDLI1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("KIDLI"),
+			void 0,
+			[
+				this.atc.beacon("KIDLI", 15000),
+				this.atc.fix("MID", "510314.23N", "0003730.01W"),
+				this.atc.fix("TUFOZ", "510101.01N", "0003024.31W", void 0, 250),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ABSAV1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("ABSAV"),
+			void 0,
+			[
+				this.atc.beacon("ABSAV", 15000),
+				this.atc.fix("MID", "510314.23N", "0003730.01W"),
+				this.atc.fix("AVANT", "504912.00N", "0005618.05W"),
+				this.atc.beacon("GWC", 13000, 220),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			"GWC1G",
+			"Goodwood one golf",
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("GWC"),
+			void 0,
+			[
+				this.atc.beacon("GWC", 13000, 220),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("SIRIC1G"),
+			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			this.atc.beacon("SIRIC"),
+			void 0,
+			[
+				this.atc.beacon("SIRIC", 14000),
+				this.atc.fix("NIGIT", "511846.96N", "0011014.71W"),
+				this.atc.fix("MID", "510314.23N", "0003730.01W"),
+				this.atc.fix("TUFOZ", "510101.01N", "0003024.31W", void 0, 250),
+				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
+
+				// course to fix path terminator approximation
+				new Fix(50.9010, 0.0283),
+				new Fix(50.9548, 0.0197),
+
+				this.atc.beacon("WILLO", 7000, 220)
+			],
+			{end: "hold"}
+		));
 	}
 }
