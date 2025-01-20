@@ -121,7 +121,7 @@ export default class EGLL {
 			void 0,
 			[
 				this.atc.beacon("TANET"),
-				this.atc.fix("DET", "511814.41N", "0003550.19E"),
+				this.atc.beacon("DET"),
 				this.atc.fix("LLE02", "511857.68N", "0002109.87E", void 0, 250),
 				this.atc.beacon("BIG", 7000, 220)
 			],

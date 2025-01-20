@@ -51,6 +51,8 @@ atc.airspace(
 			Beacon.fromDMS("514334.19N", "0003259.10W", "BNN", "Bovingdon", 116),
 			Beacon.fromDMS("505643.99N", "0001542.25E", "TIMBA", "Timba", 308),
 			Beacon.fromDMS("505905.88N", "0001130.30W", "WILLO", "Willo", {left: 283}),
+			Beacon.fromDMS("520050.20N", "0000309.52W", "LOREL", "Lorel", {left: 187}),
+			Beacon.fromDMS("520058.00N", "0003558.49E", "ABBOT", "Abbot", 265),
 
 			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
@@ -81,6 +83,12 @@ atc.airspace(
 			Beacon.fromDMS("514617.00N", "0012140.87W", "KIDLI", "Kidli"),
 			Beacon.fromDMS("503828.94N", "0011029.05W", "ABSAV", "Absav"),
 			Beacon.fromDMS("505118.79N", "0004524.25W", "GWC", "Goodwood", {left: 175}),
+			Beacon.fromDMS("515947.21N", "0010313.34W", "FINMA", "Finma"),
+			Beacon.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
+			Beacon.fromDMS("503242.00N", "0004512.00E", "BANVA", "Banva"),
+			Beacon.fromDMS("515051.34N", "0010019.40W", "SILVA", "Silva"),
+			Beacon.fromDMS("504912.00N", "0005618.05W", "AVANT", "Avant"),
+			Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 		],
 		new Map([
 			[180, {callsign: "London Control", pronunciation: "London Control", frequency: 129.425}],
@@ -129,23 +137,27 @@ atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 ]);
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));

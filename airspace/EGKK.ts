@@ -247,7 +247,7 @@ export default class EGKK {
 			[
 				this.atc.beacon("ABSAV", 15000),
 				this.atc.fix("MID", "510314.23N", "0003730.01W"),
-				this.atc.fix("AVANT", "504912.00N", "0005618.05W"),
+				this.atc.beacon("AVANT"),
 				this.atc.beacon("GWC", 13000, 220),
 				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
 

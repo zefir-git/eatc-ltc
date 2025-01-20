@@ -41,5 +41,191 @@ export default class EGSS {
 	}
 
 	private star() {
+		this.atc.arrival(new STAR(
+			...STAR.named("TELTU1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("TELTU"),
+			void 0,
+			[
+				this.atc.beacon("TELTU", 19000),
+				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("LISTO1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("FINMA"),
+			149,
+			[
+				this.atc.beacon("FINMA", 15000),
+				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			"BKY1X",
+			"Barkway one x-ray",
+			[this.atc.runway("ss")],
+			this.atc.beacon("BKY"),
+			void 0,
+			[
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
+				this.atc.beacon("ABBOT", 8000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			"BPK1X",
+			"Brookmans Park one x-ray",
+			[this.atc.runway("ss")],
+			this.atc.beacon("BPK"),
+			void 0,
+			[
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
+				this.atc.beacon("ABBOT", 8000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("BANVA1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("BANVA"),
+			void 0,
+			[
+				this.atc.beacon("BANVA"),
+				this.atc.fix("UNDUG", "504723.71N", "0002530.03E"),
+				this.atc.beacon("MAY", 20000),
+				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ABBOT1Z"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("ABBOT"),
+			void 0,
+			[
+				this.atc.beacon("ABBOT", void 0, 220),
+				this.atc.fix("TABIS", "520031.75N", "0002643.90E", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("FINMA1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("FINMA"),
+			void 0,
+			[
+				this.atc.beacon("FINMA", 15000),
+				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("SILVA1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("SILVA"),
+			void 0,
+			[
+				this.atc.beacon("SILVA"),
+				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("AVANT1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("AVANT"),
+			void 0,
+			[
+				this.atc.beacon("AVANT", 19000),
+				this.atc.beacon("OCK"),
+				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("SIRIC1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("SIRIC"),
+			void 0,
+			[
+				this.atc.beacon("SIRIC", 18000),
+				this.atc.fix("NIGIT", "511846.96N", "0011014.71W"),
+				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("LOGAN2A"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("LOGAN"),
+			void 0,
+			[
+				this.atc.beacon("LOGAN", 10000),
+				this.atc.fix("CLN", "515054.50N", "0010851.32E", void 0, 250),
+				this.atc.beacon("ABBOT", 8000, 220)
+			],
+			{end: "hold"}
+		));
+
+		this.atc.arrival(new STAR(
+			"DET2A",
+			"Detling two alpha",
+			[this.atc.runway("ss")],
+			this.atc.beacon("DET"),
+			void 0,
+			[
+				this.atc.beacon("DET", 17000),
+				this.atc.fix("LOFFO", "515012.00N", "0003556.37E", void 0, 250),
+				this.atc.beacon("ABBOT", 8000, 220)
+			],
+			{end: "hold"}
+		));
+
+		// BARMI 2A omitted (BARMI→ABBOT)
+		// RINIS 1A omitted (RINIS→ABBOT)
+		// XAMAN 1A omitted (XAMAN→ABBOT)
+		// TOSVA 1A omitted (TOSVA→ABBOT)
 	}
 }
