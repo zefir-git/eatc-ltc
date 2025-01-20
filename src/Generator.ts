@@ -4,6 +4,8 @@ import Beacon from "./Beacon.js";
 import NamedFix from "./NamedFix.js";
 import RunwayConfiguration from "./RunwayConfiguration.js";
 import Runway from "./Runway.js";
+import Fix from "./Fix.js";
+import StarFix from "./StarFix.js";
 
 export default class Generator {
 	#airspace: Airspace | null = null;
@@ -30,11 +32,17 @@ export default class Generator {
 	/**
 	 * Get beacon by name.
 	 */
-	public beacon(name: string): Beacon {
-		const beacon = this.airspace().beacons.get(name);
-		if (beacon === undefined)
-			throw new Error(`Beacon ${name} not found`);
-		return beacon;
+	public beacon(name: string): Beacon;
+	public beacon(name: string, altitude: number | undefined, speed?: number): StarFix;
+	public beacon(...args: any[]): any {
+		if (args.length === 1) {
+			const beacon = this.airspace().beacons.get(args[0]);
+			if (beacon === undefined)
+				throw new Error(`Beacon ${args[0]} not found`);
+			return beacon;
+		}
+		const beacon = this.beacon(args[0]);
+		return StarFix.from(beacon, args[1], args[2]);
 	}
 
 	/**
@@ -92,19 +100,77 @@ export default class Generator {
 		return this;
 	}
 
-	/**
-	 * Get a fix by name/identifier.
-	 */
-	public fix(name: string): NamedFix {
-		const beacon = this.airspace().beacons.get(name);
-		if (beacon !== undefined)
-			return beacon;
-		for (const airport of this.#airports.values()) {
-			const sid = airport.sidMarkers.get(name);
-			if (sid !== undefined)
-				return sid;
+	// Map<runway, Map<beacon, STAR[]>>
+	#arrivals = new Map<string, Map<string, STAR[]>>;
+
+	public arrival(star: STAR): typeof this {
+		for (const runway of star.runways) {
+			if (!this.#arrivals.has(runway.id))
+				this.#arrivals.set(runway.id, new Map<string, STAR[]>([[star.beacon.name, []]]));
+			else if (!this.#arrivals.get(runway.id)!.has(star.beacon.name))
+				this.#arrivals.get(runway.id)!.set(star.beacon.name, []);
+
+			this.#arrivals.get(runway.id)!
+				.get(star.beacon.name)!
+				.push(star);
 		}
-		throw new Error(`Fix ${name} not found`);
+		return this;
+	}
+
+	#fixes = new Map<string, Fix>;
+
+	public fix(name: string): Fix;
+	public fix(fix: NamedFix): NamedFix;
+	public fix(name: string, fix: Fix): Fix;
+	public fix(name: string, altitude: number | undefined, speed?: number): StarFix;
+	public fix(name: string, lat: string, lon: string, altitude?: number, speed?: number): Fix | StarFix;
+	public fix(name: string, lat: number, lon: number, altitude?: number, speed?: number): Fix | StarFix;
+	public fix(...args: any[]): Fix {
+		if (args.length < 3 && (args[1] === undefined || typeof args[1] === "number")) {
+			if (typeof args[0] === "string") {
+				const name = args[0];
+				let fix: Fix | undefined = this.#fixes.get(name);
+				if (fix === undefined) {
+					fix = this.airspace().beacons.get(name);
+					if (fix === undefined) {
+						for (const airport of this.#airports.values()) {
+							const sid = airport.sidMarkers.get(name);
+							if (sid !== undefined) {
+								fix = sid;
+								break;
+							}
+						}
+					}
+				}
+				if (fix === undefined)
+					throw new Error(`Cannot find fix ${name}`);
+				if (args.length > 1)
+					return StarFix.from(fix, args[1], args[2]);
+				return fix;
+			}
+			else {
+				this.#fixes.set(args[0].name, args[0]);
+				return args[0];
+			}
+		}
+
+		const existing = this.#fixes.get(args[0]);
+
+		const fix = args.length < 2
+		? args[1] as Fix
+		: typeof args[1] === "string"
+		? args.length === 3
+					? Fix.fromDMS(args[1], args[2])
+		  			: StarFix.fromDMS(args[1], args[2], args[3], args[4])
+		: args.length === 3
+					? new Fix(args[1], args[2])
+		  			: new StarFix(args[1], args[2], args[3], args[4]);
+
+		if (existing && (existing.latitude !== fix.latitude || existing.longitude !== fix.longitude))
+			throw new Error(`Trying to overwrite ${args[0]} (${existing.toString()}) with different coordinates: ${fix.toString()}`);
+
+		this.#fixes.set(args[0], fix);
+		return fix;
 	}
 
 	/**
