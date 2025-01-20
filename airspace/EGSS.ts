@@ -35,7 +35,7 @@ export default class EGSS {
 					new Airport.Airline("RYR", 10, ["b738"], ["e"], "Ryanair"),
 				],
 				[],
-				this.atc.beacon("BKY")
+				this.atc.beacon("ABBOT")
 			)
 		);
 	}

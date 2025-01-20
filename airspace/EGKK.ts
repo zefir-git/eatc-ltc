@@ -45,7 +45,7 @@ export default class EGKK {
 					new Airport.Airline("EZY", 10, ["a320"], ["s"], "Easy"),
 				],
 				[],
-				this.atc.beacon("LON")
+				this.atc.beacon("MAY")
 			)
 		);
 	}
