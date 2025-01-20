@@ -7,6 +7,7 @@ import Polygon from "../src/Polygon.js";
 import RunwayConfiguration from "../src/RunwayConfiguration.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
+import EGSS from "./EGSS.js";
 
 const atc = new Generator();
 
@@ -41,7 +42,7 @@ atc.airspace(
 
 			// Manoeuvring/misc beacons
 			Beacon.fromDMS("510102N", "0000658E", "MAY", "Mayfield", {left: 87}),
-			//new Beacon("BKY", "Barkway", 51.989722, 0.061944),
+			Beacon.fromDMS("515923N", "0000343E", "BKY", "Barkway"),
 
 			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
@@ -122,6 +123,7 @@ atc.airspace(
 
 new EGLL(atc);
 new EGKK(atc);
+new EGSS(atc);
 
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
