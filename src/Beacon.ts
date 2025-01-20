@@ -59,8 +59,8 @@ export default class Beacon extends NamedFix {
 		);
 	}
 
-	public static override fromDMS(lon: string, lat: string, name: string, pronunciation: string, holdingPattern?: {left: number} | {right: number} | number): Beacon {
-		const fix = super.fromDMS(lon, lat, name, pronunciation);
+	public static override fromDMS(lat: string, lon: string, name: string, pronunciation: string, holdingPattern?: {left: number} | {right: number} | number): Beacon {
+		const fix = super.fromDMS(lat, lon, name, pronunciation);
 		return new Beacon(fix.name, fix.pronunciation, fix.latitude, fix.longitude, holdingPattern);
 	}
 }
