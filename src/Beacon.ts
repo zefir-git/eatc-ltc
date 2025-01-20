@@ -1,4 +1,5 @@
 import NamedFix from "./NamedFix.js";
+import Fix from "./Fix.js";
 
 /**
  * A beacon is a visible named fix in the airspace. Has optional holding
@@ -75,5 +76,9 @@ export default class Beacon extends NamedFix {
 	public static override fromDMS(lat: string, lon: string, name: string, pronunciation: string, holdingPattern?: {left: number} | {right: number} | number): Beacon {
 		const fix = super.fromDMS(lat, lon, name, pronunciation);
 		return new Beacon(fix.name, fix.pronunciation, fix.latitude, fix.longitude, holdingPattern);
+	}
+
+	public static from(name: string, pronunciation: string, fix: Fix, holdingPattern?: {left: number} | {right: number} | number): Beacon {
+		return new Beacon(name, pronunciation, fix.latitude, fix.longitude, holdingPattern);
 	}
 }
