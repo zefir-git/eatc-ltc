@@ -95,6 +95,10 @@ export default class EGLL {
 			{end: "hold"}
 		));
 
+		/**
+		 * This arrival is to enable continuation on ALESO 1H if interrupted
+		 * with HOLD at TIGER.
+		 */
 		this.atc.arrival(new STAR(
 			...STAR.named("ALESO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
