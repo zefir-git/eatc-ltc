@@ -395,16 +395,7 @@ export default class Airspace {
 				 ).join("\n"),
 			"beacons = \n" +
 			Array.from(this.beacons.values())
-				 .map(beacon => "\t" + [
-					 beacon.name,
-					 beacon.toString(),
-					 beacon.holdingPattern !== undefined
-					 ? "right" in beacon.holdingPattern
-					   ? beacon.holdingPattern.right
-					   : -beacon.holdingPattern.left
-					 : 0,
-					 beacon.pronunciation
-				 ].join(", ")).join("\n"),
+				 .map(beacon => "\t" + beacon.beaconString()).join("\n"),
 			this.boundary === undefined
 			? null
 			: "boundary = \n" + this.boundary.toString()
