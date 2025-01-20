@@ -28,7 +28,7 @@ export default class EGKK {
 						124.23,
 						"Gatwick Tower",
 						77.63
-					).reverse(),
+					),
 					new Runway("kks", "26L",
 						Fix.fromDMS("510902.42N", "0001019.00W"),
 						257.65, 196,
