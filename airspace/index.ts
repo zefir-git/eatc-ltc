@@ -8,6 +8,7 @@ import RunwayConfiguration from "../src/RunwayConfiguration.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
 import EGSS from "./EGSS.js";
+import EGGW from "./EGGW.js";
 
 const atc = new Generator();
 
@@ -132,24 +133,28 @@ atc.airspace(
 new EGLL(atc);
 new EGKK(atc);
 new EGSS(atc);
+new EGGW(atc);
 
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
@@ -157,6 +162,7 @@ atc.runway([
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 ]);
 
