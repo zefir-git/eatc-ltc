@@ -149,15 +149,15 @@ atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {departures: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
 	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true}),
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 ]);
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
