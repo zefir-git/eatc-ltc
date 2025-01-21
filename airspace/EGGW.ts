@@ -8,6 +8,7 @@ export default class EGGW {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
 		this.star();
+		this.transition();
 	}
 
 	private airport() {
@@ -242,6 +243,28 @@ export default class EGGW {
 				this.atc.beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
+		));
+	}
+
+	private transition() {
+		const rwy25 = this.atc.runway("gw");
+		this.atc.fix("FITME", rwy25.position.destination(rwy25.heading - 180, 10.7));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ZAGZO1T"),
+			[this.atc.runway("gw")],
+			this.atc.beacon("ZAGZO"),
+			void 0,
+			[
+				this.atc.beacon("ZAGZO", 8000, 220),
+				this.atc.fix("EFFUT", "521142.36N", "0001200.36W", 8000),
+				this.atc.fix("GWN30", "520606.88N", "0001154.11W", 6000),
+				this.atc.fix("GWN26", "520307.39N", "0001807.70W", 5000),
+				this.atc.fix("GWN22", "515948.29N", "0001637.97W"),
+				this.atc.fix("GWE17", "520016.82N", "0000645.79W", 5000, 185),
+				this.atc.fix("FITME", 3000)
+			],
+			{ils: {dme: 7.7, altitude: 3000}}
 		));
 	}
 }
