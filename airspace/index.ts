@@ -55,11 +55,13 @@ atc.airspace(
 			Beacon.fromDMS("505905.88N", "0001130.30W", "WILLO", "Willo", {left: 283}),
 			Beacon.fromDMS("520050.20N", "0000309.52W", "LOREL", "Lorel", {left: 187}),
 			Beacon.fromDMS("520058.00N", "0003558.49E", "ABBOT", "Abbot", 265),
+			Beacon.fromDMS("521812.97N", "0001352.54W", "ZAGZO", "Zagzo", 149),
 
 			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
 			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
+			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -91,6 +93,7 @@ atc.airspace(
 			Beacon.fromDMS("515051.34N", "0010019.40W", "SILVA", "Silva"),
 			Beacon.fromDMS("504912.00N", "0005618.05W", "AVANT", "Avant"),
 			Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
+			Beacon.fromDMS("504723.71N", "0002530.03E", "UNDUG", "Undug", 319),
 		],
 		new Map([
 			[180, {callsign: "London Control", pronunciation: "London Control", frequency: 129.425}],
