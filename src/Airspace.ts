@@ -374,8 +374,8 @@ export default class Airspace {
 			"ceiling = " + this.ceiling,
 			"above = " + this.above,
 			"speedrestriction = " + [
-				this.speedRestriction.radius?.nm ?? 0,
-				this.speedRestriction.radius?.kts ?? 0,
+				this.speedRestriction.radius?.nm ?? this.radius * 2,
+				this.speedRestriction.radius?.kts ?? 300,
 				this.speedRestriction.altitude?.ft ?? 0,
 				this.speedRestriction.altitude?.kts ?? 0,
 			].join(", "),
