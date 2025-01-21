@@ -48,7 +48,28 @@ export default class EGSS {
 			void 0,
 			[
 				this.atc.beacon("TELTU", 19000),
-				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("VATON"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		/**
+		 * This arrival is to enable continuation on TELTU 1L AVANT 1L if
+		 * interrupted with HOLD at VATON. Since the original STAR was
+		 * interrupted, it’s not possible to continue with the same name.
+		 * Continuation after interruption at VATON will show as TELTU 1L.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("TELTU1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("VATON"),
+			25,
+			[
+				this.atc.beacon("VATON"),
 				this.atc.beacon("BPK", void 0, 250),
 				this.atc.beacon("BKY", void 0, 220),
 				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
@@ -107,9 +128,49 @@ export default class EGSS {
 			void 0,
 			[
 				this.atc.beacon("BANVA"),
-				this.atc.fix("UNDUG", "504723.71N", "0002530.03E"),
+				this.atc.beacon("UNDUG"),
 				this.atc.beacon("MAY", 20000),
-				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("VATON"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		/**
+		 * This arrival is to enable continuation on BANVA 1L if interrupted
+		 * with HOLD at UNDUG.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("BANVA1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("UNDUG"),
+			319,
+			[
+				this.atc.beacon("UNDUG"),
+				this.atc.beacon("MAY", 20000),
+				this.atc.beacon("VATON"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		/**
+		 * This arrival is to enable continuation on BANVA 1L if interrupted
+		 * with HOLD at VATON.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("BANVA1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("VATON"),
+			325,
+			[
+				this.atc.beacon("VATON"),
 				this.atc.beacon("BPK", void 0, 250),
 				this.atc.beacon("BKY", void 0, 220),
 				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
@@ -170,7 +231,7 @@ export default class EGSS {
 			[
 				this.atc.beacon("AVANT", 19000),
 				this.atc.beacon("OCK"),
-				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("VATON"),
 				this.atc.beacon("BPK", void 0, 250),
 				this.atc.beacon("BKY", void 0, 220),
 				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
@@ -187,7 +248,26 @@ export default class EGSS {
 			[
 				this.atc.beacon("SIRIC", 18000),
 				this.atc.fix("NIGIT", "511846.96N", "0011014.71W"),
-				this.atc.fix("VATON", "512603.83N", "0002056.10W"),
+				this.atc.beacon("VATON"),
+				this.atc.beacon("BPK", void 0, 250),
+				this.atc.beacon("BKY", void 0, 220),
+				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				this.atc.beacon("LOREL", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+		/**
+		 * This arrival is to enable continuation on SIRIC 1L if interrupted
+		 * with HOLD at VATON.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("SIRIC1L"),
+			[this.atc.runway("ss")],
+			this.atc.beacon("VATON"),
+			76,
+			[
+				this.atc.beacon("VATON"),
 				this.atc.beacon("BPK", void 0, 250),
 				this.atc.beacon("BKY", void 0, 220),
 				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
