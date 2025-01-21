@@ -9,6 +9,7 @@ import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
+import EGLC from "./EGLC.js";
 
 const atc = new Generator();
 
@@ -134,6 +135,7 @@ new EGLL(atc);
 new EGKK(atc);
 new EGSS(atc);
 new EGGW(atc);
+new EGLC(atc);
 
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
@@ -141,6 +143,7 @@ atc.runway([
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {departures: true}),
@@ -148,6 +151,7 @@ atc.runway([
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),
@@ -155,6 +159,7 @@ atc.runway([
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true}),
 ]);
 atc.runway([
@@ -163,6 +168,7 @@ atc.runway([
 	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true}),
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 ]);
 
