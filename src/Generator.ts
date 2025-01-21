@@ -125,49 +125,62 @@ export default class Generator {
 	public fix(name: string, fix: Fix): Fix;
 	public fix(name: string, altitude: number | undefined, speed?: number): StarFix;
 	public fix(name: string, lat: string, lon: string, altitude?: number, speed?: number): Fix | StarFix;
-	public fix(name: string, lat: number, lon: number, altitude?: number, speed?: number): Fix | StarFix;
 	public fix(...args: any[]): Fix {
-		if (args.length < 3 && (args[1] === undefined || typeof args[1] === "number")) {
+		if (args.length === 1) {
 			if (typeof args[0] === "string") {
-				const name = args[0];
-				let fix: Fix | undefined = this.#fixes.get(name);
-				if (fix === undefined) {
-					fix = this.airspace().beacons.get(name);
-					if (fix === undefined) {
-						for (const airport of this.#airports.values()) {
-							const sid = airport.sidMarkers.get(name);
-							if (sid !== undefined) {
-								fix = sid;
-								break;
-							}
-						}
-					}
+				let fix: Fix | undefined = this.#fixes.get(args[0]);
+				if (fix !== undefined)
+					return fix;
+				fix = this.airspace().beacons.get(args[0]);
+				if (fix !== undefined)
+					return fix;
+				for (const airport of this.#airports.values()) {
+					fix = airport.sidMarkers.get(args[0]);
+					if (fix !== undefined)
+						return fix;
 				}
-				if (fix === undefined)
-					throw new Error(`Cannot find fix ${name}`);
-				if (args.length > 1)
-					return StarFix.from(fix, args[1], args[2]);
-				return fix;
+				throw new Error(`Cannot find fix ${args[0]}`);
 			}
-			else {
-				this.#fixes.set(args[0].name, args[0]);
-				return args[0];
+
+			let existing: Fix | null = null;
+			try {
+				existing = this.fix(args[0].name);
 			}
+			catch (ignored) {}
+			if (existing !== null && (existing.latitude !== args[0].latitude || existing.longitude !== args[0].longitude))
+				throw new Error(`Trying to overwrite ${args[0].name} (${existing.toString()}) with different coordinates: ${args[0].toString()}`);
+
+			this.#fixes.set(args[0].name, args[0]);
+			return args[0];
+		}
+		if (args.length === 2 && typeof args[1] !== "number") {
+			let existing: Fix | null = null;
+			try {
+				existing = this.fix(args[1].name);
+			}
+			catch (ignored) {}
+			if (existing !== null && (existing.latitude !== args[1].latitude || existing.longitude !== args[1].longitude))
+				throw new Error(`Trying to overwrite ${args[0]} (${existing.toString()}) with different coordinates: ${args[1].toString()}`);
+
+			this.#fixes.set(args[0], args[1]);
+			return args[1];
+		}
+		if (typeof args[1] !== "string") {
+			const fix = this.fix(args[0]);
+			return StarFix.from(fix, args[1], args[2]);
 		}
 
-		const existing = this.#fixes.get(args[0]);
+		const fix =
+			args.length > 2
+			? StarFix.fromDMS(args[1], args[2], args[3], args[4])
+			: Fix.fromDMS(args[1], args[2]);
 
-		const fix = args.length < 2
-		? args[1] as Fix
-		: typeof args[1] === "string"
-		? args.length === 3
-					? Fix.fromDMS(args[1], args[2])
-		  			: StarFix.fromDMS(args[1], args[2], args[3], args[4])
-		: args.length === 3
-					? new Fix(args[1], args[2])
-		  			: new StarFix(args[1], args[2], args[3], args[4]);
-
-		if (existing && (existing.latitude !== fix.latitude || existing.longitude !== fix.longitude))
+		let existing: Fix | null = null;
+		try {
+			existing = this.fix(args[0]);
+		}
+		catch (ignored) {}
+		if (existing !== null && (existing.latitude !== fix.latitude || existing.longitude !== fix.longitude))
 			throw new Error(`Trying to overwrite ${args[0]} (${existing.toString()}) with different coordinates: ${fix.toString()}`);
 
 		this.#fixes.set(args[0], fix);
