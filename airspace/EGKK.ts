@@ -152,7 +152,7 @@ export default class EGKK {
 			91,
 			[
 				this.atc.beacon("ELDER"),
-				this.atc.fix("TELTU", "504839.92N", "0004517.69W", 13000, 250),
+				this.atc.beacon("TELTU", 13000, 250),
 				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
 
 				// course to fix path terminator approximation
@@ -171,7 +171,7 @@ export default class EGKK {
 			39,
 			[
 				this.atc.beacon("DISVO"),
-				this.atc.fix("TELTU", "504839.92N", "0004517.69W", 13000, 250),
+				this.atc.beacon("TELTU", 13000, 250),
 				this.atc.fix("HOLLY", "505312.18N", "0000542.23W", void 0, 220),
 
 				// course to fix path terminator approximation
