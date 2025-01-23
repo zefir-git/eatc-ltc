@@ -56,12 +56,15 @@ atc.airspace(
 			Beacon.fromDMS("520050.20N", "0000309.52W", "LOREL", "Lorel", {left: 187}),
 			Beacon.fromDMS("520058.00N", "0003558.49E", "ABBOT", "Abbot", 265),
 			Beacon.fromDMS("521812.97N", "0001352.54W", "ZAGZO", "Zagzo", 149),
+			Beacon.fromDMS("514408.65N", "0012536.00E", "JACKO", "Jacko", {left: 264}),
+			Beacon.fromDMS("510958.44N", "0011704.26E", "GODLU", "Godlu", 309),
 
 			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
 			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
+			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -94,6 +97,19 @@ atc.airspace(
 			Beacon.fromDMS("504912.00N", "0005618.05W", "AVANT", "Avant"),
 			Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 			Beacon.fromDMS("504723.71N", "0002530.03E", "UNDUG", "Undug", 319),
+			Beacon.fromDMS("504645.67N", "0012800.00E", "SOVAT", "Sovat"),
+			/**
+			 * KONAN: moved closer to GODLU to fit within airspace.
+			 * Use this beacon only for KONAN 1C.
+			 */
+			Beacon.from("KONAN", "Konan",
+				atc.fix("GODLU", "510958.44N", "0011704.26E")
+				   .destination(94, 20)
+			),
+			Beacon.fromDMS("520748.00N", "0010043.20W", "TIXEX", "Tixex"),
+			Beacon.fromDMS("504338.76N", "0005839.48W", "BIDVA", "Bidva"),
+			Beacon.fromDMS("505718.90N", "0012042.20W", "SAM", "Southampton"),
+			Beacon.fromDMS("503546.32N", "0005545.48E", "SOXUX", "Soxux"),
 		],
 		new Map([
 			[180, {callsign: "London Control", pronunciation: "London Control", frequency: 129.425}],
@@ -106,6 +122,14 @@ atc.airspace(
 				new Fix(50.669484, 0.500093),
 				new Fix(50.755138, 0.750332),
 				new Fix(50.979723, 1.040440),
+
+				// extension WORTHING CTA 1A
+				new Fix(51.000000, 1.466675),
+				new Fix(51.349485, 1.531906),
+				new Fix(51.357633, 1.362991),
+				new Fix(51.379067, 1.264114),
+				// end extension WORTHING CTA 1A
+
 				new Fix(51.649981, 1.416721),
 				new Fix(51.873206, 1.443844),
 				new Fix(51.984880, 1.384964),
@@ -122,8 +146,13 @@ atc.airspace(
 				new Fix(52.397601, -0.569229),
 				// end extension CLACTON CTA 10C
 
-				new Fix(52.191404, -0.371819),
-				new Fix(52.054417, -0.578971),
+				//new Fix(52.191404, -0.371819),
+				//new Fix(52.054417, -0.578971),
+				// extension
+				new Fix(52.248403, -0.427780),
+				new Fix(52.114939, -0.721664),
+				// end extension
+
 				new Fix(52.071910, -0.619354),
 				new Fix(51.960029, -1.190300),
 				new Fix(51.735906, -1.014090),
