@@ -259,7 +259,9 @@ export default class EGGW {
 
 	private transition() {
 		const rwy25 = this.atc.runway("gw");
+		const rwy07 = rwy25.reverse();
 		this.atc.fix("FITME", rwy25.position.destination(rwy25.heading - 180, 10.7));
+		this.atc.fix("ODWAD", rwy07.position.destination(rwy07.heading - 180, 10.5));
 
 		this.atc.arrival(new STAR(
 			...STAR.named("ZAGZO1T"),
@@ -277,6 +279,27 @@ export default class EGGW {
 				this.atc.fix("FITME", 3000)
 			],
 			{ils: {dme: 7.7, altitude: 3000}}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ZAGZO1Q"),
+			[this.atc.runway("gw")],
+			"only",
+			this.atc.beacon("ZAGZO"),
+			void 0,
+			[
+				this.atc.beacon("ZAGZO", 8000, 220),
+				this.atc.fix("EFFUT", "521142.36N", "0001200.36W", 8000),
+				this.atc.fix("GWN45", "520607.61N", "0001015.06W", 6000),
+				this.atc.fix("GWN39", "520225.12N", "0001700.84W", 5000),
+				this.atc.fix("GWN35", "515950.08N", "0002142.52W"),
+				this.atc.fix("GWN32", "515852.03N", "0002656.67W"),
+				this.atc.fix("GWW24", "515404.06N", "0003649.52W"),
+				this.atc.fix("GWW18", "515230.10N", "0004544.14W", 5000, 185),
+				this.atc.fix("GWW14", "514839.58N", "0004358.20W", 4000),
+				this.atc.fix("ODWAD", 3000)
+			],
+			{ils: {dme: 4.5, altitude: 2000}}
 		));
 	}
 }
