@@ -105,13 +105,20 @@ export default class Generator {
 	#arrivals = new Map<string, Map<string, STAR[]>>;
 
 	public arrival(star: STAR): typeof this {
-		for (const runway of star.runways) {
-			if (!this.#arrivals.has(runway.id))
-				this.#arrivals.set(runway.id, new Map<string, STAR[]>([[star.beacon.name, []]]));
-			else if (!this.#arrivals.get(runway.id)!.has(star.beacon.name))
-				this.#arrivals.get(runway.id)!.set(star.beacon.name, []);
+		const runways = Array.from(star.runways);
+		const runwayIds =
+			star.reverse === "only"
+			? runways.map(r => r.id + ", rev")
+			: star.reverse
+			  ? runways.flatMap(r => [r.id, r.id + ", rev"])
+			  : runways.map(r => r.id);
+		for (const runway of runwayIds) {
+			if (!this.#arrivals.has(runway))
+				this.#arrivals.set(runway, new Map<string, STAR[]>([[star.beacon.name, []]]));
+			else if (!this.#arrivals.get(runway)!.has(star.beacon.name))
+				this.#arrivals.get(runway)!.set(star.beacon.name, []);
 
-			this.#arrivals.get(runway.id)!
+			this.#arrivals.get(runway)!
 				.get(star.beacon.name)!
 				.push(star);
 		}
@@ -146,7 +153,8 @@ export default class Generator {
 			try {
 				existing = this.fix(args[0].name);
 			}
-			catch (ignored) {}
+			catch (ignored) {
+			}
 			if (existing !== null && (existing.latitude !== args[0].latitude || existing.longitude !== args[0].longitude))
 				throw new Error(`Trying to overwrite ${args[0].name} (${existing.toString()}) with different coordinates: ${args[0].toString()}`);
 
@@ -158,7 +166,8 @@ export default class Generator {
 			try {
 				existing = this.fix(args[1].name);
 			}
-			catch (ignored) {}
+			catch (ignored) {
+			}
 			if (existing !== null && (existing.latitude !== args[1].latitude || existing.longitude !== args[1].longitude))
 				throw new Error(`Trying to overwrite ${args[0]} (${existing.toString()}) with different coordinates: ${args[1].toString()}`);
 
@@ -179,7 +188,8 @@ export default class Generator {
 		try {
 			existing = this.fix(args[0]);
 		}
-		catch (ignored) {}
+		catch (ignored) {
+		}
 		if (existing !== null && (existing.latitude !== fix.latitude || existing.longitude !== fix.longitude))
 			throw new Error(`Trying to overwrite ${args[0]} (${existing.toString()}) with different coordinates: ${fix.toString()}`);
 

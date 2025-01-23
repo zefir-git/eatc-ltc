@@ -44,6 +44,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("TELTU1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("TELTU"),
 			void 0,
 			[
@@ -66,6 +67,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("TELTU1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("VATON"),
 			25,
 			[
@@ -81,6 +83,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("LISTO1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("FINMA"),
 			149,
 			[
@@ -97,6 +100,7 @@ export default class EGSS {
 			"BKY1X",
 			"Barkway one x-ray",
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("BKY"),
 			void 0,
 			[
@@ -111,6 +115,7 @@ export default class EGSS {
 			"BPK1X",
 			"Brookmans Park one x-ray",
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("BPK"),
 			void 0,
 			[
@@ -124,6 +129,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("BANVA1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("BANVA"),
 			void 0,
 			[
@@ -146,6 +152,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("BANVA1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("UNDUG"),
 			319,
 			[
@@ -167,6 +174,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("BANVA1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("VATON"),
 			325,
 			[
@@ -182,6 +190,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("ABBOT1Z"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("ABBOT"),
 			void 0,
 			[
@@ -196,6 +205,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("FINMA1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("FINMA"),
 			void 0,
 			[
@@ -211,6 +221,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("SILVA1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("SILVA"),
 			void 0,
 			[
@@ -226,6 +237,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("AVANT1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("AVANT"),
 			void 0,
 			[
@@ -243,6 +255,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("SIRIC"),
 			void 0,
 			[
@@ -264,6 +277,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1L"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("VATON"),
 			76,
 			[
@@ -279,6 +293,7 @@ export default class EGSS {
 		this.atc.arrival(new STAR(
 			...STAR.named("LOGAN2A"),
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("LOGAN"),
 			void 0,
 			[
@@ -293,6 +308,7 @@ export default class EGSS {
 			"DET2A",
 			"Detling two alpha",
 			[this.atc.runway("ss")],
+			true,
 			this.atc.beacon("DET"),
 			void 0,
 			[

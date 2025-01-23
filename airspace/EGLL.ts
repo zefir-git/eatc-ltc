@@ -55,6 +55,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("OTMET1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("BEGTO"),
 			63,
 			[
@@ -69,6 +70,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("ROXOG1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("BEGTO"),
 			17,
 			[
@@ -83,6 +85,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("ALESO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("ROTNO"),
 			314,
 			[
@@ -102,6 +105,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("ALESO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("TIGER"),
 			314,
 			[
@@ -117,6 +121,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("TANET1Z"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("TANET"),
 			void 0,
 			[
@@ -133,6 +138,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("NUGRA1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("TOBID"),
 			147,
 			[
@@ -150,6 +156,7 @@ export default class EGLL {
 			"HON1H",
 			"Honiley one hotel",
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("TOBID"),
 			139,
 			[
@@ -164,6 +171,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("BARMI1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("LOGAN"),
 			228,
 			[
@@ -179,6 +187,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("LOGAN2H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("LOGAN"),
 			void 0,
 			[
@@ -196,6 +205,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("HAZEL1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("HAZEL"),
 			void 0,
 			[
@@ -212,6 +222,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("FITBO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("SOPIT"),
 			107,
 			[
@@ -225,6 +236,7 @@ export default class EGLL {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
+			true,
 			this.atc.beacon("SIRIC"),
 			void 0,
 			[

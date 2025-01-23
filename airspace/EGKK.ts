@@ -54,6 +54,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("BARMI1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("TEBRA"),
 			228,
 			[
@@ -70,6 +71,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("TEBRA2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("TEBRA"),
 			0,
 			[
@@ -92,6 +94,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("TEBRA2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("ARNUN"),
 			216,
 			[
@@ -106,6 +109,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("KONAN2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("ARNUN"),
 			264,
 			[
@@ -122,6 +126,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("NEVIL1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("AMDUT"),
 			25,
 			[
@@ -135,6 +140,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("KUNAV1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("AMDUT"),
 			312,
 			[
@@ -148,6 +154,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("OTMET1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("ELDER"),
 			91,
 			[
@@ -167,6 +174,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("VASUX1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("DISVO"),
 			39,
 			[
@@ -189,6 +197,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("TELTU1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("TELTU"),
 			void 0,
 			[
@@ -202,6 +211,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("DISIT1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("KIDLI"),
 			146,
 			[
@@ -222,6 +232,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("KIDLI1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("KIDLI"),
 			void 0,
 			[
@@ -242,6 +253,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("ABSAV1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("ABSAV"),
 			void 0,
 			[
@@ -264,6 +276,7 @@ export default class EGKK {
 			"GWC1G",
 			"Goodwood one golf",
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("GWC"),
 			void 0,
 			[
@@ -282,6 +295,7 @@ export default class EGKK {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
+			true,
 			this.atc.beacon("SIRIC"),
 			void 0,
 			[

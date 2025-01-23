@@ -45,6 +45,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("UNDUG1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("UNDUG"),
 			void 0,
 			[
@@ -69,6 +70,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("UNDUG1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("VATON"),
 			325,
 			[
@@ -87,6 +89,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("SIRIC"),
 			void 0,
 			[
@@ -111,6 +114,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("SIRIC1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("VATON"),
 			76,
 			[
@@ -129,6 +133,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("TELTU1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("TELTU"),
 			void 0,
 			[
@@ -153,6 +158,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("TELTU1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("VATON"),
 			22,
 			[
@@ -176,6 +182,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("FINMA1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("FINMA"),
 			void 0,
 			[
@@ -191,6 +198,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("SILVA1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("SILVA"),
 			void 0,
 			[
@@ -206,6 +214,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("LISTO1N"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("FINMA"),
 			149,
 			[
@@ -221,6 +230,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("LOGAN2A"),
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("LOGAN"),
 			void 0,
 			[
@@ -235,6 +245,7 @@ export default class EGGW {
 			"DET2A",
 			"Detling two alpha",
 			[this.atc.runway("gw")],
+			true,
 			this.atc.beacon("DET"),
 			void 0,
 			[
@@ -253,6 +264,7 @@ export default class EGGW {
 		this.atc.arrival(new STAR(
 			...STAR.named("ZAGZO1T"),
 			[this.atc.runway("gw")],
+			false,
 			this.atc.beacon("ZAGZO"),
 			void 0,
 			[

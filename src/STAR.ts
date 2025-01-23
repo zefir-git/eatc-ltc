@@ -25,6 +25,11 @@ export default class STAR {
 	public readonly runways: Set<Runway>;
 
 	/**
+	 * Reversed runway end use for this STAR.
+	 */
+	public readonly reverse: boolean | "only";
+
+	/**
 	 * The beacon at which this STAR begins.
 	 */
 	public readonly beacon: Beacon;
@@ -76,6 +81,7 @@ export default class STAR {
 	 * 			a fix, followed by a number and a letter.
 	 * @param pronunciation Pronunciation of this STAR’s name.
 	 * @param runways The runways for which this STAR is available.
+	 * @param reverse Reversed runway end use for this STAR.
 	 * @param beacon The beacon at which this STAR begins.
 	 * @param heading The inbound heading of the STAR in decimal degrees. When
 	 * 			there are multiple STARs with the same runway and beacon, the
@@ -88,6 +94,7 @@ export default class STAR {
 		name: string,
 		pronunciation: string,
 		runways: Iterable<Runway>,
+		reverse: boolean | "only",
 		beacon: Beacon,
 		heading: number | undefined,
 		route: Iterable<Fix>,
@@ -96,6 +103,7 @@ export default class STAR {
 		this.name = name;
 		this.pronunciation = pronunciation;
 		this.runways = new Set(runways);
+		this.reverse = reverse;
 		this.beacon = beacon;
 		this.heading = heading;
 		this.route = Array.from(route);
