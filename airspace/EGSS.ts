@@ -23,8 +23,8 @@ export default class EGSS {
 						Fix.fromDMS("515342.57N", "0001500.16E"),
 						222.89, 347,
 						3049 / Fix.FT, 0, 298 / Fix.FT,
-						{name: "TOTVO", distance: 10.4},
-						{name: "EKVEG", distance: 10.4},
+						void 0,
+						void 0,
 						123.805,
 						"Stansted Tower",
 						42.87

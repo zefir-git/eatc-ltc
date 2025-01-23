@@ -23,8 +23,8 @@ export default class EGKK {
 						Fix.fromDMS("510903.69N", "0001057.40W"),
 						257.65, 195,
 						2561 / Fix.FT, 415 / Fix.FT, 321 / Fix.FT,
-						{name: "ARPIT", distance: 10.6},
-						{name: "MEBIG", distance: 10.6},
+						void 0,
+						void 0,
 						124.23,
 						"Gatwick Tower",
 						77.63
@@ -33,8 +33,8 @@ export default class EGKK {
 						Fix.fromDMS("510902.42N", "0001019.00W"),
 						257.65, 196,
 						3317 / Fix.FT, 425 / Fix.FT, 395 / Fix.FT,
-						{name: "OEVI", distance: 10.6},
-						{name: "ABIBI", distance: 10.6},
+						void 0,
+						void 0,
 						124.23,
 						"Gatwick Tower",
 						77.63

@@ -24,8 +24,8 @@ export default class EGLL {
 						Fix.fromDMS("512839.63N", "0002559.82W"),
 						269.71, 77,
 						3901 / Fix.FT, 0, 309 / Fix.FT,
-						{name: "IVLAR", distance: 10},
-						{name: "ABAVI", distance: 10},
+						void 0,
+						void 0,
 						118.7,
 						"Tower",
 						89.67
@@ -34,8 +34,8 @@ export default class EGLL {
 						Fix.fromDMS("512753.82N", "0002602.76W"),
 						269.72, 75,
 						3658 / Fix.FT, 0, 308 / Fix.FT,
-						{name: "NEKSA", distance: 10},
-						{name: "BENPA", distance: 10},
+						void 0,
+						void 0,
 						118.5,
 						"Tower",
 						89.68
