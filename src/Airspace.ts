@@ -295,60 +295,6 @@ export default class Airspace {
 	}
 
 	public toString() {
-		/*return `[airspace]
-		 name = ${this.name.approach}, ${this.name.departure}
-		 usa = ${this.usa}
-		 metric = ${this.metric}
-		 automatic = ${this.automatic}
-		 strictspawn = ${this.strictSpawn}
-		 decimaldegrees = false
-		 center = ${this.center.toString()}
-		 magneticvar = ${this.magneticVar}
-		 radius = ${this.radius}
-		 zoom = ${this.zoom}
-		 letters = ${this.letters}
-		 separation = ${this.separation}
-		 elevation = ${this.elevation}
-		 floor = ${this.floor}
-		 diversionaltitude = ${this.diversionAltitude}
-		 transitionaltitude = ${this.transitionAltitude}
-		 descentaltitude = ${this.descentAltitude}
-		 ceiling = ${this.ceiling}
-		 above = ${this.above}
-		 speedrestriction = ${[
-		 this.speedRestriction.radius?.nm ?? 0,
-		 this.speedRestriction.radius?.kts ?? 0,
-		 this.speedRestriction.altitude?.ft ?? 0,
-		 this.speedRestriction.altitude?.kts ?? 0,
-		 ].join(", ")}
-		 localizerspeed = ${this.localizerSpeed.nm}, ${this.localizerSpeed.kts}
-
-		 handoff =
-		 ${
-		 Array.from(this.handoff.entries())
-		 .map(([dir, handoff]) =>
-		 "\t" +
-		 [dir, handoff.callsign, handoff.pronunciation, handoff.frequency]
-		 .join(", ")
-		 )
-		 .join("\n")
-		 }
-
-		 beacons =
-		 ${
-		 Array.from(this.beacons.values())
-		 .map(beacon => `\t${beacon.name}, ${beacon.toString()}, ${
-		 beacon.holdingPattern !== undefined
-		 ? "right" in beacon.holdingPattern
-		 ? beacon.holdingPattern.right
-		 : -beacon.holdingPattern.left
-		 : 0
-		 }, ${beacon.pronunciation}`).join("\n")
-		 }
-		 ${this.boundary !== undefined
-		 ? `\nboundary = \n${this.boundary.toString()}`
-		 : ""}
-		 `;*/
 		return [
 			"[airspace]",
 			"name = " + [
