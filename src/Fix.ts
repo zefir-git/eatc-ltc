@@ -163,6 +163,23 @@ export default class Fix {
 	}
 
 	/**
+	 * Calculate great circle distance between two fixes.
+	 * @param other The other fix.
+	 * @return Distance in metres.
+	 */
+	public distance(other: Fix): number {
+		const φ1 = this.degToRad(this.latitude);
+		const φ2 = this.degToRad(other.latitude);
+		const Δφ = φ2 - φ1;
+		const Δλ = this.degToRad(other.longitude - this.longitude);
+
+		const a = Math.sin(Δφ / 2) ** 2
+			+ Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
+		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		return Fix.R * c;
+	}
+
+	/**
 	 * Create a new fix from DMS coordinates
 	 * @param lon Longitude in DMS
 	 * @param lat Latitude in DMS
