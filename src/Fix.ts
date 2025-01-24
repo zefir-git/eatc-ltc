@@ -81,6 +81,88 @@ export default class Fix {
 	}
 
 	/**
+	 * Intersection of two paths given start points and bearings
+	 * @param bearing Initial bearing from this point in decimal degrees.
+	 * @param other The other point.
+	 * @param otherBearing Initial bearing from the other point in decimal degrees.
+	 */
+	public bearingIntersection(bearing: number, other: Fix, otherBearing: number) {
+		const φ1 = this.degToRad(this.latitude);
+		const λ1 = this.degToRad(this.longitude);
+
+		const φ2 = this.degToRad(other.latitude);
+		const λ2 = this.degToRad(other.longitude);
+
+		const Δφ = φ2 - φ1;
+		const Δλ = λ2 - λ1;
+
+		const θ13 = this.degToRad(bearing);
+		const θ23 = this.degToRad(otherBearing);
+
+		/** angular distance **/
+		const δ12 = 2 * Math.asin(
+			Math.sqrt(
+				Math.sin(Δφ / 2) ** 2
+				+ Math.cos(φ1)
+				* Math.cos(φ2)
+				* Math.sin(Δλ / 2) ** 2
+			)
+		);
+
+		/** initial/final bearings between points **/
+		const θa = Math.acos(
+			(Math.sin(φ2) - Math.sin(φ1) * Math.cos(δ12))
+			/
+			(Math.sin(δ12) * Math.cos(φ1))
+		);
+		const θb = Math.acos(
+			(Math.sin(φ1) - Math.sin(φ2) * Math.cos(δ12))
+			/
+			(Math.sin(δ12) * Math.cos(φ2))
+		);
+
+		let θ12: number;
+		let θ21: number;
+		if (Math.sin(λ2 - λ1) > 0) {
+			θ12 = θa;
+			θ21 = 2 * Math.PI - θb;
+		}
+		else {
+			θ12 = 2 * Math.PI - θa;
+			θ21 = θb;
+		}
+
+		const α1 = θ13 - θ12;
+		const α2 = θ21 - θ23;
+
+		const α3 = Math.acos(
+			-Math.cos(α1) * Math.cos(α2)
+			+ Math.sin(α1) * Math.sin(α2) * Math.cos(δ12)
+		);
+
+		/** angular distance **/
+		const δ13 = Math.atan2(
+			Math.sin(δ12) * Math.sin(α1) * Math.sin(α2),
+			Math.cos(α2)
+			+ Math.cos(α1) * Math.cos(α3)
+		);
+
+		const φ3 = Math.asin(
+			Math.sin(φ1) * Math.cos(δ13)
+			+ Math.cos(φ1) * Math.sin(δ13) * Math.cos(θ13)
+		);
+
+		const Δλ13 = Math.atan2(
+			Math.sin(θ13) * Math.sin(δ13) * Math.cos(φ1),
+			Math.cos(δ13) - Math.sin(φ1) * Math.sin(φ3)
+		);
+
+		const λ3 = λ1 + Δλ13;
+
+		return new Fix(this.radToDeg(φ3), this.radToDeg(λ3));
+	}
+
+	/**
 	 * Create a new fix from DMS coordinates
 	 * @param lon Longitude in DMS
 	 * @param lat Latitude in DMS
