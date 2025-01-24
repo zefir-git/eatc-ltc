@@ -214,6 +214,41 @@ atc.runway([
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true}),
 ]);
 
+atc.runway([
+	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true, reverse: true}),
+	new RunwayConfiguration(0, atc.runway("lln"), {departures: true, reverse: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+]);
+atc.runway([
+	new RunwayConfiguration(0, atc.runway("lls"), {departures: true, reverse: true}),
+	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true, reverse: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+]);
+atc.runway([
+	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true, reverse: true}),
+	new RunwayConfiguration(0, atc.runway("lln"), {departures: true, reverse: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(23, atc.runway("lln"), {arrivals: true, departures: true, reverse: true}),
+]);
+atc.runway([
+	new RunwayConfiguration(0, atc.runway("lls"), {departures: true, reverse: true}),
+	new RunwayConfiguration(0, atc.runway("lln"), {arrivals: true, reverse: true}),
+	new RunwayConfiguration(8, atc.runway("kks"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(12, atc.runway("ss"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(18, atc.runway("gw"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true, reverse: true}),
+]);
+
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 
 console.log(atc.generate(`
