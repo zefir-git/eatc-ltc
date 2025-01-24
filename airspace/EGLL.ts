@@ -4,11 +4,14 @@ import StarFix from "../src/StarFix.js";
 import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
+import SID from "../src/SID.js";
+import NamedFix from "../src/NamedFix.js";
 
 export default class EGLL {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
 		this.star();
+		this.sid();
 	}
 
 	private airport() {
@@ -45,7 +48,17 @@ export default class EGLL {
 				[
 					new Airport.Airline("BAW", 10, ["a320"], ["e"], "Speedbird"),
 				],
-				[],
+				[
+					NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
+					NamedFix.fromDMS("511459N", "0003343W", "MAXIT", "Maxit"),
+					NamedFix.fromDMS("511401N", "0002910W", "MODMI", "Modmi"),
+					this.atc.beacon("BPK"),
+					NamedFix.fromDMS("514020N", "0004139W", "UMLAT", "Umlat"),
+					NamedFix.fromDMS("513936N", "0001644W", "ULTIB", "Ultib"),
+					this.atc.beacon("DET"),
+					NamedFix.fromDMS("511727N", "0010002W", "GOGSI", "Gogsi"),
+					NamedFix.fromDMS("511224N", "0005736W", "GASGU", "Gasgu"),
+				],
 				this.atc.beacon("LON")
 			)
 		);
@@ -249,5 +262,358 @@ export default class EGLL {
 		));
 
 		// SIRIC 1Z omitted (SIRIC→BNN)
+	}
+
+	private sid() {
+		const lln = this.atc.runway("lln");
+		const llnRev = lln.reverse();
+		const lls = this.atc.runway("lls");
+		const llsRev = lls.reverse();
+
+		this.atc.departure(new SID(
+			"CPT3F",
+			"Compton three foxtrot",
+			lln,
+			[
+				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
+				this.atc.beacon("LON").destination(255, 7),
+				this.atc.fix("WOD", "512710N", "0005244W"),
+				this.atc.fix("CPT").destination(100, 8),
+				this.atc.fix("CPT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"CPT3G",
+			"Compton three golf",
+			lls,
+			[
+				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
+				this.atc.beacon("LON").destination(255, 7),
+				this.atc.fix("WOD", "512710N", "0005244W"),
+				this.atc.fix("CPT").destination(100, 8),
+				this.atc.fix("CPT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"CPT5J",
+			"Compton five juliet",
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				new Fix(51.4500, -0.3280),
+				new Fix(51.4300, -0.3280),
+				lls.position.bearingIntersection(180, this.atc.fix("WOD", "512710N", "0005244W"), 101),
+				this.atc.fix("WOD", "512710N", "0005244W"),
+				this.atc.fix("CPT").destination(100, 8),
+				this.atc.fix("CPT")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			"CPT4K",
+			"Compton four kilo",
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				new Fix(51.4600, -0.3280),
+				new Fix(51.4100, -0.3280),
+				lln.position.bearingIntersection(180, this.atc.fix("WOD", "512710N", "0005244W"), 101),
+				this.atc.fix("WOD", "512710N", "0005244W"),
+				this.atc.fix("CPT").destination(100, 8),
+				this.atc.fix("CPT")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("MAXIT1F"),
+			lln,
+			[
+				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
+				this.atc.beacon("LON").destination(255, 5),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 7.9),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 10.5),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 14),
+				this.atc.fix("MAXIT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("MAXIT1G"),
+			lls,
+			[
+				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 239),
+				this.atc.beacon("LON").destination(239, 5.5),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 7.9),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 10.5),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 14),
+				this.atc.fix("MAXIT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("MODMI1J"),
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				this.atc.beacon("LON").destination(124, 3.5),
+				this.atc.beacon("LON").bearingIntersection(124, this.atc.fix("MID", "510314.23N", "0003730.01W"), 25.6),
+				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
+				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
+				this.atc.fix("MODMI")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("MODMI1K"),
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				this.atc.beacon("LON").destination(124, 3.5),
+				this.atc.beacon("LON").bearingIntersection(124, this.atc.fix("MID", "510314.23N", "0003730.01W"), 25.6),
+				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
+				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
+				this.atc.fix("MODMI")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			"BPK7F",
+			"Brookmans Park seven foxtrot",
+			lln,
+			[
+				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llnRev.position, lln.heading),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				this.atc.fix("BUR", "513108N", "0004038W"),
+				this.atc.beacon("LON").bearingIntersection(304, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
+				this.atc.beacon("LON").bearingIntersection(325, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
+				this.atc.fix("CHT", "513723N", "0003107W"),
+				this.atc.beacon("BPK")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"BPK7G",
+			"Brookmans Park seven golf",
+			lls,
+			[
+				llsRev.position.destination(lls.heading, 2),
+				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				this.atc.fix("BUR", "513108N", "0004038W"),
+				this.atc.beacon("LON").bearingIntersection(304, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
+				this.atc.beacon("LON").bearingIntersection(325, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
+				this.atc.fix("CHT", "513723N", "0003107W"),
+				this.atc.beacon("BPK")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"BPK6J",
+			"Brookmans Park six juliet",
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, this.atc.beacon("LON"), 70),
+				this.atc.beacon("LON").destination(70, 10),
+				this.atc.beacon("BPK").destination(196, 10),
+				this.atc.beacon("BPK").destination(196, 6),
+				this.atc.fix("BAPAG", "514305N", "0000724W"),
+				this.atc.beacon("BPK")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			"BPK6K",
+			"Brookmans Park six kilo",
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, this.atc.beacon("LON"), 70),
+				this.atc.beacon("LON").destination(70, 10),
+				this.atc.beacon("BPK").destination(196, 10),
+				this.atc.beacon("BPK").destination(196, 6),
+				this.atc.fix("BAPAG", "514305N", "0000724W"),
+				this.atc.beacon("BPK")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("UMLAT1F"),
+			lln,
+			[
+				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				this.atc.fix("BUR", "513108N", "0004038W"),
+				this.atc.fix("UMLAT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("UMLAT1G"),
+			lln,
+			[
+				llsRev.position.destination(lls.heading, 2),
+				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				this.atc.fix("BUR", "513108N", "0004038W"),
+				this.atc.fix("UMLAT")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("ULTIB1J"),
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, this.atc.beacon("LON"), 70),
+				this.atc.beacon("LON").destination(70, 10),
+				this.atc.beacon("LON").bearingIntersection(70, this.atc.beacon("BIG"), 328),
+				this.atc.beacon("BIG").destination(328, 20),
+				this.atc.fix("ULTIB")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("ULTIB1K"),
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, this.atc.beacon("LON"), 70),
+				this.atc.beacon("LON").destination(70, 10),
+				this.atc.beacon("LON").bearingIntersection(70, this.atc.beacon("BIG"), 328),
+				this.atc.beacon("BIG").destination(328, 20),
+				this.atc.fix("ULTIB")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			"DET2F",
+			"Detling two foxtrot",
+			lln,
+			[
+				llnRev.position.destination(lln.heading, 2),
+				this.atc.fix("EPSOM", "511910N", "0002219W"),
+				this.atc.beacon("DET").destination(270, 32),
+				this.atc.beacon("DET").destination(270, 29),
+				this.atc.beacon("DET").destination(270, 5),
+				this.atc.beacon("DET")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"DET2G",
+			"Detling two golf",
+			lls,
+			[
+				llsRev.position.destination(lls.heading, 1),
+				this.atc.fix("EPSOM", "511910N", "0002219W"),
+				this.atc.beacon("DET").destination(270, 32),
+				this.atc.beacon("DET").destination(270, 29),
+				this.atc.beacon("DET").destination(270, 5),
+				this.atc.beacon("DET")
+			]
+		));
+
+		this.atc.departure(new SID(
+			"DET1J",
+			"Detling one juliet",
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(120, this.atc.beacon("DET"), 282),
+				this.atc.beacon("DET").destination(282, 34),
+				this.atc.beacon("DET").destination(282, 29),
+				this.atc.beacon("DET").destination(282, 20),
+				this.atc.beacon("DET").destination(282, 5),
+				this.atc.beacon("DET")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			"DET1K",
+			"Detling one kilo",
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(121, this.atc.beacon("DET"), 282),
+				this.atc.beacon("DET").destination(282, 34),
+				this.atc.beacon("DET").destination(282, 29),
+				this.atc.beacon("DET").destination(282, 20),
+				this.atc.beacon("DET").destination(282, 5),
+				this.atc.beacon("DET")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("GOGSI2F"),
+			lln,
+			[
+				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
+				this.atc.beacon("LON").destination(255, 7),
+				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
+				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
+				this.atc.beacon("SAM").destination(32, 32.8),
+				this.atc.beacon("SAM").destination(32, 29.6),
+				this.atc.fix("GOGSI")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("GOGSI2G"),
+			lls,
+			[
+				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
+				this.atc.beacon("LON").destination(255, 7),
+				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
+				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
+				this.atc.beacon("SAM").destination(32, 32.8),
+				this.atc.beacon("SAM").destination(32, 29.6),
+				this.atc.fix("GOGSI")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("GASGU2J"),
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				this.atc.beacon("LON").destination(124, 5),
+				this.atc.beacon("OCK").destination(42, 2),
+				this.atc.beacon("OCK"),
+				this.atc.beacon("OCK").destination(253, 1.4),
+				this.atc.beacon("OCK").destination(253, 4.7),
+				this.atc.fix("GASGU")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...STAR.named("GASGU2K"),
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				this.atc.beacon("LON").destination(124, 5),
+				this.atc.beacon("OCK").destination(42, 2),
+				this.atc.beacon("OCK"),
+				this.atc.beacon("OCK").destination(253, 1.4),
+				this.atc.beacon("OCK").destination(253, 4.7),
+				this.atc.fix("GASGU")
+			]
+		));
 	}
 }
