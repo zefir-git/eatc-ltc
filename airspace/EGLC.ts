@@ -8,6 +8,7 @@ export default class EGLC {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
 		this.star();
+		this.transition();
 	}
 
 	private airport() {
@@ -235,6 +236,191 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
+		));
+	}
+
+	private transition() {
+		this.atc.arrival(new STAR(
+			...STAR.named("LAVNO1G"),
+			[this.atc.runway("lc")],
+			false,
+			this.atc.beacon("GODLU"),
+			void 0,
+			[
+				this.atc.beacon("GODLU", 10000, 210),
+				this.atc.fix("ELMIV", "512033.08N", "0011533.36E"),
+				this.atc.fix("LCE11", "512504.57N", "0011834.81E"),
+				this.atc.fix("LCE12", "512958.17N", "0011906.68E"),
+				this.atc.fix("LCE13", "513442.46N", "0011704.79E", 10000),
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+			],
+			// LAVNO
+			{ils: {dme: 6, altitude: 3000, speed: 185}}
+		));
+
+		/**
+		 * On LAVNO 1G, you can give a shortcut ELMIV→RAVSA.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("LAVNO1G"),
+			[this.atc.runway("lc")],
+			false,
+			this.atc.beacon("RAVSA"),
+			302,
+			[
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+			],
+			// LAVNO
+			{ils: {dme: 6, altitude: 3000, speed: 185}}
+		));
+
+
+		this.atc.arrival(new STAR(
+			...STAR.named("LAVNO1J"),
+			[this.atc.runway("lc")],
+			false,
+			this.atc.beacon("JACKO"),
+			void 0,
+			[
+				this.atc.beacon("JACKO", 9000, 210),
+				this.atc.fix("NONVA", "513846.45N", "0012144.31E"),
+				this.atc.fix("BABKU", "513519.59N", "0011916.23E"),
+				this.atc.fix("LCE21", "513006.82N", "0012130.07E"),
+				this.atc.fix("LCE22", "512443.87N", "0012054.73E"),
+				this.atc.fix("LCE23", "511945.28N", "0011734.94E", 9000),
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+			],
+			// LAVNO
+			{ils: {dme: 6, altitude: 3000, speed: 185}}
+		));
+
+		/**
+		 * On LAVNO 1J, you can give a shortcut BABKU→RAVSA.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("LAVNO1J"),
+			[this.atc.runway("lc")],
+			false,
+			this.atc.beacon("RAVSA"),
+			245,
+			[
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+			],
+			// LAVNO
+			{ils: {dme: 6, altitude: 3000, speed: 185}}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ODLEG1G"),
+			[this.atc.runway("lc")],
+			"only",
+			this.atc.beacon("GODLU"),
+			void 0,
+			[
+				this.atc.beacon("GODLU", 10000, 210),
+				this.atc.fix("ELMIV", "512033.08N", "0011533.36E"),
+				this.atc.fix("LCE11", "512504.57N", "0011834.81E"),
+				this.atc.fix("LCE12", "512958.17N", "0011906.68E"),
+				this.atc.fix("LCE13", "513442.46N", "0011704.79E", 10000),
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+			],
+			{end: 48}
+		));
+
+		/**
+		 * On ODLEG 1G, you can give a shortcut ELMIV→RAVSA.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("ODLEG1G"),
+			[this.atc.runway("lc")],
+			"only",
+			this.atc.beacon("RAVSA"),
+			302,
+			[
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+			],
+			{end: 48}
+		));
+
+		this.atc.arrival(new STAR(
+			...STAR.named("ODLEG1J"),
+			[this.atc.runway("lc")],
+			"only",
+			this.atc.beacon("JACKO"),
+			void 0,
+			[
+				this.atc.beacon("JACKO", 9000, 210),
+				this.atc.fix("NONVA", "513846.45N", "0012144.31E"),
+				this.atc.fix("BABKU", "513519.59N", "0011916.23E"),
+				this.atc.fix("LCE21", "513006.82N", "0012130.07E"),
+				this.atc.fix("LCE22", "512443.87N", "0012054.73E"),
+				this.atc.fix("LCE23", "511945.28N", "0011734.94E", 9000),
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+			],
+			{end: 48}
+		));
+
+		/**
+		 * On ODLEG 1J, you can give a shortcut BABKU→RAVSA.
+		 */
+		this.atc.arrival(new STAR(
+			...STAR.named("ODLEG1J"),
+			[this.atc.runway("lc")],
+			"only",
+			this.atc.beacon("RAVSA"),
+			245,
+			[
+				this.atc.beacon("RAVSA", 6000),
+				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
+				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+			],
+			{end: 48}
 		));
 	}
 }
