@@ -7,6 +7,7 @@ import Runway from "./Runway.js";
 import STAR from "./STAR.js";
 import Fix from "./Fix.js";
 import StarFix from "./StarFix.js";
+import SID from "./SID.js";
 
 export default class Generator {
 	#airspace: Airspace | null = null;
@@ -125,6 +126,17 @@ export default class Generator {
 		return this;
 	}
 
+	// Map<runway, SID[]>
+	#departures = new Map<string, SID[]>;
+
+	public departure(sid: SID): typeof this {
+		const rwy = sid.reverse ? sid.runway.id + ", rev" : sid.runway.id;
+		if (!this.#departures.has(rwy))
+			this.#departures.set(rwy, []);
+		this.#departures.get(rwy)!.push(sid);
+		return this;
+	}
+
 	#fixes = new Map<string, Fix>;
 
 	public fix(name: string): Fix;
@@ -234,7 +246,16 @@ export default class Generator {
 								  stars.map((star, i) => `route${i + 1} =\n${star.routeString()}`).join("\n"),
 							  ].join("\n")
 						  )
-				 ).map((e, i) => `[approach${i + 1}]\n${e}`).join("\n\n")
+				 ).map((e, i) => `[approach${i + 1}]\n${e}`).join("\n\n"),
+
+			Array.from(this.#departures.entries())
+				.map(([rwy, routes], i) =>
+					[
+						`[departure${i + 1}]`,
+						`runway = ${rwy}`,
+					].join("\n") + "\n"
+					+ routes.map((route, i) => `route${i + 1} =\n${route.routeString()}`).join("\n")
+				).join("\n\n"),
 		].filter(l => l !== null).join("\n\n");
 	}
 }
