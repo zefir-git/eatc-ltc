@@ -266,6 +266,22 @@ namespace Airport {
 			this.direction = new Set(direction as any) as any;
 			this.pronunciation = pronunciation;
 		}
+
+		/**
+		 * Airlines config from raw Endless ATC config format.
+		 */
+		public static raw(config: string): Airport.Airline[] {
+			return config.split("\n").map(line => {
+				const [name, frequency, type, pronunciation, direction] = line.trim().split(/,\s*?/);
+				return new Airport.Airline(
+					name!,
+					Number.parseFloat(frequency!),
+					type!.split("/"),
+					direction!.split("") as any,
+					pronunciation!
+				)
+			});
+		}
 	}
 }
 
