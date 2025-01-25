@@ -333,7 +333,6 @@ export default class EGKK {
 
 	private sid() {
 		const kkn = this.atc.runway("kkn");
-		const kknRev = kkn.reverse();
 		const kks = this.atc.runway("kks");
 		const kksRev = kks.reverse();
 
