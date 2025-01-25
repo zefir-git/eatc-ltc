@@ -3,12 +3,15 @@ import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
+import SID from "../src/SID.js";
+import NamedFix from "../src/NamedFix.js";
 
 export default class EGLC {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
 		this.star();
 		this.transition();
+		this.sid();
 	}
 
 	private airport() {
@@ -18,7 +21,7 @@ export default class EGLC {
 				"London City",
 				"EGLC",
 				10,
-				4000,
+				3000,
 				[
 					new Runway("lc", "27",
 						Fix.fromDMS("513017.60N", "0000357.68E"),
@@ -38,7 +41,12 @@ export default class EGLC {
 				[
 					new Airport.Airline("CFE", 10, ["e190"], ["e"], "Flyer"),
 				],
-				[],
+				[
+					NamedFix.fromDMS("513623.75N", "0002328.43E", "SOQQA", "Soqqa"),
+					this.atc.beacon("BPK"),
+					NamedFix.fromDMS("514504.03N", "0001113.77W", "SAXBI", "Saxbi"),
+					NamedFix.fromDMS("513531.78N", "0001715.47E", "ODUKU", "Oduku")
+				],
 				this.atc.beacon("LON")
 			)
 		);
@@ -420,6 +428,103 @@ export default class EGLC {
 				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
 			],
 			{end: 48}
+		));
+	}
+
+	private sid() {
+		const rwy = this.atc.runway("lc");
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("SOQQA"), "1A"),
+			rwy,
+			[
+				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
+				this.atc.fix("LCN02", "513408.09N", "0000016.11W"),
+				this.atc.fix("LCN06", "513608.68N", "0001118.82E"),
+				this.atc.fix("SOQQA")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("SOQQA"), "1H"),
+			rwy,
+			[
+				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
+				this.atc.fix("LCE02", "513316.42N", "0000950.44E"),
+				this.atc.fix("LCE03", "513346.90N", "0001436.66E"),
+				this.atc.fix("SOQQA")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce("BPK", "1A"),
+			rwy,
+			[
+				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
+				this.atc.fix("LCN01", "513332.44N", "0000109.21W"),
+				this.atc.fix("LCN04", "513436.75N", "0000056.79E"),
+				this.atc.fix("LCN05", "513538.42N", "0000257.77E"),
+				this.atc.beacon("BPK")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("SAXBI"), "1A"),
+			rwy,
+			[
+				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
+				this.atc.fix("LCN01", "513332.44N", "0000109.21W"),
+				this.atc.fix("LCN04", "513436.75N", "0000056.79E"),
+				this.atc.fix("LCN05", "513538.42N", "0000257.77E"),
+				this.atc.beacon("BPK"),
+				this.atc.fix("SAXBI")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce("BPK", "1H"),
+			rwy,
+			[
+				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
+				this.atc.fix("LCN03", "513424.02N", "0000750.39E"),
+				this.atc.beacon("BPK")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("SAXBI"), "1H"),
+			rwy,
+			[
+				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
+				this.atc.fix("LCN03", "513424.02N", "0000750.39E"),
+				this.atc.beacon("BPK"),
+				this.atc.fix("SAXBI")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("ODUKU"), "1A"),
+			rwy,
+			[
+				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
+				this.atc.fix("LCN02", "513408.09N", "0000016.11W"),
+				this.atc.fix("LCE04", "513619.70N", "0001222.73E"),
+				this.atc.fix("ODUKU")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("ODUKU"), "1H"),
+			rwy,
+			[
+				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
+				this.atc.fix("LCE02", "513316.42N", "0000950.44E"),
+				this.atc.fix("ODUKU")
+			],
+			true
 		));
 	}
 }
