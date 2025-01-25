@@ -4,7 +4,6 @@ import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
-import Beacon from "../src/Beacon.js";
 import NamedFix from "../src/NamedFix.js";
 
 export default class EGSS {
