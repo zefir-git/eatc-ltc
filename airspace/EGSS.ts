@@ -463,7 +463,7 @@ export default class EGSS {
 				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, this.atc.beacon("DET"), 333),
 				this.atc.beacon("DET").destination(333, 32),
 				this.atc.beacon("DET").destination(333, 25),
-				this.atc.fix("NEPNA", "512958N", "0002657E"),
+				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
 				this.atc.beacon("DET")
 			]
 		));
@@ -476,7 +476,7 @@ export default class EGSS {
 				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("LAM"), 24),
 				this.atc.beacon("LAM").destination(24, 9),
 				this.atc.beacon("DET").destination(333, 25),
-				this.atc.fix("NEPNA", "512958N", "0002657E"),
+				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
 				this.atc.beacon("DET")
 			],
 			true

@@ -3,12 +3,15 @@ import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
+import SID from "../src/SID.js";
+import NamedFix from "../src/NamedFix.js";
 
 export default class EGGW {
 	public constructor(private readonly atc: Generator) {
 		this.airport();
 		this.star();
 		this.transition();
+		this.sid();
 	}
 
 	private airport() {
@@ -18,7 +21,7 @@ export default class EGGW {
 				"Luton",
 				"EGGW",
 				10,
-				4000,
+				5000,
 				[
 					new Runway("gw", "25",
 						Fix.fromDMS("515237.36N", "0002116.15W"),
@@ -35,7 +38,12 @@ export default class EGGW {
 				[
 					new Airport.Airline("WUK", 10, ["a21n"], ["e"], "Wizz Go"),
 				],
-				[],
+				[
+					NamedFix.fromDMS("514645N", "0001500E", "MATCH", "Match"),
+					this.atc.beacon("DET"),
+					NamedFix.fromDMS("514257N", "0005142W", "RODNI", "Rodni"),
+					NamedFix.fromDMS("520740N", "0004403W", "OLNEY", "Olney"),
+				],
 				this.atc.beacon("BKY")
 			)
 		);
@@ -299,6 +307,159 @@ export default class EGGW {
 				this.atc.fix("ODWAD", 3000)
 			],
 			{ils: {dme: 4.5, altitude: 2000}}
+		));
+	}
+
+	private sid() {
+		const rwy = this.atc.runway("gw");
+		const rev = rwy.reverse();
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("MATCH"), "3B"),
+			rwy,
+			[
+				this.atc.beacon("BNN").destination(31, 7),
+				this.atc.beacon("BPK").destination(284, 10),
+				this.atc.beacon("BPK").destination(284, 6),
+				this.atc.beacon("BPK").destination(284, 3),
+				this.atc.beacon("BPK"),
+				this.atc.fix("CLN").destination(262, 40),
+				this.atc.fix("MATCH")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("MATCH"), "2C"),
+			rwy,
+			[
+				this.atc.fix("LUT", "515341N", "0001509W"),
+				this.atc.fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("BPK"), 336),
+				this.atc.beacon("BPK").destination(336, 6),
+				this.atc.beacon("BPK").destination(336, 3),
+				this.atc.beacon("BPK"),
+				this.atc.fix("CLN").destination(262, 40),
+				this.atc.fix("MATCH")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce("DET", "8B"),
+			rwy,
+			[
+				this.atc.beacon("BNN").destination(31, 7),
+				this.atc.beacon("BPK").destination(284, 10),
+				this.atc.beacon("BPK").destination(284, 6),
+				this.atc.beacon("BPK").destination(284, 3),
+				this.atc.beacon("BPK"),
+				this.atc.beacon("BPK").destination(97, 7),
+				this.atc.beacon("BPK").destination(97, 7).bearingIntersection(97, this.atc.beacon("DET"), 333),
+				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
+				this.atc.beacon("DET")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce("DET", "7C"),
+			rwy,
+			[
+				this.atc.fix("LUT", "515341N", "0001509W"),
+				this.atc.fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("BPK"), 336),
+				this.atc.beacon("BPK").destination(336, 6),
+				this.atc.beacon("BPK").destination(336, 3),
+				this.atc.beacon("BPK"),
+				this.atc.beacon("BPK").destination(97, 7),
+				this.atc.beacon("BPK").destination(97, 7).bearingIntersection(97, this.atc.beacon("DET"), 333),
+				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
+				this.atc.beacon("DET")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("MATCH"), "3Y"),
+			rwy,
+			[
+				rev.position.bearingIntersection(254, this.atc.fix("GWS01", "515119.98N", "0002514.51W"), 180 - 211),
+				this.atc.fix("GWS01", "515119.98N", "0002514.51W"),
+				this.atc.fix("GWS06", "514705.83N", "0002928.41W"),
+				this.atc.fix("GWS12", "514656.85N", "0001944.38W"),
+				this.atc.fix("GWE16", "514622.04N", "0001546.78W"),
+				this.atc.fix("GWE19", "514540.56N", "0001104.88W"),
+				this.atc.beacon("BPK"),
+				this.atc.fix("MATCH")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce("DET", "3Y"),
+			rwy,
+			[
+				rev.position.bearingIntersection(254, this.atc.fix("GWS01", "515119.98N", "0002514.51W"), 180 - 211),
+				this.atc.fix("GWS01", "515119.98N", "0002514.51W"),
+				this.atc.fix("GWS06", "514705.83N", "0002928.41W"),
+				this.atc.fix("GWS12", "514656.85N", "0001944.38W"),
+				this.atc.fix("GWE16", "514622.04N", "0001546.78W"),
+				this.atc.fix("GWE19", "514540.56N", "0001104.88W"),
+				this.atc.beacon("BPK"),
+				this.atc.fix("GWE37", "514259.91N", "0001658.25E"),
+				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
+				this.atc.beacon("DET")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("RODNI"), "1B"),
+			rwy,
+			[
+				this.atc.beacon("BNN").destination(31, 7),
+				this.atc.beacon("BNN").destination(31, 7).bearingIntersection(31, this.atc.fix("HEN", "514535N", "0004725W"), 255),
+				this.atc.fix("HEN", "514535N", "0004725W"),
+				this.atc.fix("RODNI")
+			]
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("RODNI"), "1C"),
+			rwy,
+			[
+				rwy.position.destination(rwy.reverseLocalizer, 3.8),
+				rwy.position.destination(rwy.reverseLocalizer, 3.8).bearingIntersection(rwy.reverseLocalizer + 45, this.atc.fix("HEN", "514535N", "0004725W"), 256),
+				this.atc.fix("HEN", "514535N", "0004725W"),
+				this.atc.fix("RODNI")
+			],
+			true
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("OLNEY"), "2B"),
+			rwy,
+			[
+				this.atc.beacon("BNN").destination(31, 7),
+				this.atc.beacon("BNN").destination(31, 7).bearingIntersection(31, this.atc.fix("HEN", "514535N", "0004725W"), 255),
+				this.atc.beacon("BNN").destination(31, 7)
+					.bearingIntersection(31, this.atc.fix("HEN", "514535N", "0004725W"), 255)
+					.bearingIntersection(255, this.atc.beacon("BNN"), 3),
+				this.atc.beacon("BNN").destination(344, 6),
+				this.atc.beacon("BNN").destination(344, 9),
+				this.atc.beacon("BNN").destination(344, 15),
+				this.atc.fix("OLNEY")
+			],
+			false,
+			6000
+		));
+
+		this.atc.departure(new SID(
+			...this.atc.pronounce(this.atc.sidFix("OLNEY"), "2C"),
+			rwy,
+			[
+				rwy.position.destination(rwy.reverseLocalizer, 3.4),
+				this.atc.beacon("BPK").destination(314, 15),
+				this.atc.beacon("BPK").destination(314, 21),
+				this.atc.fix("OLNEY")
+			],
+			true,
+			6000
 		));
 	}
 }
