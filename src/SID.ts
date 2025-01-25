@@ -42,7 +42,7 @@ export default class SID {
 				this.name,
 				this.pronunciation
 			].join(", ") + "\n"
-			+ this.route.map(fix => "\t" + fix.toString()).join("\n");
+			+ this.route.map((fix, i) => "\t" + fix.toString() + (this.altitude !== undefined && i === 0 ? `, ${this.altitude}`: "")).join("\n");
 	}
 
 	/**
