@@ -43,7 +43,7 @@ export default class EGGW {
 
 	private star() {
 		this.atc.arrival(new STAR(
-			...STAR.named("UNDUG1N"),
+			...this.atc.pronounce("UNDUG", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("UNDUG"),
@@ -68,7 +68,7 @@ export default class EGGW {
 		 * with HOLD at VATON.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("UNDUG1N"),
+			...this.atc.pronounce("UNDUG", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("VATON"),
@@ -87,7 +87,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1N"),
+			...this.atc.pronounce("SIRIC", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("SIRIC"),
@@ -112,7 +112,7 @@ export default class EGGW {
 		 * with HOLD at VATON.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1N"),
+			...this.atc.pronounce("SIRIC", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("VATON"),
@@ -131,7 +131,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("TELTU1N"),
+			...this.atc.pronounce("TELTU", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("TELTU"),
@@ -156,7 +156,7 @@ export default class EGGW {
 		 * with HOLD at VATON.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("TELTU1N"),
+			...this.atc.pronounce("TELTU", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("VATON"),
@@ -180,7 +180,7 @@ export default class EGGW {
 		// TOSVA 1N omitted (TOSVA→ZAGZO)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("FINMA1N"),
+			...this.atc.pronounce("FINMA", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("FINMA"),
@@ -196,7 +196,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SILVA1N"),
+			...this.atc.pronounce("SILVA", "1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("SILVA"),
@@ -212,7 +212,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LISTO1N"),
+			...this.atc.pronounce("LISTO1N"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("FINMA"),
@@ -228,7 +228,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LOGAN2A"),
+			...this.atc.pronounce("LOGAN", "2A"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -242,8 +242,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			"DET2A",
-			"Detling two alpha",
+			...this.atc.pronounce("DET", "2A"),
 			[this.atc.runway("gw")],
 			true,
 			this.atc.beacon("DET"),
@@ -264,7 +263,7 @@ export default class EGGW {
 		this.atc.fix("ODWAD", rwy07.position.destination(rwy07.heading - 180, 10.5));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ZAGZO1T"),
+			...this.atc.pronounce("ZAGZO", "1T"),
 			[this.atc.runway("gw")],
 			false,
 			this.atc.beacon("ZAGZO"),
@@ -282,7 +281,7 @@ export default class EGGW {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ZAGZO1Q"),
+			...this.atc.pronounce("ZAGZO", "1Q"),
 			[this.atc.runway("gw")],
 			"only",
 			this.atc.beacon("ZAGZO"),

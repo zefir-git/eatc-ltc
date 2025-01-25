@@ -46,7 +46,7 @@ export default class EGLC {
 
 	private star() {
 		this.atc.arrival(new STAR(
-			...STAR.named("SUMUM1C"),
+			...this.atc.pronounce("SUMUM1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -59,7 +59,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("XAMAN1C"),
+			...this.atc.pronounce("XAMAN1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -72,7 +72,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SILVA1C"),
+			...this.atc.pronounce("SILVA", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("SILVA"),
@@ -89,7 +89,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("KONAN1C"),
+			...this.atc.pronounce("KONAN", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("KONAN"),
@@ -106,7 +106,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SOVAT1C"),
+			...this.atc.pronounce("SOVAT", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("SOVAT"),
@@ -125,7 +125,7 @@ export default class EGLC {
 		// HON 1C omitted (HON→JACKO)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LISTO1C"),
+			...this.atc.pronounce("LISTO1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("TIXEX"),
@@ -146,7 +146,7 @@ export default class EGLC {
 		 * with HOLD at ROPMU.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("LISTO1C"),
+			...this.atc.pronounce("LISTO1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("ROPMU"),
@@ -161,7 +161,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("KATHY1C"),
+			...this.atc.pronounce("KATHY1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("BIDVA"),
@@ -177,8 +177,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			"SAM1C",
-			"Southampton one charlie",
+			...this.atc.pronounce("SAM", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("SAM"),
@@ -195,7 +194,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("AVANT1C"),
+			...this.atc.pronounce("AVANT", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("AVANT"),
@@ -210,7 +209,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("NEVIL1C"),
+			...this.atc.pronounce("NEVIL1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("SOXUX"),
@@ -224,7 +223,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1C"),
+			...this.atc.pronounce("SIRIC", "1C"),
 			[this.atc.runway("lc")],
 			true,
 			this.atc.beacon("SIRIC"),
@@ -241,7 +240,7 @@ export default class EGLC {
 
 	private transition() {
 		this.atc.arrival(new STAR(
-			...STAR.named("LAVNO1G"),
+			...this.atc.pronounce("LAVNO1G"),
 			[this.atc.runway("lc")],
 			false,
 			this.atc.beacon("GODLU"),
@@ -266,7 +265,7 @@ export default class EGLC {
 		 * On LAVNO 1G, you can give a shortcut ELMIV→RAVSA.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("LAVNO1G"),
+			...this.atc.pronounce("LAVNO1G"),
 			[this.atc.runway("lc")],
 			false,
 			this.atc.beacon("RAVSA"),
@@ -284,7 +283,7 @@ export default class EGLC {
 
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LAVNO1J"),
+			...this.atc.pronounce("LAVNO1J"),
 			[this.atc.runway("lc")],
 			false,
 			this.atc.beacon("JACKO"),
@@ -310,7 +309,7 @@ export default class EGLC {
 		 * On LAVNO 1J, you can give a shortcut BABKU→RAVSA.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("LAVNO1J"),
+			...this.atc.pronounce("LAVNO1J"),
 			[this.atc.runway("lc")],
 			false,
 			this.atc.beacon("RAVSA"),
@@ -327,7 +326,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ODLEG1G"),
+			...this.atc.pronounce("ODLEG1G"),
 			[this.atc.runway("lc")],
 			"only",
 			this.atc.beacon("GODLU"),
@@ -355,7 +354,7 @@ export default class EGLC {
 		 * On ODLEG 1G, you can give a shortcut ELMIV→RAVSA.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("ODLEG1G"),
+			...this.atc.pronounce("ODLEG1G"),
 			[this.atc.runway("lc")],
 			"only",
 			this.atc.beacon("RAVSA"),
@@ -375,7 +374,7 @@ export default class EGLC {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ODLEG1J"),
+			...this.atc.pronounce("ODLEG1J"),
 			[this.atc.runway("lc")],
 			"only",
 			this.atc.beacon("JACKO"),
@@ -404,7 +403,7 @@ export default class EGLC {
 		 * On ODLEG 1J, you can give a shortcut BABKU→RAVSA.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("ODLEG1J"),
+			...this.atc.pronounce("ODLEG1J"),
 			[this.atc.runway("lc")],
 			"only",
 			this.atc.beacon("RAVSA"),

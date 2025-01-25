@@ -66,7 +66,7 @@ export default class EGLL {
 
 	private star() {
 		this.atc.arrival(new STAR(
-			...STAR.named("OTMET1H"),
+			...this.atc.pronounce("OTMET1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("BEGTO"),
@@ -81,7 +81,7 @@ export default class EGLL {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ROXOG1H"),
+			...this.atc.pronounce("ROXOG1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("BEGTO"),
@@ -96,7 +96,7 @@ export default class EGLL {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ALESO1H"),
+			...this.atc.pronounce("ALESO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("ROTNO"),
@@ -116,7 +116,7 @@ export default class EGLL {
 		 * with HOLD at TIGER.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("ALESO1H"),
+			...this.atc.pronounce("ALESO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("TIGER"),
@@ -132,7 +132,7 @@ export default class EGLL {
 		// LAM 1X omitted (LAM→BIG)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("TANET1Z"),
+			...this.atc.pronounce("TANET", "1Z"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("TANET"),
@@ -149,7 +149,7 @@ export default class EGLL {
 		// OCK 1Z omitted (OCK→BIG)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("NUGRA1H"),
+			...this.atc.pronounce("NUGRA1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("TOBID"),
@@ -182,7 +182,7 @@ export default class EGLL {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("BARMI1H"),
+			...this.atc.pronounce("BARMI1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -198,7 +198,7 @@ export default class EGLL {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LOGAN2H"),
+			...this.atc.pronounce("LOGAN", "2H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -216,7 +216,7 @@ export default class EGLL {
 		// TOBID 1X omitted (TOBID→OCK)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("HAZEL1H"),
+			...this.atc.pronounce("HAZEL", "1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("HAZEL"),
@@ -233,7 +233,7 @@ export default class EGLL {
 		// LAM 1Y omitted (LAM→OCK)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("FITBO1H"),
+			...this.atc.pronounce("FITBO1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("SOPIT"),
@@ -247,7 +247,7 @@ export default class EGLL {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1H"),
+			...this.atc.pronounce("SIRIC", "1H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("SIRIC"),
@@ -271,8 +271,7 @@ export default class EGLL {
 		const llsRev = lls.reverse();
 
 		this.atc.departure(new SID(
-			"CPT3F",
-			"Compton three foxtrot",
+			...this.atc.pronounce(this.atc.sidFix("CPT"), "3F"),
 			lln,
 			[
 				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
@@ -284,8 +283,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"CPT3G",
-			"Compton three golf",
+			...this.atc.pronounce(this.atc.sidFix("CPT"), "3G"),
 			lls,
 			[
 				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
@@ -297,8 +295,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"CPT5J",
-			"Compton five juliet",
+			...this.atc.pronounce(this.atc.sidFix("CPT"), "5J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -313,8 +310,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"CPT4K",
-			"Compton four kilo",
+			...this.atc.pronounce(this.atc.sidFix("CPT"), "4k"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -329,7 +325,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("MAXIT1F"),
+			...this.atc.pronounce(this.atc.sidFix("MAXIT"), "1F"),
 			lln,
 			[
 				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
@@ -342,7 +338,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("MAXIT1G"),
+			...this.atc.pronounce(this.atc.sidFix("MAXIT"), "1G"),
 			lls,
 			[
 				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 239),
@@ -355,7 +351,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("MODMI1J"),
+			...this.atc.pronounce(this.atc.sidFix("MODMI"), "1J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -369,7 +365,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("MODMI1K"),
+			...this.atc.pronounce(this.atc.sidFix("MODMI"), "1K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -383,8 +379,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"BPK7F",
-			"Brookmans Park seven foxtrot",
+			...this.atc.pronounce("BPK", "7F"),
 			lln,
 			[
 				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llnRev.position, lln.heading),
@@ -399,8 +394,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"BPK7G",
-			"Brookmans Park seven golf",
+			...this.atc.pronounce("BPK", "7G"),
 			lls,
 			[
 				llsRev.position.destination(lls.heading, 2),
@@ -416,8 +410,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"BPK6J",
-			"Brookmans Park six juliet",
+			...this.atc.pronounce("BPK", "6J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -432,8 +425,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"BPK6K",
-			"Brookmans Park six kilo",
+			...this.atc.pronounce("BPK", "6K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -448,7 +440,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("UMLAT1F"),
+			...this.atc.pronounce(this.atc.sidFix("UMLAT"), "1F"),
 			lln,
 			[
 				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
@@ -460,7 +452,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("UMLAT1G"),
+			...this.atc.pronounce(this.atc.sidFix("UMLAT"), "1G"),
 			lln,
 			[
 				llsRev.position.destination(lls.heading, 2),
@@ -473,7 +465,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("ULTIB1J"),
+			...this.atc.pronounce(this.atc.sidFix("ULTIB"), "1J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -487,7 +479,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("ULTIB1K"),
+			...this.atc.pronounce(this.atc.sidFix("ULTIB"), "1K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -501,8 +493,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"DET2F",
-			"Detling two foxtrot",
+			...this.atc.pronounce("DET", "2F"),
 			lln,
 			[
 				llnRev.position.destination(lln.heading, 2),
@@ -515,8 +506,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"DET2G",
-			"Detling two golf",
+			...this.atc.pronounce("DET", "2G"),
 			lls,
 			[
 				llsRev.position.destination(lls.heading, 1),
@@ -529,8 +519,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"DET1J",
-			"Detling one juliet",
+			...this.atc.pronounce("DET", "1J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -545,8 +534,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			"DET1K",
-			"Detling one kilo",
+			...this.atc.pronounce("DET", "1K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -561,7 +549,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("GOGSI2F"),
+			...this.atc.pronounce(this.atc.sidFix("GOGSI"), "2F"),
 			lln,
 			[
 				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
@@ -575,7 +563,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("GOGSI2G"),
+			...this.atc.pronounce(this.atc.sidFix("GOGSI"), "2G"),
 			lls,
 			[
 				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
@@ -589,7 +577,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("GASGU2J"),
+			...this.atc.pronounce(this.atc.sidFix("GASGU"), "2J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
@@ -603,7 +591,7 @@ export default class EGLL {
 		));
 
 		this.atc.departure(new SID(
-			...STAR.named("GASGU2K"),
+			...this.atc.pronounce(this.atc.sidFix("GASGU"), "2K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),

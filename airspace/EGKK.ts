@@ -52,7 +52,7 @@ export default class EGKK {
 
 	private star() {
 		this.atc.arrival(new STAR(
-			...STAR.named("BARMI1G"),
+			...this.atc.pronounce("BARMI1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("TEBRA"),
@@ -69,11 +69,11 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("TEBRA2G"),
+			...this.atc.pronounce("TEBRA", "2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("TEBRA"),
-			0,
+			void 0,
 			[
 				this.atc.beacon("TEBRA"),
 				this.atc.fix("ABTUM", "512603.66N", "0012228.98E", 14000),
@@ -92,7 +92,7 @@ export default class EGKK {
 		 * Continuation after interruption at ARNUN will show as TEBRA 2G.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("TEBRA2G"),
+			...this.atc.pronounce("TEBRA", "2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("ARNUN"),
@@ -107,7 +107,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("KONAN2G"),
+			...this.atc.pronounce("KONAN", "2G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("ARNUN"),
@@ -124,7 +124,7 @@ export default class EGKK {
 		// MID 1X omitted (MID→TIMBA)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("NEVIL1G"),
+			...this.atc.pronounce("NEVIL1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("AMDUT"),
@@ -138,7 +138,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("KUNAV1G"),
+			...this.atc.pronounce("KUNAV1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("AMDUT"),
@@ -152,7 +152,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("OTMET1G"),
+			...this.atc.pronounce("OTMET1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("ELDER"),
@@ -172,7 +172,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("VASUX1G"),
+			...this.atc.pronounce("VASUX1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("DISVO"),
@@ -195,7 +195,7 @@ export default class EGKK {
 		// ARNUN 1G omitted (ARNUN→WILLO)
 
 		this.atc.arrival(new STAR(
-			...STAR.named("TELTU1G"),
+			...this.atc.pronounce("TELTU", "1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("TELTU"),
@@ -209,7 +209,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("DISIT1G"),
+			...this.atc.pronounce("DISIT1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("KIDLI"),
@@ -230,7 +230,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("KIDLI1G"),
+			...this.atc.pronounce("KIDLI", "1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("KIDLI"),
@@ -251,7 +251,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ABSAV1G"),
+			...this.atc.pronounce("ABSAV", "1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("ABSAV"),
@@ -272,8 +272,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			"GWC1G",
-			"Goodwood one golf",
+			...this.atc.pronounce("GWC", "1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("GWC"),
@@ -292,7 +291,7 @@ export default class EGKK {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1G"),
+			...this.atc.pronounce("SIRIC", "1G"),
 			[this.atc.runway("kkn"), this.atc.runway("kks")],
 			true,
 			this.atc.beacon("SIRIC"),

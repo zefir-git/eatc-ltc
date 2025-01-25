@@ -209,6 +209,94 @@ export default class Generator {
 		return fix;
 	}
 
+	public sidFix(name: string): NamedFix {
+		for (const airport of this.#airports.values()) {
+			const fix = airport.sidMarkers.get(name);
+			if (fix !== undefined)
+				return fix;
+		}
+		throw new Error(`Cannot find SID marker ${name}`);
+	}
+
+	private static readonly pronunciation: Record<string, string> = {
+		0: "zero",
+		1: "one",
+		2: "two",
+		3: "three",
+		4: "four",
+		5: "five",
+		6: "six",
+		7: "seven",
+		8: "eight",
+		9: "niner",
+		A: "alpha",
+		B: "bravo",
+		C: "charlie",
+		D: "delta",
+		E: "echo",
+		F: "foxtrot",
+		G: "golf",
+		H: "hotel",
+		I: "india",
+		J: "juliet",
+		K: "kilo",
+		L: "lima",
+		M: "mike",
+		N: "november",
+		O: "oscar",
+		P: "papa",
+		Q: "quebec",
+		R: "romeo",
+		S: "sierra",
+		T: "tango",
+		U: "uniform",
+		V: "victor",
+		W: "whiskey",
+		X: "x-ray",
+		Y: "yankee",
+		Z: "zulu",
+	};
+
+	public pronounce(beacon: NamedFix | string, suffix: string): [name: string, pronunciation: string];
+	public pronounce(name: string): [name: string, pronunciation: string];
+	public pronounce(...args: [NamedFix | string, string] | [string]): [name: string, pronunciation: string] {
+		if (args.length === 1) {
+			const name = args[0];
+			if (name.length === 0)
+				throw new SyntaxError("Empty name");
+			const waypoint = name.slice(0, -2).trim();
+			if (waypoint.length < 1) return [
+				name.trim(),
+				name[0]!.toUpperCase() + name.slice(1).toLowerCase()
+			];
+			const waypointName = waypoint[0]!.toUpperCase()
+				+ waypoint.slice(1).toLowerCase();
+			return [
+				name.trim(),
+				name.length <= 2
+				? waypointName
+				: waypointName + " "
+					+ name.slice(-2)
+						  .toUpperCase()
+						  .split(" ")
+						  .map(c => Generator.pronunciation[c] ?? c).join(" ")
+			];
+		}
+
+		const beacon = typeof args[0] === "string"
+					   ? this.beacon(args[0])
+					   : args[0];
+		const suffix = args[1];
+		return [
+			beacon.name + suffix,
+			beacon.pronunciation + " "
+			+ suffix
+				.toUpperCase()
+				.split(" ")
+				.map(c => Generator.pronunciation[c] ?? c).join(" ")
+		]
+	}
+
 	/**
 	 * Generate Endless ATC configuration
 	 * @param [header] Data to prepend. Prefix lines with # for comments.

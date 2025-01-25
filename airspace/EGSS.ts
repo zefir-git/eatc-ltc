@@ -42,7 +42,7 @@ export default class EGSS {
 
 	private star() {
 		this.atc.arrival(new STAR(
-			...STAR.named("TELTU1L"),
+			...this.atc.pronounce("TELTU", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("TELTU"),
@@ -65,7 +65,7 @@ export default class EGSS {
 		 * Continuation after interruption at VATON will show as TELTU 1L.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("TELTU1L"),
+			...this.atc.pronounce("TELTU", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("VATON"),
@@ -81,7 +81,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LISTO1L"),
+			...this.atc.pronounce("LISTO1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("FINMA"),
@@ -97,8 +97,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			"BKY1X",
-			"Barkway one x-ray",
+			...this.atc.pronounce("BKY", "1X"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("BKY"),
@@ -112,8 +111,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			"BPK1X",
-			"Brookmans Park one x-ray",
+			...this.atc.pronounce("BPK", "1X"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("BPK"),
@@ -127,7 +125,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("BANVA1L"),
+			...this.atc.pronounce("BANVA", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("BANVA"),
@@ -150,7 +148,7 @@ export default class EGSS {
 		 * with HOLD at UNDUG.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("BANVA1L"),
+			...this.atc.pronounce("BANVA", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("UNDUG"),
@@ -172,7 +170,7 @@ export default class EGSS {
 		 * with HOLD at VATON.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("BANVA1L"),
+			...this.atc.pronounce("BANVA", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("VATON"),
@@ -188,7 +186,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("ABBOT1Z"),
+			...this.atc.pronounce("ABBOT", "1Z"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("ABBOT"),
@@ -203,7 +201,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("FINMA1L"),
+			...this.atc.pronounce("FINMA", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("FINMA"),
@@ -219,7 +217,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SILVA1L"),
+			...this.atc.pronounce("SILVA", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("SILVA"),
@@ -235,7 +233,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("AVANT1L"),
+			...this.atc.pronounce("AVANT", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("AVANT"),
@@ -253,7 +251,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1L"),
+			...this.atc.pronounce("SIRIC", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("SIRIC"),
@@ -275,7 +273,7 @@ export default class EGSS {
 		 * with HOLD at VATON.
 		 */
 		this.atc.arrival(new STAR(
-			...STAR.named("SIRIC1L"),
+			...this.atc.pronounce("SIRIC", "1L"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("VATON"),
@@ -291,7 +289,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			...STAR.named("LOGAN2A"),
+			...this.atc.pronounce("LOGAN", "2A"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("LOGAN"),
@@ -305,8 +303,7 @@ export default class EGSS {
 		));
 
 		this.atc.arrival(new STAR(
-			"DET2A",
-			"Detling two alpha",
+			...this.atc.pronounce("DET", "2A"),
 			[this.atc.runway("ss")],
 			true,
 			this.atc.beacon("DET"),
