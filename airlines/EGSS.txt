@@ -1,0 +1,144 @@
+	RYR, 10.00, b738, Ryanair, e
+	RYR, 5.30, b738, Ryanair, s
+	RYR, 4.00, b38m, Ryanair, s
+	RYR, 3.70, b38m, Ryanair, e
+	RYR, 1.94, b738, Ryanair, w
+	RUK, 1.42, b738, Blue Max, e
+	EXS, 1.11, b738, Channex, s
+	RUK, 0.68, b738, Blue Max, n
+	PGT, 0.67, a21n, Sunturk, e
+	RUK, 0.62, b738, Blue Max, w
+	RUK, 0.62, b738, Blue Max, s
+	RYR, 0.55, a320, Ryanair, e
+	RYR, 0.52, b738, Ryanair, n
+	EZY, 0.47, a320, Easy, n
+	RYR, 0.44, b38m, Ryanair, w
+	PGT, 0.44, a20n, Sunturk, e
+	UAE, 0.40, b77w, Emirates, e
+	TKJ, 0.35, b738, Anatolia, e
+	FDX, 0.31, b77l, Fedex, w
+	BCS, 0.30, b752, Postman, e
+	EZY, 0.24, a20n, Easy, w
+	EZY, 0.20, a320, Easy, w
+	QTR, 0.20, b77l, Qatari, e
+	CSG, 0.18, b77l, Southern Cargo, e
+	FPY, 0.18, a20n, Player, n
+	RYR, 0.18, b38m, Ryanair, n
+	RUK, 0.18, b38m, Blue Max, s
+	EZY, 0.17, a319, Easy, n
+	FDX, 0.16, b763, Fedex, s
+	PGT, 0.16, a320, Sunturk, e
+	BCS, 0.14, a306, Postman, e
+	UPS, 0.14, b763, UPS, w
+	EZY, 0.14, a20n, Easy, n
+	UPS, 0.14, b763, UPS, e
+	AWC, 0.13, a333, Zap, e
+	BCS, 0.13, b752, Postman, w
+	TAY, 0.13, b738, Quality, e
+	BCS, 0.13, b734, Postman, e
+	FDX, 0.13, b763, Fedex, w
+	CWY, 0.13, be20, Causeway, w
+	EJU, 0.11, a20n, Alpine, e
+	EXS, 0.11, b738, Channex, e
+	CLX, 0.10, b744, Cargolux, e
+	TKJ, 0.10, a321, Anatolia, e
+	TOM, 0.10, b738, Tomjet, e
+	SXS, 0.09, b738, Sunexpress, e
+	FDX, 0.09, b77l, Fedex, s
+	HKC, 0.09, a332, Mascot, e
+	HYS, 0.09, a320, Sky Europe, e
+	NJE, 0.09, e55p, Fraction, s
+	HYM, 0.09, b738, Sky Moldova, e
+	TOM, 0.09, b738, Tomjet, s
+	SXS, 0.09, b38m, Sunexpress, e
+	BRO, 0.07, b733, Broadsword, w
+	RYR, 0.07, a320, Ryanair, s
+	BCS, 0.07, b763, Postman, e
+	RJA, 0.07, a320, Jordanian, e
+	THY, 0.07, a332, Turkish, e
+	CKK, 0.07, b77l, Cargo King, e
+	HYM, 0.06, a319, Sky Moldova, e
+	EJU, 0.06, a319, Alpine, e
+	CFE, 0.06, e190, Flyer, s
+	EZY, 0.06, a319, Easy, w
+	EXS, 0.06, b738, Channex, w
+	FIA, 0.04, a320, Fia Airlines, e
+	AAR, 0.04, b744, Asiana, e
+	AWC, 0.03, a321, Zap, s
+	PGT, 0.03, b738, Sunturk, e
+	CLF, 0.03, e550, Clifton, w
+	SYG, 0.03, b738, Synergy, w
+	CFE, 0.03, e190, Flyer, e
+	RRR, 0.03, a332, Ascot/Kittyhawk, e
+	EZS, 0.03, a320, Topswiss, e
+	FIA, 0.03, a321, Fia Airlines, e
+	EZS, 0.03, a320, Topswiss, s
+	GNJ, 0.03, cl60, Gain Jet, w
+	TKJ, 0.03, b38m, Anatolia, e
+	AUR, 0.03, a320, Ayline, s
+	CTN, 0.03, a320, Croatia, e
+	FLJ, 0.01, e550, Flexair, w
+	EDC, 0.01, e550, Saltire, w
+	LXJ, 0.01, glf4, Flexjet, w
+	PEA, 0.01, e55p, Peach, s
+	VJH, 0.01, e35l, Vista Germany, e
+	AZG, 0.01, b744, Silk West, e
+	AXY, 0.01, e35l, Legend, s
+	KRH, 0.01, a21n, Sparrowhawk, e
+	BFY, 0.01, glex, Mwango Best, e
+	IFA, 0.01, lj60, Red Angel, s
+	NPT, 0.01, b733, Neptune, w
+	VJT, 0.01, cl35, Vista Jet, s
+	CLX, 0.01, b748, Cargolux, e
+	QQE, 0.01, glf6, Q-Rex, w
+	HFM, 0.01, a332, Moonraker, w
+	QQE, 0.01, glf6, Q-Rex, e
+	NJE, 0.01, e55p, Fraction, e
+	RJA, 0.01, a321, Jordanian, e
+	AXY, 0.01, e190, Legend, e
+	ABF, 0.01, e550, Skywings, e
+	TOM, 0.01, b38m, Tomjet, e
+	RRR, 0.01, a332, Ascot/Kittyhawk, s
+	TOM, 0.01, b38m, Tomjet, w
+	PGT, 0.01, a321, Sunturk, e
+	NJE, 0.01, cl35, Fraction, e
+	AWC, 0.01, a21n, Zap, s
+	LJC, 0.01, pc24, Little Jet, w
+	ROJ, 0.01, b737, Royaljet, e
+	GRB, 0.01, glf3, Gray Bird, s
+	ASY, 0.01, a343, Aussie, e
+	VJT, 0.01, c56x, Vista Jet, s
+	HYM, 0.01, a320, Sky Moldova, e
+	EXS, 0.01, a320, Channex, n
+	SON, 0.01, glex, Sonas, w
+	WUK, 0.01, a321, Wizz Go, w
+	KRH, 0.01, a21n, Sparrowhawk, s
+	KPO, 0.01, glex, Krypto, e
+	ELG, 0.01, e55p, Elangeni, w
+	FFA, 0.01, b738, Sunshine, e
+	RUK, 0.01, b38m, Blue Max, e
+	SAH, 0.01, be40, Smart Jet, s
+	GNJ, 0.01, cl60, Gain Jet, e
+	AZE, 0.01, e55p, Arcus Air, e
+	NEP, 0.01, b738, Warisan, w
+	VXS, 0.01, e550, Voluxis, n
+	AWH, 0.01, c560, Aerowest, e
+	NJE, 0.01, c56x, Fraction, w
+	AWC, 0.01, a321, Zap, e
+	NJE, 0.01, c68a, Fraction, s
+	AWC, 0.01, a320, Zap, s
+	FJO, 0.01, e550, Flex Europe, w
+	VXS, 0.01, e550, Voluxis, w
+	AWC, 0.01, a321, Zap, w
+	ARN, 0.01, b763, Aeronex, w
+	NJE, 0.01, e55p, Fraction, w
+	AXY, 0.01, b737, Legend, e
+	AXY, 0.01, a343, Legend, s
+	VJT, 0.01, glex, Vista Jet, s
+	EXS, 0.01, b738, Channex, n
+	BCS, 0.01, b738, Postman, e
+	AJO, 0.01, c25a, Aviate Jet, s
+	AXY, 0.01, crj2, Legend, e
+	PAV, 0.01, c25a, Brilliant, s
+	RYR, 0.01, b737, Ryanair, e
+	NJE, 0.01, c68a, Fraction, w

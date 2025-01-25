@@ -1,0 +1,288 @@
+	BAW, 10.00, a320, Speedbird, e
+	BAW, 5.38, a319, Speedbird, e
+	BAW, 5.19, a20n, Speedbird, e
+	BAW, 4.88, a320, Speedbird, s
+	SHT, 4.10, a320, Shuttle, n
+	DLH, 3.26, a20n, Lufthansa, e
+	EIN, 2.65, a20n, Shamrock, w
+	BAW, 2.58, b772, Speedbird, w
+	BAW, 2.42, a20n, Speedbird, s
+	SHT, 2.20, a319, Shuttle, n
+	BAW, 2.17, a21n, Speedbird, e
+	UAL, 2.03, b763, United, w
+	AAL, 1.78, b772, American, w
+	BAW, 1.76, a319, Speedbird, s
+	EWG, 1.44, a319, Eurowings, e
+	SAS, 1.42, a20n, Scandinavian, n
+	BAW, 1.37, a35k, Speedbird, w
+	BAW, 1.36, a21n, Speedbird, s
+	AAL, 1.35, b77w, American, w
+	BAW, 1.33, b772, Speedbird, e
+	SHT, 1.30, a20n, Shuttle, n
+	BAW, 1.29, b78x, Speedbird, w
+	IBE, 1.23, a20n, Iberia, s
+	SHT, 1.23, a21n, Shuttle, n
+	UAE, 1.16, a388, Emirates, e
+	VIR, 1.15, a35k, Virgin, w
+	BAW, 1.09, b77w, Speedbird, w
+	VIR, 1.08, a339, Virgin, w
+	AFR, 1.03, bcs3, Airfrans, s
+	BAW, 1.00, a320, Speedbird, n
+	BAW, 0.94, b789, Speedbird, e
+	QTR, 0.86, b77w, Qatari, e
+	VIR, 0.85, b789, Virgin, w
+	SWR, 0.85, bcs3, Swiss, s
+	DAL, 0.83, b764, Delta, w
+	BAW, 0.83, b789, Speedbird, w
+	AAL, 0.80, b789, American, w
+	BAW, 0.78, a35k, Speedbird, s
+	VIR, 0.72, a35k, Virgin, e
+	VIR, 0.72, a333, Virgin, w
+	DAL, 0.72, a332, Delta, w
+	BAW, 0.72, a388, Speedbird, w
+	SAS, 0.69, a20n, Scandinavian, e
+	SVA, 0.68, b77w, Saudia, e
+	FIN, 0.68, a321, Finnair, e
+	BAW, 0.68, a319, Speedbird, n
+	BAW, 0.66, b788, Speedbird, w
+	AUA, 0.66, a20n, Austrian, e
+	JBU, 0.65, a21n, Jetblue, w
+	KLM, 0.63, e295, KLM, e
+	UAL, 0.62, b772, United, w
+	THY, 0.62, a21n, Turkish, e
+	EWG, 0.61, a20n, Eurowings, e
+	BAW, 0.61, a20n, Speedbird, n
+	SWR, 0.61, a20n, Swiss, e
+	LOG, 0.60, e145, Logan, w
+	VIR, 0.57, b789, Virgin, e
+	TAP, 0.56, a21n, Air Portugal, s
+	TAP, 0.54, a20n, Air Portugal, s
+	VIR, 0.52, b789, Virgin, n
+	VLG, 0.50, a320, Vueling, s
+	BAW, 0.48, b788, Speedbird, e
+	BAW, 0.46, b772, Speedbird, s
+	LOT, 0.46, b38m, Lot, e
+	CPA, 0.46, a359, Cathay, e
+	KLM, 0.45, b738, KLM, e
+	BAW, 0.44, b77w, Speedbird, e
+	UAL, 0.43, b772, United, n
+	BEL, 0.42, a20n, Beeline, e
+	UAL, 0.42, b789, United, w
+	BAW, 0.40, a21n, Speedbird, w
+	MSR, 0.39, a20n, Egyptair, e
+	VIR, 0.39, b789, Virgin, s
+	AEE, 0.39, a21n, Aegean, e
+	QTR, 0.38, a388, Qatari, e
+	BAW, 0.38, a388, Speedbird, e
+	CPA, 0.38, b77w, Cathay, e
+	KMM, 0.38, a20n, Sky Knight, s
+	BAW, 0.38, b78x, Speedbird, n
+	SIA, 0.37, b77w, Singapore, e
+	THA, 0.37, b77w, Thai, e
+	MAS, 0.37, a359, Malaysian, e
+	EIN, 0.37, a320, Shamrock, w
+	KAC, 0.37, b77w, Kuwaiti, e
+	ACA, 0.37, b77w, Air Canada, n
+	BAW, 0.35, b789, Speedbird, n
+	BAW, 0.35, b77w, Speedbird, s
+	SIA, 0.35, a388, Singapore, e
+	AIC, 0.35, b77w, Air India, e
+	BAW, 0.34, a35k, Speedbird, e
+	ACA, 0.34, a333, Air Canada, w
+	GFA, 0.34, b789, Gulf Air, e
+	EIN, 0.34, a21n, Shamrock, w
+	SWR, 0.33, a21n, Swiss, e
+	ETD, 0.33, a388, Etihad, e
+	BAW, 0.33, a320, Speedbird, w
+	LOG, 0.31, at45, Logan, n
+	SHT, 0.31, a320, Shuttle, s
+	AIC, 0.31, a359, Air India, e
+	CES, 0.31, b77w, China Eastern, e
+	ACA, 0.30, b77w, Air Canada, w
+	DAL, 0.30, a339, Delta, w
+	AEE, 0.30, a20n, Aegean, e
+	BAW, 0.27, b772, Speedbird, n
+	THY, 0.26, a359, Turkish, e
+	FIN, 0.26, a359, Finnair, e
+	ELY, 0.25, b789, El Al, e
+	MEA, 0.25, a21n, Cedar Jet, e
+	BAW, 0.24, a20n, Speedbird, w
+	RWD, 0.23, a332, Rwandair, s
+	ALK, 0.23, a333, Srilankan, e
+	BAW, 0.23, b77w, Speedbird, n
+	ETD, 0.23, b789, Etihad, e
+	BAW, 0.22, a35k, Speedbird, n
+	BAW, 0.22, a388, Speedbird, n
+	THY, 0.22, b77w, Turkish, e
+	AIC, 0.21, b789, Air India, e
+	JAL, 0.21, a35k, Japanair, n
+	AVA, 0.21, b788, Avianca, w
+	LOG, 0.21, at76, Logan, n
+	BAW, 0.21, b788, Speedbird, n
+	SVA, 0.21, b789, Saudia, e
+	BAW, 0.20, b78x, Speedbird, s
+	QFA, 0.20, b789, Qantas, e
+	RJA, 0.20, b788, Jordanian, e
+	WJA, 0.20, b789, Westjet, n
+	BCS, 0.20, a306, Postman, e
+	HVN, 0.19, b789, Vietnam Airlines, e
+	ACA, 0.19, b38m, Air Canada, w
+	OMA, 0.19, b789, Oman Air, e
+	SVA, 0.19, b78x, Saudia, e
+	KAL, 0.19, b77w, Koreanair, n
+	ANA, 0.19, b77w, All Nippon, n
+	AMX, 0.19, b789, Aeromexico, w
+	QTR, 0.18, a359, Qatari, e
+	JAL, 0.18, b788, Japanair, n
+	BAW, 0.18, a388, Speedbird, s
+	KLM, 0.17, e190, KLM, e
+	QFA, 0.17, a388, Qantas, e
+	EVA, 0.17, b77w, Eva, e
+	CSN, 0.17, b789, China Southern, e
+	CSN, 0.17, a359, China Southern, e
+	CCA, 0.17, b77w, Air China, e
+	CCA, 0.17, a359, Air China, e
+	VIR, 0.17, a339, Virgin, e
+	BAW, 0.17, a21n, Speedbird, n
+	BAW, 0.17, b788, Speedbird, s
+	AIC, 0.17, b788, Air India, e
+	BEL, 0.16, a319, Beeline, e
+	MSR, 0.16, b77w, Egyptair, e
+	ICE, 0.16, a21n, Iceair, n
+	SWR, 0.15, bcs3, Swiss, e
+	VIR, 0.15, a35k, Virgin, s
+	QTR, 0.15, b77l, Qatari, e
+	ETD, 0.15, b78x, Etihad, e
+	ICE, 0.14, b38m, Iceair, n
+	TAM, 0.14, b77w, TAM, s
+	SHT, 0.14, a319, Shuttle, s
+	CSZ, 0.13, a333, Shenzhen Air, e
+	ASL, 0.13, a319, Air Serbia, e
+	ACA, 0.13, b77w, Air Canada, e
+	AAR, 0.12, a359, Asiana, n
+	BAW, 0.12, a319, Speedbird, w
+	CAL, 0.11, a359, Dynasty, e
+	IBE, 0.11, a359, Iberia, s
+	ETH, 0.10, a359, Ethiopian, e
+	AHY, 0.10, b788, Azal, e
+	BCS, 0.10, a306, Postman, s
+	LZB, 0.10, bcs3, Flying Bulgaria, e
+	RAM, 0.10, b38m, Royalair Maroc, s
+	ACA, 0.10, b789, Air Canada, w
+	KQA, 0.10, b788, Kenya, s
+	GCR, 0.09, a332, Bo Hai, e
+	EWG, 0.09, a21n, Eurowings, e
+	CPA, 0.09, a35k, Cathay, e
+	AFR, 0.09, a320, Airfrans, s
+	BCS, 0.09, a306, Postman, n
+	CTN, 0.09, a319, Croatia, e
+	RBA, 0.09, b788, Brunei, e
+	KLM, 0.09, b737, KLM, e
+	BAW, 0.09, b78x, Speedbird, e
+	DLH, 0.08, a21n, Lufthansa, e
+	KQA, 0.08, a333, Kenya, s
+	CCA, 0.08, a333, Air China, e
+	DAL, 0.08, a333, Delta, w
+	ACA, 0.08, b789, Air Canada, e
+	SWR, 0.08, e290, Swiss, e
+	AFR, 0.07, a318, Airfrans, s
+	SWR, 0.07, bcs1, Swiss, s
+	SHT, 0.07, a20n, Shuttle, s
+	RAM, 0.07, b789, Royalair Maroc, s
+	ASL, 0.07, a320, Air Serbia, e
+	ACA, 0.07, b789, Air Canada, n
+	MEA, 0.06, a320, Cedar Jet, e
+	VLG, 0.06, a20n, Vueling, s
+	CSN, 0.06, b788, China Southern, e
+	EWG, 0.06, a320, Eurowings, e
+	TAR, 0.06, a20n, Tunair, s
+	DAH, 0.06, a332, Air Algerie, s
+	AFR, 0.06, a319, Airfrans, s
+	CBJ, 0.06, a333, Capital Jet, e
+	RAM, 0.06, b788, Royalair Maroc, s
+	DAL, 0.06, a339, Delta, n
+	BBC, 0.06, b789, Bangladesh, e
+	DAH, 0.06, b738, Air Algerie, s
+	UAE, 0.06, b77l, Emirates, e
+	VIR, 0.06, a333, Virgin, n
+	AAL, 0.06, b788, American, w
+	THY, 0.06, a321, Turkish, e
+	ELY, 0.05, b788, El Al, e
+	FIN, 0.05, a333, Finnair, e
+	BBC, 0.05, b788, Bangladesh, e
+	KZR, 0.05, a21n, Astanaline, e
+	KAL, 0.05, b77l, Koreanair, n
+	CHH, 0.05, b789, Hainan, e
+	SWR, 0.04, e295, Swiss, e
+	BAW, 0.04, b789, Speedbird, s
+	RJA, 0.04, a320, Jordanian, e
+	IBE, 0.04, a333, Iberia, s
+	CPA, 0.04, b748, Cathay, e
+	ETH, 0.04, a35k, Ethiopian, e
+	SIA, 0.04, b744, Singapore, e
+	ICE, 0.04, b39m, Iceair, n
+	CPA, 0.04, b744, Cathay, e
+	VIR, 0.04, a35k, Virgin, n
+	IBE, 0.03, a332, Iberia, s
+	DAL, 0.03, b763, Delta, w
+	ICE, 0.03, b752, Iceair, n
+	UZB, 0.03, b788, Uzbek, e
+	FIN, 0.03, a319, Finnair, e
+	VIR, 0.03, a333, Virgin, e
+	FIN, 0.03, a320, Finnair, e
+	KLM, 0.03, a21n, KLM, e
+	BEL, 0.03, a320, Beeline, e
+	BAW, 0.03, b77l, Speedbird, w
+	VLG, 0.03, a321, Vueling, s
+	THY, 0.03, a333, Turkish, e
+	UZB, 0.03, a21n, Uzbek, e
+	THY, 0.03, b789, Turkish, e
+	DAL, 0.03, a359, Delta, w
+	KAL, 0.02, b748, Koreanair, e
+	LOT, 0.02, b738, Lot, e
+	SWR, 0.02, bcs1, Swiss, e
+	QTR, 0.02, b77w, Qatari, n
+	CTN, 0.02, a320, Croatia, e
+	AFR, 0.02, e190, Airfrans, s
+	SAS, 0.02, a320, Scandinavian, n
+	KLM, 0.02, b739, KLM, e
+	QTR, 0.02, a35k, Qatari, e
+	AIC, 0.02, b77l, Air India, e
+	EIN, 0.02, a20n, Shamrock, n
+	UAL, 0.02, b763, United, n
+	VIR, 0.02, a339, Virgin, n
+	GFA, 0.02, b789, Gulf Air, n
+	DAL, 0.02, a359, Delta, n
+	QFA, 0.01, b789, Qantas, n
+	KLM, 0.01, e75l, KLM, e
+	DLH, 0.01, a320, Lufthansa, e
+	UAL, 0.01, b764, United, w
+	DLH, 0.01, a321, Lufthansa, e
+	EIN, 0.01, b788, Shamrock, w
+	SHT, 0.01, a20n, Shuttle, e
+	RJA, 0.01, a321, Jordanian, e
+	SWR, 0.01, a321, Swiss, e
+	AUA, 0.01, a320, Austrian, e
+	JAL, 0.01, b789, Japanair, n
+	AAL, 0.01, b77w, American, n
+	SWR, 0.01, a320, Swiss, e
+	DAL, 0.01, b764, Delta, n
+	FJO, 0.01, e550, Flex Europe, e
+	CPA, 0.01, a35k, Cathay, n
+	ETH, 0.01, a359, Ethiopian, s
+	THY, 0.01, b77l, Turkish, e
+	UAE, 0.01, a388, Emirates, n
+	TOM, 0.01, b789, Tomjet, n
+	RWD, 0.01, a332, Rwandair, n
+	CFD, 0.01, b77w, Aeronaut, n
+	ETD, 0.01, b78x, Etihad, n
+	ETD, 0.01, b789, Etihad, n
+	SHT, 0.01, a319, Shuttle, e
+	SHT, 0.01, a320, Shuttle, e
+	SVA, 0.01, a21n, Saudia, e
+	LZB, 0.01, bcs1, Flying Bulgaria, e
+	VIR, 0.01, a339, Virgin, s
+	QTR, 0.01, a35k, Qatari, w
+	MSR, 0.01, b738, Egyptair, e
+	MSR, 0.01, b789, Egyptair, e
+	AMX, 0.01, b788, Aeromexico, w
