@@ -43,7 +43,6 @@ export default class EGSS {
 					this.atc.beacon("BKY"),
 					NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
 					this.atc.beacon("DET"),
-					this.atc.beacon("LAM"),
 				],
 				this.atc.beacon("ABBOT")
 			)

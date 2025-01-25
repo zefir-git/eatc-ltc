@@ -48,7 +48,6 @@ export default class EGKK {
 					new Airport.Airline("EZY", 10, ["a320"], ["s"], "Easy"),
 				],
 				[
-					this.atc.beacon("LAM"),
 					NamedFix.fromDMS("512306N", "0003739E", "FRANE", "Frane"),
 					NamedFix.fromDMS("504207N", "0001506W", "BOGNA", "Bogna"),
 					NamedFix.fromDMS("502816.00N", "0002928.00E", "HARDY", "Hardy"),
