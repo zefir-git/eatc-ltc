@@ -8,6 +8,7 @@ import STAR from "./STAR.js";
 import Fix from "./Fix.js";
 import StarFix from "./StarFix.js";
 import SID from "./SID.js";
+import Aircraft from "./Aircraft.js";
 
 export default class Generator {
 	#airspace: Airspace | null = null;
@@ -100,6 +101,12 @@ export default class Generator {
 			)
 		);
 		return this;
+	}
+
+	#aircraft = new Map<string, Aircraft>;
+
+	public aircraft(aircraft: Aircraft) {
+		this.#aircraft.set(aircraft.type.toLowerCase(), aircraft);
 	}
 
 	// Map<runway, Map<beacon, STAR[]>>
@@ -344,6 +351,12 @@ export default class Generator {
 					].join("\n") + "\n"
 					+ routes.map((route, i) => `route${i + 1} =\n${route.routeString()}`).join("\n")
 				).join("\n\n"),
+
+			[
+				"[planetypes]",
+				"types =",
+				...Array.from(this.#aircraft.values()).map(a => a.toString()),
+			].join("\n"),
 		].filter(l => l !== null).join("\n\n");
 	}
 }

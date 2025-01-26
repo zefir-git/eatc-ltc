@@ -59,7 +59,7 @@ export default class EGKK {
 					NamedFix.fromDMS("511358N", "0002930E", "MIMFO", "Mimfo"),
 					NamedFix.fromDMS("510945N", "0012133E", "DVR", "Dover"),
 					NamedFix.fromDMS("510957.40N", "0002909.33E", "ODVIK", "Odvik"),
-					NamedFix.fromDMS("510402N", "0002622E", "TIGER", "Tiger"),
+					this.atc.beacon("TIGER"),
 					NamedFix.fromDMS("514919N", "0004739E", "DAGGA", "Dagga"),
 				],
 				this.atc.beacon("MAY")
@@ -815,7 +815,7 @@ export default class EGKK {
 		));
 
 		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("TIGER"), "3M"),
+			...this.atc.pronounce("TIGER", "3M"),
 			kks,
 			[
 				kksRev.position.destination(257, 2.3),
@@ -823,13 +823,13 @@ export default class EGKK {
 				this.atc.beacon("MAY").destination(228, 13),
 				this.atc.beacon("MAY").destination(228, 9),
 				this.atc.beacon("MAY"),
-				this.atc.fix("TIGER"),
+				this.atc.beacon("TIGER"),
 				this.atc.beacon("LAM")
 			]
 		));
 
 		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("TIGER"), "3V"),
+			...this.atc.pronounce("TIGER", "3V"),
 			kkn,
 			[
 				kksRev.position.destination(257, 2.3),
@@ -837,7 +837,7 @@ export default class EGKK {
 				this.atc.beacon("MAY").destination(228, 13),
 				this.atc.beacon("MAY").destination(228, 9),
 				this.atc.beacon("MAY"),
-				this.atc.fix("TIGER"),
+				this.atc.beacon("TIGER"),
 				this.atc.beacon("LAM")
 			]
 		));
@@ -851,7 +851,7 @@ export default class EGKK {
 				this.atc.beacon("MAY").destination(228, 13),
 				this.atc.beacon("MAY").destination(228, 9),
 				this.atc.beacon("MAY"),
-				this.atc.fix("TIGER"),
+				this.atc.beacon("TIGER"),
 				this.atc.beacon("DET"),
 				this.atc.fix("DAGGA"),
 				this.atc.fix("CLN", "515054.50N", "0010851.32E")
@@ -867,7 +867,7 @@ export default class EGKK {
 				this.atc.beacon("MAY").destination(228, 13),
 				this.atc.beacon("MAY").destination(228, 9),
 				this.atc.beacon("MAY"),
-				this.atc.fix("TIGER"),
+				this.atc.beacon("TIGER"),
 				this.atc.beacon("DET"),
 				this.atc.fix("DAGGA"),
 				this.atc.fix("CLN", "515054.50N", "0010851.32E")
@@ -875,7 +875,7 @@ export default class EGKK {
 		));
 
 		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("TIGER"), "1X"),
+			...this.atc.pronounce("TIGER", "1X"),
 			kks,
 			[
 				this.atc.fix("KKW04", "510750.70N", "0001857.30W"),

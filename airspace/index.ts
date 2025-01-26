@@ -10,6 +10,7 @@ import EGKK from "./EGKK.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
+import Aircraft from "../src/Aircraft.js";
 
 const atc = new Generator();
 
@@ -248,6 +249,34 @@ atc.runway([
 	new RunwayConfiguration(24, atc.runway("lc"), {arrivals: true, departures: true, reverse: true}),
 	new RunwayConfiguration(23, atc.runway("lls"), {arrivals: true, departures: true, reverse: true}),
 ]);
+
+atc.aircraft(new Aircraft(
+	"D228",
+	"Dornier",
+	Aircraft.WTC.LIGHT,
+	[105, 220],
+	85,
+	[0.8, 1.2],
+	1000,
+	1500,
+	[20, 25],
+	[2.5, 3.5],
+	[2.9, 3.1]
+));
+
+atc.aircraft(new Aircraft(
+	"GA6C",
+	"Gulfstream",
+	Aircraft.WTC.LOWER_MEDIUM,
+	[160, 300],
+	129,
+	[1.2, 1.4],
+	1400,
+	3620,
+	[25, 30],
+	[3, 5],
+	[2.9, 3.1]
+));
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 
