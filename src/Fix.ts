@@ -29,11 +29,11 @@ export default class Fix {
 			+ Math.abs(this.longitude).toFixed(6);
 	}
 
-	private degToRad(degrees: number): number {
+	public static degToRad(degrees: number): number {
 		return degrees * Math.PI / 180;
 	}
 
-	private radToDeg(radians: number): number {
+	public static radToDeg(radians: number): number {
 		return radians * 180 / Math.PI;
 	}
 
@@ -60,9 +60,9 @@ export default class Fix {
 	 * @param distance Distance in NM.
 	 */
 	public destination(bearing: number, distance: number): Fix {
-		const φ1 = this.degToRad(this.latitude);
-		const λ1 = this.degToRad(this.longitude);
-		const θ = this.degToRad(bearing);
+		const φ1 = Fix.degToRad(this.latitude);
+		const λ1 = Fix.degToRad(this.longitude);
+		const θ = Fix.degToRad(bearing);
 		/** distance in metres */
 		const d = distance * Fix.NMI;
 		/** angular distance **/
@@ -77,7 +77,7 @@ export default class Fix {
 			Math.cos(δ) - Math.sin(φ1) * Math.sin(φ2)
 		);
 
-		return new Fix(this.radToDeg(φ2), this.radToDeg(λ2));
+		return new Fix(Fix.radToDeg(φ2), Fix.radToDeg(λ2));
 	}
 
 	/**
@@ -87,17 +87,17 @@ export default class Fix {
 	 * @param otherBearing Initial bearing from the other point in decimal degrees.
 	 */
 	public bearingIntersection(bearing: number, other: Fix, otherBearing: number) {
-		const φ1 = this.degToRad(this.latitude);
-		const λ1 = this.degToRad(this.longitude);
+		const φ1 = Fix.degToRad(this.latitude);
+		const λ1 = Fix.degToRad(this.longitude);
 
-		const φ2 = this.degToRad(other.latitude);
-		const λ2 = this.degToRad(other.longitude);
+		const φ2 = Fix.degToRad(other.latitude);
+		const λ2 = Fix.degToRad(other.longitude);
 
 		const Δφ = φ2 - φ1;
 		const Δλ = λ2 - λ1;
 
-		const θ13 = this.degToRad(bearing);
-		const θ23 = this.degToRad(otherBearing);
+		const θ13 = Fix.degToRad(bearing);
+		const θ23 = Fix.degToRad(otherBearing);
 
 		/** angular distance **/
 		const δ12 = 2 * Math.asin(
@@ -159,7 +159,7 @@ export default class Fix {
 
 		const λ3 = λ1 + Δλ13;
 
-		return new Fix(this.radToDeg(φ3), this.radToDeg(λ3));
+		return new Fix(Fix.radToDeg(φ3), Fix.radToDeg(λ3));
 	}
 
 	/**
@@ -168,10 +168,10 @@ export default class Fix {
 	 * @return Distance in metres.
 	 */
 	public distance(other: Fix): number {
-		const φ1 = this.degToRad(this.latitude);
-		const φ2 = this.degToRad(other.latitude);
+		const φ1 = Fix.degToRad(this.latitude);
+		const φ2 = Fix.degToRad(other.latitude);
 		const Δφ = φ2 - φ1;
-		const Δλ = this.degToRad(other.longitude - this.longitude);
+		const Δλ = Fix.degToRad(other.longitude - this.longitude);
 
 		const a = Math.sin(Δφ / 2) ** 2
 			+ Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
