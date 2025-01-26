@@ -601,7 +601,8 @@ export default class EGLL {
 				this.atc.beacon("OCK").destination(253, 1.4),
 				this.atc.beacon("OCK").destination(253, 4.7),
 				this.atc.fix("GASGU")
-			]
+			],
+			true
 		));
 	}
 }
