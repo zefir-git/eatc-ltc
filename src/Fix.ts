@@ -180,6 +180,19 @@ export default class Fix {
 	}
 
 	/**
+	 * To cartesian coordinates.
+	 */
+	public cartesian(): [x: number, y: number, z: number] {
+		const φ = Fix.degToRad(this.latitude);
+		const λ = Fix.degToRad(this.longitude);
+		return [
+			Fix.R * Math.cos(φ) * Math.cos(λ),
+			Fix.R * Math.cos(φ) * Math.sin(λ),
+			Fix.R * Math.sin(φ)
+		];
+	}
+
+	/**
 	 * Create a new fix from DMS coordinates
 	 * @param lon Longitude in DMS
 	 * @param lat Latitude in DMS
