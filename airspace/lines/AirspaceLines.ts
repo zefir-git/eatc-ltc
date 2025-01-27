@@ -253,6 +253,87 @@ export default class AirspaceLines {
 			new Fix(51.848929, -0.826035),
 		], [0x30, 0x30, 0x30]));
 
+		// Stansted CTR (D)
+		this.atc.line(new Line([
+			new Fix(51.867270, 0.022402),
+			new Fix(51.867270, 0.022402).destination(44, 12.4),
+		], [0x30, 0x30, 0x30]).join(Circle.from(
+				new Fix(51.867270, 0.022402).destination(44, 12.4),
+				this.atc.runway("ss").position.destination(this.atc.runway("ss").reverseLocalizer, 7.3),
+				new Fix(51.758544, 0.217581).destination(44, 12.4),
+				75
+			).cutoff(f =>
+				f.latitude <= new Fix(51.867270, 0.022402).destination(44, 12.4).latitude
+				&& f.latitude >= new Fix(51.758544, 0.217581).destination(44, 12.4).latitude
+				&& f.longitude >= new Fix(51.867270, 0.022402).destination(44, 12.4).longitude)
+		).join(new Line([
+			new Fix(51.758544, 0.217581).destination(44, 12.4),
+			new Fix(51.758544, 0.217581),
+		])).join(Circle.from(
+			new Fix(51.867270, 0.022402),
+			this.atc.runway("ss").reverse().position.destination(this.atc.runway("ss").heading, 7.4),
+			new Fix(51.758544, 0.217581),
+			75
+		).cutoff(f => f.latitude <= 51.867270 && f.longitude <= 0.217581)
+					   .append(new Fix(51.867270, 0.022402))));
+
+		// Stansted CTA 1 (D)
+		this.atc.line(new Line([
+			new Fix(51.867270, 0.022402).destination(44, 12.4),
+			new Fix(52.083831, 0.361691),
+		], [0x30, 0x30, 0x30]).join(
+			Circle.from(
+				new Fix(52.083831, 0.361691),
+				this.atc.runway("ss").position.destination(this.atc.runway("ss").reverseLocalizer, 13),
+				new Fix(51.973884, 0.556526),
+				75
+			).cutoff(f => f.latitude <= 52.083831 && f.latitude >= 51.973884 && f.longitude >= 0.361691)
+		).join(new Line([
+			new Fix(51.973884, 0.556526),
+			new Fix(51.758544, 0.217581).destination(44, 12.4),
+		])));
+
+		// Stansted CTA 2 (D)
+		this.atc.line(new Line([
+			new Fix(51.758384, 0.217323),
+			new Fix(51.690596, 0.109091),
+		], [0x30, 0x30, 0x30]).join(
+			Circle.from(
+				new Fix(51.769115, -0.056992),
+				this.atc.runway("ss").reverse().position.destination(this.atc.runway("ss").heading, 12.3),
+				new Fix(51.690596, 0.109091),
+				75
+			).cutoff(f => f.latitude <= 51.769115 && f.longitude <= 0.109091)
+		).join(new Line([
+			new Fix(51.769115, -0.056992),
+			new Fix(51.854867, -0.007210),
+			new Fix(51.865521, -0.001287),
+			new Fix(51.867270, 0.022402),
+		], [0x30, 0x30, 0x30])));
+
+		// Stansted CTA 3 (D)
+		this.atc.line(Circle.from(
+				new Fix(51.973884, 0.556526),
+				new Fix(51.923097, 0.581589),
+				new Fix(51.900223, 0.586395),
+				75,
+				[0x30, 0x30, 0x30]
+			).cutoff(f => f.latitude <= 51.973884 && f.latitude >= 51.900223 && f.longitude >= 0.556526)
+							.prepend(new Fix(51.973884, 0.556526)
+							)
+							.join(new Line([
+								new Fix(51.900223, 0.586395),
+								new Fix(51.900223, 0.586395).destination(225, 11.2),
+								new Fix(51.758384, 0.217323),
+							], [0x30, 0x30, 0x30]))
+		);
+
+		// Stansted CTA 4 (D)
+		this.atc.line(new Line([
+			new Fix(52.021365, 0.004292),
+			new Fix(52.083831, 0.361691),
+		], [0x30, 0x30, 0x30]))
+
 		// LTC boundary
 		this.atc.line(new Line([
 				new Fix(50.668994, -0.373578),
