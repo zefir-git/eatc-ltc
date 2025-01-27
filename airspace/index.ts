@@ -142,7 +142,7 @@ atc.airspace(
 				new Fix(52.186037, 0.546227),
 
 				// extension CLACTON CTA 10C
-				new Fix(52.186458, 0.237236),
+				new Fix(52.1878, 0.2364),
 				new Fix(52.288428, 0.161018),
 				new Fix(52.310893, -0.086174),
 				new Fix(52.399486, -0.191917),
