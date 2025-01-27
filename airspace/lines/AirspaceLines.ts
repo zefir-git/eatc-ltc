@@ -57,6 +57,15 @@ export default class AirspaceLines {
 							.append(new Fix(51.606291, -0.693555))
 				)
 		);
+		this.atc.line(new Line([
+			new Fix(51.353130, -0.713382),
+			new Fix(51.393422, -0.919590),
+			new Fix(51.568854, -0.921907),
+			new Fix(51.5854, -0.8835),
+			new Fix(51.589976, -0.818310),
+			new Fix(51.611514, -0.768185),
+			new Fix(51.6459, -0.7401),
+		]));
 
 		// London City CTA (D)
 		this.atc.line(
