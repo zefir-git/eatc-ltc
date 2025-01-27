@@ -37,6 +37,52 @@ class Line extends Polygon {
 			+ this.colour + "\n"
 			+ this.toString();
 	}
+
+	/**
+	 * Get lines from GeoJSON
+	 */
+	public static fromGeoJSON(data: any, colour?: Line.Colour): Line[] {
+		const lines: Line[] = [];
+
+		// Ensure valid GeoJSON structure
+		if (!data || data.type !== "FeatureCollection" || !Array.isArray(data.features)) {
+			return lines; // Early return if the structure is invalid
+		}
+
+		// Iterate over each feature in the GeoJSON
+		for (const feature of data.features) {
+			if (!feature.geometry) continue; // Skip if no geometry is present
+			const {type, coordinates} = feature.geometry;
+
+			switch (type) {
+				case "LineString":
+					lines.push(new Line(coordinates.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour));
+					break;
+
+				case "MultiLineString":
+					lines.push(...coordinates.map((lineCoords: [number, number][]) =>
+						new Line(lineCoords.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour)
+					));
+					break;
+
+				case "Polygon":
+					lines.push(...coordinates.map((ring: [number, number][]) =>
+						new Line(ring.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour)
+					));
+					break;
+
+				case "MultiPolygon":
+					lines.push(...coordinates.map((polygon: [number, number][][]) =>
+						polygon.map((ring: [number, number][]) =>
+							new Line(ring.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour)
+						)
+					).flat());
+					break;
+			}
+		}
+
+		return lines;
+	}
 }
 
 namespace Line {

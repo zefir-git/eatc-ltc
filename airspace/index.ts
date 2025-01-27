@@ -279,7 +279,7 @@ atc.aircraft(new Aircraft(
 	[2.9, 3.1]
 ));
 
-new AirspaceLines(atc);
+await new AirspaceLines(atc).coastline();
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 

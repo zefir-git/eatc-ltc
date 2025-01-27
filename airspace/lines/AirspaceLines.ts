@@ -2,6 +2,7 @@ import Generator from "../../src/Generator.js";
 import Fix from "../../src/Fix.js";
 import Line from "../../src/Line.js";
 import Circle from "../../src/Circle.js";
+import fs from "node:fs/promises";
 
 export default class AirspaceLines {
 	public constructor(
@@ -95,6 +96,16 @@ export default class AirspaceLines {
 				new Fix(51.437531, 0.131149),
 				new Fix(51.445449, -0.134926),
 			]))
+		);
+	}
+
+	public async coastline() {
+		// Great Britain coastline
+		this.atc.line(
+			...Line.fromGeoJSON(
+				JSON.parse(await fs.readFile("./coastline/gb.geojson", "utf8")),
+				Line.ColourType.COAST
+			)
 		);
 	}
 }
