@@ -334,6 +334,12 @@ export default class AirspaceLines {
 			new Fix(52.083831, 0.361691),
 		], [0x30, 0x30, 0x30]))
 
+		// LTMA 23 (A) / LTMA 11 (A)
+		this.atc.line(new Line([
+			new Fix(51.569281, -1.195107),
+			new Fix(51.406274, -1.246605),
+		], [0x30, 0x30, 0x30]));
+
 		// LTC boundary
 		this.atc.line(new Line([
 				new Fix(50.668994, -0.373578),
