@@ -11,6 +11,7 @@ import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
 import Aircraft from "../src/Aircraft.js";
+import AirspaceLines from "./lines/AirspaceLines.js";
 
 const atc = new Generator();
 
@@ -277,6 +278,8 @@ atc.aircraft(new Aircraft(
 	[3, 5],
 	[2.9, 3.1]
 ));
+
+new AirspaceLines(atc);
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 
