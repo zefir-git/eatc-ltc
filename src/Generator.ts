@@ -368,7 +368,7 @@ export default class Generator {
 
 			this.#lines.length === 0 ? null : [
 				"[background]",
-				this.#lines.map((line, i) => [
+				this.#lines.reverse().map((line, i) => [
 					`line${i + 1} =`,
 					line instanceof Line ? line.lineString() : line.toString()
 				].join("\n")).join("\n")
