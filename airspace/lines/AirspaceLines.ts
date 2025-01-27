@@ -87,7 +87,6 @@ export default class AirspaceLines {
 					new Fix(51.419764, 0.159473),
 					75
 				).cutoff(f => f.latitude <= 51.587176 && f.longitude >= 0.1594)
-					  .append(new Fix(51.419764, 0.159473))
 			).join(
 				new Line([
 					new Fix(51.419764, 0.159473),
