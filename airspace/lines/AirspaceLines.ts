@@ -27,7 +27,7 @@ export default class AirspaceLines {
 				.destination(337, 7)
 				.destination(360, 7.5),
 			this.atc.beacon("BNN"),
-		]);
+		]));
 
 		// London CTR TMZ
 		this.atc.line(
