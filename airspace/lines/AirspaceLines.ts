@@ -115,6 +115,7 @@ export default class AirspaceLines {
 			]))
 		);
 
+		// LTC boundary
 		this.atc.line(new Line([
 				new Fix(50.668994, -0.373578),
 				new Fix(50.669484, 0.500093),
@@ -155,6 +156,8 @@ export default class AirspaceLines {
 				JSON.parse(await fs.readFile("./coastline/gb.geojson", "utf8")),
 				Line.ColourType.COAST
 			)
+				// ignore islands etc. north of 52.5, west of -2
+				   .filter(line => !line.vertices.every(fix => fix.latitude > 52.5 || fix.longitude < -2))
 		);
 	}
 }
