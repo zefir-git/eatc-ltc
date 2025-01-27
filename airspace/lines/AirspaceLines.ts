@@ -42,7 +42,7 @@ export default class AirspaceLines {
 			new Line([
 				new Fix(51.606291, -0.693555),
 				new Fix(51.606291, -0.217152),
-			])
+			], [0x30, 0x30, 0x30])
 				.join(Circle.from(
 						new Fix(51.606291, -0.217152),
 						new Fix(51.581710, -0.187025),
@@ -73,14 +73,14 @@ export default class AirspaceLines {
 			new Fix(51.589976, -0.818310),
 			new Fix(51.611514, -0.768185),
 			new Fix(51.6459, -0.7401),
-		]));
+		], [0x30, 0x30, 0x30]));
 
 		// London City CTA (D)
 		this.atc.line(
 			new Line([
 				new Fix(51.599147, -0.208225),
 				new Fix(51.587176, 0.172005),
-			]).join(
+			], [0x30, 0x30, 0x30]).join(
 				Circle.from(
 					new Fix(51.587176, 0.172005),
 					new Fix(51.497843, 0.230026),
@@ -101,7 +101,7 @@ export default class AirspaceLines {
 			new Line([
 				new Fix(51.581710, -0.187025),
 				new Fix(51.571735, 0.139732),
-			]).join(
+			], [0x30, 0x30, 0x30]).join(
 				Circle.from(
 					new Fix(51.571735, 0.139732),
 					new Fix(51.502545, 0.189857),
