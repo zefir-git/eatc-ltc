@@ -113,8 +113,8 @@ export default class Generator {
 
 	#lines: Polygon[] = [];
 
-	public line(line: Polygon) {
-		this.#lines.push(line);
+	public line(...line: Polygon[]) {
+		this.#lines.push(...line);
 	}
 
 	// Map<runway, Map<beacon, STAR[]>>
