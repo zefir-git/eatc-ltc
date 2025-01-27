@@ -9,6 +9,8 @@ import Fix from "./Fix.js";
 import StarFix from "./StarFix.js";
 import SID from "./SID.js";
 import Aircraft from "./Aircraft.js";
+import Polygon from "./Polygon.js";
+import Line from "./Line.js";
 
 export default class Generator {
 	#airspace: Airspace | null = null;
@@ -107,6 +109,12 @@ export default class Generator {
 
 	public aircraft(aircraft: Aircraft) {
 		this.#aircraft.set(aircraft.type.toLowerCase(), aircraft);
+	}
+
+	#lines: Polygon[] = [];
+
+	public line(line: Polygon) {
+		this.#lines.push(line);
 	}
 
 	// Map<runway, Map<beacon, STAR[]>>
@@ -344,19 +352,27 @@ export default class Generator {
 				 ).map((e, i) => `[approach${i + 1}]\n${e}`).join("\n\n"),
 
 			Array.from(this.#departures.entries())
-				.map(([rwy, routes], i) =>
-					[
-						`[departure${i + 1}]`,
-						`runway = ${rwy}`,
-					].join("\n") + "\n"
-					+ routes.map((route, i) => `route${i + 1} =\n${route.routeString()}`).join("\n")
-				).join("\n\n"),
+				 .map(([rwy, routes], i) =>
+					 [
+						 `[departure${i + 1}]`,
+						 `runway = ${rwy}`,
+					 ].join("\n") + "\n"
+					 + routes.map((route, i) => `route${i + 1} =\n${route.routeString()}`).join("\n")
+				 ).join("\n\n"),
 
-			[
+			this.#aircraft.size === 0 ? null : [
 				"[planetypes]",
 				"types =",
 				...Array.from(this.#aircraft.values()).map(a => a.toString()),
 			].join("\n"),
+
+			this.#lines.length === 0 ? null : [
+				"[background]",
+				this.#lines.map((line, i) => [
+					`line${i + 1} =`,
+					line instanceof Line ? line.lineString() : line.toString()
+				].join("\n")).join("\n")
+			].join("\n")
 		].filter(l => l !== null).join("\n\n");
 	}
 }
