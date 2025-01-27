@@ -34,7 +34,7 @@ class Line extends Polygon {
 
 	public lineString(): string {
 		return "\t"
-			+ this.colour + "\n"
+			+ (typeof this.colour === "string" ? this.colour : this.colour.join(", ")) + "\n"
 			+ this.toString();
 	}
 
