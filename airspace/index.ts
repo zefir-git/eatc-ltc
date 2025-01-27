@@ -130,8 +130,14 @@ atc.airspace(
 				new Fix(51.000000, 1.466675),
 				new Fix(51.349485, 1.531906),
 				new Fix(51.357633, 1.362991),
-				new Fix(51.379067, 1.264114),
+				//new Fix(51.379067, 1.264114),
 				// end extension WORTHING CTA 1A
+
+				// extension
+				new Fix(51.4061, 1.3896),
+				new Fix(51.5, 1.4),
+				new Fix(51.5637, 1.3681),
+				// end extension
 
 				new Fix(51.649981, 1.416721),
 				new Fix(51.873206, 1.443844),
