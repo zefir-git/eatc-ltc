@@ -6,15 +6,18 @@ import Runway from "../src/Runway.js";
 import Fix from "../src/Fix.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
+import fs from "node:fs/promises";
 
 export default class EGLL {
-	public constructor(private readonly atc: Generator) {
-		this.airport();
+	public constructor(private readonly atc: Generator) {}
+
+	public async init() {
+		await this.airport();
 		this.star();
 		this.sid();
 	}
 
-	private airport() {
+	private async airport() {
 		this.atc.airport(
 			new Airport(
 				"London Heathrow Airport",
@@ -45,9 +48,7 @@ export default class EGLL {
 					),
 				],
 				[],
-				[
-					new Airport.Airline("BAW", 10, ["a320"], ["e"], "Speedbird"),
-				],
+				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
 					NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
 					NamedFix.fromDMS("511459N", "0003343W", "MAXIT", "Maxit"),

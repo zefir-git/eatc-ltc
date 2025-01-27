@@ -182,11 +182,11 @@ atc.airspace(
 	)
 );
 
-new EGLL(atc);
-new EGKK(atc);
-new EGSS(atc);
-new EGGW(atc);
-new EGLC(atc);
+await new EGLL(atc).init();
+await new EGKK(atc).init();
+await new EGSS(atc).init();
+await new EGGW(atc).init();
+await new EGLC(atc).init();
 
 atc.runway([
 	new RunwayConfiguration(0, atc.runway("lls"), {arrivals: true}),

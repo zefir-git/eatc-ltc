@@ -5,15 +5,18 @@ import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
+import fs from "node:fs/promises";
 
 export default class EGKK {
-	public constructor(private readonly atc: Generator) {
-		this.airport();
+	public constructor(private readonly atc: Generator) {}
+
+	public async init() {
+		await this.airport();
 		this.star();
 		this.sid();
 	}
 
-	private airport() {
+	private async airport() {
 		this.atc.airport(
 			new Airport(
 				"London Gatwick Airport",
@@ -44,9 +47,7 @@ export default class EGKK {
 					),
 				],
 				[],
-				[
-					new Airport.Airline("EZY", 10, ["a320"], ["s"], "Easy"),
-				],
+				Airport.Airline.raw(await fs.readFile("./airlines/EGKK.txt", "utf8")),
 				[
 					NamedFix.fromDMS("512306N", "0003739E", "FRANE", "Frane"),
 					NamedFix.fromDMS("504207N", "0001506W", "BOGNA", "Bogna"),

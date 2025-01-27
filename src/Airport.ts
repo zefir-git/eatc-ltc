@@ -271,7 +271,7 @@ namespace Airport {
 		 * Airlines config from raw Endless ATC config format.
 		 */
 		public static raw(config: string): Airport.Airline[] {
-			return config.split("\n").map(line => {
+			return config.trim().split("\n").map(line => {
 				const [name, frequency, type, pronunciation, direction] = line.trim().split(/,\s*?/);
 				return new Airport.Airline(
 					name!,

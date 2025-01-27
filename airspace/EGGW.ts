@@ -5,16 +5,19 @@ import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
+import fs from "node:fs/promises";
 
 export default class EGGW {
-	public constructor(private readonly atc: Generator) {
-		this.airport();
+	public constructor(private readonly atc: Generator) {}
+
+	public async init() {
+		await this.airport();
 		this.star();
 		this.transition();
 		this.sid();
 	}
 
-	private airport() {
+	private async airport() {
 		this.atc.airport(
 			new Airport(
 				"London Luton Airport",
@@ -35,9 +38,7 @@ export default class EGGW {
 					)
 				],
 				[],
-				[
-					new Airport.Airline("WUK", 10, ["a21n"], ["e"], "Wizz Go"),
-				],
+				Airport.Airline.raw(await fs.readFile("./airlines/EGGW.txt", "utf8")),
 				[
 					NamedFix.fromDMS("514645N", "0001500E", "MATCH", "Match"),
 					this.atc.beacon("DET"),

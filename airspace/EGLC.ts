@@ -5,16 +5,19 @@ import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
+import fs from "node:fs/promises";
 
 export default class EGLC {
-	public constructor(private readonly atc: Generator) {
-		this.airport();
+	public constructor(private readonly atc: Generator) {}
+
+	public async init() {
+		await this.airport();
 		this.star();
 		this.transition();
 		this.sid();
 	}
 
-	private airport() {
+	private async airport() {
 		this.atc.airport(
 			new Airport(
 				"London City Airport",
@@ -38,9 +41,7 @@ export default class EGLC {
 					)
 				],
 				[],
-				[
-					new Airport.Airline("CFE", 10, ["e190"], ["e"], "Flyer"),
-				],
+				Airport.Airline.raw(await fs.readFile("./airlines/EGLC.txt", "utf8")),
 				[
 					NamedFix.fromDMS("513623.75N", "0002328.43E", "SOQQA", "Soqqa"),
 					this.atc.beacon("BPK"),

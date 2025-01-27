@@ -5,15 +5,18 @@ import Fix from "../src/Fix.js";
 import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
+import fs from "node:fs/promises";
 
 export default class EGSS {
-	public constructor(private readonly atc: Generator) {
-		this.airport();
+	public constructor(private readonly atc: Generator) {}
+
+	public async init() {
+		await this.airport();
 		this.star();
 		this.sid();
 	}
 
-	private airport() {
+	private async airport() {
 		this.atc.airport(
 			new Airport(
 				"London Stansted Airport",
@@ -34,9 +37,7 @@ export default class EGSS {
 					)
 				],
 				[],
-				[
-					new Airport.Airline("RYR", 10, ["b738"], ["e"], "Ryanair"),
-				],
+				Airport.Airline.raw(await fs.readFile("./airlines/EGSS.txt", "utf8")),
 				[
 					NamedFix.fromDMS("515847N", "0000419W", "UTAVA", "Utava"),
 					NamedFix.fromDMS("515822N", "0000412W", "NUGBO", "Nugbo"),
