@@ -181,7 +181,77 @@ export default class AirspaceLines {
 			).cutoff(f => f.latitude <= 51.980440 && f.latitude >= 51.846596 && f.longitude >= -0.241013)
 				.append(new Fix(51.846596, -0.160847))
 			)
-		)
+		);
+
+		// London CTA 1 (D)
+		this.atc.line(new Line([
+			new Fix(51.846596, -0.160847),
+			new Fix(51.854867, -0.007210),
+			new Fix(51.865521, -0.001287),
+			new Fix(52.021365, 0.004292),
+			new Fix(51.980440, -0.241013),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 2 (D)
+		this.atc.line(new Line([
+			new Fix(51.756153, -0.586567),
+			new Fix(51.741380, -0.672226),
+			new Fix(51.805961, -0.701408),
+			new Fix(51.820607, -0.615406),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 3 (D)
+		this.atc.line(new Line([
+			new Fix(51.805961, -0.701408),
+			new Fix(51.864620, -0.727158),
+			new Fix(51.879352, -0.641670),
+			new Fix(51.820607, -0.615406),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 4 (D)
+		this.atc.line(new Line([
+			new Fix(51.805961, -0.701408),
+			new Fix(51.786533, -0.813332),
+			new Fix(51.848929, -0.826035),
+			new Fix(51.864620, -0.727158),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 5 (D)
+		this.atc.line(new Line([
+			new Fix(51.960558, -0.359802),
+			new Fix(52.007287, -0.472069),
+			new Fix(51.883326, -0.618324),
+			new Fix(51.918809, -0.406752),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 6 (D)
+		this.atc.line(new Line([
+			new Fix(51.883326, -0.618324),
+			new Fix(51.879352, -0.641670),
+			new Fix(51.916321, -0.729733),
+			new Fix(52.054417, -0.578971),
+			new Fix(52.007287, -0.472069),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 7 (D)
+		this.atc.line(new Line([
+			new Fix(52.007287, -0.472069),
+			new Fix(52.096646, -0.280151),
+			new Fix(51.990536, -0.177069),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 8 (D)
+		this.atc.line(new Line([
+			new Fix(51.864620, -0.727158),
+			new Fix(51.916321, -0.729733),
+		], [0x30, 0x30, 0x30]));
+
+		// London CTA 9 (D)
+		this.atc.line(new Line([
+			new Fix(51.958654, -0.683041),
+			new Fix(51.898741, -0.834618),
+			new Fix(51.848929, -0.826035),
+		], [0x30, 0x30, 0x30]));
 
 		// LTC boundary
 		this.atc.line(new Line([
