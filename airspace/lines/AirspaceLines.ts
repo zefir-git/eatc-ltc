@@ -13,12 +13,20 @@ export default class AirspaceLines {
 		 */
 		this.atc.line(new Line([
 			this.atc.beacon("BNN"),
-			this.atc.beacon("BNN").bearingIntersection(115, this.atc.beacon("LAM"), 270),
+			this.atc.beacon("BNN")
+				.bearingIntersection(
+					115, this.atc.beacon("LAM"), 270
+				),
 			this.atc.beacon("LAM"),
-			this.atc.runway("lc").position.destination(this.atc.runway("lc").heading, this.atc.runway("lc").length * Fix.FT / Fix.NMI / 2),
+			this.atc.runway("lc").position
+				.destination(
+					this.atc.runway("lc").heading,
+					this.atc.runway("lc").length * Fix.FT / Fix.NMI / 2
+				),
 			this.atc.beacon("BIG"),
 			this.atc.beacon("OCK"),
-			this.atc.beacon("OCK").destination(270, 18),
+			this.atc.beacon("OCK")
+				.destination(270, 18),
 			this.atc.beacon("OCK")
 				.destination(270, 18)
 				.destination(337, 7),
