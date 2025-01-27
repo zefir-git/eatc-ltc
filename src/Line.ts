@@ -2,7 +2,7 @@ import Polygon from "./Polygon.js";
 import Fix from "./Fix.js";
 
 class Line extends Polygon {
-	public readonly colour: Line.Colour | [red: number, green: number, blue: number]
+	public readonly colour: Line.Colour
 
 	/**
 	 * Create new line.
@@ -11,7 +11,7 @@ class Line extends Polygon {
 	 */
 	public constructor(
 		vertices: ReadonlyArray<Fix>,
-		colour: Line.Colour | [red: number, green: number, blue: number] = Line.Colour.AIRSPACE
+		colour: Line.Colour = Line.ColourType.AIRSPACE
 	) {
 		super(vertices);
 		this.colour = colour;
@@ -40,11 +40,13 @@ class Line extends Polygon {
 }
 
 namespace Line {
-	export const enum Colour {
+	export const enum ColourType {
 		COAST = "coast",
 		AIRSPACE = "airspace",
 		RUNWAY = "runway"
 	}
+
+	export type Colour = Line.ColourType | [red: number, green: number, blue: number];
 }
 
 export default Line;

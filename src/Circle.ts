@@ -6,7 +6,7 @@ export default class Circle extends Line {
 		public readonly centre: Fix,
 		public readonly radius: number,
 		public readonly precision: number,
-		colour?: Line.Colour | [red: number, green: number, blue: number]
+		colour?: Line.Colour
 	) {
 		const vertices: Fix[] = [];
 
@@ -37,7 +37,7 @@ export default class Circle extends Line {
 		return new Line(this.vertices.filter((fix, i) => filter(fix, i, this)), this.colour);
 	}
 
-	public static from(a: Fix, b: Fix, c: Fix, precision: number, colour?: Line.Colour | [red: number, green: number, blue: number]): Circle {
+	public static from(a: Fix, b: Fix, c: Fix, precision: number, colour?: Line.Colour): Circle {
 		const [xₐ, yₐ, zₐ] = a.cartesian();
 		const [xᵦ, yᵦ, zᵦ] = b.cartesian();
 		const [x𝚌, y𝚌, z𝚌] = c.cartesian();
