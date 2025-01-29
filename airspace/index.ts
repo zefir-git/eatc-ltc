@@ -18,7 +18,7 @@ const atc = new Generator();
 atc.airspace(
 	new Airspace(
 		50,
-		5,
+		4,
 		36,
 		1300,
 		{altitude: {ft: 10000, kts: 250}},
