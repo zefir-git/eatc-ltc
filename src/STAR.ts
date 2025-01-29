@@ -136,7 +136,7 @@ export default class STAR {
 
 		let bearing = Math.round(centreBearing * 100) / 100;
 		let closest: {deltaDistance: number, e: Fix} | null = null;
-		for (let iteration = 0; iteration < 4000; ++iteration) {
+		for (let iteration = 0; iteration < 20000; ++iteration) {
 			bearing += Δθ > 0 ? .0025 : -.0025;
 			// intersect boundary on this headings
 			const bi = boundary.intersection(airspace.center, bearing);
