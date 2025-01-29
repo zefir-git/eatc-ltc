@@ -50,14 +50,6 @@ export default class Generator {
 		return StarFix.from(beacon, args[1], args[2]);
 	}
 
-	/**
-	 * Get beacons by name. Non-existent beacons are ignored.
-	 */
-	public beacons(...names: string[]): Beacon[] {
-		return names.map(this.airspace().beacons.get)
-					.filter(n => n !== undefined) as Beacon[];
-	}
-
 	#airports = new Map<string, Airport>;
 
 	/**
