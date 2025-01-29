@@ -49,7 +49,7 @@ class Airport {
 	 * Entry points. Including the same entry point several times will increase
 	 * the amount of traffic that spawns at that entry point.
 	 */
-	public readonly entryPoints: ReadonlyArray<Airport.EntryPoint>;
+	public readonly entryPoints: Airport.EntryPoint[];
 
 	/**
 	 * List of airline configuration entries for spawning traffic.
@@ -116,7 +116,7 @@ class Airport {
 			"entrypoints =\n" +
 				Array.from(this.entryPoints)
 					.map(e => "\t" + [
-						e.heading,
+						e.heading.toPrecision(5),
 						e.beacon?.name === undefined ? e.altitude === undefined ? null : 0 : e.beacon.name,
 						e.altitude ?? null,
 					].join(", ")).join("\n"),

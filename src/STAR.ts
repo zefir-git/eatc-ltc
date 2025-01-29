@@ -2,6 +2,8 @@ import Runway from "./Runway.js";
 import Beacon from "./Beacon.js";
 import Fix from "./Fix.js";
 import StarFix from "./StarFix.js";
+import Generator from "./Generator.js";
+import Airport from "./Airport.js";
 
 /**
  * A Standard Terminal Arrival Route (STAR).
@@ -108,6 +110,54 @@ export default class STAR {
 		this.heading = heading;
 		this.route = Array.from(route);
 		this.end = end;
+	}
+
+	public entryPoint(atc: Generator, inboundHeading = this.heading, altitude?: number): Airport.EntryPoint {
+		const airspace = atc.airspace();
+		const boundary = airspace.boundary;
+		if (boundary === undefined)
+			throw new Error("A polygon airspace boundary is required to compute entry points.");
+
+		if (inboundHeading === undefined)
+			throw new Error("Cannot determine STAR inbound heading from entry point.");
+
+		const reverseInboundHeading = (180 + inboundHeading) % 360;
+
+		// bearing from centre to beacon
+		const centreBearing = atc.airspace().center.bearing(this.beacon);
+
+		const Δθ = (reverseInboundHeading - centreBearing + 180) % 360 - 180;
+
+		const ε = 0.05;
+
+		// inbound bearing is identical to centre bearing
+		if (Math.abs(Δθ) <= ε)
+			return new Airport.EntryPoint(reverseInboundHeading, this.beacon, altitude);
+
+		let bearing = Math.round(centreBearing * 100) / 100;
+		let closest: {deltaDistance: number, e: Fix} | null = null;
+		for (let iteration = 0; iteration < 4000; ++iteration) {
+			bearing += Δθ > 0 ? .0025 : -.0025;
+			// intersect boundary on this headings
+			const bi = boundary.intersection(airspace.center, bearing);
+			if (bi === null)
+				throw new Error(`Cannot find boundary intersection from ${airspace.center.toString()} on bearing ${bearing}°.`);
+			// intersect inbound bearing and centre bearing
+			const e = bi.bearingIntersection(bearing, this.beacon, reverseInboundHeading);
+			const deltaDistance = Math.abs(e.distance(bi) / Fix.NMI - 12);
+			if (closest === null) closest = {deltaDistance, e};
+			else if (closest.deltaDistance > deltaDistance) closest = {deltaDistance, e};
+			if (deltaDistance <= ε) {
+				airspace.beacons.set(this.name, Beacon.from(this.name, this.pronunciation, e));
+				return new Airport.EntryPoint(airspace.center.bearing(e), this.beacon, altitude);
+			}
+		}
+		if (closest !== null) {
+			console.warn(`${this.name}: Using closest entry point at Δ = ${closest.deltaDistance.toFixed(2)} NMI`);
+			airspace.beacons.set(this.name, Beacon.from(this.name, this.pronunciation, closest.e));
+			return new Airport.EntryPoint(airspace.center.bearing(closest.e), this.beacon, altitude);
+		}
+		throw new Error("Could not determine entry point.");
 	}
 
 	public routeString(): string {

@@ -119,7 +119,7 @@ export default class Generator {
 	// Map<runway, Map<beacon, STAR[]>>
 	#arrivals = new Map<string, Map<string, STAR[]>>;
 
-	public arrival(star: STAR): typeof this {
+	public arrival(star: STAR, altitude?: number, heading?: number): typeof this {
 		const runways = Array.from(star.runways);
 		const runwayIds =
 			star.reverse === "only"
@@ -137,6 +137,17 @@ export default class Generator {
 				.get(star.beacon.name)!
 				.push(star);
 		}
+
+		if (altitude !== undefined || heading !== undefined) {
+			const e = star.entryPoint(this, heading, altitude);
+			const airports = Array.from(new Map(Array.from(star.runways.values()).map(r => {
+				const f = this.airport(r);
+				return [f.code, f];
+			})).values());
+			for (const airport of airports)
+				airport.entryPoints.push(e);
+		}
+
 		return this;
 	}
 
