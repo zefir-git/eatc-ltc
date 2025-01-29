@@ -66,7 +66,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 19000, 8);
 
 		/**
 		 * This arrival is to enable continuation on TELTU 1L AVANT 1L if
@@ -104,7 +104,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("BKY", "1X"),
@@ -151,7 +151,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 20000, 319);
 
 		/**
 		 * This arrival is to enable continuation on BANVA 1L if interrupted
@@ -224,7 +224,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000, 143);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SILVA", "1L"),
@@ -240,7 +240,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 13000, 50);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("AVANT", "1L"),
@@ -258,7 +258,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 19000, 10);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SIRIC", "1L"),
@@ -276,7 +276,7 @@ export default class EGSS {
 				this.atc.beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 18000, 107);
 
 		/**
 		 * This arrival is to enable continuation on SIRIC 1L if interrupted
@@ -310,7 +310,7 @@ export default class EGSS {
 				this.atc.beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 10000, 290);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("DET", "2A"),
