@@ -147,14 +147,11 @@ export default class STAR {
 			const deltaDistance = Math.abs(e.distance(bi) / Fix.NMI - 12);
 			if (closest === null) closest = {deltaDistance, e};
 			else if (closest.deltaDistance > deltaDistance) closest = {deltaDistance, e};
-			if (deltaDistance <= ε) {
-				airspace.beacons.set(this.name, Beacon.from(this.name, this.pronunciation, e));
+			if (deltaDistance <= ε)
 				return new Airport.EntryPoint(airspace.center.bearing(e), this.beacon, altitude);
-			}
 		}
 		if (closest !== null) {
 			console.warn(`${this.name}: Using closest entry point at ε = ${closest.deltaDistance.toFixed(2)} NMI`);
-			airspace.beacons.set(this.name, Beacon.from(this.name, this.pronunciation, closest.e));
 			return new Airport.EntryPoint(airspace.center.bearing(closest.e), this.beacon, altitude);
 		}
 		throw new Error("Could not determine entry point.");
