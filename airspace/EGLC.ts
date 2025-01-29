@@ -65,7 +65,7 @@ export default class EGLC {
 				this.atc.beacon("JACKO", 9000, 210)
 			],
 			{end: "hold"}
-		));
+		), 9000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("XAMAN1C"),
@@ -78,7 +78,7 @@ export default class EGLC {
 				this.atc.beacon("JACKO", 9000, 210)
 			],
 			{end: "hold"}
-		));
+		), 9000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SILVA", "1C"),
@@ -112,7 +112,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 10000, 274);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SOVAT", "1C"),
@@ -127,7 +127,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 10000, 318);
 
 		// XAMAN 1X omitted (XAMAN→GODLU)
 		// SUMUM 1X omitted (SUMUM→GODLU)
@@ -148,7 +148,7 @@ export default class EGLC {
 				this.atc.beacon("JACKO", 9000, 210)
 			],
 			{end: "hold"}
-		));
+		), 22000);
 
 		/**
 		 * This arrival is to enable continuation on LISTO 1C if interrupted
@@ -183,8 +183,10 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 13000);
 
+		// Not possible to have spawn point as aircraft will need to cross into
+		// the boundary at SAM→BIDVA and then leave it to re-enter later on.
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SAM", "1C"),
 			[this.atc.runway("lc")],
@@ -215,7 +217,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 19000, 91);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("NEVIL1C"),
@@ -229,7 +231,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 10000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SIRIC", "1C"),
@@ -244,7 +246,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		));
+		), 18000, 90);
 	}
 
 	private transition() {
