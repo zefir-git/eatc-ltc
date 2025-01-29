@@ -47,7 +47,9 @@ export default class EGLL {
 						89.68
 					),
 				],
-				[],
+				[
+					new Airport.EntryPoint(220, this.atc.beacon("HAZEL"), 13000),
+				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
 					NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
@@ -79,7 +81,7 @@ export default class EGLL {
 				this.atc.beacon("OCK", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 16000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("ROXOG1H"),
@@ -94,7 +96,7 @@ export default class EGLL {
 				this.atc.beacon("OCK", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 16000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("ALESO1H"),
@@ -110,7 +112,7 @@ export default class EGLL {
 				this.atc.beacon("BIG", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 19000);
 
 		/**
 		 * This arrival is to enable continuation on ALESO 1H if interrupted
@@ -162,7 +164,7 @@ export default class EGLL {
 				this.atc.beacon("BNN", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		// LAM 1Z omitted (LAM→BNN)
 
@@ -180,7 +182,7 @@ export default class EGLL {
 				this.atc.beacon("BNN", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("BARMI1H"),
@@ -196,14 +198,14 @@ export default class EGLL {
 				this.atc.beacon("LAM", 7000, 250)
 			],
 			{end: "hold"}
-		));
+		), 22000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("LOGAN", "2H"),
 			[this.atc.runway("lln"), this.atc.runway("lls")],
 			true,
 			this.atc.beacon("LOGAN"),
-			void 0,
+			289,
 			[
 				this.atc.beacon("LOGAN", 25000),
 				this.atc.fix("SABER", "514213.76N", "0005658.19E", 16000),
@@ -212,7 +214,7 @@ export default class EGLL {
 				this.atc.beacon("LAM", 7000, 250)
 			],
 			{end: "hold"}
-		));
+		), 22000, 320);
 
 		// TOBID 1X omitted (TOBID→OCK)
 
@@ -245,7 +247,7 @@ export default class EGLL {
 				this.atc.beacon("BNN", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SIRIC", "1H"),
@@ -260,7 +262,7 @@ export default class EGLL {
 				this.atc.beacon("OCK", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000, 96);
 
 		// SIRIC 1Z omitted (SIRIC→BNN)
 	}
