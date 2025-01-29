@@ -70,7 +70,7 @@ export default class EGGW {
 				this.atc.beacon("ZAGZO", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 20000, 319);
 
 		/**
 		 * This arrival is to enable continuation on UNDUG 1N if interrupted
@@ -114,7 +114,7 @@ export default class EGGW {
 				this.atc.beacon("ZAGZO", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 18000, 96);
 
 		/**
 		 * This arrival is to enable continuation on SIRIC 1N if interrupted
@@ -158,7 +158,7 @@ export default class EGGW {
 				this.atc.beacon("ZAGZO", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 19000, 5);
 
 		/**
 		 * This arrival is to enable continuation on TELTU 1N if interrupted
@@ -202,7 +202,7 @@ export default class EGGW {
 				this.atc.beacon("ZAGZO", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000, 147);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("SILVA", "1N"),
@@ -234,7 +234,7 @@ export default class EGGW {
 				this.atc.beacon("ZAGZO", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("LOGAN", "2A"),
@@ -248,7 +248,7 @@ export default class EGGW {
 				this.atc.beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
-		));
+		), 10000, 290);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("DET", "2A"),
