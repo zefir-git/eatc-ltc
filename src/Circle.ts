@@ -71,10 +71,7 @@ export default class Circle extends Line {
 		const yᵤ = U[1] / U_norm;
 		const zᵤ = U[2] / U_norm;
 
-		const φᶜ = Fix.radToDeg(Math.asin(zᵤ));
-		const λᶜ = Fix.radToDeg(Math.atan2(yᵤ, xᵤ));
-		const circumcentre = new Fix(φᶜ, λᶜ);
-
+		const circumcentre = Fix.fromCartesian([xᵤ, yᵤ, zᵤ]);
 		const radius = circumcentre.distance(a);
 
 		return new Circle(circumcentre, radius, precision, colour);

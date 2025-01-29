@@ -193,6 +193,16 @@ export default class Fix {
 	}
 
 	/**
+	 * From 3D cartesian coordinates.
+	 */
+	public static fromCartesian([x, y, z]: readonly [x: number, y: number, z: number]): Fix {
+		return new Fix(
+			Fix.radToDeg(Math.asin(z)),
+			Fix.radToDeg(Math.atan2(y, x))
+		);
+	}
+
+	/**
 	 * Create a new fix from DMS coordinates
 	 * @param lon Longitude in DMS
 	 * @param lat Latitude in DMS
