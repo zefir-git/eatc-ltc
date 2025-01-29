@@ -79,14 +79,17 @@ export default class Polygon {
 	}
 
 	public intersection(origin: Fix, bearing: number) {
+		const intersections: Fix[] = [];
 		for (let i = 0; i < this.vertices.length; ++i) {
 			const a = this.vertices[i]!;
 			const b = this.vertices[i + 1] ?? this.vertices[0]!;
 			const d = origin.destination(bearing, Math.max(a.distance(origin), b.distance(origin)) / Fix.NMI);
 			const intersection = Polygon.intersection(a, b, origin, d);
 			if (intersection !== null)
-				return intersection;
+				intersections.push(intersection);
 		}
-		return null;
+		if (intersections.length === 0) return null;
+		// return the farthest intersection
+		return intersections.sort((a, b) => b.distance(origin) - a.distance(origin))[0]!;
 	}
 }
