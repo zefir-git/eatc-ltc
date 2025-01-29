@@ -814,7 +814,8 @@ export default class EGKK {
 				this.atc.fix("KKE10", "510955.93N", "0000909.88E"),
 				this.atc.fix("KKE17", "510957.12N", "0001937.59E"),
 				this.atc.fix("ODVIK")
-			]
+			],
+			true
 		));
 
 		this.atc.departure(new SID(
