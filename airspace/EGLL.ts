@@ -195,7 +195,7 @@ export default class EGLL {
 				this.atc.fix("SABER", "514213.76N", "0005658.19E", 16000),
 				this.atc.fix("BRASO", "514106.57N", "0004100.03E"),
 				this.atc.fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
-				this.atc.beacon("LAM", 7000, 250)
+				this.atc.beacon("LAM", 7000, 220)
 			],
 			{end: "hold"}
 		), 22000);
@@ -211,7 +211,7 @@ export default class EGLL {
 				this.atc.fix("SABER", "514213.76N", "0005658.19E", 16000),
 				this.atc.fix("BRASO", "514106.57N", "0004100.03E"),
 				this.atc.fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
-				this.atc.beacon("LAM", 7000, 250)
+				this.atc.beacon("LAM", 7000, 220)
 			],
 			{end: "hold"}
 		), 22000, 320);
