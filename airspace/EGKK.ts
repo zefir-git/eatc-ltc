@@ -46,7 +46,9 @@ export default class EGKK {
 						77.63
 					),
 				],
-				[],
+				[
+					new Airport.EntryPoint(105, this.atc.beacon("ARNUN"), 14000),
+				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGKK.txt", "utf8")),
 				[
 					NamedFix.fromDMS("512306N", "0003739E", "FRANE", "Frane"),
@@ -84,7 +86,7 @@ export default class EGKK {
 				this.atc.beacon("TIMBA", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("TEBRA", "2G"),
@@ -101,7 +103,7 @@ export default class EGKK {
 				this.atc.beacon("TIMBA", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000, 280);
 
 		/**
 		 * This arrival is to enable continuation on BARMI 1G TEBRA 2G if
@@ -153,7 +155,7 @@ export default class EGKK {
 				this.atc.beacon("TIMBA", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("KUNAV1G"),
@@ -167,7 +169,7 @@ export default class EGKK {
 				this.atc.beacon("TIMBA", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("OTMET1G"),
@@ -187,7 +189,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 13000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("VASUX1G"),
@@ -207,7 +209,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 13000);
 
 		// AMDUT 1G omitted (AMDUT→WILLO)
 		// ARNUN 1G omitted (ARNUN→WILLO)
@@ -245,7 +247,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("KIDLI", "1G"),
@@ -266,7 +268,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 15000, 160);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("ABSAV", "1G"),
@@ -287,7 +289,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000, 33);
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("GWC", "1G"),
@@ -328,7 +330,7 @@ export default class EGKK {
 				this.atc.beacon("WILLO", 7000, 220)
 			],
 			{end: "hold"}
-		));
+		), 14000, 106);
 	}
 
 	private sid() {
