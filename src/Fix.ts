@@ -180,6 +180,21 @@ export default class Fix {
 	}
 
 	/**
+	 * Calculate initial bearing to another fix.
+	 * @param other The other fix.
+	 */
+	public bearing(other: Fix): number {
+		const φ1 = Fix.degToRad(this.latitude);
+		const φ2 = Fix.degToRad(other.latitude);
+		const Δλ = Fix.degToRad(other.longitude - this.longitude);
+		const y = Math.sin(Δλ) * Math.cos(φ2);
+		const x = Math.cos(φ1) * Math.sin(φ2)
+			- Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+		const θ = Math.atan2(y, x);
+		return (Fix.radToDeg(θ) + 360) % 360;
+	}
+
+	/**
 	 * To cartesian coordinates.
 	 */
 	public cartesian(): [x: number, y: number, z: number] {
