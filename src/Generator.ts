@@ -61,11 +61,18 @@ export default class Generator {
 	 * Add airport.
 	 */
 	public airport(airport: Airport): typeof this;
-	public airport(a: Airport | string): Airport | typeof this {
+	public airport(runway: Runway): Airport;
+	public airport(a: Airport | Runway | string): Airport | typeof this {
 		if (typeof a === "string") {
 			const airport = this.#airports.get(a);
 			if (airport === undefined)
 				throw new Error(`Airport ${a} not found`);
+			return airport;
+		}
+		else if (a instanceof Runway) {
+			const airport = Array.from(this.#airports.values()).find(f => f.runways.has(a.id));
+			if (airport === undefined)
+				throw new Error(`No airport found for runway ${a.id}`);
 			return airport;
 		}
 		this.#airports.set(a.code, a);
