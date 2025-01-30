@@ -268,8 +268,8 @@ export default class EGGW {
 	private transition() {
 		const rwy25 = this.atc.runway("gw");
 		const rwy07 = rwy25.reverse();
-		this.atc.fix("FITME", rwy25.position.destination(rwy25.heading - 180, 10.7));
-		this.atc.fix("ODWAD", rwy07.position.destination(rwy07.heading - 180, 10.5));
+		this.atc.fix("FITME", rwy25.position.destination(rwy25.reverseLocalizer, 10.7));
+		this.atc.fix("ODWAD", rwy07.position.destination(rwy07.reverseLocalizer, 10.5));
 
 		this.atc.arrival(new STAR(
 			...this.atc.pronounce("ZAGZO", "1T"),

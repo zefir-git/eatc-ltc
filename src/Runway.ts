@@ -164,6 +164,11 @@ export default class Runway {
 		localizer?: number,
 		glideslope?: number,
 	) {
+		heading = Math.round(heading / 10) * 10;
+		if (localizer !== undefined)
+			localizer = Math.round(localizer / 10) * 10;
+		if (reverseLocalizer !== undefined)
+			reverseLocalizer = Math.round(reverseLocalizer / 10) * 10;
 		this.id = id;
 		this.name = name;
 		this.position = position;
