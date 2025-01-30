@@ -437,10 +437,7 @@ export default class EGGW {
 			rwy,
 			[
 				this.atc.beacon("BNN").destination(31, 7),
-				this.atc.beacon("BNN").destination(31, 7).bearingIntersection(31, this.atc.fix("HEN", "514535N", "0004725W"), 255),
-				this.atc.beacon("BNN").destination(31, 7)
-					.bearingIntersection(31, this.atc.fix("HEN", "514535N", "0004725W"), 255)
-					.bearingIntersection(255, this.atc.beacon("BNN"), 3),
+				this.atc.beacon("BNN").bearingIntersection(3, this.atc.fix("HEN", "514535N", "0004725W"), 255 - 180),
 				this.atc.beacon("BNN").destination(344, 6),
 				this.atc.beacon("BNN").destination(344, 9),
 				this.atc.beacon("BNN").destination(344, 15),
