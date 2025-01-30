@@ -183,7 +183,7 @@ export default class EGLC {
 				this.atc.beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
-		), 13000);
+		));
 
 		// Not possible to have spawn point as aircraft will need to cross into
 		// the boundary at SAM→BIDVA and then leave it to re-enter later on.
