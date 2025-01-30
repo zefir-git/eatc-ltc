@@ -130,7 +130,6 @@ atc.airspace(
 				new Fix(51.000000, 1.466675),
 				new Fix(51.349485, 1.531906),
 				new Fix(51.357633, 1.362991),
-				//new Fix(51.379067, 1.264114),
 				// end extension WORTHING CTA 1A
 
 				// extension
@@ -156,14 +155,16 @@ atc.airspace(
 				new Fix(52.397601, -0.569229),
 				// end extension CLACTON CTA 10C
 
-				//new Fix(52.191404, -0.371819),
-				//new Fix(52.054417, -0.578971),
 				// extension
 				new Fix(52.248403, -0.427780),
 				new Fix(52.114939, -0.721664),
 				// end extension
 
-				new Fix(52.071910, -0.619354),
+				// extension
+				new Fix(52.08, -0.6383),
+				new Fix(52.0638, -0.6613),
+				// end extension
+
 				new Fix(51.960029, -1.190300),
 				new Fix(51.735906, -1.014090),
 				new Fix(51.569281, -1.195107),
