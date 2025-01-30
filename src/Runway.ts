@@ -164,23 +164,18 @@ export default class Runway {
 		localizer?: number,
 		glideslope?: number,
 	) {
-		heading = Math.round(heading / 10) * 10;
-		if (localizer !== undefined)
-			localizer = Math.round(localizer / 10) * 10;
-		if (reverseLocalizer !== undefined)
-			reverseLocalizer = Math.round(reverseLocalizer / 10) * 10;
 		this.id = id;
 		this.name = name;
 		this.position = position;
-		this.heading = heading;
+		this.heading = Math.round(heading);
 		this.elevation = elevation;
 		this.length = length;
 		this.displacedThreshold = displacedThreshold ?? 0;
 		this.reverseDisplacedThreshold = reverseDisplacedThreshold ?? 0;
 		this.glideslope = glideslope ?? 3;
-		this.localizer = localizer ?? heading;
+		this.localizer = Math.round(localizer ?? heading);
 		this.reverseGlideslope = reverseGlideslope ?? 3;
-		this.reverseLocalizer = reverseLocalizer ?? (heading + 180) % 360;
+		this.reverseLocalizer = Math.round(reverseLocalizer ?? (heading + 180) % 360);
 		this.initialFix = initialFix;
 		this.reverseInitialFix = reverseInitialFix;
 		this.frequency = frequency;
@@ -235,15 +230,15 @@ export default class Runway {
 			this.id,
 			this.name,
 			this.position,
-			this.heading.toPrecision(2),
+			this.heading.toFixed(0),
 			this.length.toPrecision(2),
 			this.displacedThreshold.toPrecision(2),
 			this.reverseDisplacedThreshold.toPrecision(2),
 			this.elevation,
 			this.glideslope,
-			this.localizer.toPrecision(2),
+			this.localizer.toFixed(0),
 			this.reverseGlideslope,
-			this.reverseLocalizer.toPrecision(2),
+			this.reverseLocalizer.toFixed(0),
 			this.initialFix?.name ?? 0,
 			this.initialFix?.distance ?? 0,
 			this.reverseInitialFix?.name ?? 0,
