@@ -764,8 +764,8 @@ export default class EGKK {
 			...this.atc.pronounce(this.atc.sidFix("MIMFO"), "1M"),
 			kks,
 			[
-				kks.position.destination(kks.reverseLocalizer, 3.5),
-				kks.position.destination(kks.reverseLocalizer, 3.5).bearingIntersection(51, this.atc.beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 3.5),
+				kksRev.position.destination(kks.heading, 3.5).bearingIntersection(51, this.atc.beacon("DET"), 258),
 				this.atc.beacon("DET").destination(258, 20),
 				this.atc.fix("ACORN", "511519N", "0001146E"),
 				this.atc.fix("MIMFO")
