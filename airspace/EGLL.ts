@@ -446,7 +446,7 @@ export default class EGLL {
 			...this.atc.pronounce(this.atc.sidFix("UMLAT"), "1F"),
 			lln,
 			[
-				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
+				llnRev.position.bearingIntersection(lln.heading, this.atc.fix("BUR", "513108N", "0004038W"), 297 - 180),
 				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
 				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
 				this.atc.fix("BUR", "513108N", "0004038W"),
