@@ -792,7 +792,8 @@ export default class EGKK {
 				this.atc.fix("TUNBY", "511008N", "0001929E"),
 				this.atc.fix("DVR").destination(269, 33),
 				this.atc.fix("DVR")
-			]
+			],
+			true
 		));
 
 		this.atc.departure(new SID(
@@ -803,7 +804,8 @@ export default class EGKK {
 				this.atc.fix("TUNBY", "511008N", "0001929E"),
 				this.atc.fix("DVR").destination(269, 33),
 				this.atc.fix("DVR")
-			]
+			],
+			true
 		));
 
 		this.atc.departure(new SID(
