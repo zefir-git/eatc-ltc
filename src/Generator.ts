@@ -303,7 +303,7 @@ export default class Generator {
 				: waypointName + " "
 					+ name.slice(-2)
 						  .toUpperCase()
-						  .split(" ")
+						  .split("")
 						  .map(c => Generator.pronunciation[c] ?? c).join(" ")
 			];
 		}
@@ -317,7 +317,7 @@ export default class Generator {
 			beacon.pronunciation + " "
 			+ suffix
 				.toUpperCase()
-				.split(" ")
+				.split("")
 				.map(c => Generator.pronunciation[c] ?? c).join(" ")
 		]
 	}
