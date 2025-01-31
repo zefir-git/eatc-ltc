@@ -141,8 +141,14 @@ atc.airspace(
 				new Fix(51.649981, 1.416721),
 				new Fix(51.873206, 1.443844),
 				new Fix(51.984880, 1.384964),
-				new Fix(51.930718, 1.118546),
-				new Fix(51.970183, 0.964737),
+
+				// extension CLACTON CTA 3A
+				new Fix(51.969759, 1.308231),
+				new Fix(52.120104, 1.211243),
+				new Fix(52.177300, 1.034088),
+				new Fix(52.145657, 0.848351),
+				// end extension CLACTON CTA 3A
+
 				new Fix(52.207501, 0.806808),
 				new Fix(52.186037, 0.546227),
 
