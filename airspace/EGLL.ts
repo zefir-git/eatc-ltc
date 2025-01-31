@@ -584,12 +584,13 @@ export default class EGLL {
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
 				this.atc.beacon("LON").destination(124, 5),
-				this.atc.beacon("OCK").destination(42, 2),
+				this.atc.beacon("OCK").destination(41, 2),
 				this.atc.beacon("OCK"),
 				this.atc.beacon("OCK").destination(253, 1.4),
 				this.atc.beacon("OCK").destination(253, 4.7),
 				this.atc.fix("GASGU")
-			]
+			],
+			true
 		));
 
 		this.atc.departure(new SID(
