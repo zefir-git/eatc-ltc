@@ -400,7 +400,6 @@ export default class EGLL {
 			...this.atc.pronounce("BPK", "7G"),
 			lls,
 			[
-				llsRev.position.destination(lls.heading, 2),
 				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
 				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
 				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
