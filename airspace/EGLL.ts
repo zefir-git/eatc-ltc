@@ -569,7 +569,6 @@ export default class EGLL {
 			lls,
 			[
 				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
-				this.atc.beacon("LON").destination(255, 7),
 				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
 				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
 				this.atc.beacon("SAM").destination(32, 32.8),
