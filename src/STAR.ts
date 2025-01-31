@@ -188,6 +188,7 @@ export default class STAR {
 					  ? null
 					  : 0
 					: this.end.ils.altitude,
-				]].join(", ");
+					this.end.ils.speed ?? null
+				]].filter(o => o !== null).join(", ");
 	}
 }
