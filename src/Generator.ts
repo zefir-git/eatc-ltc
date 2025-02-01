@@ -13,6 +13,13 @@ import Polygon from "./Polygon.js";
 import Line from "./Line.js";
 
 export default class Generator {
+	static #instance: Generator | null = null;
+	public static getInstance(): Generator {
+		return this.#instance ??= new Generator();
+	}
+	private constructor() {
+	}
+
 	#airspace: Airspace | null = null;
 
 	/**
@@ -119,7 +126,9 @@ export default class Generator {
 	// Map<runway, Map<beacon, STAR[]>>
 	#arrivals = new Map<string, Map<string, STAR[]>>;
 
-	public arrival(star: STAR, altitude?: number, heading?: number): typeof this {
+	public arrival(a: STAR | STAR.StarWithEntry): typeof this {
+		const star = a instanceof STAR ? a : a.star;
+		const entries = a instanceof STAR.StarWithEntry ? a.entries : [];
 		const runways = Array.from(star.runways);
 		const runwayIds =
 			star.reverse === "only"
@@ -138,14 +147,13 @@ export default class Generator {
 				.push(star);
 		}
 
-		if (altitude !== undefined || heading !== undefined) {
-			const e = star.entryPoint(this, heading, altitude);
+		for (const entry of entries) {
 			const airports = Array.from(new Map(Array.from(star.runways.values()).map(r => {
 				const f = this.airport(r);
 				return [f.code, f];
 			})).values());
 			for (const airport of airports)
-				airport.entryPoints.push(e);
+				airport.entryPoints.push(entry);
 		}
 
 		return this;

@@ -9,8 +9,6 @@ import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
 
 export default class EGLL {
-	public constructor(private readonly atc: Generator) {}
-
 	public async init() {
 		await this.airport();
 		this.star();
@@ -18,7 +16,7 @@ export default class EGLL {
 	}
 
 	private async airport() {
-		this.atc.airport(
+		Generator.getInstance().airport(
 			new Airport(
 				"London Heathrow Airport",
 				"Heathrow",
@@ -48,186 +46,186 @@ export default class EGLL {
 					),
 				],
 				[
-					new Airport.EntryPoint(220, this.atc.beacon("HAZEL"), 13000),
+					new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
 					NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
 					NamedFix.fromDMS("511459N", "0003343W", "MAXIT", "Maxit"),
 					NamedFix.fromDMS("511401N", "0002910W", "MODMI", "Modmi"),
-					this.atc.beacon("BPK"),
+					Generator.getInstance().beacon("BPK"),
 					NamedFix.fromDMS("514020N", "0004139W", "UMLAT", "Umlat"),
 					NamedFix.fromDMS("513936N", "0001644W", "ULTIB", "Ultib"),
-					this.atc.beacon("DET"),
+					Generator.getInstance().beacon("DET"),
 					NamedFix.fromDMS("511727N", "0010002W", "GOGSI", "Gogsi"),
 					NamedFix.fromDMS("511224N", "0005736W", "GASGU", "Gasgu"),
 				],
-				this.atc.beacon("LON")
+				Generator.getInstance().beacon("LON")
 			)
 		);
 	}
 
 	private star() {
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("OTMET1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("OTMET1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("BEGTO"),
+			Generator.getInstance().beacon("BEGTO"),
 			63,
 			[
-				this.atc.beacon("BEGTO"),
-				this.atc.beacon("HAZEL", 13000),
-				this.atc.fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
-				this.atc.beacon("OCK", 7000, 220)
+				Generator.getInstance().beacon("BEGTO"),
+				Generator.getInstance().beacon("HAZEL", 13000),
+				Generator.getInstance().fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
+				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
-			{end: "hold"}
-		), 16000);
+			{end: "hold"})
+		.withEntry(16000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ROXOG1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ROXOG1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("BEGTO"),
+			Generator.getInstance().beacon("BEGTO"),
 			17,
 			[
-				this.atc.beacon("BEGTO"),
-				this.atc.beacon("HAZEL", 13000),
-				this.atc.fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
-				this.atc.beacon("OCK", 7000, 220)
+				Generator.getInstance().beacon("BEGTO"),
+				Generator.getInstance().beacon("HAZEL", 13000),
+				Generator.getInstance().fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
+				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
-			{end: "hold"}
-		), 16000);
+			{end: "hold"})
+		.withEntry(16000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ALESO1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ALESO1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("ROTNO"),
+			Generator.getInstance().beacon("ROTNO"),
 			314,
 			[
-				this.atc.beacon("ROTNO"),
-				this.atc.fix("ETVAX", "505806.99N", "0003556.27E", 18000),
-				this.atc.beacon("TIGER"),
-				this.atc.fix("LLE01", "511113.96N", "0001521.68E", void 0, 250),
-				this.atc.beacon("BIG", 7000, 220)
+				Generator.getInstance().beacon("ROTNO"),
+				Generator.getInstance().fix("ETVAX", "505806.99N", "0003556.27E", 18000),
+				Generator.getInstance().beacon("TIGER"),
+				Generator.getInstance().fix("LLE01", "511113.96N", "0001521.68E", void 0, 250),
+				Generator.getInstance().beacon("BIG", 7000, 220)
 			],
-			{end: "hold"}
-		), 19000);
+			{end: "hold"})
+		.withEntry(19000));
 
 		/**
 		 * This arrival is to enable continuation on ALESO 1H if interrupted
 		 * with HOLD at TIGER.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ALESO1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ALESO1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("TIGER"),
+			Generator.getInstance().beacon("TIGER"),
 			314,
 			[
-				this.atc.beacon("TIGER"),
-				this.atc.fix("LLE01", "511113.96N", "0001521.68E", void 0, 250),
-				StarFix.from(this.atc.beacon("BIG"), 7000, 220)
+				Generator.getInstance().beacon("TIGER"),
+				Generator.getInstance().fix("LLE01", "511113.96N", "0001521.68E", void 0, 250),
+				StarFix.from(Generator.getInstance().beacon("BIG"), 7000, 220)
 			],
 			{end: "hold"}
 		));
 
 		// LAM 1X omitted (LAM→BIG)
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("TANET", "1Z"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("TANET", "1Z"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("TANET"),
+			Generator.getInstance().beacon("TANET"),
 			void 0,
 			[
-				this.atc.beacon("TANET"),
-				this.atc.beacon("DET"),
-				this.atc.fix("LLE02", "511857.68N", "0002109.87E", void 0, 250),
-				this.atc.beacon("BIG", 7000, 220)
+				Generator.getInstance().beacon("TANET"),
+				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("LLE02", "511857.68N", "0002109.87E", void 0, 250),
+				Generator.getInstance().beacon("BIG", 7000, 220)
 			],
 			{end: "hold"}
 		));
 
 		// OCK 1Z omitted (OCK→BIG)
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("NUGRA1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("NUGRA1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("TOBID"),
+			Generator.getInstance().beacon("TOBID"),
 			147,
 			[
-				this.atc.beacon("TOBID"),
-				this.atc.fix("SOPIT", 15000),
-				this.atc.beacon("WCO", void 0, 220),
-				this.atc.beacon("BNN", 7000, 220)
+				Generator.getInstance().beacon("TOBID"),
+				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
-			{end: "hold"}
-		), 15000);
+			{end: "hold"})
+		.withEntry(15000));
 
 		// LAM 1Z omitted (LAM→BNN)
 
-		this.atc.arrival(new STAR(
+		Generator.getInstance().arrival(new STAR(
 			"HON1H",
 			"Honiley one hotel",
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("TOBID"),
+			Generator.getInstance().beacon("TOBID"),
 			139,
 			[
-				this.atc.beacon("TOBID"),
-				this.atc.fix("SOPIT", 15000),
-				this.atc.beacon("WCO", void 0, 220),
-				this.atc.beacon("BNN", 7000, 220)
+				Generator.getInstance().beacon("TOBID"),
+				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
-			{end: "hold"}
-		), 15000);
+			{end: "hold"})
+		.withEntry(15000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BARMI1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BARMI1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("LOGAN"),
+			Generator.getInstance().beacon("LOGAN"),
 			228,
 			[
-				this.atc.beacon("LOGAN", 25000),
-				this.atc.fix("SABER", "514213.76N", "0005658.19E", 16000),
-				this.atc.fix("BRASO", "514106.57N", "0004100.03E"),
-				this.atc.fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
-				this.atc.beacon("LAM", 7000, 220)
+				Generator.getInstance().beacon("LOGAN", 25000),
+				Generator.getInstance().fix("SABER", "514213.76N", "0005658.19E", 16000),
+				Generator.getInstance().fix("BRASO", "514106.57N", "0004100.03E"),
+				Generator.getInstance().fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
+				Generator.getInstance().beacon("LAM", 7000, 220)
 			],
-			{end: "hold"}
-		), 22000);
+			{end: "hold"})
+		.withEntry(22000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LOGAN", "2H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LOGAN", "2H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("LOGAN"),
+			Generator.getInstance().beacon("LOGAN"),
 			289,
 			[
-				this.atc.beacon("LOGAN", 25000),
-				this.atc.fix("SABER", "514213.76N", "0005658.19E", 16000),
-				this.atc.fix("BRASO", "514106.57N", "0004100.03E"),
-				this.atc.fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
-				this.atc.beacon("LAM", 7000, 220)
+				Generator.getInstance().beacon("LOGAN", 25000),
+				Generator.getInstance().fix("SABER", "514213.76N", "0005658.19E", 16000),
+				Generator.getInstance().fix("BRASO", "514106.57N", "0004100.03E"),
+				Generator.getInstance().fix("WESUL", "514015.29N", "0002909.27E", void 0, 250),
+				Generator.getInstance().beacon("LAM", 7000, 220)
 			],
-			{end: "hold"}
-		), 22000, 320);
+			{end: "hold"})
+		.withEntry(22000, 320));
 
 		// TOBID 1X omitted (TOBID→OCK)
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("HAZEL", "1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("HAZEL", "1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("HAZEL"),
+			Generator.getInstance().beacon("HAZEL"),
 			void 0,
 			[
-				this.atc.beacon("HAZEL", 13000),
-				this.atc.fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
-				this.atc.beacon("OCK", 7000, 220)
+				Generator.getInstance().beacon("HAZEL", 13000),
+				Generator.getInstance().fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
+				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
 			{end: "hold"}
 		));
@@ -235,373 +233,373 @@ export default class EGLL {
 		// BIG 1Z omitted (BIG→OCK)
 		// LAM 1Y omitted (LAM→OCK)
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("FITBO1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("FITBO1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("SOPIT"),
+			Generator.getInstance().beacon("SOPIT"),
 			107,
 			[
-				this.atc.fix("SOPIT", 15000),
-				this.atc.beacon("WCO", void 0, 220),
-				this.atc.beacon("BNN", 7000, 220)
+				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
-			{end: "hold"}
-		), 15000);
+			{end: "hold"})
+		.withEntry(15000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SIRIC", "1H"),
-			[this.atc.runway("lln"), this.atc.runway("lls")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SIRIC", "1H"),
+			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
-			this.atc.beacon("SIRIC"),
+			Generator.getInstance().beacon("SIRIC"),
 			void 0,
 			[
-				this.atc.beacon("SIRIC", 14000),
-				this.atc.fix("NIGIT", "511846.96N", "0011014.71W"),
-				this.atc.fix("LLW03", "511832.83N", "0004556.94W", void 0, 250),
-				this.atc.beacon("OCK", 7000, 220)
+				Generator.getInstance().beacon("SIRIC", 14000),
+				Generator.getInstance().fix("NIGIT", "511846.96N", "0011014.71W"),
+				Generator.getInstance().fix("LLW03", "511832.83N", "0004556.94W", void 0, 250),
+				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
-			{end: "hold"}
-		), 14000, 96);
+			{end: "hold"})
+		.withEntry(14000, 96));
 
 		// SIRIC 1Z omitted (SIRIC→BNN)
 	}
 
 	private sid() {
-		const lln = this.atc.runway("lln");
+		const lln = Generator.getInstance().runway("lln");
 		const llnRev = lln.reverse();
-		const lls = this.atc.runway("lls");
+		const lls = Generator.getInstance().runway("lls");
 		const llsRev = lls.reverse();
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CPT"), "3F"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CPT"), "3F"),
 			lln,
 			[
-				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
-				this.atc.beacon("LON").destination(255, 7),
-				this.atc.fix("WOD", "512710N", "0005244W"),
-				this.atc.fix("CPT").destination(100, 8),
-				this.atc.fix("CPT")
+				llnRev.position.bearingIntersection(lln.heading, Generator.getInstance().beacon("LON"), 255),
+				Generator.getInstance().beacon("LON").destination(255, 7),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
+				Generator.getInstance().fix("CPT").destination(100, 8),
+				Generator.getInstance().fix("CPT")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CPT"), "3G"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CPT"), "3G"),
 			lls,
 			[
-				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
-				this.atc.beacon("LON").destination(255, 7),
-				this.atc.fix("WOD", "512710N", "0005244W"),
-				this.atc.fix("CPT").destination(100, 8),
-				this.atc.fix("CPT")
+				llsRev.position.bearingIntersection(lls.heading, Generator.getInstance().beacon("LON"), 255),
+				Generator.getInstance().beacon("LON").destination(255, 7),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
+				Generator.getInstance().fix("CPT").destination(100, 8),
+				Generator.getInstance().fix("CPT")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CPT"), "5J"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CPT"), "5J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
 				new Fix(51.4500, -0.3280),
 				new Fix(51.4300, -0.3280),
-				lls.position.bearingIntersection(180, this.atc.fix("WOD", "512710N", "0005244W"), 101),
-				this.atc.fix("WOD", "512710N", "0005244W"),
-				this.atc.fix("CPT").destination(100, 8),
-				this.atc.fix("CPT")
+				lls.position.bearingIntersection(180, Generator.getInstance().fix("WOD", "512710N", "0005244W"), 101),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
+				Generator.getInstance().fix("CPT").destination(100, 8),
+				Generator.getInstance().fix("CPT")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CPT"), "4k"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CPT"), "4k"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
 				new Fix(51.4600, -0.3280),
 				new Fix(51.4100, -0.3280),
-				lln.position.bearingIntersection(180, this.atc.fix("WOD", "512710N", "0005244W"), 101),
-				this.atc.fix("WOD", "512710N", "0005244W"),
-				this.atc.fix("CPT").destination(100, 8),
-				this.atc.fix("CPT")
+				lln.position.bearingIntersection(180, Generator.getInstance().fix("WOD", "512710N", "0005244W"), 101),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
+				Generator.getInstance().fix("CPT").destination(100, 8),
+				Generator.getInstance().fix("CPT")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("MAXIT"), "1F"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MAXIT"), "1F"),
 			lln,
 			[
-				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
-				this.atc.beacon("LON").destination(255, 5),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 7.9),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 10.5),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 14),
-				this.atc.fix("MAXIT")
+				llnRev.position.bearingIntersection(lln.heading, Generator.getInstance().beacon("LON"), 255),
+				Generator.getInstance().beacon("LON").destination(255, 5),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 7.9),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 10.5),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 14),
+				Generator.getInstance().fix("MAXIT")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("MAXIT"), "1G"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MAXIT"), "1G"),
 			lls,
 			[
-				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 239),
-				this.atc.beacon("LON").destination(239, 5.5),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 7.9),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 10.5),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(161, 14),
-				this.atc.fix("MAXIT")
+				llsRev.position.bearingIntersection(lls.heading, Generator.getInstance().beacon("LON"), 239),
+				Generator.getInstance().beacon("LON").destination(239, 5.5),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 7.9),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 10.5),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 14),
+				Generator.getInstance().fix("MAXIT")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("MODMI"), "1J"),
-			lls,
-			[
-				lls.position.destination(lls.reverseLocalizer, .4),
-				this.atc.beacon("LON").destination(124, 3.5),
-				this.atc.beacon("LON").bearingIntersection(124, this.atc.fix("MID", "510314.23N", "0003730.01W"), 25.6),
-				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
-				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
-				this.atc.fix("MODMI")
-			],
-			true
-		));
-
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("MODMI"), "1K"),
-			lln,
-			[
-				lln.position.destination(lln.reverseLocalizer, .1),
-				this.atc.beacon("LON").destination(124, 3.5),
-				this.atc.beacon("LON").bearingIntersection(124, this.atc.fix("MID", "510314.23N", "0003730.01W"), 25.6),
-				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
-				this.atc.fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
-				this.atc.fix("MODMI")
-			],
-			true
-		));
-
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "7F"),
-			lln,
-			[
-				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llnRev.position, lln.heading),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
-				this.atc.fix("BUR", "513108N", "0004038W"),
-				this.atc.beacon("LON").bearingIntersection(304, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
-				this.atc.beacon("LON").bearingIntersection(325, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
-				this.atc.fix("CHT", "513723N", "0003107W"),
-				this.atc.beacon("BPK")
-			]
-		));
-
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "7G"),
-			lls,
-			[
-				this.atc.fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
-				this.atc.fix("BUR", "513108N", "0004038W"),
-				this.atc.beacon("LON").bearingIntersection(304, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
-				this.atc.beacon("LON").bearingIntersection(325, this.atc.fix("CHT", "513723N", "0003107W"), 53 + 180),
-				this.atc.fix("CHT", "513723N", "0003107W"),
-				this.atc.beacon("BPK")
-			]
-		));
-
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "6J"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MODMI"), "1J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
-				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, this.atc.beacon("LON"), 70),
-				this.atc.beacon("LON").destination(70, 10),
-				this.atc.beacon("BPK").destination(196, 10),
-				this.atc.beacon("BPK").destination(196, 6),
-				this.atc.fix("BAPAG", "514305N", "0000724W"),
-				this.atc.beacon("BPK")
+				Generator.getInstance().beacon("LON").destination(124, 3.5),
+				Generator.getInstance().beacon("LON").bearingIntersection(124, Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"), 25.6),
+				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
+				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
+				Generator.getInstance().fix("MODMI")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "6K"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MODMI"), "1K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
-				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, this.atc.beacon("LON"), 70),
-				this.atc.beacon("LON").destination(70, 10),
-				this.atc.beacon("BPK").destination(196, 10),
-				this.atc.beacon("BPK").destination(196, 6),
-				this.atc.fix("BAPAG", "514305N", "0000724W"),
-				this.atc.beacon("BPK")
+				Generator.getInstance().beacon("LON").destination(124, 3.5),
+				Generator.getInstance().beacon("LON").bearingIntersection(124, Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"), 25.6),
+				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
+				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
+				Generator.getInstance().fix("MODMI")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("UMLAT"), "1F"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "7F"),
 			lln,
 			[
-				llnRev.position.bearingIntersection(lln.heading, this.atc.fix("BUR", "513108N", "0004038W"), 297 - 180),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
-				this.atc.fix("BUR", "513108N", "0004038W"),
-				this.atc.fix("UMLAT")
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llnRev.position, lln.heading),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
+				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
+				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
+				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
+				Generator.getInstance().beacon("BPK")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("UMLAT"), "1G"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "7G"),
 			lls,
 			[
-				llsRev.position.bearingIntersection(lls.heading, this.atc.fix("BUR", "513108N", "0004038W"), 297 - 180),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
-				this.atc.fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
-				this.atc.fix("BUR", "513108N", "0004038W"),
-				this.atc.fix("UMLAT")
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
+				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
+				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
+				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
+				Generator.getInstance().beacon("BPK")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("ULTIB"), "1J"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "6J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
-				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, this.atc.beacon("LON"), 70),
-				this.atc.beacon("LON").destination(70, 10),
-				this.atc.beacon("LON").bearingIntersection(70, this.atc.beacon("BIG"), 328),
-				this.atc.beacon("BIG").destination(328, 20),
-				this.atc.fix("ULTIB")
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
+				Generator.getInstance().beacon("LON").destination(70, 10),
+				Generator.getInstance().beacon("BPK").destination(196, 10),
+				Generator.getInstance().beacon("BPK").destination(196, 6),
+				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
+				Generator.getInstance().beacon("BPK")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("ULTIB"), "1K"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "6K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
-				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, this.atc.beacon("LON"), 70),
-				this.atc.beacon("LON").destination(70, 10),
-				this.atc.beacon("LON").bearingIntersection(70, this.atc.beacon("BIG"), 328),
-				this.atc.beacon("BIG").destination(328, 20),
-				this.atc.fix("ULTIB")
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
+				Generator.getInstance().beacon("LON").destination(70, 10),
+				Generator.getInstance().beacon("BPK").destination(196, 10),
+				Generator.getInstance().beacon("BPK").destination(196, 6),
+				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
+				Generator.getInstance().beacon("BPK")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "2F"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("UMLAT"), "1F"),
+			lln,
+			[
+				llnRev.position.bearingIntersection(lln.heading, Generator.getInstance().fix("BUR", "513108N", "0004038W"), 297 - 180),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
+				Generator.getInstance().fix("UMLAT")
+			]
+		));
+
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("UMLAT"), "1G"),
+			lls,
+			[
+				llsRev.position.bearingIntersection(lls.heading, Generator.getInstance().fix("BUR", "513108N", "0004038W"), 297 - 180),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
+				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
+				Generator.getInstance().fix("UMLAT")
+			]
+		));
+
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("ULTIB"), "1J"),
+			lls,
+			[
+				lls.position.destination(lls.reverseLocalizer, .4),
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
+				Generator.getInstance().beacon("LON").destination(70, 10),
+				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
+				Generator.getInstance().beacon("BIG").destination(328, 20),
+				Generator.getInstance().fix("ULTIB")
+			],
+			true
+		));
+
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("ULTIB"), "1K"),
+			lln,
+			[
+				lln.position.destination(lln.reverseLocalizer, .1),
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
+				Generator.getInstance().beacon("LON").destination(70, 10),
+				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
+				Generator.getInstance().beacon("BIG").destination(328, 20),
+				Generator.getInstance().fix("ULTIB")
+			],
+			true
+		));
+
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "2F"),
 			lln,
 			[
 				llnRev.position.destination(lln.heading, 2),
-				this.atc.fix("EPSOM", "511910N", "0002219W"),
-				this.atc.beacon("DET").destination(270, 32),
-				this.atc.beacon("DET").destination(270, 29),
-				this.atc.beacon("DET").destination(270, 5),
-				this.atc.beacon("DET")
+				Generator.getInstance().fix("EPSOM", "511910N", "0002219W"),
+				Generator.getInstance().beacon("DET").destination(270, 32),
+				Generator.getInstance().beacon("DET").destination(270, 29),
+				Generator.getInstance().beacon("DET").destination(270, 5),
+				Generator.getInstance().beacon("DET")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "2G"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "2G"),
 			lls,
 			[
 				llsRev.position.destination(lls.heading, 1),
-				this.atc.fix("EPSOM", "511910N", "0002219W"),
-				this.atc.beacon("DET").destination(270, 32),
-				this.atc.beacon("DET").destination(270, 29),
-				this.atc.beacon("DET").destination(270, 5),
-				this.atc.beacon("DET")
+				Generator.getInstance().fix("EPSOM", "511910N", "0002219W"),
+				Generator.getInstance().beacon("DET").destination(270, 32),
+				Generator.getInstance().beacon("DET").destination(270, 29),
+				Generator.getInstance().beacon("DET").destination(270, 5),
+				Generator.getInstance().beacon("DET")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "1J"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "1J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
-				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(120, this.atc.beacon("DET"), 282),
-				this.atc.beacon("DET").destination(282, 34),
-				this.atc.beacon("DET").destination(282, 29),
-				this.atc.beacon("DET").destination(282, 20),
-				this.atc.beacon("DET").destination(282, 5),
-				this.atc.beacon("DET")
+				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(120, Generator.getInstance().beacon("DET"), 282),
+				Generator.getInstance().beacon("DET").destination(282, 34),
+				Generator.getInstance().beacon("DET").destination(282, 29),
+				Generator.getInstance().beacon("DET").destination(282, 20),
+				Generator.getInstance().beacon("DET").destination(282, 5),
+				Generator.getInstance().beacon("DET")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "1K"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "1K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
-				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(121, this.atc.beacon("DET"), 282),
-				this.atc.beacon("DET").destination(282, 34),
-				this.atc.beacon("DET").destination(282, 29),
-				this.atc.beacon("DET").destination(282, 20),
-				this.atc.beacon("DET").destination(282, 5),
-				this.atc.beacon("DET")
+				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(121, Generator.getInstance().beacon("DET"), 282),
+				Generator.getInstance().beacon("DET").destination(282, 34),
+				Generator.getInstance().beacon("DET").destination(282, 29),
+				Generator.getInstance().beacon("DET").destination(282, 20),
+				Generator.getInstance().beacon("DET").destination(282, 5),
+				Generator.getInstance().beacon("DET")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("GOGSI"), "2F"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("GOGSI"), "2F"),
 			lln,
 			[
-				llnRev.position.bearingIntersection(lln.heading, this.atc.beacon("LON"), 255),
-				this.atc.beacon("LON").destination(255, 7),
-				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
-				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
-				this.atc.beacon("SAM").destination(32, 32.8),
-				this.atc.beacon("SAM").destination(32, 29.6),
-				this.atc.fix("GOGSI")
+				llnRev.position.bearingIntersection(lln.heading, Generator.getInstance().beacon("LON"), 255),
+				Generator.getInstance().beacon("LON").destination(255, 7),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
+				Generator.getInstance().beacon("SAM").destination(32, 32.8),
+				Generator.getInstance().beacon("SAM").destination(32, 29.6),
+				Generator.getInstance().fix("GOGSI")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("GOGSI"), "2G"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("GOGSI"), "2G"),
 			lls,
 			[
-				llsRev.position.bearingIntersection(lls.heading, this.atc.beacon("LON"), 255),
-				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
-				this.atc.fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
-				this.atc.beacon("SAM").destination(32, 32.8),
-				this.atc.beacon("SAM").destination(32, 29.6),
-				this.atc.fix("GOGSI")
+				llsRev.position.bearingIntersection(lls.heading, Generator.getInstance().beacon("LON"), 255),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, 1.65),
+				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
+				Generator.getInstance().beacon("SAM").destination(32, 32.8),
+				Generator.getInstance().beacon("SAM").destination(32, 29.6),
+				Generator.getInstance().fix("GOGSI")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("GASGU"), "2J"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("GASGU"), "2J"),
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
-				this.atc.beacon("LON").destination(124, 5),
-				this.atc.beacon("OCK").destination(41, 2),
-				this.atc.beacon("OCK"),
-				this.atc.beacon("OCK").destination(253, 1.4),
-				this.atc.beacon("OCK").destination(253, 4.7),
-				this.atc.fix("GASGU")
+				Generator.getInstance().beacon("LON").destination(124, 5),
+				Generator.getInstance().beacon("OCK").destination(41, 2),
+				Generator.getInstance().beacon("OCK"),
+				Generator.getInstance().beacon("OCK").destination(253, 1.4),
+				Generator.getInstance().beacon("OCK").destination(253, 4.7),
+				Generator.getInstance().fix("GASGU")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("GASGU"), "2K"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("GASGU"), "2K"),
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
-				this.atc.beacon("LON").destination(124, 5),
-				this.atc.beacon("OCK").destination(42, 2),
-				this.atc.beacon("OCK"),
-				this.atc.beacon("OCK").destination(253, 1.4),
-				this.atc.beacon("OCK").destination(253, 4.7),
-				this.atc.fix("GASGU")
+				Generator.getInstance().beacon("LON").destination(124, 5),
+				Generator.getInstance().beacon("OCK").destination(42, 2),
+				Generator.getInstance().beacon("OCK"),
+				Generator.getInstance().beacon("OCK").destination(253, 1.4),
+				Generator.getInstance().beacon("OCK").destination(253, 4.7),
+				Generator.getInstance().fix("GASGU")
 			],
 			true
 		));

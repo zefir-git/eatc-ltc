@@ -8,7 +8,7 @@ import Airport from "./Airport.js";
 /**
  * A Standard Terminal Arrival Route (STAR).
  */
-export default class STAR {
+class STAR {
 	/**
 	 * The name/identifier of this star.
 	 * Usually this is the name of a fix, followed by a number and a letter.
@@ -112,7 +112,8 @@ export default class STAR {
 		this.end = end;
 	}
 
-	public entryPoint(atc: Generator, inboundHeading = this.heading, altitude?: number): Airport.EntryPoint {
+	public entryPoint(altitude?: number, inboundHeading = this.heading): Airport.EntryPoint {
+		const atc = Generator.getInstance();
 		const airspace = atc.airspace();
 		const boundary = airspace.boundary;
 		if (boundary === undefined)
@@ -157,6 +158,10 @@ export default class STAR {
 		throw new Error("Could not determine entry point.");
 	}
 
+	public withEntry(...params: Parameters<STAR["entryPoint"]>): STAR.StarWithEntry {
+		return new STAR.StarWithEntry(this, this.entryPoint(...params));
+	}
+
 	public routeString(): string {
 		return "\t" + [
 				this.heading ?? 0,
@@ -192,3 +197,22 @@ export default class STAR {
 				]].filter(o => o !== null).join(", ");
 	}
 }
+
+namespace STAR {
+	export class StarWithEntry {
+		public readonly entries: ReadonlyArray<Airport.EntryPoint>;
+		public constructor(
+			public readonly star: STAR,
+			entries: Airport.EntryPoint | Airport.EntryPoint[]
+		) {
+			this.entries = Array.isArray(entries) ? entries : [entries];
+		}
+
+		public repeated(times: number): StarWithEntry {
+			const entries = this.entries.flatMap(e => new Array(times).fill(e));
+			return new StarWithEntry(this.star, entries);
+		}
+	}
+}
+
+export default STAR;

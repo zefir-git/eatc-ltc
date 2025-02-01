@@ -8,8 +8,6 @@ import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
 
 export default class EGLC {
-	public constructor(private readonly atc: Generator) {}
-
 	public async init() {
 		await this.airport();
 		this.star();
@@ -18,7 +16,7 @@ export default class EGLC {
 	}
 
 	private async airport() {
-		this.atc.airport(
+		Generator.getInstance().airport(
 			new Airport(
 				"London City Airport",
 				"London City",
@@ -44,229 +42,229 @@ export default class EGLC {
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLC.txt", "utf8")),
 				[
 					NamedFix.fromDMS("513623.75N", "0002328.43E", "SOQQA", "Soqqa"),
-					this.atc.beacon("BPK"),
+					Generator.getInstance().beacon("BPK"),
 					NamedFix.fromDMS("514504.03N", "0001113.77W", "SAXBI", "Saxbi"),
 					NamedFix.fromDMS("513531.78N", "0001715.47E", "ODUKU", "Oduku")
 				],
-				this.atc.beacon("LON")
+				Generator.getInstance().beacon("LON")
 			)
 		);
 	}
 
 	private star() {
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SUMUM1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SUMUM1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("LOGAN"),
+			Generator.getInstance().beacon("LOGAN"),
 			289,
 			[
-				this.atc.beacon("LOGAN", void 0, 250),
-				this.atc.beacon("JACKO", 9000, 210)
+				Generator.getInstance().beacon("LOGAN", void 0, 250),
+				Generator.getInstance().beacon("JACKO", 9000, 210)
 			],
-			{end: "hold"}
-		), 9000);
+			{end: "hold"})
+		.withEntry(9000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("XAMAN1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("XAMAN1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("LOGAN"),
+			Generator.getInstance().beacon("LOGAN"),
 			264,
 			[
-				this.atc.beacon("LOGAN", void 0, 250),
-				this.atc.beacon("JACKO", 9000, 210)
+				Generator.getInstance().beacon("LOGAN", void 0, 250),
+				Generator.getInstance().beacon("JACKO", 9000, 210)
 			],
-			{end: "hold"}
-		), 9000);
+			{end: "hold"})
+		.withEntry(9000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SILVA", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SILVA", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("SILVA"),
+			Generator.getInstance().beacon("SILVA"),
 			void 0,
 			[
-				this.atc.beacon("SILVA"),
-				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				this.atc.beacon("BKY"),
-				this.atc.fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
-				this.atc.fix("CLN", "515054.50N", "0010851.32E"),
-				this.atc.beacon("JACKO", 9000, 210)
+				Generator.getInstance().beacon("SILVA"),
+				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
+				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"),
+				Generator.getInstance().beacon("JACKO", 9000, 210)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("KONAN", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("KONAN", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("KONAN"),
+			Generator.getInstance().beacon("KONAN"),
 			void 0,
 			[
-				this.atc.beacon("KONAN"),
+				Generator.getInstance().beacon("KONAN"),
 				// at least 3 fixes are needed due to a bug
 				// roughly airspace boundary intersection
-				this.atc.beacon("GODLU")
+				Generator.getInstance().beacon("GODLU")
 					.destination(94, 8.1),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"}
-		), 10000, 274);
+			{end: "hold"})
+		.withEntry(10000, 274));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SOVAT", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SOVAT", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("SOVAT"),
+			Generator.getInstance().beacon("SOVAT"),
 			void 0,
 			[
-				this.atc.beacon("SOVAT"),
-				this.atc.fix("ERKEX", "505240.62N", "0011936.96E", void 0, 250),
-				this.atc.fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("SOVAT"),
+				Generator.getInstance().fix("ERKEX", "505240.62N", "0011936.96E", void 0, 250),
+				Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"}
-		), 10000, 318);
+			{end: "hold"})
+		.withEntry(10000, 318));
 
 		// XAMAN 1X omitted (XAMAN→GODLU)
 		// SUMUM 1X omitted (SUMUM→GODLU)
 		// HON 1C omitted (HON→JACKO)
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LISTO1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LISTO1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("TIXEX"),
+			Generator.getInstance().beacon("TIXEX"),
 			129,
 			[
-				this.atc.beacon("TIXEX"),
-				this.atc.fix("ODVOD", "520755.98N", "0000852.98E"),
-				this.atc.beacon("ROPMU"),
-				this.atc.fix("NUDNA", "520354.90N", "0005016.56E", void 0, 250),
-				this.atc.fix("INLIM", "515422.98N", "0011912.90E", 12000, 250),
-				this.atc.beacon("JACKO", 9000, 210)
+				Generator.getInstance().beacon("TIXEX"),
+				Generator.getInstance().fix("ODVOD", "520755.98N", "0000852.98E"),
+				Generator.getInstance().beacon("ROPMU"),
+				Generator.getInstance().fix("NUDNA", "520354.90N", "0005016.56E", void 0, 250),
+				Generator.getInstance().fix("INLIM", "515422.98N", "0011912.90E", 12000, 250),
+				Generator.getInstance().beacon("JACKO", 9000, 210)
 			],
-			{end: "hold"}
-		), 22000);
+			{end: "hold"})
+		.withEntry(22000));
 
 		/**
 		 * This arrival is to enable continuation on LISTO 1C if interrupted
 		 * with HOLD at ROPMU.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LISTO1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LISTO1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("ROPMU"),
+			Generator.getInstance().beacon("ROPMU"),
 			97,
 			[
-				this.atc.beacon("ROPMU"),
-				this.atc.fix("NUDNA", "520354.90N", "0005016.56E", void 0, 250),
-				this.atc.fix("INLIM", "515422.98N", "0011912.90E", 12000, 250),
-				this.atc.beacon("JACKO", 9000, 210)
+				Generator.getInstance().beacon("ROPMU"),
+				Generator.getInstance().fix("NUDNA", "520354.90N", "0005016.56E", void 0, 250),
+				Generator.getInstance().fix("INLIM", "515422.98N", "0011912.90E", 12000, 250),
+				Generator.getInstance().beacon("JACKO", 9000, 210)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("KATHY1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("KATHY1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("BIDVA"),
+			Generator.getInstance().beacon("BIDVA"),
 			47,
 			[
-				this.atc.beacon("BIDVA", 13000),
-				this.atc.fix("EVEXU", "504115.78N", "0003440.86W"),
-				this.atc.beacon("SOXUX"),
-				this.atc.fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("BIDVA", 13000),
+				Generator.getInstance().fix("EVEXU", "504115.78N", "0003440.86W"),
+				Generator.getInstance().beacon("SOXUX"),
+				Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
 		));
 
 		// Not possible to have spawn point as aircraft will need to cross into
 		// the boundary at SAM→BIDVA and then leave it to re-enter later on.
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SAM", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SAM", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("SAM"),
+			Generator.getInstance().beacon("SAM"),
 			void 0,
 			[
-				this.atc.beacon("SAM"),
-				this.atc.beacon("BIDVA", 13000),
-				this.atc.fix("EVEXU", "504115.78N", "0003440.86W"),
-				this.atc.beacon("SOXUX"),
-				this.atc.fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("SAM"),
+				Generator.getInstance().beacon("BIDVA", 13000),
+				Generator.getInstance().fix("EVEXU", "504115.78N", "0003440.86W"),
+				Generator.getInstance().beacon("SOXUX"),
+				Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("AVANT", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("AVANT", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("AVANT"),
+			Generator.getInstance().beacon("AVANT"),
 			void 0,
 			[
-				this.atc.beacon("AVANT", 19000),
-				this.atc.beacon("BIG", 16000),
-				this.atc.fix("UMTUM", "511227.30N", "0010102.78E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("AVANT", 19000),
+				Generator.getInstance().beacon("BIG", 16000),
+				Generator.getInstance().fix("UMTUM", "511227.30N", "0010102.78E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"}
-		), 19000, 91);
+			{end: "hold"})
+		.withEntry(19000, 91));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("NEVIL1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("NEVIL1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("SOXUX"),
+			Generator.getInstance().beacon("SOXUX"),
 			57,
 			[
-				this.atc.beacon("SOXUX"),
-				this.atc.fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("SOXUX"),
+				Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"}
-		), 10000);
+			{end: "hold"})
+		.withEntry(10000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SIRIC", "1C"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SIRIC", "1C"),
+			[Generator.getInstance().runway("lc")],
 			true,
-			this.atc.beacon("SIRIC"),
+			Generator.getInstance().beacon("SIRIC"),
 			void 0,
 			[
-				this.atc.beacon("SIRIC", 18000),
-				this.atc.beacon("BIG", 16000),
-				this.atc.fix("UMTUM", "511227.30N", "0010102.78E", void 0, 250),
-				this.atc.beacon("GODLU", 10000, 210)
+				Generator.getInstance().beacon("SIRIC", 18000),
+				Generator.getInstance().beacon("BIG", 16000),
+				Generator.getInstance().fix("UMTUM", "511227.30N", "0010102.78E", void 0, 250),
+				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"}
-		), 18000, 90);
+			{end: "hold"})
+		.withEntry(18000, 90));
 	}
 
 	private transition() {
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LAVNO1G"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LAVNO1G"),
+			[Generator.getInstance().runway("lc")],
 			false,
-			this.atc.beacon("GODLU"),
+			Generator.getInstance().beacon("GODLU"),
 			void 0,
 			[
-				this.atc.beacon("GODLU", 10000, 210),
-				this.atc.fix("ELMIV", "512033.08N", "0011533.36E"),
-				this.atc.fix("LCE11", "512504.57N", "0011834.81E"),
-				this.atc.fix("LCE12", "512958.17N", "0011906.68E"),
-				this.atc.fix("LCE13", "513442.46N", "0011704.79E", 10000),
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+				Generator.getInstance().beacon("GODLU", 10000, 210),
+				Generator.getInstance().fix("ELMIV", "512033.08N", "0011533.36E"),
+				Generator.getInstance().fix("LCE11", "512504.57N", "0011834.81E"),
+				Generator.getInstance().fix("LCE12", "512958.17N", "0011906.68E"),
+				Generator.getInstance().fix("LCE13", "513442.46N", "0011704.79E", 10000),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
 			],
 			// LAVNO
 			{ils: {dme: 6, altitude: 3000, speed: 185}}
@@ -275,42 +273,42 @@ export default class EGLC {
 		/**
 		 * On LAVNO 1G, you can give a shortcut ELMIV→RAVSA.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LAVNO1G"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LAVNO1G"),
+			[Generator.getInstance().runway("lc")],
 			false,
-			this.atc.beacon("RAVSA"),
+			Generator.getInstance().beacon("RAVSA"),
 			302,
 			[
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
 			],
 			// LAVNO
 			{ils: {dme: 6, altitude: 3000, speed: 185}}
 		));
 
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LAVNO1J"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LAVNO1J"),
+			[Generator.getInstance().runway("lc")],
 			false,
-			this.atc.beacon("JACKO"),
+			Generator.getInstance().beacon("JACKO"),
 			void 0,
 			[
-				this.atc.beacon("JACKO", 9000, 210),
-				this.atc.fix("NONVA", "513846.45N", "0012144.31E"),
-				this.atc.fix("BABKU", "513519.59N", "0011916.23E"),
-				this.atc.fix("LCE21", "513006.82N", "0012130.07E"),
-				this.atc.fix("LCE22", "512443.87N", "0012054.73E"),
-				this.atc.fix("LCE23", "511945.28N", "0011734.94E", 9000),
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+				Generator.getInstance().beacon("JACKO", 9000, 210),
+				Generator.getInstance().fix("NONVA", "513846.45N", "0012144.31E"),
+				Generator.getInstance().fix("BABKU", "513519.59N", "0011916.23E"),
+				Generator.getInstance().fix("LCE21", "513006.82N", "0012130.07E"),
+				Generator.getInstance().fix("LCE22", "512443.87N", "0012054.73E"),
+				Generator.getInstance().fix("LCE23", "511945.28N", "0011734.94E", 9000),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
 			],
 			// LAVNO
 			{ils: {dme: 6, altitude: 3000, speed: 185}}
@@ -319,44 +317,44 @@ export default class EGLC {
 		/**
 		 * On LAVNO 1J, you can give a shortcut BABKU→RAVSA.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LAVNO1J"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LAVNO1J"),
+			[Generator.getInstance().runway("lc")],
 			false,
-			this.atc.beacon("RAVSA"),
+			Generator.getInstance().beacon("RAVSA"),
 			245,
 			[
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
 			],
 			// LAVNO
 			{ils: {dme: 6, altitude: 3000, speed: 185}}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ODLEG1G"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ODLEG1G"),
+			[Generator.getInstance().runway("lc")],
 			"only",
-			this.atc.beacon("GODLU"),
+			Generator.getInstance().beacon("GODLU"),
 			void 0,
 			[
-				this.atc.beacon("GODLU", 10000, 210),
-				this.atc.fix("ELMIV", "512033.08N", "0011533.36E"),
-				this.atc.fix("LCE11", "512504.57N", "0011834.81E"),
-				this.atc.fix("LCE12", "512958.17N", "0011906.68E"),
-				this.atc.fix("LCE13", "513442.46N", "0011704.79E", 10000),
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
-				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
-				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
-				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
-				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+				Generator.getInstance().beacon("GODLU", 10000, 210),
+				Generator.getInstance().fix("ELMIV", "512033.08N", "0011533.36E"),
+				Generator.getInstance().fix("LCE11", "512504.57N", "0011834.81E"),
+				Generator.getInstance().fix("LCE12", "512958.17N", "0011906.68E"),
+				Generator.getInstance().fix("LCE13", "513442.46N", "0011704.79E", 10000),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				Generator.getInstance().fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				Generator.getInstance().fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				Generator.getInstance().fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				Generator.getInstance().fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
 			],
 			{end: 48}
 		));
@@ -364,48 +362,48 @@ export default class EGLC {
 		/**
 		 * On ODLEG 1G, you can give a shortcut ELMIV→RAVSA.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ODLEG1G"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ODLEG1G"),
+			[Generator.getInstance().runway("lc")],
 			"only",
-			this.atc.beacon("RAVSA"),
+			Generator.getInstance().beacon("RAVSA"),
 			302,
 			[
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
-				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
-				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
-				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
-				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				Generator.getInstance().fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				Generator.getInstance().fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				Generator.getInstance().fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				Generator.getInstance().fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
 			],
 			{end: 48}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ODLEG1J"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ODLEG1J"),
+			[Generator.getInstance().runway("lc")],
 			"only",
-			this.atc.beacon("JACKO"),
+			Generator.getInstance().beacon("JACKO"),
 			void 0,
 			[
-				this.atc.beacon("JACKO", 9000, 210),
-				this.atc.fix("NONVA", "513846.45N", "0012144.31E"),
-				this.atc.fix("BABKU", "513519.59N", "0011916.23E"),
-				this.atc.fix("LCE21", "513006.82N", "0012130.07E"),
-				this.atc.fix("LCE22", "512443.87N", "0012054.73E"),
-				this.atc.fix("LCE23", "511945.28N", "0011734.94E", 9000),
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
-				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
-				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
-				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
-				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+				Generator.getInstance().beacon("JACKO", 9000, 210),
+				Generator.getInstance().fix("NONVA", "513846.45N", "0012144.31E"),
+				Generator.getInstance().fix("BABKU", "513519.59N", "0011916.23E"),
+				Generator.getInstance().fix("LCE21", "513006.82N", "0012130.07E"),
+				Generator.getInstance().fix("LCE22", "512443.87N", "0012054.73E"),
+				Generator.getInstance().fix("LCE23", "511945.28N", "0011734.94E", 9000),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				Generator.getInstance().fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				Generator.getInstance().fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				Generator.getInstance().fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				Generator.getInstance().fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
 			],
 			{end: 48}
 		));
@@ -413,119 +411,119 @@ export default class EGLC {
 		/**
 		 * On ODLEG 1J, you can give a shortcut BABKU→RAVSA.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ODLEG1J"),
-			[this.atc.runway("lc")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ODLEG1J"),
+			[Generator.getInstance().runway("lc")],
 			"only",
-			this.atc.beacon("RAVSA"),
+			Generator.getInstance().beacon("RAVSA"),
 			245,
 			[
-				this.atc.beacon("RAVSA", 6000),
-				this.atc.fix("GAPGI", "512844.89N", "0004820.99E", 6000),
-				this.atc.fix("ATPEV", "512918.05N", "0003322.74E"),
-				this.atc.fix("LCE07", "512929.22N", "0002807.69E", 4000),
-				this.atc.fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
-				this.atc.fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
-				this.atc.fix("LCS02", "512619.24N", "0000259.13E", 2000),
-				this.atc.fix("TODBI", "512636.35N", "0000611.78W", 2000),
-				this.atc.fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
+				Generator.getInstance().beacon("RAVSA", 6000),
+				Generator.getInstance().fix("GAPGI", "512844.89N", "0004820.99E", 6000),
+				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
+				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
+				Generator.getInstance().fix("OSVEV", "512549.36N", "0001808.59E", 3000, 210),
+				Generator.getInstance().fix("LCS01", "512603.37N", "0001109.39E", 3000, 185),
+				Generator.getInstance().fix("LCS02", "512619.24N", "0000259.13E", 2000),
+				Generator.getInstance().fix("TODBI", "512636.35N", "0000611.78W", 2000),
+				Generator.getInstance().fix("ODLEG", "512925.35N", "0000716.56W", 2000, 185),
 			],
 			{end: 48}
 		));
 	}
 
 	private sid() {
-		const rwy = this.atc.runway("lc");
+		const rwy = Generator.getInstance().runway("lc");
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("SOQQA"), "1A"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("SOQQA"), "1A"),
 			rwy,
 			[
-				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
-				this.atc.fix("LCN02", "513408.09N", "0000016.11W"),
-				this.atc.fix("LCN06", "513608.68N", "0001118.82E"),
-				this.atc.fix("SOQQA")
+				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
+				Generator.getInstance().fix("LCN02", "513408.09N", "0000016.11W"),
+				Generator.getInstance().fix("LCN06", "513608.68N", "0001118.82E"),
+				Generator.getInstance().fix("SOQQA")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("SOQQA"), "1H"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("SOQQA"), "1H"),
 			rwy,
 			[
-				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
-				this.atc.fix("LCE02", "513316.42N", "0000950.44E"),
-				this.atc.fix("LCE03", "513346.90N", "0001436.66E"),
-				this.atc.fix("SOQQA")
+				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
+				Generator.getInstance().fix("LCE02", "513316.42N", "0000950.44E"),
+				Generator.getInstance().fix("LCE03", "513346.90N", "0001436.66E"),
+				Generator.getInstance().fix("SOQQA")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "1A"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "1A"),
 			rwy,
 			[
-				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
-				this.atc.fix("LCN01", "513332.44N", "0000109.21W"),
-				this.atc.fix("LCN04", "513436.75N", "0000056.79E"),
-				this.atc.fix("LCN05", "513538.42N", "0000257.77E"),
-				this.atc.beacon("BPK")
+				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
+				Generator.getInstance().fix("LCN01", "513332.44N", "0000109.21W"),
+				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
+				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
+				Generator.getInstance().beacon("BPK")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("SAXBI"), "1A"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("SAXBI"), "1A"),
 			rwy,
 			[
-				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
-				this.atc.fix("LCN01", "513332.44N", "0000109.21W"),
-				this.atc.fix("LCN04", "513436.75N", "0000056.79E"),
-				this.atc.fix("LCN05", "513538.42N", "0000257.77E"),
-				this.atc.beacon("BPK"),
-				this.atc.fix("SAXBI")
+				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
+				Generator.getInstance().fix("LCN01", "513332.44N", "0000109.21W"),
+				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
+				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
+				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("SAXBI")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BPK", "1H"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BPK", "1H"),
 			rwy,
 			[
-				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
-				this.atc.fix("LCN03", "513424.02N", "0000750.39E"),
-				this.atc.beacon("BPK")
+				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
+				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
+				Generator.getInstance().beacon("BPK")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("SAXBI"), "1H"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("SAXBI"), "1H"),
 			rwy,
 			[
-				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
-				this.atc.fix("LCN03", "513424.02N", "0000750.39E"),
-				this.atc.beacon("BPK"),
-				this.atc.fix("SAXBI")
+				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
+				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
+				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("SAXBI")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("ODUKU"), "1A"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("ODUKU"), "1A"),
 			rwy,
 			[
-				this.atc.fix("LCW01", "513024.40N", "0000020.78E"),
-				this.atc.fix("LCN02", "513408.09N", "0000016.11W"),
-				this.atc.fix("LCE04", "513619.70N", "0001222.73E"),
-				this.atc.fix("ODUKU")
+				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
+				Generator.getInstance().fix("LCN02", "513408.09N", "0000016.11W"),
+				Generator.getInstance().fix("LCE04", "513619.70N", "0001222.73E"),
+				Generator.getInstance().fix("ODUKU")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("ODUKU"), "1H"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("ODUKU"), "1H"),
 			rwy,
 			[
-				this.atc.fix("LCE01", "513014.67N", "0000529.91E"),
-				this.atc.fix("LCE02", "513316.42N", "0000950.44E"),
-				this.atc.fix("ODUKU")
+				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
+				Generator.getInstance().fix("LCE02", "513316.42N", "0000950.44E"),
+				Generator.getInstance().fix("ODUKU")
 			],
 			true
 		));

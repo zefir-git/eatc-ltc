@@ -8,8 +8,6 @@ import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
 
 export default class EGSS {
-	public constructor(private readonly atc: Generator) {}
-
 	public async init() {
 		await this.airport();
 		this.star();
@@ -17,7 +15,7 @@ export default class EGSS {
 	}
 
 	private async airport() {
-		this.atc.airport(
+		Generator.getInstance().airport(
 			new Airport(
 				"London Stansted Airport",
 				"Stansted",
@@ -41,32 +39,32 @@ export default class EGSS {
 				[
 					NamedFix.fromDMS("515847N", "0000419W", "UTAVA", "Utava"),
 					NamedFix.fromDMS("515822N", "0000412W", "NUGBO", "Nugbo"),
-					this.atc.beacon("BKY"),
+					Generator.getInstance().beacon("BKY"),
 					NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
-					this.atc.beacon("DET"),
+					Generator.getInstance().beacon("DET"),
 				],
-				this.atc.beacon("ABBOT")
+				Generator.getInstance().beacon("ABBOT")
 			)
 		);
 	}
 
 	private star() {
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("TELTU", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("TELTU", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("TELTU"),
+			Generator.getInstance().beacon("TELTU"),
 			void 0,
 			[
-				this.atc.beacon("TELTU", 19000),
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("TELTU", 19000),
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 19000, 8);
+			{end: "hold"})
+		.withEntry(19000, 8));
 
 		/**
 		 * This arrival is to enable continuation on TELTU 1L AVANT 1L if
@@ -74,103 +72,103 @@ export default class EGSS {
 		 * interrupted, it’s not possible to continue with the same name.
 		 * Continuation after interruption at VATON will show as TELTU 1L.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("TELTU", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("TELTU", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("VATON"),
+			Generator.getInstance().beacon("VATON"),
 			25,
 			[
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LISTO1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LISTO1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("FINMA"),
+			Generator.getInstance().beacon("FINMA"),
 			149,
 			[
-				this.atc.beacon("FINMA", 15000),
-				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("FINMA", 15000),
+				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 15000);
+			{end: "hold"})
+		.withEntry(15000));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BKY", "1X"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BKY", "1X"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("BKY"),
+			Generator.getInstance().beacon("BKY"),
 			void 0,
 			[
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
-				this.atc.beacon("ABBOT", 8000, 220)
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
+				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BPK", "1X"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BPK", "1X"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("BPK"),
+			Generator.getInstance().beacon("BPK"),
 			void 0,
 			[
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
-				this.atc.beacon("ABBOT", 8000, 220)
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
+				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BANVA", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BANVA", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("BANVA"),
+			Generator.getInstance().beacon("BANVA"),
 			void 0,
 			[
-				this.atc.beacon("BANVA"),
-				this.atc.beacon("UNDUG"),
-				this.atc.beacon("MAY", 20000),
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("BANVA"),
+				Generator.getInstance().beacon("UNDUG"),
+				Generator.getInstance().beacon("MAY", 20000),
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 20000, 319);
+			{end: "hold"})
+		.withEntry(20000, 319));
 
 		/**
 		 * This arrival is to enable continuation on BANVA 1L if interrupted
 		 * with HOLD at UNDUG.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BANVA", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BANVA", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("UNDUG"),
+			Generator.getInstance().beacon("UNDUG"),
 			319,
 			[
-				this.atc.beacon("UNDUG"),
-				this.atc.beacon("MAY", 20000),
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("UNDUG"),
+				Generator.getInstance().beacon("MAY", 20000),
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
 		));
@@ -179,149 +177,149 @@ export default class EGSS {
 		 * This arrival is to enable continuation on BANVA 1L if interrupted
 		 * with HOLD at VATON.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("BANVA", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("BANVA", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("VATON"),
+			Generator.getInstance().beacon("VATON"),
 			325,
 			[
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("ABBOT", "1Z"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("ABBOT", "1Z"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("ABBOT"),
+			Generator.getInstance().beacon("ABBOT"),
 			void 0,
 			[
-				this.atc.beacon("ABBOT", void 0, 220),
-				this.atc.fix("TABIS", "520031.75N", "0002643.90E", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("ABBOT", void 0, 220),
+				Generator.getInstance().fix("TABIS", "520031.75N", "0002643.90E", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("FINMA", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("FINMA", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("FINMA"),
+			Generator.getInstance().beacon("FINMA"),
 			void 0,
 			[
-				this.atc.beacon("FINMA", 15000),
-				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("FINMA", 15000),
+				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 15000, 143);
+			{end: "hold"})
+		.withEntry(15000, 143));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SILVA", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SILVA", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("SILVA"),
+			Generator.getInstance().beacon("SILVA"),
 			void 0,
 			[
-				this.atc.beacon("SILVA"),
-				this.atc.fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("SILVA"),
+				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 13000, 50);
+			{end: "hold"})
+		.withEntry(13000, 50));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("AVANT", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("AVANT", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("AVANT"),
+			Generator.getInstance().beacon("AVANT"),
 			void 0,
 			[
-				this.atc.beacon("AVANT", 19000),
-				this.atc.beacon("OCK"),
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("AVANT", 19000),
+				Generator.getInstance().beacon("OCK"),
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 19000, 10);
+			{end: "hold"})
+		.withEntry(19000, 10));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SIRIC", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SIRIC", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("SIRIC"),
+			Generator.getInstance().beacon("SIRIC"),
 			void 0,
 			[
-				this.atc.beacon("SIRIC", 18000),
-				this.atc.fix("NIGIT", "511846.96N", "0011014.71W"),
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("SIRIC", 18000),
+				Generator.getInstance().fix("NIGIT", "511846.96N", "0011014.71W"),
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
-			{end: "hold"}
-		), 18000, 107);
+			{end: "hold"})
+		.withEntry(18000, 107));
 
 		/**
 		 * This arrival is to enable continuation on SIRIC 1L if interrupted
 		 * with HOLD at VATON.
 		 */
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("SIRIC", "1L"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("SIRIC", "1L"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("VATON"),
+			Generator.getInstance().beacon("VATON"),
 			76,
 			[
-				this.atc.beacon("VATON"),
-				this.atc.beacon("BPK", void 0, 250),
-				this.atc.beacon("BKY", void 0, 220),
-				this.atc.fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
-				this.atc.beacon("LOREL", 7000, 220)
+				Generator.getInstance().beacon("VATON"),
+				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
+				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"}
 		));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("LOGAN", "2A"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("LOGAN", "2A"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("LOGAN"),
+			Generator.getInstance().beacon("LOGAN"),
 			void 0,
 			[
-				this.atc.beacon("LOGAN", 10000),
-				this.atc.fix("CLN", "515054.50N", "0010851.32E", void 0, 250),
-				this.atc.beacon("ABBOT", 8000, 220)
+				Generator.getInstance().beacon("LOGAN", 10000),
+				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E", void 0, 250),
+				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
-			{end: "hold"}
-		), 10000, 290);
+			{end: "hold"})
+		.withEntry(10000, 290));
 
-		this.atc.arrival(new STAR(
-			...this.atc.pronounce("DET", "2A"),
-			[this.atc.runway("ss")],
+		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("DET", "2A"),
+			[Generator.getInstance().runway("ss")],
 			true,
-			this.atc.beacon("DET"),
+			Generator.getInstance().beacon("DET"),
 			void 0,
 			[
-				this.atc.beacon("DET", 17000),
-				this.atc.fix("LOFFO", "515012.00N", "0003556.37E", void 0, 250),
-				this.atc.beacon("ABBOT", 8000, 220)
+				Generator.getInstance().beacon("DET", 17000),
+				Generator.getInstance().fix("LOFFO", "515012.00N", "0003556.37E", void 0, 250),
+				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
 			{end: "hold"}
 		));
@@ -333,191 +331,191 @@ export default class EGSS {
 	}
 
 	private sid() {
-		const rwy = this.atc.runway("ss");
+		const rwy = Generator.getInstance().runway("ss");
 		const rev = rwy.reverse();
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("UTAVA"), "1R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("UTAVA"), "1R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				this.atc.beacon("BKY").destination(169, 8),
-				this.atc.beacon("BKY").destination(169, 5),
-				this.atc.beacon("BKY").destination(169, 2),
-				this.atc.fix("UTAVA")
+				Generator.getInstance().beacon("BKY").destination(169, 8),
+				Generator.getInstance().beacon("BKY").destination(169, 5),
+				Generator.getInstance().beacon("BKY").destination(169, 2),
+				Generator.getInstance().fix("UTAVA")
 			],
 			false,
 			4000
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("NUGBO"), "1R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("NUGBO"), "1R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				this.atc.beacon("BKY").destination(169, 8),
-				this.atc.beacon("BKY").destination(169, 5),
-				this.atc.beacon("BKY").destination(169, 2),
-				this.atc.fix("NUGBO")
+				Generator.getInstance().beacon("BKY").destination(169, 8),
+				Generator.getInstance().beacon("BKY").destination(169, 5),
+				Generator.getInstance().beacon("BKY").destination(169, 2),
+				Generator.getInstance().fix("NUGBO")
 			],
 			false,
 			4000
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BKY", "5R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BKY", "5R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				this.atc.beacon("BKY").destination(169, 8),
-				this.atc.beacon("BKY").destination(169, 5),
-				this.atc.beacon("BKY").destination(169, 2),
-				this.atc.beacon("BKY"),
-				this.atc.beacon("BKY").destination(357, 3),
+				Generator.getInstance().beacon("BKY").destination(169, 8),
+				Generator.getInstance().beacon("BKY").destination(169, 5),
+				Generator.getInstance().beacon("BKY").destination(169, 2),
+				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().beacon("BKY").destination(357, 3),
 			],
 			false,
 			4000
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("UTAVA"), "1S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("UTAVA"), "1S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				this.atc.beacon("BKY").destination(99, 7),
-				this.atc.beacon("BKY").destination(99, 5),
-				this.atc.beacon("BKY").destination(99, 2),
-				this.atc.beacon("BKY"),
-				this.atc.fix("UTAVA")
+				Generator.getInstance().beacon("BKY").destination(99, 7),
+				Generator.getInstance().beacon("BKY").destination(99, 5),
+				Generator.getInstance().beacon("BKY").destination(99, 2),
+				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("UTAVA")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("NUGBO"), "1S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("NUGBO"), "1S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				this.atc.beacon("BKY").destination(99, 7),
-				this.atc.beacon("BKY").destination(99, 5),
-				this.atc.beacon("BKY").destination(99, 2),
-				this.atc.beacon("BKY"),
-				this.atc.fix("NUGBO")
+				Generator.getInstance().beacon("BKY").destination(99, 7),
+				Generator.getInstance().beacon("BKY").destination(99, 5),
+				Generator.getInstance().beacon("BKY").destination(99, 2),
+				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("NUGBO")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("BKY", "2S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("BKY", "2S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				this.atc.beacon("BKY").destination(99, 7),
-				this.atc.beacon("BKY").destination(99, 5),
-				this.atc.beacon("BKY").destination(99, 2),
-				this.atc.beacon("BKY").destination(357, 3),
-				this.atc.beacon("BKY").destination(357, 7),
+				Generator.getInstance().beacon("BKY").destination(99, 7),
+				Generator.getInstance().beacon("BKY").destination(99, 5),
+				Generator.getInstance().beacon("BKY").destination(99, 2),
+				Generator.getInstance().beacon("BKY").destination(357, 3),
+				Generator.getInstance().beacon("BKY").destination(357, 7),
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CLN"), "9R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CLN"), "9R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 1.2),
-				this.atc.fix("XIGAR", "514850N", "0001546E"),
-				this.atc.fix("CLN").destination(265, 28),
-				this.atc.fix("CLN").destination(265, 21),
-				this.atc.fix("CLN").destination(265, 20),
-				this.atc.fix("CLN").destination(265, 16),
-				this.atc.fix("CLN").destination(265, 13),
-				this.atc.fix("CLN")
+				Generator.getInstance().fix("XIGAR", "514850N", "0001546E"),
+				Generator.getInstance().fix("CLN").destination(265, 28),
+				Generator.getInstance().fix("CLN").destination(265, 21),
+				Generator.getInstance().fix("CLN").destination(265, 20),
+				Generator.getInstance().fix("CLN").destination(265, 16),
+				Generator.getInstance().fix("CLN").destination(265, 13),
+				Generator.getInstance().fix("CLN")
 			],
 			false,
 			6000
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CLN"), "5S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CLN"), "5S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 1),
-				rwy.position.destination(rwy.reverseLocalizer, 1).bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("BKY"), 114),
-				this.atc.beacon("BKY").destination(114, 14),
-				this.atc.beacon("BKY").destination(114, 17),
-				this.atc.fix("CLN").destination(265, 20),
-				this.atc.fix("CLN").destination(265, 16),
-				this.atc.fix("CLN").destination(265, 13),
-				this.atc.fix("CLN")
+				rwy.position.destination(rwy.reverseLocalizer, 1).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("BKY"), 114),
+				Generator.getInstance().beacon("BKY").destination(114, 14),
+				Generator.getInstance().beacon("BKY").destination(114, 17),
+				Generator.getInstance().fix("CLN").destination(265, 20),
+				Generator.getInstance().fix("CLN").destination(265, 16),
+				Generator.getInstance().fix("CLN").destination(265, 13),
+				Generator.getInstance().fix("CLN")
 			],
 			true,
 			6000
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "2R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "2R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 1.2),
-				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, this.atc.beacon("DET"), 333),
-				this.atc.beacon("DET").destination(333, 32),
-				this.atc.beacon("DET").destination(333, 25),
-				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
-				this.atc.beacon("DET")
+				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().beacon("DET"), 333),
+				Generator.getInstance().beacon("DET").destination(333, 32),
+				Generator.getInstance().beacon("DET").destination(333, 25),
+				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
+				Generator.getInstance().beacon("DET")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("DET", "2S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("DET", "2S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 0.8),
-				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("LAM"), 24),
-				this.atc.beacon("LAM").destination(24, 9),
-				this.atc.beacon("DET").destination(333, 25),
-				this.atc.fix("NEPNA", "512958.33N", "0002656.55E"),
-				this.atc.beacon("DET")
+				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("LAM"), 24),
+				Generator.getInstance().beacon("LAM").destination(24, 9),
+				Generator.getInstance().beacon("DET").destination(333, 25),
+				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
+				Generator.getInstance().beacon("DET")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("LAM", "4R"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("LAM", "4R"),
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 1.2),
-				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, this.atc.beacon("BKY"), 153),
-				this.atc.beacon("BKY").destination(153, 13.8),
-				this.atc.fix("ROWAN", "514509N", "0001457E"),
-				this.atc.beacon("LAM")
+				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().beacon("BKY"), 153),
+				Generator.getInstance().beacon("BKY").destination(153, 13.8),
+				Generator.getInstance().fix("ROWAN", "514509N", "0001457E"),
+				Generator.getInstance().beacon("LAM")
 			]
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce("LAM", "3S"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce("LAM", "3S"),
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 0.8),
-				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, this.atc.beacon("LAM"), 24),
-				this.atc.beacon("LAM").destination(24, 9),
-				this.atc.fix("LAM")
+				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("LAM"), 24),
+				Generator.getInstance().beacon("LAM").destination(24, 9),
+				Generator.getInstance().fix("LAM")
 			],
 			true
 		));
 
-		this.atc.departure(new SID(
-			...this.atc.pronounce(this.atc.sidFix("CLN"), "2E"),
+		Generator.getInstance().departure(new SID(
+			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CLN"), "2E"),
 			rwy,
 			[
-				this.atc.fix("SSW01", "515146.36N", "0001205.90E"),
-				this.atc.fix("SSS03", "514938.12N", "0001213.68E"),
-				this.atc.fix("SSE06", "514850.07N", "0001553.31E"),
-				this.atc.fix("SSE11", "514910.19N", "0002348.04E"),
-				this.atc.fix("SSE18", "514937.86N", "0003502.87E"),
-				this.atc.fix("SSE23", "514957.00N", "0004306.08E"),
-				this.atc.fix("SSE26", "515008.21N", "0004755.61E"),
-				this.atc.fix("CLN")
+				Generator.getInstance().fix("SSW01", "515146.36N", "0001205.90E"),
+				Generator.getInstance().fix("SSS03", "514938.12N", "0001213.68E"),
+				Generator.getInstance().fix("SSE06", "514850.07N", "0001553.31E"),
+				Generator.getInstance().fix("SSE11", "514910.19N", "0002348.04E"),
+				Generator.getInstance().fix("SSE18", "514937.86N", "0003502.87E"),
+				Generator.getInstance().fix("SSE23", "514957.00N", "0004306.08E"),
+				Generator.getInstance().fix("SSE26", "515008.21N", "0004755.61E"),
+				Generator.getInstance().fix("CLN")
 			],
 			false,
 			6000
