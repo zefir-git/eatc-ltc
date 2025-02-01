@@ -391,6 +391,7 @@ export default class Generator {
 					line instanceof Line ? line.lineString() : line.toString()
 				].join("\n")).join("\n")
 			].join("\n")
-		].filter(l => l !== null).join("\n\n");
+		].filter(l => l !== null).join("\n\n")
+			+ "\n";
 	}
 }
