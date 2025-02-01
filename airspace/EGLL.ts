@@ -20,7 +20,7 @@ export default class EGLL {
 			new Airport(
 				"London Heathrow Airport",
 				"Heathrow",
-				"TEST",
+				"LTCC",
 				28.9,
 				6000,
 				[
