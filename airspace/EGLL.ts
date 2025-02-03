@@ -469,7 +469,6 @@ export default class EGLL {
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
 				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
-				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
 				Generator.getInstance().beacon("BIG").destination(328, 20),
 				Generator.getInstance().fix("ULTIB")
@@ -483,7 +482,6 @@ export default class EGLL {
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
 				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
-				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
 				Generator.getInstance().beacon("BIG").destination(328, 20),
 				Generator.getInstance().fix("ULTIB")
