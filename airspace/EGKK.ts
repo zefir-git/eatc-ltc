@@ -589,7 +589,7 @@ export default class EGKK {
 			...Generator.getInstance().pronounce("SAM", "3P"),
 			kks,
 			[
-				kks.position.destination(kksRev.reverseLocalizer, 3),
+				kks.position.destination(kks.reverseLocalizer, 3),
 				Generator.getInstance().beacon("DET").destination(259, 26),
 				Generator.getInstance().beacon("DET").destination(259, 36),
 				Generator.getInstance().beacon("DET").destination(259, 43),
@@ -603,7 +603,7 @@ export default class EGKK {
 			...Generator.getInstance().pronounce("SAM", "3W"),
 			kkn,
 			[
-				kks.position.destination(kksRev.reverseLocalizer, 3),
+				kks.position.destination(kks.reverseLocalizer, 3),
 				Generator.getInstance().beacon("DET").destination(259, 26),
 				Generator.getInstance().beacon("DET").destination(259, 36),
 				Generator.getInstance().beacon("DET").destination(259, 43),
