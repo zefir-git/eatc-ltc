@@ -471,7 +471,8 @@ export default class EGSS {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 0.8),
-				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("LAM"), 24),
+				rwy.position.destination(rwy.reverseLocalizer, 0.8)
+				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().beacon("LAM"), 24),
 				Generator.getInstance().beacon("LAM").destination(24, 9),
 				Generator.getInstance().beacon("DET").destination(333, 25),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
@@ -497,7 +498,8 @@ export default class EGSS {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 0.8),
-				rwy.position.destination(rwy.reverseLocalizer, 0.8).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("LAM"), 24),
+				rwy.position.destination(rwy.reverseLocalizer, 0.8)
+				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().beacon("LAM"), 24),
 				Generator.getInstance().beacon("LAM").destination(24, 9),
 				Generator.getInstance().fix("LAM")
 			],
