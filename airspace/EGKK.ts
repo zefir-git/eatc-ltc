@@ -453,8 +453,8 @@ export default class EGKK {
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("FRANE"), "1P"),
 			kks,
 			[
-				kks.position.bearingIntersection(kks.reverseLocalizer, Generator.getInstance().fix("DVR"), 269),
-				Generator.getInstance().fix("TUNBY", "511008N", "0001929E"),
+				Generator.getInstance().fix("DVR").destination(269, 52.7),
+				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
 				Generator.getInstance().beacon("DET"),
 				Generator.getInstance().fix("FRANE")
@@ -466,8 +466,8 @@ export default class EGKK {
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("FRANE"), "1W"),
 			kkn,
 			[
-				kks.position.bearingIntersection(kks.reverseLocalizer, Generator.getInstance().fix("DVR"), 269),
-				Generator.getInstance().fix("TUNBY", "511008N", "0001929E"),
+				Generator.getInstance().fix("DVR").destination(269, 52.7),
+				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
 				Generator.getInstance().beacon("DET"),
 				Generator.getInstance().fix("FRANE")
