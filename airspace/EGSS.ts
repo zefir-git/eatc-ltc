@@ -238,7 +238,7 @@ export default class EGSS {
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(13000, 50));
+		.withEntry(15000, 50));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("AVANT", "1L"),
