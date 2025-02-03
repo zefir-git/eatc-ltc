@@ -68,5 +68,9 @@ export default class SID {
 		this.route = route;
 		this.reverse = reverse ?? false;
 		this.altitude = altitude;
+
+		// send warning if distance between 2 consecutive fixes is over 50 NMI
+		if (this.route.some((fix, i) => i > 0 && fix.distance(this.route[i - 1]!) > 50 * Fix.NMI))
+			console.warn(`${this.name}: Distance between consecutive fixes is over 50 NMI.`);
 	}
 }
