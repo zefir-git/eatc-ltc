@@ -787,7 +787,7 @@ export default class EGKK {
 			kks,
 			[
 				kks.position.bearingIntersection(kks.reverseLocalizer, Generator.getInstance().fix("DVR"), 269),
-				Generator.getInstance().fix("TUNBY", "511008N", "0001929E"),
+				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
 				Generator.getInstance().fix("DVR")
 			],
@@ -799,7 +799,7 @@ export default class EGKK {
 			kkn,
 			[
 				kks.position.bearingIntersection(kks.reverseLocalizer, Generator.getInstance().fix("DVR"), 269),
-				Generator.getInstance().fix("TUNBY", "511008N", "0001929E"),
+				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
 				Generator.getInstance().fix("DVR")
 			],
