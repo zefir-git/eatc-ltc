@@ -331,6 +331,34 @@ gen.aircraft(new Aircraft(
 	[2.9, 3.1]
 ));
 
+gen.aircraft(new Aircraft(
+	"H25B",
+	"Raytheon",
+	Aircraft.WTC.LIGHT,
+	[160, 300],
+	125,
+	[1.2, 1.3],
+	[1500, 2500],
+	[2000, 3100],
+	[25, 30],
+	[3, 5],
+	[2.9, 3.1]
+));
+
+gen.aircraft(new Aircraft(
+	"F2TH",
+	"Dassault Falcon",
+	Aircraft.WTC.LOWER_MEDIUM,
+	[160, 300],
+	110,
+	[1.2, 1.3],
+	[1500, 4000],
+	[2000, 3000],
+	[25, 30],
+	[3, 5],
+	[2.9, 3.1]
+));
+
 await new AirspaceLines().withCoastline();
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
