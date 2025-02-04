@@ -118,7 +118,7 @@ export default class AirspaceLines {
 			new Line([
 				new Fix(51.188489, -0.489750),
 				new Fix(51.269380, 0.099134),
-			], [0x30, 0x30, 0x30]).join(
+			], Line.ColourType.AIRSPACE).join(
 				Circle.from(
 					new Fix(51.016131, 0.088921),
 					new Fix(51.197418, 0.150375),
