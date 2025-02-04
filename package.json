@@ -1,6 +1,6 @@
 {
   "name": "eatc-ltc",
-  "version": "0.0.0",
+  "version": "0.0.0-dev",
   "description": "London Terminal Control is a custom airspace for Endless ATC, designed to enhance your gameplay experience with detailed airspace management for London airports using STARs and SIDs.",
   "keywords": [
     "endlessatc",
