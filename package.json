@@ -22,6 +22,7 @@
   "main": "dist/airspace/index.js",
   "scripts": {
     "build": "tsc",
+    "gen": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
