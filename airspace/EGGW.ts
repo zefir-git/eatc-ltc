@@ -423,7 +423,8 @@ export default class EGGW {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 3.8),
-				rwy.position.destination(rwy.reverseLocalizer, 3.8).bearingIntersection(rwy.reverseLocalizer + 45, Generator.getInstance().fix("HEN", "514535N", "0004725W"), 256),
+				rwy.position.destination(rwy.reverseLocalizer, 3.8)
+				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().fix("HEN", "514535N", "0004725W"), 256 - 180),
 				Generator.getInstance().fix("HEN", "514535N", "0004725W"),
 				Generator.getInstance().fix("RODNI")
 			],
