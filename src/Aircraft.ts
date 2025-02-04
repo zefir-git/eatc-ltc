@@ -134,11 +134,29 @@ namespace Aircraft {
 	 * Wake Turbulence Category.
 	 */
 	export const enum WTC {
+		/**
+		 * MTOW > 100 t, wingspan > 72 m
+		 */
 		SUPER_HEAVY = 1,
+		/**
+		 * MTOW > 100t, wingspan metres ∈ (60, 72)
+		 */
 		UPPER_HEAVY = 2,
+		/**
+		 * MTOW > 100 t, wingspan < 60 m
+		 */
 		LOWER_HEAVY = 3,
+		/**
+		 * MTOW tons ∈ (15, 100), wingspan > 32 m
+		 */
 		UPPER_MEDIUM = 4,
+		/**
+		 * MTOW tons ∈ (15, 100), wingspan < 32 m
+		 */
 		LOWER_MEDIUM = 5,
+		/**
+		 * MTOW < 15 t
+		 */
 		LIGHT = 6
 	}
 }
