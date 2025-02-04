@@ -1,0 +1,185 @@
+	EZY, 10.00, a320, Easy, s
+	VLG, 7.16, a320, Vueling, s
+	EZY, 6.59, a320, Easy, e
+	EFW, 4.91, a321, Griffin, s
+	EZY, 4.60, a320, Easy, n
+	RYR, 4.41, b738, Ryanair, w
+	EFW, 4.32, a320, Griffin, s
+	EZY, 3.61, a319, Easy, n
+	WMT, 3.61, a21n, Wizz Malta, e
+	EZY, 3.52, a319, Easy, s
+	WUK, 3.28, a21n, Wizz Go, e
+	BAW, 3.19, b772, Speedbird, w
+	AUR, 2.80, at76, Ayline, s
+	EZY, 2.56, a21n, Easy, s
+	NOZ, 2.40, b738, Nordic, n
+	EZY, 2.29, a319, Easy, e
+	EZY, 1.96, a20n, Easy, e
+	WUK, 1.87, a21n, Wizz Go, s
+	EZY, 1.67, a20n, Easy, s
+	TOM, 1.63, b738, Tomjet, s
+	EZS, 1.59, a320, Topswiss, s
+	EFW, 1.41, a320, Griffin, e
+	WZZ, 1.39, a21n, Wizz Air, e
+	TOM, 1.37, b38m, Tomjet, s
+	EJU, 1.17, a320, Alpine, s
+	UAE, 1.12, a388, Emirates, e
+	EZY, 1.10, a20n, Easy, n
+	EJU, 1.06, a320, Alpine, e
+	NSZ, 1.01, b738, Rednose, e
+	AEA, 1.01, b738, Europa, s
+	AIC, 1.01, b788, Air India, e
+	UBT, 0.97, b789, Longboat, w
+	EZE, 0.93, at76, Eastflight, w
+	TOM, 0.88, b789, Tomjet, w
+	NSZ, 0.86, b38m, Rednose, n
+	THY, 0.84, a21n, Turkish, e
+	VLG, 0.81, a319, Vueling, e
+	BTI, 0.79, bcs3, Airbaltic, e
+	VLG, 0.79, a20n, Vueling, s
+	VLG, 0.75, a320, Vueling, e
+	QTR, 0.73, b788, Qatari, e
+	BAW, 0.70, b772, Speedbird, e
+	EJU, 0.66, a319, Alpine, s
+	CCA, 0.59, a359, Air China, e
+	CES, 0.59, b77w, China Eastern, e
+	RYR, 0.59, b38m, Ryanair, s
+	EJU, 0.57, a20n, Alpine, e
+	EJU, 0.57, a319, Alpine, e
+	IBS, 0.57, a320, Iberexpres, s
+	TAP, 0.55, a320, Air Portugal, s
+	KMM, 0.48, a20n, Sky Knight, s
+	APK, 0.48, b772, Peace Bird, s
+	NSZ, 0.48, b38m, Rednose, e
+	RAM, 0.48, b738, Royalair Maroc, s
+	TOM, 0.46, b788, Tomjet, w
+	TAP, 0.46, e195, Air Portugal, s
+	RYR, 0.46, b38m, Ryanair, w
+	WMT, 0.46, a321, Wizz Malta, e
+	TOM, 0.44, b38m, Tomjet, e
+	NSZ, 0.44, b738, Rednose, n
+	ICE, 0.42, b38m, Iceair, n
+	SHT, 0.42, a320, Shuttle, n
+	THY, 0.42, b738, Turkish, e
+	EXS, 0.42, b738, Channex, s
+	VLG, 0.40, a321, Vueling, s
+	TAP, 0.35, e190, Air Portugal, s
+	TOM, 0.35, b738, Tomjet, e
+	AWC, 0.35, a320, Zap, s
+	SEH, 0.35, a20n, Air Crete, e
+	UAE, 0.33, b77w, Emirates, e
+	EJU, 0.31, a21n, Alpine, s
+	SIA, 0.31, a359, Singapore, e
+	ETH, 0.31, a359, Ethiopian, e
+	BAW, 0.31, b772, Speedbird, s
+	AEE, 0.31, a21n, Aegean, e
+	TSC, 0.31, a21n, Transat, w
+	EFW, 0.29, a321, Griffin, e
+	TOM, 0.29, b788, Tomjet, e
+	MAU, 0.26, a359, Airmauritius, e
+	BAW, 0.26, a320, Speedbird, s
+	SXS, 0.26, b38m, Sunexpress, e
+	TSC, 0.24, a332, Transat, w
+	EZY, 0.24, a21n, Easy, e
+	TOM, 0.24, b38m, Tomjet, n
+	TOM, 0.22, b738, Tomjet, n
+	UBT, 0.22, b789, Longboat, s
+	EZY, 0.22, a21n, Easy, n
+	AHY, 0.22, b788, Azal, e
+	WZZ, 0.22, a20n, Wizz Air, e
+	BAW, 0.22, b77w, Speedbird, w
+	EZS, 0.20, a320, Topswiss, e
+	SWR, 0.20, bcs3, Swiss, s
+	SWR, 0.20, bcs1, Swiss, e
+	EFW, 0.20, a320, Griffin, n
+	MAC, 0.20, a320, Arabia Maroc, s
+	MAU, 0.20, a339, Airmauritius, e
+	SEH, 0.18, a21n, Air Crete, e
+	AUR, 0.15, a320, Ayline, s
+	RYR, 0.15, b738, Ryanair, s
+	BAW, 0.15, a321, Speedbird, s
+	SWU, 0.15, dh8d, Skyalps, e
+	BAW, 0.13, b772, Speedbird, n
+	VOE, 0.13, a320, Volotea, e
+	EZE, 0.13, e170, Eastflight, n
+	CSN, 0.13, b788, China Southern, e
+	TUA, 0.13, b77l, Turkmenistan, e
+	SVA, 0.13, b789, Saudia, e
+	EZE, 0.13, e170, Eastflight, w
+	TAR, 0.11, a20n, Tunair, s
+	AWC, 0.11, a321, Zap, n
+	SVA, 0.11, b78x, Saudia, e
+	THY, 0.11, a321, Turkish, e
+	SWR, 0.11, bcs3, Swiss, e
+	TOM, 0.11, b788, Tomjet, s
+	TAP, 0.11, a20n, Air Portugal, s
+	WZZ, 0.09, a321, Wizz Air, e
+	EZS, 0.09, a20n, Topswiss, s
+	UBT, 0.09, b789, Longboat, n
+	AWC, 0.09, a321, Zap, e
+	TOM, 0.09, b788, Tomjet, n
+	LBT, 0.09, a320, Nouvelair, s
+	EJU, 0.09, a21n, Alpine, e
+	SVA, 0.09, b77w, Saudia, e
+	AUR, 0.09, dh8d, Ayline, s
+	CSN, 0.07, b789, China Southern, e
+	SXS, 0.07, b738, Sunexpress, e
+	EXS, 0.07, b738, Channex, n
+	EJU, 0.07, a20n, Alpine, s
+	VLG, 0.07, a20n, Vueling, e
+	SWR, 0.07, a320, Swiss, e
+	EZY, 0.07, a320, Easy, w
+	EFW, 0.04, a321, Griffin, n
+	SWR, 0.04, e295, Swiss, e
+	UZB, 0.04, a21n, Uzbek, e
+	EXS, 0.04, b738, Channex, e
+	CFE, 0.04, e190, Flyer, s
+	LBT, 0.04, a20n, Nouvelair, s
+	WUK, 0.04, a21n, Wizz Go, n
+	RYR, 0.04, b738, Ryanair, n
+	THY, 0.04, b739, Turkish, e
+	HAT, 0.04, b734, Sky Runner, s
+	RYR, 0.04, b738, Ryanair, e
+	IBS, 0.04, a21n, Iberexpres, s
+	TAP, 0.04, a319, Air Portugal, s
+	EZE, 0.04, at72, Eastflight, w
+	ENT, 0.04, b738, Enter, n
+	EZY, 0.04, a319, Easy, w
+	WZZ, 0.02, a320, Wizz Air, e
+	MAC, 0.02, a321, Arabia Maroc, s
+	ICE, 0.02, b39m, Iceair, n
+	EZY, 0.02, a20n, Easy, w
+	UBD, 0.02, a320, Urair, e
+	SWR, 0.02, e195, Swiss, e
+	EJU, 0.02, a320, Alpine, n
+	QTR, 0.02, b788, Qatari, n
+	AWC, 0.02, a320, Zap, n
+	MSR, 0.02, a21n, Egyptair, e
+	SIA, 0.02, a359, Singapore, w
+	ETH, 0.02, a359, Ethiopian, s
+	AUR, 0.02, at75, Ayline, s
+	AUR, 0.02, a320, Ayline, n
+	TOM, 0.02, b789, Tomjet, n
+	TUI, 0.02, b738, Tuifly, e
+	ICE, 0.02, a21n, Iceair, n
+	LOG, 0.02, e145, Logan, n
+	WMT, 0.02, a320, Wizz Malta, e
+	IFA, 0.02, lj60, Red Angel, e
+	BAW, 0.02, b38m, Speedbird, n
+	SYG, 0.02, b738, Synergy, n
+	PGT, 0.02, a20n, Sunturk, e
+	TAP, 0.02, a321, Air Portugal, s
+	ENT, 0.02, b738, Enter, e
+	AWH, 0.02, c680, Aerowest, e
+	PVG, 0.02, a321, Privilege, e
+	EZS, 0.02, a20n, Topswiss, e
+	UZB, 0.02, b788, Uzbek, e
+	SHT, 0.02, a20n, Shuttle, n
+	TOM, 0.02, b38m, Tomjet, w
+	IFA, 0.02, cl60, Red Angel, w
+	ENT, 0.02, b738, Enter, s
+	EZE, 0.02, e190, Eastflight, w
+	VJH, 0.02, c56x, Vista Germany, e
+	VLG, 0.02, a319, Vueling, s
+	VJH, 0.02, e35l, Vista Germany, n
+	VOE, 0.02, a320, Volotea, s

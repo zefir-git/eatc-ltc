@@ -1,0 +1,49 @@
+	CFE, 10.00, e190, Flyer, e
+	CFE, 6.30, e190, Flyer, n
+	CFE, 4.56, e190, Flyer, w
+	KLM, 4.10, e190, KLM, e
+	ITY, 3.36, bcs1, Itarrow, e
+	LGL, 3.06, dh8d, Luxair, e
+	CFE, 1.71, e190, Flyer, s
+	DLA, 1.10, e190, Dolomiti, e
+	SWR, 0.92, bcs1, Swiss, e
+	LOG, 0.80, at76, Logan, w
+	SWR, 0.58, e290, Swiss, e
+	ITY, 0.52, bcs3, Itarrow, e
+	LOT, 0.46, e190, Lot, e
+	AUR, 0.34, at76, Ayline, s
+	NJE, 0.21, c68a, Fraction, s
+	NJE, 0.18, e55p, Fraction, e
+	NJE, 0.09, c68a, Fraction, e
+	PVD, 0.09, e55p, Pad Aviation, s
+	GAC, 0.09, c510, Dream Team, e
+	GAC, 0.09, c510, Dream Team, s
+	VJH, 0.09, c56x, Vista Germany, w
+	MCK, 0.06, c25a, Maverick, s
+	NJE, 0.06, e55p, Fraction, w
+	MCK, 0.06, c525, Maverick, s
+	MCK, 0.06, c25a, Maverick, e
+	NJE, 0.06, c56x, Fraction, e
+	NJE, 0.06, e55p, Fraction, s
+	JFA, 0.03, pc24, Mosquito, n
+	NJE, 0.03, c56x, Fraction, w
+	NJE, 0.03, cl35, Fraction, s
+	BCP, 0.03, pc24, Sybajet, w
+	SHT, 0.03, a21n, Shuttle, n
+	NJE, 0.03, cl60, Fraction, s
+	FJO, 0.03, e550, Flex Europe, e
+	FJO, 0.03, e550, Flex Europe, s
+	LOG, 0.03, at76, Logan, n
+	PVD, 0.03, e55p, Pad Aviation, e
+	EFD, 0.03, c25b, Ever Flight, e
+	NJE, 0.03, c68a, Fraction, w
+	VJH, 0.03, c56x, Vista Germany, e
+	NJE, 0.03, cl35, Fraction, w
+	FJO, 0.03, e550, Flex Europe, n
+	FJO, 0.03, e550, Flex Europe, w
+	VJH, 0.03, c56x, Vista Germany, n
+	SWR, 0.03, e190, Swiss, e
+	NJU, 0.03, c56x, Artisan, w
+	JIV, 0.03, c56x, Jivair, n
+	AWH, 0.03, c68a, Aerowest, s
+	SAS, 0.03, e190, Scandinavian, e
