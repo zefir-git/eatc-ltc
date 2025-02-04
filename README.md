@@ -6,6 +6,9 @@ detailed airspace management for London airports using STARs and SIDs.
 
 ## Installation
 
+<details>
+<summary>Show installation steps</summary>
+
 Follow these steps to add the custom airspace to your game:
 
 0. Download the `LTCC.ini` file from the [latest release](https://github.com/zefir-git/eatc-ltc/releases/latest) on
@@ -41,26 +44,19 @@ Follow these steps to add the custom airspace to your game:
 6. In the game, tap the <kbd>⋮</kbd> menu → <kbd>airports</kbd>. You should see the <kbd>LTCC</kbd> button at the bottom
    of the screen.
 
+</details>
+
 ## Airports
 
-- ### `EGLL` Heathrow Airport
-  Only runways 27L/R currently available. Runways 9L/R will be added soon.
-  <br>Approach transition via radar vectors only.
-- ### `EGKK` Gatwick Airport
-  Both runways 26L/R available with same STARs and SIDs. Only runway 26L currently selectable in runway configuration.
-  <br>Approach transition via radar vectors only.
-- ### `EGSS` Stansted Airport
-  Not yet available.
-- ### `EGGW` Luton Airport
-  Only runway 25 currently available. Runway 7 will be added soon.
-  <br>Approach transition via radar vectors,
-  or [`ZAGZO 1T`](https://web.archive.org/web/20241130183249if_/https://nats-uk.ead-it.com/cms-nats/opencms/en/Publications/AIP/Current-AIRAC/graphics/321263.pdf)
-  to RWY 25.
-- ### `EGLC` London City Airport
-  Only runway 27 currently available. Runway 9 will be added soon.
-  <br>Approach transition via radar vectors,
-  or [`LAVNO 1G 1J`](https://web.archive.org/web/20250116120625if_/https://nats-uk.ead-it.com/cms-nats/opencms/en/Publications/AIP/Current-AIRAC/graphics/399531.pdf)
-  from GODLU or JACKO to RWY 27.
+The airspace features the following airports.
+
+- `EGLL` London Heathrow Airport
+- `EGKK` London Gatwick Airport
+- `EGSS` London Stansted Airport
+- `EGGW` London Luton Airport
+- `EGLC` London City Airport
+
+RNAV approach transitions are available for EGGW (ZAGZO 1T 1Q) and EGLC (LAVNO 1G 1J ODLEG 1G 1J).
 
 ## Runway Configurations
 
@@ -68,12 +64,121 @@ The following is a list of available runway configurations. You can select the c
 *Runways** and selecting your preferred setup. The required game score to unlock each runway configuration is listed in
 parentheses.
 
-| # | EGLL                                     | EGKK         | EGGW         | EGLC         |
-|---|------------------------------------------|--------------|--------------|--------------|
-| 1 | `↓ 27L` `↑ 27R`                          | `↓↑ 26L` (8) | `↓↑ 25` (12) | `↓↑ 27` (18) |
-| 2 | `↑ 27L` `↓ 27R`                          | `↓↑ 26L` (8) | `↓↑ 25` (12) | `↓↑ 27` (18) |
-| 3 | `↓ 27L` `↑ 27R`<br>`↓ 27L` `↓↑ 27R` (23) | `↓↑ 26L` (8) | `↓↑ 25` (12) | `↓↑ 27` (18) |
-| 4 | `↑ 27L` `↓ 27R`<br>`↓↑ 27L` `↓ 27R` (23) | `↓↑ 26L` (8) | `↓↑ 25` (12) | `↓↑ 27` (18) |
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>EGLL</th>
+      <th>EGKK</th>
+      <th>EGSS</th>
+      <th>EGGW</th>
+      <th>EGLC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th colspan=6>Westerly operations</th></tr>
+    <tr>
+      <td>1</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 26L</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 26L</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> (23)</td>
+      <td><code>↓↑ 26L</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> (23)</td>
+      <td><code>↓↑ 26L</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr><th colspan=6>Easterly operations</th></tr>
+    <tr>
+      <td>5</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 08R</code> (8)</td>
+      <td><code>↓↑ 04</code> (12)</td>
+      <td><code>↓↑ 07</code> (18)</td>
+      <td><code>↓↑ 09</code> (24)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> (23)</td>
+      <td><code>↓↑ 08R</code> (8)</td>
+      <td><code>↓↑ 04</code> (12)</td>
+      <td><code>↓↑ 07</code> (18)</td>
+      <td><code>↓↑ 09</code> (24)</td>
+    </tr>
+    <tr><th colspan=6>EGKK RWY 26R/08L</th></tr>
+    <tr><td colspan=6>These configurations are the same as 1–6, except the secondary (26R/08L) runway is used for
+                        Gatwick.</td></tr>
+    <tr>
+      <td>7</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 26R</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 26R</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> (23)</td>
+      <td><code>↓↑ 26R</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> (23)</td>
+      <td><code>↓↑ 26R</code> (8)</td>
+      <td><code>↓↑ 22</code> (12)</td>
+      <td><code>↓↑ 25</code> (18)</td>
+      <td><code>↓↑ 27</code> (24)</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 08L</code> (8)</td>
+      <td><code>↓↑ 04</code> (12)</td>
+      <td><code>↓↑ 07</code> (18)</td>
+      <td><code>↓↑ 09</code> (24)</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> (23)</td>
+      <td><code>↓↑ 08L</code> (8)</td>
+      <td><code>↓↑ 04</code> (12)</td>
+      <td><code>↓↑ 07</code> (18)</td>
+      <td><code>↓↑ 09</code> (24)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Issues and Suggestions
 
