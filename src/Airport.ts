@@ -272,7 +272,7 @@ namespace Airport {
 		 */
 		public static raw(config: string): Airport.Airline[] {
 			return config.trim().split("\n").map(line => {
-				const [name, frequency, type, pronunciation, direction] = line.trim().split(/,\s*?/);
+				const [name, frequency, type, pronunciation, direction] = line.trim().split(/,\s*/);
 				return new Airport.Airline(
 					name!,
 					Number.parseFloat(frequency!),
