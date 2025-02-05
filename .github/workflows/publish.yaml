@@ -1,0 +1,44 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: npm
+
+      - name: Install latest NPM
+        run: npm i -g npm@latest
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Set version from release tag
+        run: npm version ${{ github.event.release.tag_name }} --git-tag-version=false
+
+      - name: Generate
+        run: npm run gen
+
+      - name: Upload to release
+        uses: cloudnode-pro/release-upload-asset@1.0.2
+        with:
+          gh-token: ${{ github.token }}
+          files: LTCC.ini; type=text/plain
