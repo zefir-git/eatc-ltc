@@ -115,10 +115,8 @@ gen.airspace(
 			Beacon.fromDMS("503546.32N", "0005545.48E", "SOXUX", "Soxux"),
 		],
 		new Map([
-			[180, {callsign: "London Control", pronunciation: "London Control", frequency: 129.425}],
-			[270, {callsign: "London Control", pronunciation: "London Control", frequency: 126.075}],
-			[360, {callsign: "London Control", pronunciation: "London Control", frequency: 127.1}],
-			[90, {callsign: "Amsterdam Radar", pronunciation: "Amsterdam Radar", frequency: 134.375}],
+			[360, {callsign: "LON_C_CTR", pronunciation: "London Control", frequency: 127.105}],
+			[182, {callsign: "LON_S_CTR", pronunciation: "London Control", frequency: 129.43}],
 		]),
 		new Polygon([
 				new Fix(50.668994, -0.373578),
