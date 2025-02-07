@@ -11,8 +11,8 @@ detailed airspace management for London airports using STARs and SIDs.
 
 Follow these steps to add the custom airspace to your game:
 
-0. Download the `LTCC.ini` file from the [latest release](https://github.com/zefir-git/eatc-ltc/releases/latest) on
-   GitHub.
+0. Download the [`LTCC.ini`](https://github.com/zefir-git/eatc-ltc/releases/latest/download/LTCC.ini) file from the
+   latest release on GitHub.
 
 > [!NOTE]
 > You need the full (paid) version of *Endless ATC*; the demo or lite version will not work.
