@@ -207,7 +207,7 @@ export default class AirspaceLines {
 			)
 		);
 
-		// London CTA 1 (D)
+		// Luton CTA 1 (D)
 		this.gen.line(new Line([
 			new Fix(51.846596, -0.160847),
 			new Fix(51.854867, -0.007210),
@@ -216,7 +216,7 @@ export default class AirspaceLines {
 			new Fix(51.980440, -0.241013),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 2 (D)
+		// Luton CTA 2 (D)
 		this.gen.line(new Line([
 			new Fix(51.756153, -0.586567),
 			new Fix(51.741380, -0.672226),
@@ -224,7 +224,7 @@ export default class AirspaceLines {
 			new Fix(51.820607, -0.615406),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 3 (D)
+		// Luton CTA 3 (D)
 		this.gen.line(new Line([
 			new Fix(51.805961, -0.701408),
 			new Fix(51.864620, -0.727158),
@@ -232,7 +232,7 @@ export default class AirspaceLines {
 			new Fix(51.820607, -0.615406),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 4 (D)
+		// Luton CTA 4 (D)
 		this.gen.line(new Line([
 			new Fix(51.805961, -0.701408),
 			new Fix(51.786533, -0.813332),
@@ -240,7 +240,7 @@ export default class AirspaceLines {
 			new Fix(51.864620, -0.727158),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 5 (D)
+		// Luton CTA 5 (D)
 		this.gen.line(new Line([
 			new Fix(51.960558, -0.359802),
 			new Fix(52.007287, -0.472069),
@@ -248,7 +248,7 @@ export default class AirspaceLines {
 			new Fix(51.918809, -0.406752),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 6 (D)
+		// Luton CTA 6 (D)
 		this.gen.line(new Line([
 			new Fix(51.883326, -0.618324),
 			new Fix(51.879352, -0.641670),
@@ -257,20 +257,20 @@ export default class AirspaceLines {
 			new Fix(52.007287, -0.472069),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 7 (D)
+		// Luton CTA 7 (D)
 		this.gen.line(new Line([
 			new Fix(52.007287, -0.472069),
 			new Fix(52.096646, -0.280151),
 			new Fix(51.990536, -0.177069),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 8 (D)
+		// Luton CTA 8 (D)
 		this.gen.line(new Line([
 			new Fix(51.864620, -0.727158),
 			new Fix(51.916321, -0.729733),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 9 (D)
+		// Luton CTA 9 (D)
 		this.gen.line(new Line([
 			new Fix(51.958654, -0.683041),
 			new Fix(51.898741, -0.834618),
