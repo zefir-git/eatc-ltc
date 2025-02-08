@@ -48,6 +48,10 @@ gen.airspace(
 			Beacon.fromDMS("510102N", "0000658E", "MAY", "Mayfield", {left: 87}),
 			Beacon.fromDMS("515923N", "0000343E", "BKY", "Barkway"),
 
+			// Missed approach holding
+			Beacon.fromDMS("511910N", "0002219W", "EPM", "Epsom", {left: 271}),
+			Beacon.fromDMS("513723N", "0003107W", "CHT", "Chiltern", {left: 290}),
+
 			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
 			Beacon.fromDMS("511951.15N", "0000205.32E", "BIG", "Biggin", 302),
