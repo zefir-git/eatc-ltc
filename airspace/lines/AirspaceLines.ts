@@ -156,30 +156,36 @@ export default class AirspaceLines {
 		);
 
 		// Gatwick CTR (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.186875, -0.382290),
-				new Fix(51.214089, -0.183163),
-				new Fix(51.197849, 0.068150),
-			], [0x30, 0x30, 0x30]).join(Circle.from(
-				new Fix(51.197849, 0.068150),
-				new Fix(51.166697, 0.080509),
-				new Fix(51.096030, 0.068493),
-				75
-			).cutoff(f => f.latitude <= 51.197849 && f.longitude >= 0.068493))
-				.join(new Line([
-					new Fix(51.096030, 0.068493),
-					new Fix(51.043660, -0.312767),
-				]))
-				.join(Circle.from(
-					new Fix(51.186875, -0.382290),
-					new Fix(51.067075, -0.350361),
-					new Fix(51.043660, -0.312767),
-					75
-				).cutoff(f => f.latitude <= 51.186875 && f.longitude <= -0.312767)
-					.append(new Fix(51.186875, -0.382290))
-				)
-		);
+		const GatwickCTRD = new Line([
+			new Fix(51.186875, -0.382290),
+			new Fix(51.214089, -0.183163),
+			new Fix(51.197849, 0.068150),
+		], [0x30, 0x30, 0x30]).join(Circle.from(
+			new Fix(51.197849, 0.068150),
+			new Fix(51.166697, 0.080509),
+			new Fix(51.096030, 0.068493),
+			75
+		).cutoff(f => f.latitude <= 51.197849 && f.longitude >= 0.068493))
+							  .join(new Line([
+								  new Fix(51.096030, 0.068493),
+								  new Fix(51.043660, -0.312767),
+							  ]))
+							  .join(Circle.from(
+									  new Fix(51.186875, -0.382290),
+									  new Fix(51.067075, -0.350361),
+									  new Fix(51.043660, -0.312767),
+									  75
+								  ).cutoff(f => f.latitude <= 51.186875 && f.longitude <= -0.312767)
+										  .append(new Fix(51.186875, -0.382290))
+							  );
+		this.gen.area(new Area(
+			"SFC",
+			2500,
+			new Fix(51.1943, -0.22),
+			GatwickCTRD,
+			GatwickCTRD.vertices.length
+		));
+		this.gen.line(GatwickCTRD);
 
 		// Luton CTR (D)
 		this.gen.line(
