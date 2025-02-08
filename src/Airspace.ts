@@ -329,7 +329,7 @@ export default class Airspace {
 				this.localizerSpeed.nm,
 				this.localizerSpeed.kts
 			].join(", "),
-			"handoff = \n" +
+			"handoff =\n" +
 			Array.from(this.handoff.entries())
 				 .map(([dir, handoff]) =>
 						 "\t" + [
@@ -339,12 +339,12 @@ export default class Airspace {
 							 handoff.frequency
 						 ].join(", ")
 				 ).join("\n"),
-			"beacons = \n" +
+			"beacons =\n" +
 			Array.from(this.beacons.values())
 				 .map(beacon => "\t" + beacon.beaconString()).join("\n"),
 			this.boundary === undefined
 			? null
-			: "boundary = \n" + this.boundary.toString()
+			: "boundary =\n" + this.boundary.toString()
 		].filter(l => l !== null).join("\n");
 	}
 }
