@@ -6,12 +6,15 @@ import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
+import Beacon from "../src/Beacon.js";
+import StarFix from "../src/StarFix.js";
 
 export default class EGKK {
 	public async init() {
 		await this.airport();
 		this.star();
 		this.sid();
+		this.rnp();
 	}
 
 	private async airport() {
@@ -906,6 +909,26 @@ export default class EGKK {
 				Generator.getInstance().fix("DAGGA"),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E")
 			]
+		));
+	}
+
+	private rnp() {
+		const kkn = Generator.getInstance().runway("kkn");
+
+		Generator.getInstance().fix("ARPIT", kkn.position.destination(kkn.reverseLocalizer, 10.6));
+
+		Generator.getInstance().arrival(new STAR(
+			"RNP",
+			"R-N-P",
+			[kkn],
+			false,
+			Beacon.from("ARPIT", "Arpit", Generator.getInstance().fix("ARPIT")),
+			void 0,
+			[
+				Generator.getInstance().fix("ARPIT", 3000)
+			],
+			// K26RF
+			{ils: {dme: 8.6, altitude: 3000}}
 		));
 	}
 }
