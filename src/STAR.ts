@@ -159,7 +159,7 @@ class STAR {
 	}
 
 	public withEntry(...params: Parameters<STAR["entryPoint"]>): STAR.StarWithEntry {
-		return new STAR.StarWithEntry(this, this.entryPoint(...params));
+		return new STAR.StarWithEntry(this, process.argv.includes("--noentry") ? [] : this.entryPoint(...params));
 	}
 
 	public routeString(): string {
