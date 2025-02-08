@@ -46,7 +46,7 @@ export default class EGLC {
 					NamedFix.fromDMS("514504.03N", "0001113.77W", "SAXBI", "Saxbi"),
 					NamedFix.fromDMS("513531.78N", "0001715.47E", "ODUKU", "Oduku")
 				],
-				Generator.getInstance().beacon("LON")
+				Generator.getInstance().beacon("LCY")
 			)
 		);
 	}

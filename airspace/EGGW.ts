@@ -43,7 +43,7 @@ export default class EGGW {
 					NamedFix.fromDMS("514257N", "0005142W", "RODNI", "Rodni"),
 					NamedFix.fromDMS("520740N", "0004403W", "OLNEY", "Olney"),
 				],
-				Generator.getInstance().beacon("BKY")
+				Generator.getInstance().beacon("LUT")
 			)
 		);
 	}
