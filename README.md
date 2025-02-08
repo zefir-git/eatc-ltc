@@ -60,9 +60,9 @@ RNAV approach transitions are available for EGGW (ZAGZO 1T 1Q) and EGLC (LAVNO 1
 
 ## Runway Configurations
 
-The following is a list of available runway configurations. You can select the configuration in-game by choosing *
-*Runways** and selecting your preferred setup. The required game score to unlock each runway configuration is listed in
-parentheses.
+The following is a list of available runway configurations. You can select the configuration in-game by going
+to <kbd>≡</kbd> or <kbd>⋮</kbd>, then selecting <kbd>Runways</kbd>. The required game score to unlock each runway
+configuration is listed in parentheses.
 
 <table>
   <thead>
