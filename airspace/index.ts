@@ -51,6 +51,7 @@ gen.airspace(
 			// Missed approach holding
 			Beacon.fromDMS("511910N", "0002219W", "EPM", "Epsom", {left: 271}),
 			Beacon.fromDMS("513723N", "0003107W", "CHT", "Chiltern", {left: 290}),
+			Beacon.fromDMS("515341N", "0001509W", "LUT", "Luton", 254),
 
 			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
