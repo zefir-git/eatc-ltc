@@ -6,12 +6,14 @@ import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
+import Beacon from "../src/Beacon.js";
 
 export default class EGKK {
 	public async init() {
 		await this.airport();
 		this.star();
 		this.sid();
+		this.rnp();
 	}
 
 	private async airport() {
@@ -906,6 +908,42 @@ export default class EGKK {
 				Generator.getInstance().fix("DAGGA"),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E")
 			]
+		));
+	}
+
+	private rnp() {
+		const rwy26r = Generator.getInstance().runway("kkn");
+		const rwy08l = rwy26r.reverse();
+
+		Generator.getInstance().fix("ARPIT", rwy26r.position.destination(rwy26r.reverseLocalizer, 10.6));
+		Generator.getInstance().fix("MEBIG", rwy08l.position.destination(rwy08l.reverseLocalizer, 10.6));
+
+		Generator.getInstance().arrival(new STAR(
+			"RNP",
+			"R-N-P",
+			[rwy26r],
+			false,
+			Beacon.from("ARPIT", "Arpit", Generator.getInstance().fix("ARPIT")),
+			void 0,
+			[
+				Generator.getInstance().fix("ARPIT", 3000)
+			],
+			// K26RF
+			{ils: {dme: 8.6, altitude: 3000}}
+		));
+
+		Generator.getInstance().arrival(new STAR(
+			"RNP",
+			"R-N-P",
+			[rwy26r],
+			"only",
+			Beacon.from("MEBIG", "Mebig", Generator.getInstance().fix("MEBIG")),
+			void 0,
+			[
+				Generator.getInstance().fix("MEBIG", 3000)
+			],
+			// K08LF
+			{ils: {dme: 8.6, altitude: 3000}}
 		));
 	}
 }
