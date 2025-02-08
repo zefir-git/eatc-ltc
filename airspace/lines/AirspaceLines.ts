@@ -284,7 +284,7 @@ export default class AirspaceLines {
 		], [0x30, 0x30, 0x30]));
 
 		// Stansted CTR (D)
-		this.gen.line(new Line([
+		const StanstedCTRD = new Line([
 			new Fix(51.867270, 0.022402),
 			new Fix(51.867270, 0.022402).destination(44, 12.4),
 		], [0x30, 0x30, 0x30]).join(Circle.from(
@@ -305,7 +305,15 @@ export default class AirspaceLines {
 			new Fix(51.758544, 0.217581),
 			75
 		).cutoff(f => f.latitude <= 51.867270 && f.longitude <= 0.217581)
-					   .append(new Fix(51.867270, 0.022402))));
+					   .append(new Fix(51.867270, 0.022402)));
+		this.gen.area(new Area(
+			"SFC",
+			3500,
+			new Fix(51.8697, 0.2598),
+			StanstedCTRD,
+			StanstedCTRD.vertices.length
+		));
+		this.gen.line(StanstedCTRD);
 
 		// Stansted CTA 1 (D)
 		this.gen.line(new Line([
