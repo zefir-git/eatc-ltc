@@ -188,24 +188,30 @@ export default class AirspaceLines {
 		this.gen.line(GatwickCTRD);
 
 		// Luton CTR (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.846596, -0.160847),
-				new Fix(51.813497, -0.248909),
-				new Fix(51.756153, -0.586567),
-				new Fix(51.820607, -0.615406),
-				new Fix(51.841505, -0.494041),
-				new Fix(51.960558, -0.359802),
-				new Fix(51.980440, -0.241013),
-			], [0x30, 0x30, 0x30]).join(Circle.from(
+		const LutonCTRD = new Line([
+			new Fix(51.846596, -0.160847),
+			new Fix(51.813497, -0.248909),
+			new Fix(51.756153, -0.586567),
+			new Fix(51.820607, -0.615406),
+			new Fix(51.841505, -0.494041),
+			new Fix(51.960558, -0.359802),
+			new Fix(51.980440, -0.241013),
+		], [0x30, 0x30, 0x30]).join(Circle.from(
 				new Fix(51.980440, -0.241013),
 				this.gen.runway("gw").position.destination(this.gen.runway("gw").reverseLocalizer, 7 + 1/3),
 				new Fix(51.846596, -0.160847),
 				75
 			).cutoff(f => f.latitude <= 51.980440 && f.latitude >= 51.846596 && f.longitude >= -0.241013)
-				.append(new Fix(51.846596, -0.160847))
-			)
+										  .append(new Fix(51.846596, -0.160847))
 		);
+		this.gen.area(new Area(
+			"SFC",
+			3500,
+			new Fix(51.92, -0.39),
+			LutonCTRD,
+			LutonCTRD.vertices.length
+		));
+		this.gen.line(LutonCTRD);
 
 		// Luton CTA 1 (D)
 		this.gen.line(new Line([
