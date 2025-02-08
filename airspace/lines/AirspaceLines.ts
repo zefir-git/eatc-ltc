@@ -69,7 +69,7 @@ export default class AirspaceLines {
 			new Area<Polygon>(
 				null,
 				2500,
-				new Fix(51.4033, -0.6716),
+				new Fix(51.4431, -0.47),
 				LondonCTRTMZ,
 				LondonCTRTMZ.vertices.length
 			)
