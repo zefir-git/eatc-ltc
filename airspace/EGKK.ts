@@ -7,7 +7,6 @@ import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
 import Beacon from "../src/Beacon.js";
-import StarFix from "../src/StarFix.js";
 
 export default class EGKK {
 	public async init() {
