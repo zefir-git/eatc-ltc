@@ -912,14 +912,16 @@ export default class EGKK {
 	}
 
 	private rnp() {
-		const kkn = Generator.getInstance().runway("kkn");
+		const rwy26r = Generator.getInstance().runway("kkn");
+		const rwy08l = rwy26r.reverse();
 
-		Generator.getInstance().fix("ARPIT", kkn.position.destination(kkn.reverseLocalizer, 10.6));
+		Generator.getInstance().fix("ARPIT", rwy26r.position.destination(rwy26r.reverseLocalizer, 10.6));
+		Generator.getInstance().fix("MEBIG", rwy08l.position.destination(rwy08l.reverseLocalizer, 10.6));
 
 		Generator.getInstance().arrival(new STAR(
 			"RNP",
 			"R-N-P",
-			[kkn],
+			[rwy26r],
 			false,
 			Beacon.from("ARPIT", "Arpit", Generator.getInstance().fix("ARPIT")),
 			void 0,
@@ -927,6 +929,20 @@ export default class EGKK {
 				Generator.getInstance().fix("ARPIT", 3000)
 			],
 			// K26RF
+			{ils: {dme: 8.6, altitude: 3000}}
+		));
+
+		Generator.getInstance().arrival(new STAR(
+			"RNP",
+			"R-N-P",
+			[rwy26r],
+			"only",
+			Beacon.from("MEBIG", "Mebig", Generator.getInstance().fix("MEBIG")),
+			void 0,
+			[
+				Generator.getInstance().fix("MEBIG", 3000)
+			],
+			// K08LF
 			{ils: {dme: 8.6, altitude: 3000}}
 		));
 	}
