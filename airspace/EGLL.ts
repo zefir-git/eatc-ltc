@@ -21,7 +21,7 @@ export default class EGLL {
 				"London Heathrow Airport",
 				"Heathrow",
 				"LTCC",
-				28.9,
+				57.7,
 				6000,
 				[
 					new Runway("lln", "27R",
