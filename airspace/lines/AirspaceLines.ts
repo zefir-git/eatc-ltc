@@ -124,7 +124,7 @@ export default class AirspaceLines {
 		]));
 
 		this.gen.area(new Area<Polygon>(
-			"SFC",
+			"LC",
 			2500,
 			new Fix(51.555, 0.025),
 			LondonCityCTRD,
@@ -179,9 +179,9 @@ export default class AirspaceLines {
 										  .append(new Fix(51.186875, -0.382290))
 							  );
 		this.gen.area(new Area(
-			"SFC",
+			"KK",
 			2500,
-			new Fix(51.1943, -0.22),
+			new Fix(51.13, -.214),
 			GatwickCTRD,
 			GatwickCTRD.vertices.length
 		));
@@ -205,9 +205,9 @@ export default class AirspaceLines {
 										  .append(new Fix(51.846596, -0.160847))
 		);
 		this.gen.area(new Area(
-			"SFC",
+			"GW",
 			3500,
-			new Fix(51.92, -0.39),
+			new Fix(51.855, -0.39),
 			LutonCTRD,
 			LutonCTRD.vertices.length
 		));
@@ -307,7 +307,7 @@ export default class AirspaceLines {
 		).cutoff(f => f.latitude <= 51.867270 && f.longitude <= 0.217581)
 					   .append(new Fix(51.867270, 0.022402)));
 		this.gen.area(new Area(
-			"SFC",
+			"SS",
 			3500,
 			new Fix(51.8697, 0.2598),
 			StanstedCTRD,

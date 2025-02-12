@@ -4,8 +4,10 @@ import Fix from "./Fix.js";
 export class Area<T extends Polygon | {radius: number, position: Fix}> {
     public constructor(
         /**
-         * Name of the area. Set to `null` to allow aircraft inbound the main
-         * airport to enter the area below the minimum altitude.
+         * Name of the area.
+         * Set to the 2-letter code of a secondary airport to allow aircraft to
+         * or from that airport to enter the area below the minimum altitude.
+         * Set to `null` to allow the main airport.
          */
         public readonly name: string | null,
         /**
