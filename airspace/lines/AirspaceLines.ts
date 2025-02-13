@@ -3,6 +3,8 @@ import Fix from "../../src/Fix.js";
 import Line from "../../src/Line.js";
 import Circle from "../../src/Circle.js";
 import fs from "node:fs/promises";
+import {Area} from "../../src/Area.js";
+import Polygon from "../../src/Polygon.js";
 
 export default class AirspaceLines {
 	protected readonly gen = Generator.getInstance();
@@ -37,33 +39,43 @@ export default class AirspaceLines {
 		]));
 
 		// London CTR TMZ
-		this.gen.line(
-			new Line([
-				new Fix(51.606291, -0.693555),
-				new Fix(51.606291, -0.217152),
-			], [0x30, 0x30, 0x30])
-				.join(Circle.from(
-						new Fix(51.606291, -0.217152),
-						new Fix(51.581710, -0.187025),
-						new Fix(51.336537, -0.214834),
-						75
-					).cutoff(f => f.latitude <= 51.606291 && f.longitude >= -.217152)
-				)
-				.join((new Line([
-						new Fix(51.336537, -0.214834),
-						new Fix(51.336537, -0.631714),
-						new Fix(51.353130, -0.713382),
-					]))
-				)
-				.join(Circle.from(
-						new Fix(51.353130, -0.713382),
-						new Fix(51.468232, -0.773377),
-						new Fix(51.606291, -0.693555),
-						75
-					).cutoff(f => f.latitude <= 51.606291 && f.latitude >= 51.353130 && f.longitude <= -0.693555)
-							.append(new Fix(51.606291, -0.693555))
-				)
+		const LondonCTRTMZ = new Line([
+			new Fix(51.606291, -0.693555),
+			new Fix(51.606291, -0.217152),
+		], [0x30, 0x30, 0x30])
+			.join(Circle.from(
+					new Fix(51.606291, -0.217152),
+					new Fix(51.581710, -0.187025),
+					new Fix(51.336537, -0.214834),
+					75
+				).cutoff(f => f.latitude <= 51.606291 && f.longitude >= -.217152)
+			)
+			.join((new Line([
+					new Fix(51.336537, -0.214834),
+					new Fix(51.336537, -0.631714),
+					new Fix(51.353130, -0.713382),
+				]))
+			)
+			.join(Circle.from(
+					new Fix(51.353130, -0.713382),
+					new Fix(51.468232, -0.773377),
+					new Fix(51.606291, -0.693555),
+					75
+				).cutoff(f => f.latitude <= 51.606291 && f.latitude >= 51.353130 && f.longitude <= -0.693555)
+						.append(new Fix(51.606291, -0.693555))
+			);
+
+		this.gen.area(
+			new Area<Polygon>(
+				null,
+				2500,
+				new Fix(51.4431, -0.47),
+				LondonCTRTMZ,
+				LondonCTRTMZ.vertices.length
+			)
 		);
+		this.gen.line(LondonCTRTMZ);
+
 		this.gen.line(new Line([
 			new Fix(51.353130, -0.713382),
 			new Fix(51.393422, -0.919590),
@@ -95,23 +107,30 @@ export default class AirspaceLines {
 		);
 
 		// London City CTR (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.581710, -0.187025),
+		const LondonCityCTRD = new Line([
+			new Fix(51.581710, -0.187025),
+			new Fix(51.571735, 0.139732),
+		], [0x30, 0x30, 0x30]).join(
+			Circle.from(
 				new Fix(51.571735, 0.139732),
-			], [0x30, 0x30, 0x30]).join(
-				Circle.from(
-					new Fix(51.571735, 0.139732),
-					new Fix(51.502545, 0.189857),
-					new Fix(51.437531, 0.131149),
-					75
-				)
-					  .cutoff(f => f.latitude <= 51.571735 && f.longitude >= 0.131149)
-			).join(new Line([
+				new Fix(51.502545, 0.189857),
 				new Fix(51.437531, 0.131149),
-				new Fix(51.445449, -0.134926),
-			]))
-		);
+				75
+			)
+				  .cutoff(f => f.latitude <= 51.571735 && f.longitude >= 0.131149)
+		).join(new Line([
+			new Fix(51.437531, 0.131149),
+			new Fix(51.445449, -0.134926),
+		]));
+
+		this.gen.area(new Area<Polygon>(
+			"LC",
+			2500,
+			new Fix(51.555, 0.025),
+			LondonCityCTRD,
+			LondonCityCTRD.vertices.length
+		));
+		this.gen.line(LondonCityCTRD);
 
 		// Gatwick CTA (D)
 		this.gen.line(
@@ -137,52 +156,64 @@ export default class AirspaceLines {
 		);
 
 		// Gatwick CTR (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.186875, -0.382290),
-				new Fix(51.214089, -0.183163),
-				new Fix(51.197849, 0.068150),
-			], [0x30, 0x30, 0x30]).join(Circle.from(
-				new Fix(51.197849, 0.068150),
-				new Fix(51.166697, 0.080509),
-				new Fix(51.096030, 0.068493),
-				75
-			).cutoff(f => f.latitude <= 51.197849 && f.longitude >= 0.068493))
-				.join(new Line([
-					new Fix(51.096030, 0.068493),
-					new Fix(51.043660, -0.312767),
-				]))
-				.join(Circle.from(
-					new Fix(51.186875, -0.382290),
-					new Fix(51.067075, -0.350361),
-					new Fix(51.043660, -0.312767),
-					75
-				).cutoff(f => f.latitude <= 51.186875 && f.longitude <= -0.312767)
-					.append(new Fix(51.186875, -0.382290))
-				)
-		);
+		const GatwickCTRD = new Line([
+			new Fix(51.186875, -0.382290),
+			new Fix(51.214089, -0.183163),
+			new Fix(51.197849, 0.068150),
+		], [0x30, 0x30, 0x30]).join(Circle.from(
+			new Fix(51.197849, 0.068150),
+			new Fix(51.166697, 0.080509),
+			new Fix(51.096030, 0.068493),
+			75
+		).cutoff(f => f.latitude <= 51.197849 && f.longitude >= 0.068493))
+							  .join(new Line([
+								  new Fix(51.096030, 0.068493),
+								  new Fix(51.043660, -0.312767),
+							  ]))
+							  .join(Circle.from(
+									  new Fix(51.186875, -0.382290),
+									  new Fix(51.067075, -0.350361),
+									  new Fix(51.043660, -0.312767),
+									  75
+								  ).cutoff(f => f.latitude <= 51.186875 && f.longitude <= -0.312767)
+										  .append(new Fix(51.186875, -0.382290))
+							  );
+		this.gen.area(new Area(
+			"KK",
+			2500,
+			new Fix(51.13, -.214),
+			GatwickCTRD,
+			GatwickCTRD.vertices.length
+		));
+		this.gen.line(GatwickCTRD);
 
 		// Luton CTR (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.846596, -0.160847),
-				new Fix(51.813497, -0.248909),
-				new Fix(51.756153, -0.586567),
-				new Fix(51.820607, -0.615406),
-				new Fix(51.841505, -0.494041),
-				new Fix(51.960558, -0.359802),
-				new Fix(51.980440, -0.241013),
-			], [0x30, 0x30, 0x30]).join(Circle.from(
+		const LutonCTRD = new Line([
+			new Fix(51.846596, -0.160847),
+			new Fix(51.813497, -0.248909),
+			new Fix(51.756153, -0.586567),
+			new Fix(51.820607, -0.615406),
+			new Fix(51.841505, -0.494041),
+			new Fix(51.960558, -0.359802),
+			new Fix(51.980440, -0.241013),
+		], [0x30, 0x30, 0x30]).join(Circle.from(
 				new Fix(51.980440, -0.241013),
 				this.gen.runway("gw").position.destination(this.gen.runway("gw").reverseLocalizer, 7 + 1/3),
 				new Fix(51.846596, -0.160847),
 				75
 			).cutoff(f => f.latitude <= 51.980440 && f.latitude >= 51.846596 && f.longitude >= -0.241013)
-				.append(new Fix(51.846596, -0.160847))
-			)
+										  .append(new Fix(51.846596, -0.160847))
 		);
+		this.gen.area(new Area(
+			"GW",
+			3500,
+			new Fix(51.855, -0.39),
+			LutonCTRD,
+			LutonCTRD.vertices.length
+		));
+		this.gen.line(LutonCTRD);
 
-		// London CTA 1 (D)
+		// Luton CTA 1 (D)
 		this.gen.line(new Line([
 			new Fix(51.846596, -0.160847),
 			new Fix(51.854867, -0.007210),
@@ -191,7 +222,7 @@ export default class AirspaceLines {
 			new Fix(51.980440, -0.241013),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 2 (D)
+		// Luton CTA 2 (D)
 		this.gen.line(new Line([
 			new Fix(51.756153, -0.586567),
 			new Fix(51.741380, -0.672226),
@@ -199,7 +230,7 @@ export default class AirspaceLines {
 			new Fix(51.820607, -0.615406),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 3 (D)
+		// Luton CTA 3 (D)
 		this.gen.line(new Line([
 			new Fix(51.805961, -0.701408),
 			new Fix(51.864620, -0.727158),
@@ -207,7 +238,7 @@ export default class AirspaceLines {
 			new Fix(51.820607, -0.615406),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 4 (D)
+		// Luton CTA 4 (D)
 		this.gen.line(new Line([
 			new Fix(51.805961, -0.701408),
 			new Fix(51.786533, -0.813332),
@@ -215,7 +246,7 @@ export default class AirspaceLines {
 			new Fix(51.864620, -0.727158),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 5 (D)
+		// Luton CTA 5 (D)
 		this.gen.line(new Line([
 			new Fix(51.960558, -0.359802),
 			new Fix(52.007287, -0.472069),
@@ -223,7 +254,7 @@ export default class AirspaceLines {
 			new Fix(51.918809, -0.406752),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 6 (D)
+		// Luton CTA 6 (D)
 		this.gen.line(new Line([
 			new Fix(51.883326, -0.618324),
 			new Fix(51.879352, -0.641670),
@@ -232,20 +263,20 @@ export default class AirspaceLines {
 			new Fix(52.007287, -0.472069),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 7 (D)
+		// Luton CTA 7 (D)
 		this.gen.line(new Line([
 			new Fix(52.007287, -0.472069),
 			new Fix(52.096646, -0.280151),
 			new Fix(51.990536, -0.177069),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 8 (D)
+		// Luton CTA 8 (D)
 		this.gen.line(new Line([
 			new Fix(51.864620, -0.727158),
 			new Fix(51.916321, -0.729733),
 		], [0x30, 0x30, 0x30]));
 
-		// London CTA 9 (D)
+		// Luton CTA 9 (D)
 		this.gen.line(new Line([
 			new Fix(51.958654, -0.683041),
 			new Fix(51.898741, -0.834618),
@@ -253,7 +284,7 @@ export default class AirspaceLines {
 		], [0x30, 0x30, 0x30]));
 
 		// Stansted CTR (D)
-		this.gen.line(new Line([
+		const StanstedCTRD = new Line([
 			new Fix(51.867270, 0.022402),
 			new Fix(51.867270, 0.022402).destination(44, 12.4),
 		], [0x30, 0x30, 0x30]).join(Circle.from(
@@ -274,7 +305,15 @@ export default class AirspaceLines {
 			new Fix(51.758544, 0.217581),
 			75
 		).cutoff(f => f.latitude <= 51.867270 && f.longitude <= 0.217581)
-					   .append(new Fix(51.867270, 0.022402))));
+					   .append(new Fix(51.867270, 0.022402)));
+		this.gen.area(new Area(
+			"SS",
+			3500,
+			new Fix(51.8697, 0.2598),
+			StanstedCTRD,
+			StanstedCTRD.vertices.length
+		));
+		this.gen.line(StanstedCTRD);
 
 		// Stansted CTA 1 (D)
 		this.gen.line(new Line([

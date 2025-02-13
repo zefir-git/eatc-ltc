@@ -11,6 +11,7 @@ import SID from "./SID.js";
 import Aircraft from "./Aircraft.js";
 import Polygon from "./Polygon.js";
 import Line from "./Line.js";
+import {Area} from "./Area.js";
 
 export default class Generator {
 	static #instance: Generator | null = null;
@@ -167,6 +168,13 @@ export default class Generator {
 		if (!this.#departures.has(rwy))
 			this.#departures.set(rwy, []);
 		this.#departures.get(rwy)!.push(sid);
+		return this;
+	}
+
+	#areas: Area<any>[] = [];
+
+	public area(area: Area<any>): typeof this {
+		this.#areas.push(area);
 		return this;
 	}
 
@@ -383,6 +391,11 @@ export default class Generator {
 				"types =",
 				...Array.from(this.#aircraft.values()).map(a => a.toString()),
 			].join("\n"),
+
+			this.#areas.length === 0 ? null : this.#areas.map((area, i) => [
+				`[area${i + 1}]`,
+				area.toString()
+			].join("\n")).join("\n\n"),
 
 			this.#lines.length === 0 ? null : [
 				"[background]",
