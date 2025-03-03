@@ -1,45 +1,48 @@
 	CFE, 10.00, e190, Flyer, e
-	CFE, 6.19, e190, Flyer, n
-	CFE, 4.45, e190, Flyer, w
-	KLM, 3.96, e190, KLM, e
-	ITY, 3.19, bcs1, Itarrow, e
-	LGL, 2.95, dh8d, Luxair, e
-	CFE, 1.85, e190, Flyer, s
-	DLA, 1.04, e190, Dolomiti, e
-	SWR, 0.90, bcs1, Swiss, e
-	LOG, 0.77, at76, Logan, w
-	SWR, 0.62, e290, Swiss, e
-	ITY, 0.57, bcs3, Itarrow, e
-	LOT, 0.44, e190, Lot, e
-	AUR, 0.35, at76, Ayline, s
-	NJE, 0.18, c68a, Fraction, s
-	NJE, 0.13, e55p, Fraction, e
-	NJE, 0.09, c68a, Fraction, e
-	GAC, 0.09, c510, Dream Team, e
-	GAC, 0.09, c510, Dream Team, s
-	VJH, 0.09, c56x, Vista Germany, w
-	PVD, 0.07, e55p, Pad Aviation, s
-	NJE, 0.07, c68a, Fraction, w
-	NJE, 0.07, e55p, Fraction, s
-	MCK, 0.04, c25a, Maverick, s
-	NJE, 0.04, cl60, Fraction, s
-	NJE, 0.04, e55p, Fraction, w
-	MCK, 0.04, c525, Maverick, s
-	MCK, 0.04, c25a, Maverick, e
-	NJE, 0.04, c56x, Fraction, e
-	VJH, 0.04, c56x, Vista Germany, e
-	JFA, 0.04, pc24, Mosquito, s
+	CFE, 6.04, e190, Flyer, n
+	CFE, 4.39, e190, Flyer, w
+	KLM, 3.79, e190, KLM, e
+	ITY, 3.04, bcs1, Itarrow, e
+	LGL, 2.86, dh8d, Luxair, e
+	CFE, 1.99, e190, Flyer, s
+	DLA, 1.13, e190, Dolomiti, e
+	SWR, 0.93, bcs1, Swiss, e
+	LOG, 0.76, at76, Logan, w
+	SWR, 0.66, e290, Swiss, e
+	ITY, 0.63, bcs3, Itarrow, e
+	AUR, 0.60, at76, Ayline, s
+	LOT, 0.45, e190, Lot, e
+	NJE, 0.15, c68a, Fraction, s
+	NJE, 0.12, c68a, Fraction, e
+	GAC, 0.11, c510, Dream Team, s
+	NJE, 0.09, e55p, Fraction, e
+	VJH, 0.08, c56x, Vista Germany, e
+	VJH, 0.08, c56x, Vista Germany, s
+	PVD, 0.06, e55p, Pad Aviation, s
+	GAC, 0.06, c510, Dream Team, e
+	NJE, 0.06, c68a, Fraction, w
+	VJH, 0.06, c56x, Vista Germany, w
+	NJE, 0.06, e55p, Fraction, s
+	MCK, 0.05, c25a, Maverick, s
+	EFD, 0.05, c25b, Ever Flight, e
+	MCK, 0.05, c25a, Maverick, e
+	JFA, 0.05, pc24, Mosquito, s
+	NJE, 0.03, cl60, Fraction, s
+	FJO, 0.03, e550, Flex Europe, e
+	NJE, 0.03, e55p, Fraction, w
+	MCK, 0.03, c525, Maverick, s
+	NJE, 0.03, c56x, Fraction, e
+	NJE, 0.03, cl35, Fraction, w
+	FLJ, 0.03, e550, Flexair, s
+	D-ABCD, 0.03, e550, 0, e
 	JFA, 0.02, pc24, Mosquito, n
 	NJE, 0.02, c56x, Fraction, w
 	NJE, 0.02, cl35, Fraction, s
 	BCP, 0.02, pc24, Sybajet, w
 	SHT, 0.02, a21n, Shuttle, n
-	FJO, 0.02, e550, Flex Europe, e
 	FJO, 0.02, e550, Flex Europe, s
 	LOG, 0.02, at76, Logan, n
 	PVD, 0.02, e55p, Pad Aviation, e
-	EFD, 0.02, c25b, Ever Flight, e
-	NJE, 0.02, cl35, Fraction, w
 	FJO, 0.02, e550, Flex Europe, n
 	FJO, 0.02, e550, Flex Europe, w
 	VJH, 0.02, c56x, Vista Germany, n
@@ -53,7 +56,11 @@
 	NJE, 0.02, cl35, Fraction, e
 	NJU, 0.02, c56x, Artisan, s
 	NJE, 0.02, e55p, Fraction, n
-	VJH, 0.02, c56x, Vista Germany, s
-	FLJ, 0.02, e550, Flexair, s
 	IXR, 0.02, c25a, X-Bird, s
 	JFA, 0.02, pc24, Mosquito, e
+	VJH, 0.02, e550, Vista Germany, w
+	NJU, 0.02, c56x, Artisan, n
+	JAF, 0.02, e190, Beauty, e
+	GES, 0.02, c56x, Gestair, s
+	PEA, 0.02, e55p, Peach, s
+	RYR, 0.02, b38m, Ryanair, e
