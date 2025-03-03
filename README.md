@@ -1,8 +1,12 @@
 # London Terminal Control for Endless ATC
 
-**London Terminal Control** is a custom airspace for [*Endless ATC*](https://startgrid.itch.io/endlessatc), designed to
+<p class="lead"><b>London Terminal Control</b> is a custom airspace for <a href="https://startgrid.itch.io/endlessatc"><i>Endless ATC</i></a>, designed to
 enhance your gameplay experience with
-detailed airspace management for London airports using STARs and SIDs.
+detailed airspace management for London airports using STARs and SIDs.</p>
+
+[![Airspace Version](https://img.shields.io/github/v/tag/zefir-git/eatc-ltc?sort=semver&label=version&labelColor=262626&color=155dfc)](https://github.com/zefir-git/eatc-ltc/releases/latest)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/zefir-git/eatc-ltc/total?labelColor=262626)](https://github.com/zefir-git/eatc-ltc)
+[![GitHub Repo Stars](https://img.shields.io/github/stars/zefir-git/eatc-ltc)](https://github.com/zefir-git/eatc-ltc)
 
 ## Installation
 
@@ -21,12 +25,12 @@ Follow these steps to add the custom airspace to your game:
 
 1. Open <kbd>Steam</kbd> and go to your <kbd>Library</kbd>.
 2. Right-click on *Endless ATC* and select <kbd>Manage</kbd> → <kbd>Browse local files</kbd>.
-3. Copy or move the `LTCC.ini` file into the <kbd>locations</kbd> folder.
+3. Copy or move the `LTCC.ini` file into the `locations` folder.
 4. Launch *Endless ATC*.
 5. In the game, go to the menu and select <kbd>≡</kbd> → <kbd>airports</kbd>. You should see the <kbd>LTCC</kbd> button
    at the bottom of the screen.
 
-#### File Paths:
+#### File Paths
 
 - On **Linux**, the path is typically:  
   `~/.local/share/Steam/steamapps/common/Endless ATC/locations`
@@ -38,8 +42,7 @@ Follow these steps to add the custom airspace to your game:
 1. Connect your phone to your computer via USB and enable file transfer.
 2. On your computer, open the file manager and locate your connected phone.
 3. Navigate to <kbd>Internal storage</kbd>.
-4. Copy or move the `LTCC.ini` file into the following folder:  
-   <kbd>Android/data/com.dirgtrats.endlessatc/files/locations</kbd>
+4. Copy or move the `LTCC.ini` file into the following folder: `Android/data/com.dirgtrats.endlessatc/files/locations`
 5. Launch *Endless ATC* on your device.
 6. In the game, tap the <kbd>⋮</kbd> menu → <kbd>airports</kbd>. You should see the <kbd>LTCC</kbd> button at the bottom
    of the screen.
@@ -56,7 +59,10 @@ The airspace features the following airports.
 - `EGGW` London Luton Airport
 - `EGLC` London City Airport
 
-RNAV approach transitions are available for EGGW (ZAGZO 1T 1Q) and EGLC (LAVNO 1G 1J ODLEG 1G 1J).
+RNAV approach transitions are available for
+EGGW (<code>[ZAGZO 1T](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/321263.pdf) [1Q](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/321260.pdf)</code>)
+and EGLC ([`LAVNO 1G 1J`](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/399531.pdf), [
+`ODLEG 1G 1J`](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/399540.pdf)).
 
 ## Runway Configurations
 
