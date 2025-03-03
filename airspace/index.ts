@@ -31,7 +31,7 @@ gen.airspace(
 		false,
 		false,
 		2,
-		4,
+		3,
 		true,
 		true,
 		{
