@@ -82,106 +82,400 @@ configuration is listed in parentheses.
     </tr>
   </thead>
   <tbody>
-    <tr><th colspan=6>Westerly operations</th></tr>
+    <tr><th colspan=6 style="text-align: center">Westerly operations</th></tr>
     <tr>
       <td>1</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
-      <td><code>↓↑ 26L</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>2</td>
       <td><code>↑ 27L</code> <code>↓ 27R</code></td>
-      <td><code>↓↑ 26L</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>3</td>
-      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> (23)</td>
-      <td><code>↓↑ 26L</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>4</td>
-      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> (23)</td>
-      <td><code>↓↑ 26L</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
-    <tr><th colspan=6>Easterly operations</th></tr>
+    <tr><th colspan=6 style="text-align: center">Easterly operations</th></tr>
     <tr>
       <td>5</td>
       <td><code>↓ 09L</code> <code>↑ 09R</code></td>
-      <td><code>↓↑ 08R</code> (8)</td>
-      <td><code>↓↑ 04</code> (12)</td>
-      <td><code>↓↑ 07</code> (18)</td>
-      <td><code>↓↑ 09</code> (24)</td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>6</td>
-      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> (23)</td>
-      <td><code>↓↑ 08R</code> (8)</td>
-      <td><code>↓↑ 04</code> (12)</td>
-      <td><code>↓↑ 07</code> (18)</td>
-      <td><code>↓↑ 09</code> (24)</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
     </tr>
-    <tr><th colspan=6>EGKK RWY 26R/08L</th></tr>
-    <tr><td colspan=6>These configurations are the same as 1–6, except the secondary (26R/08L) runway is used for
-                        Gatwick.</td></tr>
+    <tr><th colspan=6 style="text-align: center">Westerly operations, EGKK easterly</th></tr>
     <tr>
       <td>7</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
-      <td><code>↓↑ 26R</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>8</td>
       <td><code>↑ 27L</code> <code>↓ 27R</code></td>
-      <td><code>↓↑ 26R</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>9</td>
-      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> (23)</td>
-      <td><code>↓↑ 26R</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>10</td>
-      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> (23)</td>
-      <td><code>↓↑ 26R</code> (8)</td>
-      <td><code>↓↑ 22</code> (12)</td>
-      <td><code>↓↑ 25</code> (18)</td>
-      <td><code>↓↑ 27</code> (24)</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
+    <tr><th colspan=6 style="text-align: center">Westerly operations, EGLC easterly</th></tr>
     <tr>
       <td>11</td>
-      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
-      <td><code>↓↑ 08L</code> (8)</td>
-      <td><code>↓↑ 04</code> (12)</td>
-      <td><code>↓↑ 07</code> (18)</td>
-      <td><code>↓↑ 09</code> (24)</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
     </tr>
     <tr>
       <td>12</td>
-      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> (23)</td>
-      <td><code>↓↑ 08L</code> (8)</td>
-      <td><code>↓↑ 04</code> (12)</td>
-      <td><code>↓↑ 07</code> (18)</td>
-      <td><code>↓↑ 09</code> (24)</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr><th colspan=6 style="text-align: center">Westerly operations, EGKK & EGLC easterly</th></tr>
+    <tr>
+      <td>15</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr><th colspan=6 style="text-align: center">Easterly operations, EGKK westerly</th></tr>
+    <tr>
+      <td>19</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr><th colspan=6 style="text-align: center">Easterly operations, EGLC westerly</th></tr>
+    <tr>
+      <td>21</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr><th colspan=6 style="text-align: center">Easterly operations, EGKK & EGLC westerly</th></tr>
+    <tr>
+      <td>23</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr><th colspan=6 style="text-align: center;">EGKK RWY <code>26R</code>/<code>08L</code></th></tr>
+    <tr><td colspan=6>These configurations are the same as 1–24, except the secondary runway (<code>26R</code>/<code>08L</code>) is used for
+        Gatwick.</td></tr>
+    <tr>
+      <td>25</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td><code>↓ 27L</code> <code>↑ 27R</code><br><code>↓ 27L</code> <code>↓↑ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td><code>↑ 27L</code> <code>↓ 27R</code><br><code>↓↑ 27L</code> <code>↓ 27R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 22</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 25</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 08L</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td><code>↓ 09L</code> <code>↑ 09R</code><br><code>↓ 09L</code> <code>↓↑ 09R</code> <sub>(23)</sub></td>
+      <td><code>↓↑ 26R</code> <sub>(8)</sub></td>
+      <td><code>↓↑ 04</code> <sub>(12)</sub></td>
+      <td><code>↓↑ 07</code> <sub>(18)</sub></td>
+      <td><code>↓↑ 27</code> <sub>(24)</sub></td>
     </tr>
   </tbody>
 </table>
