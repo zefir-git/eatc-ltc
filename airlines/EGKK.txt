@@ -190,19 +190,16 @@
 	G-ABCD, 0.01, p28a, 0, w
 	TOM, 0.01, b789, Tomjet, e
 	FXT, 0.01, a320, Flexflight, e
-	G-ABCD, 0.01, dv20, 0, n
 	THY, 0.01, a333, Turkish, e
 	WZZ, 0.01, a320, Wizz Air, e
 	MAC, 0.01, a321, Arabia Maroc, s
 	ENGRUN-, 0.01, a21n, engrun, n
-	GESGC-, 0.01, efox, gesgc, n
 	GBZEC-, 0.01, c152, gbzec, n
 	EJU, 0.01, a320, Alpine, n
 	GBGFX-, 0.01, c152, gbgfx, n
 	QTR, 0.01, b788, Qatari, n
 	GGATL-, 0.01, a320, ggatl, n
 	MBIGK-, 0.01, gl5t, mbigk, n
-	GXXRV-, 0.01, rv9, gxxrv, n
 	MSR, 0.01, a21n, Egyptair, e
 	SIA, 0.01, a359, Singapore, w
 	ETH, 0.01, a359, Ethiopian, s
@@ -237,23 +234,19 @@
 	NOZ, 0.01, b38m, Nordic, n
 	BAW, 0.01, a320, Speedbird, n
 	NBT, 0.01, b789, Longship, w
-	G-ABCD, 0.01, c42, 0, w
 	AFR, 0.01, bcs3, Airfrans, s
 	G-ABCD, 0.01, p28s, 0, n
-	G-ABCD, 0.01, da40, 0, w
 	AFR, 0.01, bcs3, Airfrans, n
 	PYN, 0.01, c525, Poyston, w
 	SWR, 0.01, e290, Swiss, e
 	G-ABCD, 0.01, p28a, 0, n
 	G-ABCD, 0.01, c172, 0, n
 	G-ABCD, 0.01, be76, 0, n
-	G-ABCD, 0.01, toba, 0, n
 	EZT, 0.01, a319, Thai Ezy, s
 	PH-ABC, 0.01, pc12, 0, e
 	HAT, 0.01, b734, Sky Runner, e
 	EFW, 0.01, a321, Griffin, w
 	AWC, 0.01, a320, Zap, w
-	G-ABCD, 0.01, pup, 0, n
 	OO-ABC, 0.01, lj45, 0, s
 	RYR, 0.01, b38m, Ryanair, e
 	TSC, 0.01, a21n, Transat, n
@@ -268,7 +261,6 @@
 	D-ABCD, 0.01, c55b, 0, e
 	TAR, 0.01, a320, Tunair, s
 	EZYV1B35-, 0.01, a319, ezyv one b three five, s
-	G-ABCD, 0.01, sr22, 0, n
 	THY, 0.01, b789, Turkish, e
 	UBT, 0.01, b789, Longboat, e
 	AEA, 0.01, b789, Europa, s

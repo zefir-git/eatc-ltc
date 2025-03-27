@@ -52,8 +52,6 @@
 	NJE, 0.01, cl35, Fraction, s
 	BCP, 0.01, pc24, Sybajet, w
 	SHT, 0.01, a21n, Shuttle, n
-	GOATY-, 0.01, piat, goaty, n
-	GUNJA-, 0.01, piat, gunja, e
 	PVD, 0.01, e55p, Pad Aviation, e
 	FJO, 0.01, e550, Flex Europe, n
 	FJO, 0.01, e550, Flex Europe, w
@@ -76,8 +74,6 @@
 	AWH, 0.01, c68a, Aerowest, e
 	NJE, 0.01, gl5t, Fraction, e
 	BOM, 0.01, e55p, Batman, s
-	G-ABCD, 0.01, skra, 0, n
-	G-ABCD, 0.01, sr20, 0, s
 	G-ABCD, 0.01, p28a, 0, n
 	NJE, 0.01, gl5t, Fraction, s
 	GAC, 0.01, c510, Dream Team, n

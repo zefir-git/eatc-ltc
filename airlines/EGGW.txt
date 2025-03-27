@@ -317,7 +317,6 @@
 	OAV, 0.01, lj40, Omni, e
 	GFM, 0.01, h25b, Parrot, s
 	PYN, 0.01, c525, Poyston, n
-	AMQ, 0.01, hdjt, Amex, e
 	NJU, 0.01, c56x, Artisan, e
 	CLF, 0.01, e550, Clifton, w
 	VPC, 0.01, lj60, Solar, e
@@ -421,7 +420,6 @@
 	N-123AB, 0.01, glf4, 0, w
 	EWR, 0.01, ga5c, Mayotte Air, w
 	TC-ABC, 0.01, c650, 0, e
-	AMQ, 0.01, hdjt, Amex, n
 	N-123AB, 0.01, gl7t, 0, s
 	N-123AB, 0.01, glf6, 0, w
 	QQE, 0.01, ga7c, Q-Rex, e
@@ -435,7 +433,6 @@
 	SXN, 0.01, lj45, Saxonair, s
 	N-123AB, 0.01, gl5t, 0, s
 	T7-ABC, 0.01, h25b, 0, s
-	XGO, 0.01, p180, Pastis, e
 	G-ABCD, 0.01, pc12, 0, n
 	ABN, 0.01, a320, Air Albania, e
 	SX-ABC, 0.01, c56x, 0, s
@@ -444,7 +441,6 @@
 	IFA, 0.01, cl60, Red Angel, w
 	G-ABCD, 0.01, dhc1, 0, n
 	S5-ABC, 0.01, c56x, 0, s
-	BOO, 0.01, hdjt, Bookajet, w
 	DATMJ-, 0.01, cl60, datmj, e
 	LNX, 0.01, e35l, Lonex, n
 	VT-ABC, 0.01, a319, 0, e
