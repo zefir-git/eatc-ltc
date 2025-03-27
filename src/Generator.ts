@@ -87,7 +87,7 @@ export default class Generator {
 		return this;
 	}
 
-	readonly #configurations: RunwayConfiguration[][] = [];
+	public readonly configurations: RunwayConfiguration[][] = [];
 
 	/**
 	 * Get a runway by identifier.
@@ -104,7 +104,7 @@ export default class Generator {
 			}
 			throw new Error(`Runway ${arg} not found`);
 		}
-		this.#configurations.push(arg
+		this.configurations.push(arg
 			.sort((a, b) =>
 				a.score - b.score
 			)
@@ -353,8 +353,8 @@ export default class Generator {
 				 )
 				 .join("\n"),
 
-			this.#configurations.length === 0 ? null : "[configurations]\n" +
-				this.#configurations.map(
+			this.configurations.length === 0 ? null : "[configurations]\n" +
+				this.configurations.map(
 					(config, i) =>
 						`config${i + 1} = \n` +
 						config.map(c => "\t" + c.toString())
