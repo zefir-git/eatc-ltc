@@ -221,7 +221,6 @@
 	SIA, 0.04, b744, Singapore, e
 	IBE, 0.04, a320, Iberia, s
 	CSN, 0.04, b788, China Southern, e
-	AOPS-, 0.04, grnd, aops, n
 	EWG, 0.04, a320, Eurowings, e
 	UAE, 0.04, b77l, Emirates, e
 	RWD, 0.04, a333, Rwandair, s

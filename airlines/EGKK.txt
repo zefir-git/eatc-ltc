@@ -129,48 +129,23 @@
 	TOM, 0.06, b788, Tomjet, n
 	IBS, 0.06, a21n, Iberexpres, s
 	VOE, 0.06, a320, Volotea, w
-	ROVER1-, 0.05, grnd, rover one, n
-	LEADER8-, 0.05, grnd, leader eight, n
-	LEADER6-, 0.05, grnd, leader six, n
-	FIRE1B-, 0.05, grnd, fire one b, n
-	FIRE4-, 0.05, grnd, fire four, n
-	LEADER7-, 0.05, grnd, leader seven, n
-	DEICER2-, 0.05, grnd, deicer two, n
-	DEICER5-, 0.05, grnd, deicer five, n
 	LBT, 0.05, a320, Nouvelair, s
 	EZS, 0.05, a20n, Topswiss, e
 	TAP, 0.05, a319, Air Portugal, s
-	FIRE2-, 0.04, grnd, fire two, n
-	LEADER4-, 0.04, grnd, leader four, n
-	WORKS29-, 0.04, grnd, works two niner, n
-	LEADER10-, 0.04, grnd, leader one zero, n
-	WORKS7-, 0.04, grnd, works seven, n
-	TELS1-, 0.04, grnd, tels one, n
-	DEICER3-, 0.04, grnd, deicer three, n
-	ROVER2-, 0.04, grnd, rover two, n
 	EZE, 0.04, e170, Eastflight, n
-	LEADER9-, 0.04, grnd, leader niner, n
 	THY, 0.04, a321, Turkish, e
 	CFE, 0.04, e190, Flyer, s
-	DEICER4-, 0.04, grnd, deicer four, n
 	AHY, 0.04, b763, Azal, e
 	BAW, 0.04, a320, Speedbird, e
-	WORKS3-, 0.04, grnd, works three, n
 	EFW, 0.04, a321, Griffin, n
-	WORKS19-, 0.04, grnd, works one niner, n
 	EXS, 0.04, b738, Channex, e
-	FIRE1-, 0.04, grnd, fire one, n
-	FIRE5-, 0.04, grnd, fire five, n
 	SVA, 0.04, b77w, Saudia, e
 	EZE, 0.04, at72, Eastflight, w
 	ENT, 0.04, b738, Enter, s
 	EZY, 0.04, a319, Easy, w
-	LEADER3-, 0.03, grnd, leader three, n
 	UZB, 0.03, a21n, Uzbek, e
 	UBD, 0.03, a320, Urair, e
 	SWR, 0.03, e195, Swiss, e
-	FIRE2B-, 0.03, grnd, fire two b, n
-	LEADER5-, 0.03, grnd, leader five, n
 	TOM, 0.03, b789, Tomjet, n
 	SWR, 0.03, a320, Swiss, e
 	AUR, 0.03, dh8d, Ayline, s
@@ -193,10 +168,6 @@
 	G-ABCD, 0.02, p28r, 0, n
 	G-ABCD, 0.02, c152, 0, n
 	TAP, 0.02, a21n, Air Portugal, s
-	SWEEPER7-, 0.01, grnd, sweeper seven, n
-	FIRE3-, 0.01, grnd, fire three, n
-	SWEEPER1-, 0.01, grnd, sweeper one, n
-	TELS2-, 0.01, grnd, tels two, n
 	RYR, 0.01, b738, Ryanair, n
 	THY, 0.01, b739, Turkish, e
 	AUR, 0.01, at75, Ayline, s
@@ -236,8 +207,6 @@
 	SIA, 0.01, a359, Singapore, w
 	ETH, 0.01, a359, Ethiopian, s
 	GBOYL-, 0.01, c152, gboyl, n
-	FIRE7-, 0.01, grnd, fire seven, n
-	FIRE6-, 0.01, grnd, fire six, n
 	AUR, 0.01, a320, Ayline, n
 	ICE, 0.01, a21n, Iceair, n
 	LOG, 0.01, e145, Logan, n
