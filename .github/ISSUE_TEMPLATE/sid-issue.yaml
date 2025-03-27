@@ -1,0 +1,22 @@
+name: SID Issue
+description: Report a problem with a SID (departure route).
+labels:
+  - bug
+  - sid
+body:
+  - type: input
+    attributes:
+      label: SID
+      description: The name of the SID to which this problem pertains.
+      placeholder: DET 3Y
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Please describe the problem with the route.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: If applicable, add screenshots to help explain your problem.
