@@ -2,7 +2,7 @@ name: STAR Issue
 description: Report a problem with a SID (departure route).
 labels:
   - bug
-  - sid
+  - STAR
 body:
   - type: input
     attributes:

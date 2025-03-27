@@ -2,7 +2,7 @@ name: SID Issue
 description: Report a problem with a SID (departure route).
 labels:
   - bug
-  - sid
+  - SID
 body:
   - type: input
     attributes:
