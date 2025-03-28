@@ -1,0 +1,22 @@
+name: STAR Issue
+description: Report a problem with a SID (departure route).
+labels:
+  - bug
+  - STAR
+body:
+  - type: input
+    attributes:
+      label: STAR
+      description: The name of the STAR to which this problem pertains.
+      placeholder: SIRIC 1H
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Please describe the problem with the route.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: If applicable, add screenshots to help explain your problem.

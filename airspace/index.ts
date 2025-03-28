@@ -4,7 +4,6 @@ import Airspace from "../src/Airspace.js";
 import Fix from "../src/Fix.js";
 import Beacon from "../src/Beacon.js";
 import Polygon from "../src/Polygon.js";
-import RunwayConfiguration from "../src/RunwayConfiguration.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
 import EGSS from "./EGSS.js";
@@ -12,6 +11,7 @@ import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
 import Aircraft from "../src/Aircraft.js";
 import AirspaceLines from "./lines/AirspaceLines.js";
+import RunwayConfigs from "./RunwayConfigs.js";
 
 const gen = Generator.getInstance();
 
@@ -31,7 +31,7 @@ gen.airspace(
 		false,
 		false,
 		2,
-		4,
+		3,
 		true,
 		true,
 		{
@@ -67,13 +67,12 @@ gen.airspace(
 			Beacon.fromDMS("514408.65N", "0012536.00E", "JACKO", "Jacko", {left: 264}),
 			Beacon.fromDMS("510958.44N", "0011704.26E", "GODLU", "Godlu", 309),
 
-			// STAR holding midpoints or shortcuts
+			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
 			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
-			Beacon.fromDMS("512829.01N", "0005513.72E", "RAVSA", "Ravsa"),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -199,113 +198,7 @@ await new EGSS().init();
 await new EGGW().init();
 await new EGLC().init();
 
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {arrivals: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {departures: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {arrivals: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {departures: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, gen.runway("lln"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, gen.runway("lls"), {arrivals: true, departures: true}),
-]);
-
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true, reverse: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true, reverse: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
-]);
-
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true, reverse: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true, reverse: true}),
-	new RunwayConfiguration(8, gen.runway("kks"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(23, gen.runway("lls"), {arrivals: true, departures: true, reverse: true}),
-]);
-
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {arrivals: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {departures: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {arrivals: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {departures: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, gen.runway("lln"), {arrivals: true, departures: true}),
-]);
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true}),
-	new RunwayConfiguration(23, gen.runway("lls"), {arrivals: true, departures: true}),
-]);
-
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true, reverse: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true, reverse: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
-]);
-
-gen.runway([
-	new RunwayConfiguration(0, gen.runway("lls"), {departures: true, reverse: true}),
-	new RunwayConfiguration(0, gen.runway("lln"), {arrivals: true, reverse: true}),
-	new RunwayConfiguration(8, gen.runway("kkn"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(12, gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(18, gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(24, gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
-	new RunwayConfiguration(23, gen.runway("lls"), {arrivals: true, departures: true, reverse: true}),
-]);
+new RunwayConfigs().init();
 
 gen.aircraft(new Aircraft(
 	"D228",
