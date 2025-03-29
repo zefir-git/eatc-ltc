@@ -46,7 +46,7 @@ export default class EGLL {
 					),
 				],
 				[
-					...new Array(3).fill(new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000)),
+					...new Array(5).fill(new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000)),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
@@ -79,7 +79,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(16000).repeated(3));
+		.withEntry(16000).repeated(5));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("ROXOG1H"),
@@ -94,7 +94,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(16000).repeated(3));
+		.withEntry(16000).repeated(5));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("ALESO1H"),
@@ -110,7 +110,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("BIG", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(19000).repeated(3));
+		.withEntry(19000).repeated(5));
 
 		/**
 		 * This arrival is to enable continuation on ALESO 1H if interrupted
@@ -162,7 +162,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(15000).repeated(3));
+		.withEntry(15000).repeated(5));
 
 		// LAM 1Z omitted (LAM→BNN)
 
@@ -180,7 +180,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(15000).repeated(3));
+		.withEntry(15000).repeated(5));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("BARMI1H"),
@@ -196,7 +196,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("LAM", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(22000).repeated(3));
+		.withEntry(22000).repeated(5));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("LOGAN", "2H"),
@@ -212,7 +212,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("LAM", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(22000, 320).repeated(3));
+		.withEntry(22000, 320).repeated(5));
 
 		// TOBID 1X omitted (TOBID→OCK)
 
@@ -245,7 +245,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(15000).repeated(3));
+		.withEntry(15000).repeated(5));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("SIRIC", "1H"),
@@ -260,7 +260,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
 			{end: "hold"})
-		.withEntry(14000, 96).repeated(3));
+		.withEntry(14000, 96).repeated(5));
 
 		// SIRIC 1Z omitted (SIRIC→BNN)
 	}
