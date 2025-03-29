@@ -22,7 +22,7 @@ export default class EGKK {
 				"London Gatwick Airport",
 				"Gatwick",
 				"EGKK",
-				22.12,
+				26,
 				6000,
 				[
 					new Runway("kkn", "26R",
