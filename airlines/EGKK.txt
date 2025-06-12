@@ -143,6 +143,7 @@
 	EZE, 0.04, at72, Eastflight, w
 	ENT, 0.04, b738, Enter, s
 	EZY, 0.04, a319, Easy, w
+	G-ABCD, 0.04, c152, 0, n
 	UZB, 0.03, a21n, Uzbek, e
 	UBD, 0.03, a320, Urair, e
 	SWR, 0.03, e195, Swiss, e
@@ -166,7 +167,6 @@
 	FHM, 0.02, a320, Eurobird, n
 	FHY, 0.02, a320, Freebird, e
 	G-ABCD, 0.02, p28r, 0, n
-	G-ABCD, 0.02, c152, 0, n
 	TAP, 0.02, a21n, Air Portugal, s
 	RYR, 0.01, b738, Ryanair, n
 	THY, 0.01, b739, Turkish, e
@@ -177,7 +177,7 @@
 	UZB, 0.01, b788, Uzbek, e
 	TOM, 0.01, b38m, Tomjet, w
 	VLG, 0.01, a319, Vueling, s
-	VJT, 0.01, cl35, Vista Jet, s
+	VJT, 0.01, cl35, Vista, s
 	AEE, 0.01, a320, Aegean, e
 	TVS, 0.01, b38m, Skytravel, n
 	LAV, 0.01, b738, Albastar, e
@@ -193,17 +193,12 @@
 	THY, 0.01, a333, Turkish, e
 	WZZ, 0.01, a320, Wizz Air, e
 	MAC, 0.01, a321, Arabia Maroc, s
-	ENGRUN-, 0.01, a21n, engrun, n
-	GBZEC-, 0.01, c152, gbzec, n
 	EJU, 0.01, a320, Alpine, n
-	GBGFX-, 0.01, c152, gbgfx, n
 	QTR, 0.01, b788, Qatari, n
-	GGATL-, 0.01, a320, ggatl, n
-	MBIGK-, 0.01, gl5t, mbigk, n
+	M-ABCD, 0.01, gl5t, 0, n
 	MSR, 0.01, a21n, Egyptair, e
 	SIA, 0.01, a359, Singapore, w
 	ETH, 0.01, a359, Ethiopian, s
-	GBOYL-, 0.01, c152, gboyl, n
 	AUR, 0.01, a320, Ayline, n
 	ICE, 0.01, a21n, Iceair, n
 	LOG, 0.01, e145, Logan, n
@@ -257,14 +252,11 @@
 	AEE, 0.01, a20n, Aegean, e
 	JDI, 0.01, cl35, Jedi, e
 	T7-123, 0.01, tbm8, 0, e
-	GMIDO-, 0.01, a320, gmido, e
 	D-ABCD, 0.01, c55b, 0, e
 	TAR, 0.01, a320, Tunair, s
-	EZYV1B35-, 0.01, a319, ezyv one b three five, s
 	THY, 0.01, b789, Turkish, e
 	UBT, 0.01, b789, Longboat, e
 	AEA, 0.01, b789, Europa, s
-	GUZEG-, 0.01, a20n, guzeg, e
 	QTR, 0.01, b77w, Qatari, e
 	AWC, 0.01, a321, Zap, s
 	THY, 0.01, a332, Turkish, e

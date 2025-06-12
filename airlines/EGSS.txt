@@ -98,7 +98,7 @@
 	SAH, 0.01, be40, Smart Jet, s
 	AWC, 0.01, a321, Zap, e
 	AWC, 0.01, a321, Zap, w
-	VJT, 0.01, glex, Vista Jet, s
+	VJT, 0.01, glex, Vista, s
 	BRO, 0.01, b737, Broadsword, w
 	UAE, 0.01, b77l, Emirates, e
 	JFA, 0.01, pc12, Mosquito, s
@@ -143,5 +143,5 @@
 	M-ABCD, 0.01, glex, 0, e
 	EDC, 0.01, e135, Saltire, e
 	NJE, 0.01, c56x, Fraction, s
-	VJT, 0.01, crj2, Vista Jet, e
+	VJT, 0.01, crj2, Vista, e
 	T7-ABC, 0.01, glf4, 0, w
