@@ -36,5 +36,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: LTCC.ini
-          path: LTCC.ini
+          name: LTCC.txt
+          path: LTCC.txt
