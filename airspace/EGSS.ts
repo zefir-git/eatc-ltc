@@ -20,7 +20,7 @@ export default class EGSS {
 				"London Stansted Airport",
 				"Stansted",
 				"EGSS",
-				8.55,
+				4,
 				5000,
 				[
 					new Runway("ss", "22",
