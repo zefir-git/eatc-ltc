@@ -260,7 +260,7 @@ await new AirspaceLines().withCoastline();
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 
-await fs.writeFile("./LTCC.ini", gen.generate(`
+await fs.writeFile("./LTCC.txt", gen.generate(`
 #
 # London Terminal Control for EndlessATC
 # Version: ${project.version}
