@@ -22,7 +22,7 @@ export default class EGLC {
 				"London City Airport",
 				"London City",
 				"EGLC",
-				4.54,
+				2,
 				3000,
 				[
 					new Runway("lc", "27",

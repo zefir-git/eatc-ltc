@@ -21,7 +21,7 @@ export default class EGGW {
 				"London Luton Airport",
 				"Luton",
 				"EGGW",
-				5.73,
+				3,
 				5000,
 				[
 					new Runway("gw", "25",
