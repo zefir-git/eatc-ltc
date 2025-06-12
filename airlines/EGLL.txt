@@ -282,7 +282,7 @@
 	GFA, 0.01, b789, Gulf Air, n
 	VLG, 0.01, a319, Vueling, s
 	UAL, 0.01, b78x, United, w
-	VJT, 0.01, cl35, Vista Jet, e
+	VJT, 0.01, cl35, Vista, e
 	SWR, 0.01, e195, Swiss, e
 	EZY, 0.01, b77w, Easy, n
 	LAN, 0.01, b77w, LAN, s
