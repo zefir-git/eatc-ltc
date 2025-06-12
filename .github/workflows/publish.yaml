@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: https://registry.npmjs.org/
           cache: npm
 
@@ -40,11 +40,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: LTCC.ini
-          path: LTCC.ini
+          name: LTCC.txt
+          path: LTCC.txt
 
       - name: Upload to release
         uses: cloudnode-pro/release-upload-asset@1.0.2
         with:
           gh-token: ${{ github.token }}
-          files: LTCC.ini; type=text/plain
+          files: LTCC.txt; type=text/plain
