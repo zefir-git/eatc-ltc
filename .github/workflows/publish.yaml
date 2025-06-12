@@ -47,4 +47,4 @@ jobs:
         uses: cloudnode-pro/release-upload-asset@1.0.2
         with:
           gh-token: ${{ github.token }}
-          files: LTCC.ini; type=text/plain
+          files: LTCC.txt; type=text/plain
