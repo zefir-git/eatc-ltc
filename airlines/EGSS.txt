@@ -12,136 +12,120 @@
 	RYR, 0.57, a320, Ryanair, e
 	EZY, 0.52, a320, Easy, n
 	RYR, 0.43, b738, Ryanair, n
-	RYR, 0.40, b38m, Ryanair, w
 	PGT, 0.40, a20n, Sunturk, e
+	RYR, 0.40, b38m, Ryanair, w
 	UAE, 0.34, b77w, Emirates, e
 	FDX, 0.27, b77l, Fedex, w
 	BCS, 0.26, b752, Postman, e
 	TKJ, 0.25, b738, Anatolia, e
+	FDX, 0.24, b763, Fedex, sw
 	EZY, 0.23, a20n, Easy, w
 	EZY, 0.22, a320, Easy, w
 	EZY, 0.19, a20n, Easy, n
-	RUK, 0.18, b38m, Blue Max, s
 	EZY, 0.18, a319, Easy, n
+	RUK, 0.18, b38m, Blue Max, s
 	EJU, 0.16, a20n, Alpine, e
 	BCS, 0.15, a306, Postman, e
-	RYR, 0.15, b38m, Ryanair, n
-	QTR, 0.15, b77l, Qatari, e
 	FPY, 0.15, a20n, Player, n
+	QTR, 0.15, b77l, Qatari, e
+	RYR, 0.15, b38m, Ryanair, n
 	CSG, 0.14, b77l, Southern Cargo, e
 	AWC, 0.13, a333, Zap, e
 	UPS, 0.13, b763, UPS, w
-	FDX, 0.12, b763, Fedex, s
-	UPS, 0.12, b763, UPS, e
-	FDX, 0.12, b763, Fedex, w
 	EXS, 0.12, b738, Channex, e
 	TKJ, 0.12, a321, Anatolia, e
+	UPS, 0.12, b763, UPS, e
 	TAY, 0.11, b738, Quality, e
-	TOM, 0.10, b738, Tomjet, s
 	CLX, 0.10, b744, Cargolux, e
+	TOM, 0.10, b738, Tomjet, s
 	BCS, 0.09, b752, Postman, w
+	EZY, 0.09, a319, Easy, w
 	PGT, 0.09, a320, Sunturk, e
 	SXS, 0.09, b38m, Sunexpress, e
 	TOM, 0.09, b738, Tomjet, e
-	EZY, 0.09, a319, Easy, w
+	BCS, 0.08, b734, Postman, e
 	FDX, 0.08, b77l, Fedex, s
 	HKC, 0.08, a332, Mascot, e
 	SXS, 0.08, b738, Sunexpress, e
-	BCS, 0.08, b734, Postman, e
-	HYM, 0.07, b738, Sky Moldova, e
-	CWY, 0.07, be20, Causeway, w
-	THY, 0.07, a332, Turkish, e
 	CKK, 0.07, b77l, Cargo King, e
-	RJA, 0.06, a320, Jordanian, e
+	CWY, 0.07, be20, Causeway, w
+	HYM, 0.07, b738, Sky Moldova, e
+	THY, 0.07, a332, Turkish, e
+	EZS, 0.06, a320, Topswiss, es
+	FIA, 0.06, a320/a321, Fia Airlines, e
 	M-ABCD, 0.06, lj45, 0, e
+	RJA, 0.06, a320, Jordanian, e
 	RYR, 0.06, a320, Ryanair, s
-	NJE, 0.05, e55p, Fraction, s
 	AAR, 0.05, b744, Asiana, e
 	EJU, 0.05, a319, Alpine, e
-	HYS, 0.04, a320, Sky Europe, e
+	NJE, 0.05, e55p, Fraction, s
 	BCS, 0.04, b738, Postman, e
 	CFE, 0.04, e190, Flyer, s
-	TKJ, 0.04, b38m, Anatolia, e
 	EXS, 0.04, b738, Channex, w
+	HYS, 0.04, a320, Sky Europe, e
 	M-ABCD, 0.04, lj45, 0, s
+	TKJ, 0.04, b38m, Anatolia, e
+	AWC, 0.03, a321, Zap, s
 	BRO, 0.03, b733, Broadsword, w
-	PGT, 0.03, a321, Sunturk, e
-	FIA, 0.03, a321, Fia Airlines, e
-	RYR, 0.03, b737, Ryanair, e
+	CFE, 0.03, e190, Flyer, e
 	HYM, 0.03, a319, Sky Moldova, e
 	NJE, 0.03, e55p, Fraction, e
-	AWC, 0.03, a321, Zap, s
-	FIA, 0.03, a320, Fia Airlines, e
-	CFE, 0.03, e190, Flyer, e
-	EZS, 0.03, a320, Topswiss, e
-	EZS, 0.03, a320, Topswiss, s
+	PGT, 0.03, a321, Sunturk, e
+	QQE, 0.03, glf6, Q-Rex, esw
 	RUK, 0.03, b38m, Blue Max, e
-	BCS, 0.02, b763, Postman, e
-	AZG, 0.02, b744, Silk West, e
-	PGT, 0.02, b738, Sunturk, e
-	RRR, 0.02, a332, Ascot/Kittyhawk, e
-	NJE, 0.02, e55p, Fraction, w
-	EXS, 0.02, b738, Channex, n
-	AXY, 0.02, crj2, Legend, e
+	RYR, 0.03, b737, Ryanair, e
+	AUR, 0.02, at72, Ayline, s
+	AWC, 0.02, a21n/a321, Zap, e
+	AWC, 0.02, a321, Zap, ew
+	AWC, 0.02, a21n, Zap, es
 	AWC, 0.02, a320, Zap, s
+	AXY, 0.02, crj2/e190, Legend, w
+	AXY, 0.02, e190/e35l, Legend, e
+	AXY, 0.02, e35l, Legend, es
+	AXY, 0.02, crj2, Legend, e
+	AZG, 0.02, b744, Silk West, e
+	BCS, 0.02, b763, Postman, e
+	D-ABCD, 0.02, c25a/cl30, 0, e
+	EXS, 0.02, b738, Channex, n
+	EZS, 0.02, a20n, Topswiss, es
+	EZY, 0.02, a319/a320, Easy, e
 	FJO, 0.02, e550, Flex Europe, w
 	FPY, 0.02, a21n, Player, n
-	AUR, 0.02, at72, Ayline, s
-	GNJ, 0.01, cl60, Gain Jet, e
-	AXY, 0.01, crj2, Legend, w
-	M-ABCD, 0.01, lj45, 0, w
-	VJH, 0.01, e35l, Vista Germany, e
-	IFA, 0.01, lj60, Red Angel, s
-	QQE, 0.01, glf6, Q-Rex, w
-	QQE, 0.01, glf6, Q-Rex, e
-	KRH, 0.01, a21n, Sparrowhawk, s
-	SAH, 0.01, be40, Smart Jet, s
-	AWC, 0.01, a321, Zap, e
-	AWC, 0.01, a321, Zap, w
-	VJT, 0.01, glex, Vista, s
-	BRO, 0.01, b737, Broadsword, w
-	UAE, 0.01, b77l, Emirates, e
-	JFA, 0.01, pc12, Mosquito, s
-	NJU, 0.01, c56x, Artisan, w
-	TAY, 0.01, b738, Quality, s
-	IFA, 0.01, lj60, Red Angel, e
-	EZS, 0.01, a20n, Topswiss, e
-	EZS, 0.01, a20n, Topswiss, s
-	EZY, 0.01, a320, Easy, e
-	EZE, 0.01, e170, Eastflight, n
-	AXY, 0.01, e35l, Legend, s
-	KRH, 0.01, a21n, Sparrowhawk, e
-	CLF, 0.01, e550, Clifton, w
-	AXY, 0.01, e190, Legend, e
-	SYG, 0.01, b738, Synergy, w
-	AWC, 0.01, a21n, Zap, s
-	GNJ, 0.01, cl60, Gain Jet, w
-	SON, 0.01, glex, Sonas, w
-	WUK, 0.01, a321, Wizz Go, w
+	GNJ, 0.02, cl60, Gain Jet, ew
+	IFA, 0.02, lj60, Red Angel, es
+	KRH, 0.02, a21n, Sparrowhawk, es
+	M-ABCD, 0.02, f900/glex, 0, e
+	M-ABCD, 0.02, lj45, 0, nw
+	NJE, 0.02, e55p, Fraction, w
+	PGT, 0.02, b738, Sunturk, e
+	RRR, 0.02, a332, Ascot/Kittyhawk, e
 	AUR, 0.01, a320, Ayline, s
+	BRO, 0.01, b737, Broadsword, w
+	CLF, 0.01, e550, Clifton, w
 	CTN, 0.01, a320, Croatia, e
-	TMT, 0.01, a321, Kapow, e
-	VLZ, 0.01, cl60, Volare, w
-	QTR, 0.01, b77l, Qatari, s
 	CWY, 0.01, be20, Causeway, n
-	LNX, 0.01, e550, Lonex, s
-	ENT, 0.01, b738, Enter, e
-	PTN, 0.01, pc24, Platoon, s
-	QQE, 0.01, glf6, Q-Rex, s
-	AXY, 0.01, e35l, Legend, e
-	AWC, 0.01, a21n, Zap, e
-	AXY, 0.01, e190, Legend, w
-	PYN, 0.01, be20, Poyston, w
-	EZY, 0.01, a319, Easy, e
-	FJO, 0.01, glex, Flex Europe, w
 	EDC, 0.01, e35l, Saltire, w
-	D-ABCD, 0.01, c25a, 0, e
-	D-ABCD, 0.01, cl30, 0, e
-	T7-ABC, 0.01, cl60, 0, s
-	M-ABCD, 0.01, f900, 0, e
-	M-ABCD, 0.01, lj45, 0, n
-	M-ABCD, 0.01, glex, 0, e
 	EDC, 0.01, e135, Saltire, e
+	ENT, 0.01, b738, Enter, e
+	EZE, 0.01, e170, Eastflight, n
+	FJO, 0.01, glex, Flex Europe, w
+	JFA, 0.01, pc12, Mosquito, s
+	LNX, 0.01, e550, Lonex, s
 	NJE, 0.01, c56x, Fraction, s
-	VJT, 0.01, crj2, Vista, e
+	NJU, 0.01, c56x, Artisan, w
+	PTN, 0.01, pc24, Platoon, s
+	PYN, 0.01, be20, Poyston, w
+	QTR, 0.01, b77l, Qatari, s
+	SAH, 0.01, be40, Smart Jet, s
+	SON, 0.01, glex, Sonas, w
+	SYG, 0.01, b738, Synergy, w
+	T7-ABC, 0.01, cl60, 0, s
 	T7-ABC, 0.01, glf4, 0, w
+	TAY, 0.01, b738, Quality, s
+	TMT, 0.01, a321, Kapow, e
+	UAE, 0.01, b77l, Emirates, e
+	VJH, 0.01, e35l, Vista Germany, e
+	VJT, 0.01, glex, Vista, s
+	VJT, 0.01, crj2, Vista, e
+	VLZ, 0.01, cl60, Volare, w
+	WUK, 0.01, a321, Wizz Go, w
