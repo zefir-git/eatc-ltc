@@ -3,47 +3,61 @@ import RunwayConfiguration from "../src/RunwayConfiguration.js";
 
 export default class RunwayConfigs {
     private readonly gen = Generator.getInstance();
-    private readonly westerly: RunwayConfiguration[][] = [[new RunwayConfiguration(0, this.gen.runway("lls"),
-        {arrivals: true}),
-        new RunwayConfiguration(0, this.gen.runway("lln"), {departures: true}),
-        new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
-        new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
-        new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
-        new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true})],
-        [new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
-            new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true}),
-            new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
-            new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
-            new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
-            new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true})],
-        [new RunwayConfiguration(0, this.gen.runway("lls"), {arrivals: true}),
+    private readonly westerly: RunwayConfiguration[][] = [
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {arrivals: true}),
             new RunwayConfiguration(0, this.gen.runway("lln"), {departures: true}),
             new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
-            new RunwayConfiguration(23, this.gen.runway("lln"), {arrivals: true, departures: true})],
-        [new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
+        ],
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
             new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true}),
             new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
-            new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true})]];
-    private readonly easterly: RunwayConfiguration[][] = [[new RunwayConfiguration(0, this.gen.runway("lls"),
-        {departures: true, reverse: true}),
-        new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true, reverse: true}),
-        new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true, reverse: true}),
-        new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
-        new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
-        new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true, reverse: true})],
-        [new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true, reverse: true}),
+        ],
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {arrivals: true}),
+            new RunwayConfiguration(0, this.gen.runway("lln"), {departures: true}),
+            new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(23, this.gen.runway("lln"), {arrivals: true, departures: true}),
+        ],
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
+            new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true}),
+            new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true}),
+        ],
+    ];
+    private readonly easterly: RunwayConfiguration[][] = [
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true, reverse: true}),
             new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true, reverse: true}),
             new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
-            new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true, reverse: true})]];
+        ],
+        [
+            new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true, reverse: true}),
+            new RunwayConfiguration(0, this.gen.runway("lln"), {arrivals: true, reverse: true}),
+            new RunwayConfiguration(8, this.gen.runway("kks"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true, reverse: true}),
+        ],
+    ];
 
     public init() {
         this.allWesterly();
