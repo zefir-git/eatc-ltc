@@ -58,6 +58,7 @@ The airspace features the following airports.
 - `EGSS` London Stansted Airport
 - `EGGW` London Luton Airport
 - `EGLC` London City Airport
+- `EGMC` London Southend Airport
 
 RNAV approach transitions are available for
 EGGW (<code>[ZAGZO 1T](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/321263.pdf) [1Q](https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-02-20-AIRAC/graphics/321260.pdf)</code>)
