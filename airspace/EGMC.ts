@@ -103,7 +103,7 @@ export default class EGMC {
             [Generator.getInstance().runway("mc")],
             true,
             Generator.getInstance().beacon("SOXUX"),
-            57,
+            56,
             [
                 Generator.getInstance().beacon("SOXUX"),
                 Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", 9000, 250),
@@ -112,7 +112,7 @@ export default class EGMC {
                 Generator.getInstance().beacon("GEGMU", 6000, 195),
             ],
             {end: "hold"})
-            .withEntry(10000));
+            .withEntry(12000, 56));
 
         Generator.getInstance().arrival(new STAR(
             ...Generator.getInstance().pronounce("SAM", "1S"),
@@ -149,7 +149,7 @@ export default class EGMC {
                 Generator.getInstance().beacon("GEGMU", 6000, 195),
             ],
             {end: "hold"})
-            .withEntry(10000, 318));
+            .withEntry(12000, 317));
 
         Generator.getInstance().arrival(new STAR(
             ...Generator.getInstance().pronounce("FINMA", "1S"),
