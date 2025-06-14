@@ -6,6 +6,7 @@ import Beacon from "../src/Beacon.js";
 import Polygon from "../src/Polygon.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
+import EGMC from "./EGMC.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
@@ -53,6 +54,7 @@ gen.airspace(
 			Beacon.fromDMS("513723N", "0003107W", "CHT", "Chiltern", {left: 290}),
 			Beacon.fromDMS("515341N", "0001509W", "LUT", "Luton", 254),
 			Beacon.fromDMS("513016N", "0000403E", "LCY", "London City", 272),
+			Beacon.fromDMS("513434N", "0004201E", "SND", "Southend", {left: 53}),
 
 			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
@@ -73,6 +75,7 @@ gen.airspace(
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
+			Beacon.fromDMS("514253.48N", "0010633.89E", "GEGMU", "Gegmu", 263),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -197,6 +200,7 @@ await new EGKK().init();
 await new EGSS().init();
 await new EGGW().init();
 await new EGLC().init();
+await new EGMC().init();
 
 new RunwayConfigs().init();
 
