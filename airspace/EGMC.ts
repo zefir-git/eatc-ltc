@@ -41,7 +41,7 @@ export default class EGMC {
                 [
                     NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
                     NamedFix.fromDMS("510945N", "0012133E", "DVR", "Dover"),
-                    NamedFix.fromDMS("515998N", "0005272E", "LYD", "Lydd"),
+                    NamedFix.fromDMS("505958.87N", "0005243.18E", "LYD", "Lydd"),
                     NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
                     Generator.getInstance().beacon("BPK"),
                 ],
