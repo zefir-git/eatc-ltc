@@ -11,6 +11,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true}),
         ],
         [
             new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
@@ -19,6 +20,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true}),
         ],
         [
             new RunwayConfiguration(0, this.gen.runway("lls"), {arrivals: true}),
@@ -28,6 +30,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
             new RunwayConfiguration(23, this.gen.runway("lln"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true}),
         ],
         [
             new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true}),
@@ -37,6 +40,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true}),
             new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true}),
         ],
     ];
     private readonly easterly: RunwayConfiguration[][] = [
@@ -47,6 +51,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(12, this.gen.runway("ss"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true, reverse: true}),
         ],
         [
             new RunwayConfiguration(0, this.gen.runway("lls"), {departures: true, reverse: true}),
@@ -56,6 +61,7 @@ export default class RunwayConfigs {
             new RunwayConfiguration(18, this.gen.runway("gw"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(24, this.gen.runway("lc"), {arrivals: true, departures: true, reverse: true}),
             new RunwayConfiguration(23, this.gen.runway("lls"), {arrivals: true, departures: true, reverse: true}),
+            new RunwayConfiguration(30, this.gen.runway("mc"), {arrivals: true, departures: true, reverse: true}),
         ],
     ];
 

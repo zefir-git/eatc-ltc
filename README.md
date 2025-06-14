@@ -79,10 +79,11 @@ configuration is listed in parentheses.
       <th>EGSS</th>
       <th>EGGW</th>
       <th>EGLC</th>
+      <th>EGMC</th>
     </tr>
   </thead>
   <tbody>
-    <tr><th colspan=6 style="text-align: center">Westerly operations</th></tr>
+    <tr><th colspan=7 style="text-align: center">Westerly operations</th></tr>
     <tr>
       <td>1</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
@@ -90,6 +91,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>2</td>
@@ -98,6 +100,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>3</td>
@@ -106,6 +109,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>4</td>
@@ -114,8 +118,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Easterly operations</th></tr>
+    <tr><th colspan=7 style="text-align: center">Easterly operations</th></tr>
     <tr>
       <td>5</td>
       <td><code>↓ 09L</code> <code>↑ 09R</code></td>
@@ -123,6 +128,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>6</td>
@@ -131,8 +137,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Westerly operations, EGKK easterly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Westerly operations, EGKK easterly</th></tr>
     <tr>
       <td>7</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
@@ -140,6 +147,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>8</td>
@@ -148,6 +156,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>9</td>
@@ -156,6 +165,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>10</td>
@@ -164,8 +174,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Westerly operations, EGLC easterly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Westerly operations, EGLC easterly</th></tr>
     <tr>
       <td>11</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
@@ -173,6 +184,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>12</td>
@@ -181,6 +193,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>13</td>
@@ -189,6 +202,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>14</td>
@@ -197,8 +211,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Westerly operations, EGKK & EGLC easterly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Westerly operations, EGKK & EGLC easterly</th></tr>
     <tr>
       <td>15</td>
       <td><code>↓ 27L</code> <code>↑ 27R</code></td>
@@ -206,6 +221,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>16</td>
@@ -214,6 +230,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>17</td>
@@ -222,6 +239,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>18</td>
@@ -230,8 +248,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Easterly operations, EGKK westerly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Easterly operations, EGKK westerly</th></tr>
     <tr>
       <td>19</td>
       <td><code>↓ 09L</code> <code>↑ 09R</code></td>
@@ -239,6 +258,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>20</td>
@@ -247,8 +267,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Easterly operations, EGLC westerly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Easterly operations, EGLC westerly</th></tr>
     <tr>
       <td>21</td>
       <td><code>↓ 09L</code> <code>↑ 09R</code></td>
@@ -256,6 +277,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>22</td>
@@ -264,8 +286,9 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center">Easterly operations, EGKK & EGLC westerly</th></tr>
+    <tr><th colspan=7 style="text-align: center">Easterly operations, EGKK & EGLC westerly</th></tr>
     <tr>
       <td>23</td>
       <td><code>↓ 09L</code> <code>↑ 09R</code></td>
@@ -273,6 +296,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>24</td>
@@ -281,9 +305,10 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
-    <tr><th colspan=6 style="text-align: center;">EGKK RWY <code>26R</code>/<code>08L</code></th></tr>
-    <tr><td colspan=6>These configurations are the same as 1–24, except the secondary runway (<code>26R</code>/<code>08L</code>) is used for
+    <tr><th colspan=7 style="text-align: center;">EGKK RWY <code>26R</code>/<code>08L</code></th></tr>
+    <tr><td colspan=7>These configurations are the same as 1–24, except the secondary runway (<code>26R</code>/<code>08L</code>) is used for
         Gatwick.</td></tr>
     <tr>
       <td>25</td>
@@ -292,6 +317,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>26</td>
@@ -300,6 +326,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>27</td>
@@ -308,6 +335,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>28</td>
@@ -316,6 +344,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>29</td>
@@ -324,6 +353,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>30</td>
@@ -332,6 +362,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>31</td>
@@ -340,6 +371,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>32</td>
@@ -348,6 +380,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>33</td>
@@ -356,6 +389,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>34</td>
@@ -364,6 +398,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>35</td>
@@ -372,6 +407,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>36</td>
@@ -380,6 +416,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>37</td>
@@ -388,6 +425,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>38</td>
@@ -396,6 +434,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>39</td>
@@ -404,6 +443,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>40</td>
@@ -412,6 +452,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>41</td>
@@ -420,6 +461,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>42</td>
@@ -428,6 +470,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 22</code> <sub>(12)</sub></td>
       <td><code>↓↑ 25</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 23</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>43</td>
@@ -436,6 +479,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>44</td>
@@ -444,6 +488,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 09</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>45</td>
@@ -452,6 +497,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>46</td>
@@ -460,6 +506,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>47</td>
@@ -468,6 +515,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
     <tr>
       <td>48</td>
@@ -476,6 +524,7 @@ configuration is listed in parentheses.
       <td><code>↓↑ 04</code> <sub>(12)</sub></td>
       <td><code>↓↑ 07</code> <sub>(18)</sub></td>
       <td><code>↓↑ 27</code> <sub>(24)</sub></td>
+      <td><code>↓↑ 05</code> <sub>(30)</sub></td>
     </tr>
   </tbody>
 </table>
