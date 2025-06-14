@@ -263,10 +263,10 @@ export default class EGMC {
             rwy,
             [
                 rwy.reverse().position.destination(rwy.heading, 1.5),
-                Generator.getInstance().fix("EVNAS", "514007N", "0002664E"),
+                Generator.getInstance().fix("EVNAS", "514004.25N", "0002638.37E"),
                 Generator.getInstance().beacon("LAM"),
                 Generator.getInstance().beacon("BPK"),
-                Generator.getInstance().fix("HEN", "514535N", "0004725W"),
+                Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
                 Generator.getInstance().sidFix("CPT"),
             ],
         ));
@@ -277,7 +277,7 @@ export default class EGMC {
             rwy,
             [
                 rwy.reverse().position.destination(rwy.heading, 1.5),
-                Generator.getInstance().fix("EVNAS", "514007N", "0002664E"),
+                Generator.getInstance().fix("EVNAS", "514004.25N", "0002638.37E"),
                 Generator.getInstance().beacon("LAM"),
                 Generator.getInstance().sidFix("BPK"),
             ],
