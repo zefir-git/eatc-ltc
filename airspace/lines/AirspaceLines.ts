@@ -462,6 +462,116 @@ export default class AirspaceLines {
 			this.gen.beacon("SND").destination(244, 8.1)
 		], Line.ColourType.RUNWAY));
 
+		// Southend CTA 1 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("513437N", "0002440E"),
+			Fix.fromDMS("514333N", "0004429E"),
+			Fix.fromDMS("514206N", "0004521E"),
+		], [0x30, 0x30, 0x30]));
+		this.gen.line(new Line([
+			Fix.fromDMS("513151N", "0005000E"),
+			Fix.fromDMS("513000N", "0005000E"),
+			Fix.fromDMS("512528N", "0003956E"),
+			Fix.fromDMS("512446N", "0003202E"),
+			Fix.fromDMS("512757N", "0002721E"),
+			Fix.fromDMS("513146N", "0002401E"),
+			Fix.fromDMS("513437N", "0002440E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 2 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514333N", "0004429E"),
+			Fix.fromDMS("514420N", "0004614E"),
+			Fix.fromDMS("514440N", "0005036E"),
+			Fix.fromDMS("514431N", "0005038E"),
+			Fix.fromDMS("514138N", "0005222E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 3 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514440N", "0005036E"),
+			Fix.fromDMS("514446N", "0005158E"),
+		], [0x30, 0x30, 0x30]).join(new Circle(
+			Fix.fromDMS("513428N", "0004207E"),
+			12 * Fix.NMI,
+			50
+		).cutoff(f =>
+			f.longitude >= Fix.fromDMS("514446N", "0005158E").longitude
+			&& f.latitude >= Fix.fromDMS("513504N", "0010120E").latitude
+		)).join(new Line([
+			Fix.fromDMS("513504N", "0010120E"),
+			Fix.fromDMS("513000N", "0005000E"),
+		])));
+
+		// Southend CTA 4 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("513437N", "0002440E"),
+			Fix.fromDMS("513943N", "0002551E"),
+			Fix.fromDMS("514353N", "0003508E"),
+			Fix.fromDMS("514435N", "0004406E"),
+			Fix.fromDMS("514401N", "0004412E"),
+			Fix.fromDMS("514333N", "0004429E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 5 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514435N", "0004406E"),
+			Fix.fromDMS("514506N", "0004514E"),
+			Fix.fromDMS("514530N", "0005026E"),
+			Fix.fromDMS("514440N", "0005036E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 6 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514530N", "0005026E"),
+			Fix.fromDMS("514551N", "0005510E"),
+		], [0x30, 0x30, 0x30]).join(new Circle(
+			Fix.fromDMS("513428N", "0004207E"),
+			14 * Fix.NMI,
+			50
+		).cutoff(f =>
+			f.longitude >= Fix.fromDMS("514551N", "0005510E").longitude
+			&& f.latitude >= Fix.fromDMS("513653N", "0010414E").latitude
+		)).join(new Line([
+			Fix.fromDMS("513653N", "0010414E"),
+			Fix.fromDMS("513535N", "0010117E"),
+		])));
+
+		// Southend CTA 7 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("513000N", "0005000E"),
+			Fix.fromDMS("512120N", "0005000E"),
+			Fix.fromDMS("512046N", "0003338E"),
+			Fix.fromDMS("512757N", "0002721E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 8 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("512829N", "0005000E"),
+			Fix.fromDMS("512555N", "0005625E"),
+			Fix.fromDMS("512124N", "0005144E"),
+			Fix.fromDMS("512120N", "0005000E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 9 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514506N", "0004514E"),
+			Fix.fromDMS("514716N", "0005005E"),
+			Fix.fromDMS("514530N", "0005026E"),
+		], [0x30, 0x30, 0x30]));
+
+		// Southend CTA 10 (D)
+		this.gen.line(new Line([
+			Fix.fromDMS("514716N", "0005005E"),
+			Fix.fromDMS("515032N", "0005922E"),
+			Fix.fromDMS("515158N", "0011450E"),
+			Fix.fromDMS("514921N", "0012014E"),
+			Fix.fromDMS("514212N", "0012127E"),
+			Fix.fromDMS("513836N", "0011744E"),
+			Fix.fromDMS("513751N", "0010627E"),
+			Fix.fromDMS("513653N", "0010414E"),
+		], [0x30, 0x30, 0x30]));
+
 		// LTMA 23 (A) / LTMA 11 (A)
 		this.gen.line(new Line([
 			new Fix(51.569281, -1.195107),
