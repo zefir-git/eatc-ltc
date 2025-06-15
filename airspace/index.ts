@@ -132,19 +132,13 @@ gen.airspace(
 				new Fix(50.755138, 0.750332),
 				new Fix(50.979723, 1.040440),
 
-				// extension WORTHING CTA 1A
+				// extension
 				new Fix(51.000000, 1.466675),
 				new Fix(51.349485, 1.531906),
-				new Fix(51.357633, 1.362991),
-				// end extension WORTHING CTA 1A
-
-				// extension
-				new Fix(51.4061, 1.3896),
-				new Fix(51.5, 1.4),
-				new Fix(51.5637, 1.3681),
+				Fix.fromDMS("512715.96N", "0013016.98E"),
+				Fix.fromDMS("514053.03N", "0012633.13E"),
+				new Fix(51.6849, 1.4213),
 				// end extension
-
-				new Fix(51.649981, 1.416721),
 				new Fix(51.873206, 1.443844),
 				new Fix(51.984880, 1.384964),
 
