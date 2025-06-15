@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import Airport from "../src/Airport.js";
 import Fix from "../src/Fix.js";
 import Generator from "../src/Generator.js";
@@ -37,7 +38,7 @@ export default class EGMC {
                     ),
                 ],
                 [],
-                [], //Airport.Airline.raw(await fs.readFile("./airlines/EGMC.txt", "utf8")),
+                Airport.Airline.raw(await fs.readFile("./airlines/EGMC.txt", "utf8")),
                 [
                     NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
                     NamedFix.fromDMS("510945N", "0012133E", "DVR", "Dover"),

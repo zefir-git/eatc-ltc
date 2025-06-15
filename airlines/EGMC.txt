@@ -1,0 +1,35 @@
+	EZY, 10.00, a20n, Easy, s
+	EJU, 2.68, a320, Alpine, s
+	EJU, 1.71, a319, Alpine, s
+	G-ABCD, 1.68, be76/c152/cruz/m600/pivi/s22t/sr20, 0, w
+	EJU, 1.22, a20n, Alpine, e
+	EZE, 1.22, at76, Eastflight, w
+	EZY, 1.22, a20n, Easy, e
+	G-ABCD, 1.22, c152, 0, s
+	EZS, 0.98, a320, Topswiss, s
+	EZY, 0.98, a320, Easy, es
+	G-ABCD, 0.96, hr20/p28a/pa32/rv7, 0, n
+	EJU, 0.73, a20n, Alpine, s
+	EJU, 0.73, a320, Alpine, e
+	ENT, 0.49, b38m, Enter, e
+	EZE, 0.49, at72, Eastflight, w
+	G-ABCD, 0.49, p28a, 0, w
+	M-ABCD, 0.49, be20, 0, s
+	N-123AB, 0.49, p180, 0, e
+	2-ABCD, 0.48, k100/tbm9, 0, w
+	2-ABCD, 0.48, tbm9, 0, sw
+	G-ABCD, 0.48, p28a, 0, ns
+	VJH, 0.48, e35l, Vista Germany, sw
+	VJT, 0.48, c56x/cl35, Vista, w
+	ECA, 0.24, c25a, Dark Knight, s
+	ECA, 0.24, c25b, Dark Knight, e
+	EJU, 0.24, a319, Alpine, e
+	EZY, 0.24, a320, Easy, w
+	ITY, 0.24, bcs1, Itarrow, e
+	M-ABCD, 0.24, c25c, 0, w
+	N-123AB, 0.24, be33, 0, w
+	N-123AB, 0.24, t210, 0, s
+	NJE, 0.24, e55p, Fraction, s
+	OE-ABC, 0.24, e50p, 0, n
+	PVD, 0.24, e55p, Pad Aviation, s
+	WZZ, 0.24, a320, Wizz Air, e
