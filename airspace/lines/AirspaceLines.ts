@@ -458,7 +458,7 @@ export default class AirspaceLines {
 
 		// Southend SND D8.1 for ILS/DME/NDB(L) RWY 05
 		this.gen.line(new Line([
-			this.gen.beacon("SND").destination(246, 8.1),
+			this.gen.beacon("SND").destination(249, 8.1),
 			this.gen.beacon("SND").destination(244, 8.1)
 		], Line.ColourType.RUNWAY));
 
