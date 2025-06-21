@@ -39,13 +39,10 @@ Follow these steps to add the custom airspace to your game:
 
 ### Android
 
-1. Connect your phone to your computer via USB and enable file transfer.
-2. On your computer, open the file manager and locate your connected phone.
-3. Navigate to <kbd>Internal storage</kbd>.
-4. Copy or move the `LTCC.txt` file into the following folder: `Android/data/com.dirgtrats.endlessatc/files/locations`
-5. Launch *Endless ATC* on your device.
-6. In the game, tap the <kbd>⋮</kbd> menu → <kbd>airports</kbd>. You should see the <kbd>LTCC</kbd> button at the bottom
-   of the screen.
+1. Launch *Endless ATC*.
+2. In the game, go to the menu and select <kbd>⋮</kbd> → <kbd>about</kbd> → <kbd>import</kbd>.
+3. Find where you downloaded the `LTCC.txt` file and select it.
+4. Go to <kbd>⋮</kbd> → <kbd>airports</kbd>. You should see the <kbd>LTCC</kbd> button at the bottom of the screen.
 
 </details>
 
