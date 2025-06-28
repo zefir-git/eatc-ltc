@@ -724,8 +724,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("DVR").destination(258, 36),
 				Generator.getInstance().fix("WIZAD")
@@ -738,8 +738,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("DVR").destination(258, 36),
 				Generator.getInstance().fix("WIZAD")
@@ -826,8 +826,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
 				Generator.getInstance().beacon("LAM")
@@ -840,8 +840,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
 				Generator.getInstance().beacon("LAM")
@@ -854,8 +854,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
 				Generator.getInstance().beacon("DET"),
@@ -870,8 +870,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(257, 2.3),
 				kksRev.position.destination(257, 2.3).bearingIntersection(257, Generator.getInstance().beacon("MAY"), 282),
-				Generator.getInstance().beacon("MAY").destination(228, 13),
-				Generator.getInstance().beacon("MAY").destination(228, 9),
+				Generator.getInstance().beacon("MAY").destination(282, 13),
+				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
 				Generator.getInstance().beacon("DET"),
