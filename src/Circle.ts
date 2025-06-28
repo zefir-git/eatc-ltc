@@ -37,6 +37,31 @@ export default class Circle extends Line {
 		return new Line(this.vertices.filter((fix, i) => filter(fix, i, this)), this.colour);
 	}
 
+	public arc(start: number, end: number): Line;
+	public arc(start: Fix, end: Fix): Line;
+	public arc(...args: [start: number, end: number] | [start: Fix, end: Fix]): Line {
+		if (typeof args[0] === "number") {
+			const [start, end] = args as [number, number];
+
+			// normalise the angles
+			const startAngle = ((start % 360) + 360) % 360;
+			const endAngle = ((end % 360) + 360) % 360;
+
+			return new Line(
+				this.vertices
+					.map(v => [this.centre.bearing(v), v] as const)
+					.filter(([θ]) => (startAngle <= endAngle ? θ >= startAngle && θ <= endAngle : (θ >= startAngle || θ <= endAngle)))
+					.sort(([θa], [θb]) => θa - θb)
+					.map(([, v]) => v),
+				this.colour
+			);
+		}
+		else {
+			const [start, end] = args as [Fix, Fix];
+			return this.arc(this.centre.bearing(start), this.centre.bearing(end));
+		}
+	}
+
 	public static from(a: Fix, b: Fix, c: Fix, precision: number, colour?: Line.Colour): Circle {
 		const [xₐ, yₐ, zₐ] = a.cartesian();
 		const [xᵦ, yᵦ, zᵦ] = b.cartesian();
