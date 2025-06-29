@@ -1,337 +1,327 @@
 	WUK, 10.00, a21n, Wizz Go, e
-	EZY, 4.14, a20n, Easy, s
-	EZY, 3.21, a320, Easy, s
-	WZZ, 2.85, a21n, Wizz Air, e
-	EZY, 2.53, a319, Easy, s
-	EZY, 2.20, a20n, Easy, e
-	WMT, 2.20, a320, Wizz Malta, e
-	EZY, 1.56, a319, Easy, e
-	WZZ, 1.51, a321, Wizz Air, e
-	WZZ, 1.29, a320, Wizz Air, e
-	EZY, 1.22, a319/a320, Easy, w
-	EZY, 1.17, a319, Easy, n
+	EZY, 4.70, a319, Easy, s
+	EZY, 4.65, a20n, Easy, s
+	WZZ, 3.44, a21n, Wizz Air, e
+	EZY, 3.23, a20n, Easy, e
+	EZY, 3.08, a320, Easy, s
+	WMT, 2.42, a320, Wizz Malta, e
+	EZY, 2.09, a319, Easy, e
+	EZY, 1.77, a319, Easy, n
+	RYR, 1.53, b38m, Ryanair, s
+	RYR, 1.47, b738, Ryanair, w
+	WZZ, 1.46, a321, Wizz Air, e
+	EZY, 1.45, a320, Easy, e
+	WZZ, 1.45, a320, Wizz Air, e
+	RYR, 1.32, b38m, Ryanair, e
+	RYR, 1.29, b738, Ryanair, e
+	RYR, 1.11, b738, Ryanair, s
 	RYR, 1.10, b38m, Ryanair, w
-	RYR, 1.06, b738, Ryanair, w
-	RYR, 1.06, b38m, Ryanair, e
-	EZY, 1.05, a20n, Easy, n
-	RYR, 1.05, b38m, Ryanair, s
-	RYR, 0.94, b738, Ryanair, e
-	EZY, 0.90, a320, Easy, e
-	EZY, 0.87, a320, Easy, n
-	WMT, 0.69, a21n, Wizz Malta, e
-	WMT, 0.67, a321, Wizz Malta, e
-	ELY, 0.62, b738, El Al, e
-	RYR, 0.60, b738, Ryanair, s
-	BCS, 0.54, a306, Postman, e
-	EZY, 0.46, a20n, Easy, w
-	WMT, 0.40, a20n, Wizz Malta, e
-	NJE, 0.34, e55p, Fraction, es
-	ISR, 0.31, a320, Israir, e
-	WUK, 0.31, a21n, Wizz Go, n
-	BCS, 0.25, b752, Postman, e
-	WZZ, 0.25, a20n, Wizz Air, e
-	VJT, 0.24, glex, Vista, ew
-	BCS, 0.23, b752, Postman, s
-	EJU, 0.22, a20n, Alpine, e
-	NJE, 0.20, cl60, Fraction, es
-	VJT, 0.19, cl35, Vista, e
-	VJT, 0.18, cl35, Vista, s
-	VJH, 0.16, c56x/e55p, Vista Germany, s
-	VJH, 0.16, e35l, Vista Germany, s
-	VJT, 0.16, cl60/glex, Vista, s
-	NJE, 0.15, c68a, Fraction, s
-	TOM, 0.15, b738, Tomjet, s
-	NJE, 0.14, c56x, Fraction, es
-	VJH, 0.14, e35l, Vista Germany, e
-	CLF, 0.12, e550, Clifton, es
-	NJE, 0.12, glex, Fraction, ew
-	NJE, 0.12, c68a, Fraction, e
-	PTN, 0.10, pc24, Platoon, e
+	EZY, 0.91, a20n, Easy, n
+	EZY, 0.89, a320, Easy, n
+	EZY, 0.88, a319, Easy, w
+	WMT, 0.84, a321, Wizz Malta, e
+	WMT, 0.79, a21n, Wizz Malta, e
+	BCS, 0.60, a306, Postman, e
+	ELY, 0.47, b738, El Al, e
+	EZY, 0.44, a320, Easy, w
+	EZY, 0.38, a20n, Easy, w
+	WZZ, 0.38, a20n, Wizz Air, e
+	WUK, 0.34, a21n, Wizz Go, s
+	WUK, 0.32, a321, Wizz Go, e
+	TOM, 0.29, b738, Tomjet, s
+	BCS, 0.27, b752, Postman, e
+	EXS, 0.26, a21n, Channex, s
+	VJT, 0.26, glex, Vista, ew
+	VJT, 0.26, cl35, Vista, s
+	NJE, 0.23, e55p, Fraction, s
+	VJH, 0.23, e35l, Vista Germany, s
+	BCS, 0.21, b752, Postman, s
+	WMT, 0.21, a20n, Wizz Malta, e
+	NJE, 0.20, c68a, Fraction, s
+	TOM, 0.20, b738, Tomjet, e
+	VJT, 0.20, cl35, Vista, e
+	EJU, 0.18, a319, Alpine, s
+	NJE, 0.18, c56x/glex, Fraction, s
+	NJE, 0.17, e55p, Fraction, e
+	SXS, 0.17, b738, Sunexpress, e
+	EJU, 0.16, a20n, Alpine, e
+	ISR, 0.16, a320, Israir, e
+	NJE, 0.15, c68a, Fraction, e
+	VJH, 0.15, e35l, Vista Germany, e
+	NJU, 0.14, c56x, Artisan, ns
+	WUK, 0.14, a21n, Wizz Go, n
+	ELY, 0.13, b739, El Al, e
+	DNA, 0.12, a320, Dan Air, e
+	NJE, 0.12, cl60, Fraction, es
+	VJT, 0.12, gl7t, Vista, sw
+	FJO, 0.11, e550, Flex Europe, s
+	VJH, 0.11, c56x, Vista Germany, s
+	VJT, 0.11, glex, Vista, s
+	AXY, 0.10, crj2, Legend, s
+	FIA, 0.10, a321, Fia Airlines, e
+	JFA, 0.10, pc12/pc24, Mosquito, s
+	NJE, 0.10, cl35, Fraction, s
 	VJT, 0.10, crj2/gl7t, Vista, e
-	VJT, 0.10, gl7t, Vista, es
-	CBM, 0.09, be20, Cambrian, nsw
-	NJE, 0.09, glex, Fraction, s
-	NJU, 0.09, c56x, Artisan, s
-	WUK, 0.09, a321, Wizz Go, e
-	AXY, 0.08, crj2, Legend, s
-	FIA, 0.08, a321, Fia Airlines, e
-	FJO, 0.08, e550, Flex Europe, s
-	FJO, 0.07, e550, Flex Europe, e
-	JFA, 0.07, pc24, Mosquito, s
-	VJT, 0.07, crj2, Vista, s
-	N-123AB, 0.06, cl60/gl5t/glex/glf4/glf5/glf6, 0, w
-	EJA, 0.06, gl5t/glex, Execjet, w
-	EJU, 0.06, a319, Alpine, e
-	FIA, 0.06, a320, Fia Airlines, e
-	FLJ, 0.06, e550, Flexair, e
-	GAC, 0.06, c510, Dream Team, es
-	JFA, 0.06, pc12, Mosquito, s
-	LUA, 0.06, c56x, Luminair, e
-	NJE, 0.06, cl35, Fraction, s
-	PDY, 0.06, ga6c, Pendley, s
-	VJH, 0.06, e190/fa7x, Vista Germany, s
-	VJH, 0.06, c56x, Vista Germany, e
-	VJH, 0.06, e550, Vista Germany, s
+	VJT, 0.10, cl60, Vista, s
+	EXS, 0.09, a21n, Channex, e
+	FJO, 0.09, e550, Flex Europe, e
+	N-123AB, 0.09, gl5t/gl7t/glf4, 0, w
+	CBM, 0.08, be20, Cambrian, sw
+	EDC, 0.08, c68a/e550, Saltire, s
+	EJU, 0.08, a320, Alpine, s
+	FIA, 0.08, a320, Fia Airlines, e
+	GAC, 0.08, c510, Dream Team, es
+	LNX, 0.08, c56x/e35l, Lonex, s
+	LNX, 0.08, c56x, Lonex, es
+	NJE, 0.08, cl35, Fraction, e
+	ORT, 0.08, e55p, Skywalker, ns
+	PTN, 0.08, pc24, Platoon, s
+	QQE, 0.08, glf6, Q-Rex, ew
+	VJH, 0.08, c56x, Vista Germany, e
+	VJT, 0.08, crj2, Vista, s
+	AXY, 0.07, crj2, Legend, e
+	ISR, 0.07, b738, Israir, e
+	N-123AB, 0.07, glex, 0, w
+	NJE, 0.07, glex, Fraction, e
+	EDC, 0.06, c68a/e35l/e550, Saltire, e
+	EDC, 0.06, e550, Saltire, new
+	EMC, 0.06, pc12, Nightingale, w
+	FLJ, 0.06, e550, Flexair, s
+	NJE, 0.06, c68a/e55p, Fraction, n
+	NJE, 0.06, c56x/c68a, Fraction, w
+	PTN, 0.06, pc24, Platoon, e
+	VJH, 0.06, e190/e550/fa7x, Vista Germany, e
+	VJT, 0.06, cl35/glex, Vista, n
 	VJT, 0.06, cl60, Vista, e
-	WUK, 0.06, a21n, Wizz Go, s
-	FLJ, 0.05, e550, Flexair, s
-	LXJ, 0.05, glf6, Flexjet, w
-	ORT, 0.05, e55p, Skywalker, n
-	AXY, 0.04, e190/e35l, Legend, e
-	AXY, 0.04, e190, Legend, es
-	EDC, 0.04, e35l, Saltire, nesw
-	EDC, 0.04, e550, Saltire, n
-	EDC, 0.04, c68a, Saltire, s
-	EZS, 0.04, a20n/a320, Topswiss, e
-	FJO, 0.04, glf6, Flex Europe, e
+	CLF, 0.05, e550, Clifton, e
+	EJU, 0.05, a319, Alpine, e
+	EMC, 0.05, pc12, Nightingale, n
+	LNX, 0.05, c56x, Lonex, n
+	N-123AB, 0.05, b738/ga7c/glex/glf4/glf5, 0, e
+	NJE, 0.05, c56x, Fraction, e
+	NJE, 0.05, glex, Fraction, w
+	PDY, 0.05, ga6c, Pendley, s
+	SCO, 0.05, c56x, Braveheart, s
+	VJH, 0.05, e55p, Vista Germany, s
+	VT-ABC, 0.05, glex, 0, e
+	AJO, 0.04, f2th, Aviate Jet, sw
+	AXY, 0.04, e35l, Legend, es
+	AXY, 0.04, e190, Legend, e
+	BCS, 0.04, b763, Postman, e
+	CLF, 0.04, e550, Clifton, s
+	EDC, 0.04, c25a/e35l, Saltire, s
+	EDC, 0.04, c68a/e550, Saltire, n
+	EJU, 0.04, a320, Alpine, e
+	FJO, 0.04, glex/glf6, Flex Europe, e
+	FJO, 0.04, glf6, Flex Europe, es
 	JFA, 0.04, pc12/pc24, Mosquito, e
-	JME, 0.04, glex, Jetman, sw
-	M-ABCD, 0.04, c25c/cl60/gl7t, 0, s
-	N-123AB, 0.04, glex, 0, nesw
-	NJE, 0.04, c56x/c68a, Fraction, w
-	NJE, 0.04, cl35, Fraction, e
-	NJU, 0.04, c56x, Artisan, n
-	ORT, 0.04, e55p, Skywalker, e
-	PTN, 0.04, pc24, Platoon, s
-	TOM, 0.04, b38m, Tomjet, nesw
-	TOM, 0.04, b738, Tomjet, e
+	LNX, 0.04, e35l, Lonex, ne
+	LXJ, 0.04, glf6, Flexjet, w
+	N-123AB, 0.04, cl60/glf5, 0, w
+	N-123AB, 0.04, cl60/gl5t/gl7t/glf6, 0, s
+	N-123AB, 0.04, c68a/c700/ga5c/glf6, 0, w
+	N-123AB, 0.04, c68a, 0, s
+	NJE, 0.04, cl35/e55p, Fraction, w
+	NJE, 0.04, f2th, Fraction, e
+	OK-ABC, 0.04, e55p, 0, es
+	PDY, 0.04, ga6c, Pendley, ne
+	SCO, 0.04, c25a/c56x, Braveheart, e
+	SCO, 0.04, c25a, Braveheart, es
+	SXS, 0.04, a320, Sunexpress, e
+	TOM, 0.04, b38m/b738, Tomjet, n
+	VJH, 0.04, e190/fa7x, Vista Germany, s
+	VJH, 0.04, c56x/e35l, Vista Germany, n
 	VJH, 0.04, e35l/fa7x, Vista Germany, w
-	VJT, 0.04, gl7t, Vista, w
-	VT-ABC, 0.04, a319/gl5t/glex/glf5, 0, e
-	ASJ, 0.03, c68a, Astonjet, s
-	AXY, 0.03, crj2, Legend, e
-	BRO, 0.03, b733, Broadsword, n
-	CLF, 0.03, e550, Clifton, n
-	D-ABCD, 0.03, c25a/cl60, 0, s
-	D-ABCD, 0.03, cl60, 0, es
-	DWC, 0.03, cl60, Smooth, s
-	EDC, 0.03, c68a/e35l/fa7x, Saltire, n
-	EDC, 0.03, e550, Saltire, s
-	EJU, 0.03, a320, Alpine, s
+	VJT, 0.04, c56x, Vista, s
+	VT-ABC, 0.04, gl7t/glf5, 0, e
+	ARA, 0.03, a319, Arik Air, e
+	AWH, 0.03, c56x/c680/c68a, Aerowest, e
+	AXY, 0.03, e190, Legend, s
+	EDC, 0.03, c25a/c68a/e35l, Saltire, w
+	EDC, 0.03, fa7x, Saltire, s
 	ESW, 0.03, glf5, W-Business, e
-	ISR, 0.03, b738, Israir, e
-	KRH, 0.03, e35l, Sparrowhawk, nes
-	LNX, 0.03, c56x, Lonex, esw
-	LNX, 0.03, e35l, Lonex, nes
-	LNX, 0.03, c56x, Lonex, n
-	LNX, 0.03, e55p, Lonex, s
+	FLJ, 0.03, e550, Flexair, e
+	G-ABCD, 0.03, a20n/c180/f2th, 0, e
+	G-ABCD, 0.03, f2th/m600/pc12, 0, s
+	G-ABCD, 0.03, f2th/m600/pc12, 0, w
+	G-ABCD, 0.03, pc12, 0, nsw
+	JME, 0.03, glex, Jetman, s
+	LUA, 0.03, c56x, Luminair, e
 	LXJ, 0.03, glf6, Flexjet, nes
-	MNB, 0.03, a321, Black Sea, e
-	N-123AB, 0.03, gl5t/gl7t/glex, 0, s
-	NJE, 0.03, gl5t, Fraction, esw
+	M-ABCD, 0.03, b737/galx/lj45, 0, e
+	MNB, 0.03, a306, Black Sea, e
+	N-123AB, 0.03, c68a, 0, e
+	N-123AB, 0.03, glex, 0, s
+	NJE, 0.03, c56x/cl35/gl5t, Fraction, n
+	NJE, 0.03, gl5t, Fraction, new
 	NJE, 0.03, f2th, Fraction, s
-	NJE, 0.03, c68a, Fraction, n
-	QQE, 0.03, glf6, Q-Rex, w
-	SCO, 0.03, c56x, Braveheart, new
-	SXN, 0.03, c525, Saxonair, nes
-	TOM, 0.03, b738, Tomjet, n
-	V-ABCD, 0.03, b39m/gl7t, 0, e
-	VJT, 0.03, cl35, Vista, n
-	VPC, 0.03, lj60, Solar, nes
-	VT-ABC, 0.03, b39m/gl5t/glf5, 0, w
-	VTB, 0.03, c650, Suxair, e
-	AHY, 0.02, glf6, Azal, es
-	AJO, 0.02, f2th, Aviate Jet, w
+	ORT, 0.03, e55p, Skywalker, e
+	QQE, 0.03, ga7c, Q-Rex, esw
+	QQE, 0.03, glf6, Q-Rex, s
+	SAH, 0.03, be40, Smart Jet, s
+	SXS, 0.03, b38m, Sunexpress, e
+	T7-ABC, 0.03, b737/cl60/ga6c, 0, e
+	TOM, 0.03, b38m, Tomjet, s
+	VCG, 0.03, cl35, Thunder Cat, esw
+	VJH, 0.03, e550, Vista Germany, s
+	VJH, 0.03, e55p, Vista Germany, e
+	VJT, 0.03, cl60/crj2/gl5t, Vista, w
+	VJT, 0.03, c56x, Vista, e
+	VT-ABC, 0.03, gl7t, 0, nsw
+	9H-ABC, 0.02, glf6, 0, es
+	AGR, 0.02, e135/e145, Ace Europe, e
+	ALE, 0.02, pc12, Alliance Malta, es
 	AMB, 0.02, lj35, Civil Air Ambulance, es
-	ARL, 0.02, c550/h25c, Airlec, s
-	ASP, 0.02, e545/e550, Airsprint, w
-	ATL, 0.02, c25a, Air Bremen, e
-	AWC, 0.02, a320/a321, Zap, e
-	AWC, 0.02, a321, Zap, es
-	AWH, 0.02, c56x, Aerowest, e
-	AWH, 0.02, c68a, Aerowest, s
-	AZE, 0.02, e55p, Arcus Air, s
-	BCS, 0.02, b763, Postman, e
-	C-ABCD, 0.02, c525, 0, ns
-	D-ABCD, 0.02, c25a, 0, sw
-	ECA, 0.02, c25a/c25b, Dark Knight, s
-	ECA, 0.02, c25a, Dark Knight, e
-	EDC, 0.02, c68a/e35l, Saltire, w
-	EDC, 0.02, e550, Saltire, w
-	EDC, 0.02, c68a, Saltire, e
-	EDC, 0.02, fa7x, Saltire, s
-	ELG, 0.02, c25a/e55p, Elangeni, s
-	ESW, 0.02, g280/glf6, W-Business, e
-	EZE, 0.02, e170, Eastflight, ns
-	FJO, 0.02, glex/glf6, Flex Europe, s
-	FJO, 0.02, glf6, Flex Europe, sw
-	FJO, 0.02, glex, Flex Europe, es
+	APX, 0.02, c25b/c525, Apex, w
+	APX, 0.02, c25b/c525, Apex, n
+	ASJ, 0.02, c510/c68a, Astonjet, s
+	AWH, 0.02, c68a, Aerowest, es
+	AZE, 0.02, e50p, Arcus Air, s
+	BRO, 0.02, b733/b737, Broadsword, n
+	BRO, 0.02, b737, Broadsword, ne
+	CBM, 0.02, be20, Cambrian, n
+	CFE, 0.02, e190, Flyer, es
+	CLF, 0.02, e550, Clifton, n
+	D-ABCD, 0.02, c680/cl60, 0, s
+	D-ABCD, 0.02, c25a/c56x, 0, e
+	D-ABCD, 0.02, c25a, 0, s
+	D-ABCD, 0.02, cl60, 0, e
+	DFC, 0.02, c56x, Dark Blue, es
+	DWC, 0.02, cl60, Smooth, s
+	DWW, 0.02, e55p, Private Jet, es
+	ECA, 0.02, c25a/c25b, Dark Knight, e
+	ECA, 0.02, c25b/c25c, Dark Knight, s
+	ECA, 0.02, c25a, Dark Knight, s
+	EDC, 0.02, c25a/e35l, Saltire, n
+	EDC, 0.02, c25a/fa7x, Saltire, e
+	EJU, 0.02, a21n, Alpine, e
+	ESW, 0.02, glf6, W-Business, e
+	EZS, 0.02, a20n/a320, Topswiss, e
+	EZS, 0.02, a320, Topswiss, es
+	FJO, 0.02, glex/glf6, Flex Europe, w
+	FJO, 0.02, glex, Flex Europe, sw
 	FJO, 0.02, e550, Flex Europe, w
-	FLJ, 0.02, e550, Flexair, nw
-	FTY, 0.02, c25b, Fly Tyrol, e
-	G-ABCD, 0.02, a21n/c152, 0, e
-	G-ABCD, 0.02, f2th, 0, w
-	G-ABCD, 0.02, dhc1/pc12, 0, n
+	FLJ, 0.02, e550, Flexair, n
 	GFM, 0.02, h25b, Parrot, es
 	GMA, 0.02, be20, Gama, n
-	IFA, 0.02, cl60, Red Angel, ew
 	IFA, 0.02, lj60, Red Angel, e
 	IRL, 0.02, c295/pc12, Irish, w
-	IRL, 0.02, pc12, Irish, sw
-	JBC, 0.02, be40/be4w, Jetbee, e
-	JBC, 0.02, be40, Jetbee, ne
-	JFA, 0.02, pc12/pc24, Mosquito, w
-	JME, 0.02, c56x, Jetman, e
-	JTY, 0.02, e35l, Jetology, es
-	KLJ, 0.02, b733, Class Line, e
-	KRH, 0.02, c56x, Sparrowhawk, s
-	LJC, 0.02, c55b/pc24, Little Jet, n
-	LJC, 0.02, pc24, Little Jet, nw
-	LJC, 0.02, c55b, Little Jet, e
-	LNX, 0.02, c56x/e35l, Lonex, s
-	LNX, 0.02, c56x/e35l, Lonex, e
-	LNX, 0.02, e55p, Lonex, e
+	IRL28-ABC123, 0.02, c295/pc12, 0, w
+	JME, 0.02, c56x/glex, Jetman, e
+	JME, 0.02, glex, Jetman, w
+	KRH, 0.02, c56x/e35l, Sparrowhawk, s
+	KRH, 0.02, e35l, Sparrowhawk, ns
+	KRH, 0.02, c56x, Sparrowhawk, sw
+	LNX, 0.02, e55p, Lonex, es
+	LNX, 0.02, c56x, Lonex, w
 	LUA, 0.02, c56x, Luminair, s
 	LXJ, 0.02, glf4/glf6, Flexjet, e
-	LXJ, 0.02, glf4, Flexjet, ew
-	M-ABCD, 0.02, b737/galx, 0, e
+	LXJ, 0.02, cl35/glf6, Flexjet, s
+	LXJ, 0.02, glf4, Flexjet, w
+	M-ABCD, 0.02, gl7t, 0, s
 	MHV, 0.02, cl60, Snowcap, es
-	MHV, 0.02, f2th, Snowcap, e
-	MNB, 0.02, a306/a332, Black Sea, e
-	N-123AB, 0.02, ga7c/glex, 0, e
-	NIG, 0.02, cl60/fa7x, Aeroline, w
-	NJE, 0.02, c56x/e55p, Fraction, n
-	NJE, 0.02, f2th/gl5t, Fraction, e
-	NJE, 0.02, e55p/gl5t, Fraction, w
+	MLM, 0.02, gl5t, Luxmalta, es
+	MNB, 0.02, a332/a333, Black Sea, e
+	MNB, 0.02, a321, Black Sea, e
+	N-123AB, 0.02, c68a/glex, 0, n
 	NJE, 0.02, glex, Fraction, n
-	NJU, 0.02, c56x/c68a, Artisan, e
+	NJE, 0.02, gl5t, Fraction, s
+	NJU, 0.02, c56x/f2th, Artisan, w
 	NJU, 0.02, c56x, Artisan, ew
-	NJU, 0.02, c68a, Artisan, es
-	OAV, 0.02, lj40, Omni, es
-	OK-ABC, 0.02, cl30/e55p, 0, s
-	ORT, 0.02, e55p, Skywalker, sw
-	PDY, 0.02, ga6c, Pendley, nw
-	PEA, 0.02, e50p/e55p, Peach, s
-	PTN, 0.02, pc24, Platoon, w
-	PVD, 0.02, e550/e55p, Pad Aviation, s
-	PVD, 0.02, e550, Pad Aviation, es
-	QQE, 0.02, glf6, Q-Rex, ns
-	QQE, 0.02, glf6, Q-Rex, e
-	SAH, 0.02, be40, Smart Jet, es
-	SCO, 0.02, c56x/cl35, Braveheart, w
-	SCO, 0.02, c25a/c56x, Braveheart, e
-	SCO, 0.02, c25a, Braveheart, es
-	SCO, 0.02, c56x, Braveheart, s
-	SXN, 0.02, c525/lj45, Saxonair, s
-	SXN, 0.02, c525/e55p, Saxonair, e
-	T7-ABC, 0.02, e190/glex, 0, e
-	TC-ABC, 0.02, c650/e35l, 0, e
+	NJU, 0.02, f2th, Artisan, sw
+	NJU, 0.02, f2th, Artisan, n
+	ORT, 0.02, e55p, Skywalker, w
+	P4-ABC, 0.02, pc24, 0, es
+	PVD, 0.02, e550/e55p, Pad Aviation, e
+	PVD, 0.02, e55p, Pad Aviation, es
+	SAH, 0.02, be40, Smart Jet, ne
+	SCO, 0.02, c56x, Braveheart, nw
+	SCR, 0.02, c56x, Silver Cloud, es
+	SUA, 0.02, c56x, Air Silesia, es
+	SXN, 0.02, c56x/lj45, Saxonair, s
+	T7-ABC, 0.02, cl60, 0, s
 	TOM, 0.02, b38m/b738, Tomjet, w
-	TUI, 0.02, b38m, Tuifly, e
-	TYW, 0.02, c55b, Tyrol Ambulance, es
+	TOM, 0.02, b38m, Tomjet, ew
+	TUI, 0.02, b38m/b738, Tuifly, e
 	UNI, 0.02, lj45, Unicair, es
-	VJH, 0.02, e190/e550, Vista Germany, e
-	VJH, 0.02, e35l/e55p, Vista Germany, n
-	VJH, 0.02, e55p, Vista Germany, e
-	VJH, 0.02, c56x, Vista Germany, n
-	VJT, 0.02, cl60/gl5t, Vista, w
+	VCG, 0.02, cl35/e55p, Thunder Cat, s
+	VJA, 0.02, cl30, Iconic, s
 	VJT, 0.02, cl60/gl7t, Vista, n
-	VJT, 0.02, c56x, Vista, e
-	VJT, 0.02, glex, Vista, n
+	VJT, 0.02, gl5t, Vista, sw
 	VJT, 0.02, cl35, Vista, w
-	VOS, 0.02, glex/glf6, Jetsal, w
-	VP-ABC, 0.02, glf6, 0, es
+	VP-ABC, 0.02, glf6, 0, e
+	VPC, 0.02, lj60, Solar, es
 	VQ-ABC, 0.02, f2th, 0, es
-	VT-ABC, 0.02, glex, 0, ne
-	VT-ABC, 0.02, glex, 0, w
-	ABN, 0.01, a320, Air Albania, e
-	ALE, 0.01, pc12, Alliance Malta, w
-	ANE, 0.01, crjx, Nostru Air, s
-	APX, 0.01, c25b, Apex, w
-	ARA, 0.01, a319, Arik Air, e
-	AWH, 0.01, c56x, Aerowest, s
-	AWH, 0.01, c680, Aerowest, e
-	AXS, 0.01, cl60, Axis, e
-	AXY, 0.01, e35l, Legend, s
-	AZE, 0.01, e50p, Arcus Air, s
-	AZE, 0.01, e55p, Arcus Air, e
-	BNI, 0.01, c525, Bartolini, w
-	BNI, 0.01, c25a, Bartolini, e
+	VT-ABC, 0.02, gl7t/glex, 0, w
+	VT-ABC, 0.02, a319/gl7t, 0, s
+	VT-ABC, 0.02, glex, 0, s
+	VTB, 0.02, c650, Suxair, s
+	WUK, 0.02, a321, Wizz Go, s
+	WUK, 0.02, a21n, Wizz Go, w
+	AAB, 0.01, c25c, ABG, e
+	ABF, 0.01, c25a, Skywings, e
+	AJO, 0.01, glex, Aviate Jet, s
+	AJO, 0.01, f2th, Aviate Jet, n
+	AMQ, 0.01, lj60, Amex, e
+	ATL, 0.01, c25a, Air Bremen, e
+	AXS, 0.01, cl60, Axis, s
+	AZE, 0.01, e55p, Arcus Air, s
+	AZE, 0.01, e50p, Arcus Air, e
+	B-1234, 0.01, glf5, 0, e
+	BOH, 0.01, c56x, Bohemia, s
 	BOM, 0.01, e55p, Batman, e
-	BRO, 0.01, b737, Broadsword, e
-	BZE, 0.01, lj45, Zenstar, w
 	CBM, 0.01, be20, Cambrian, e
-	CLF, 0.01, be20, Clifton, e
 	CLF, 0.01, e550, Clifton, w
-	CLF, 0.01, fa8x, Clifton, s
-	DFC, 0.01, c56x, Dark Blue, e
-	DKA, 0.01, f2th, Dokia Air, e
-	DWW, 0.01, e55p, Private Jet, e
-	EAJ, 0.01, glf4, Enka Jet, e
-	ECA, 0.01, c25c, Dark Knight, e
-	EJM, 0.01, cl60, Jet Speed, w
-	EJM, 0.01, glex, Jet Speed, e
-	EJU, 0.01, a319, Alpine, s
-	EJU, 0.01, a320, Alpine, e
-	ELG, 0.01, f2th, Elangeni, e
-	ELY, 0.01, b738, El Al, n
-	EUW, 0.01, c680, Eurowest, e
-	EWR, 0.01, ga5c, Mayotte Air, w
-	EZT, 0.01, a320, Thai Ezy, w
-	EZX, 0.01, a320, Eaglexpress Air, w
-	FCA, 0.01, e55p, Coopair, e
-	FFA, 0.01, b738, Sunshine, e
+	EMC, 0.01, da62, Nightingale, w
+	EZE, 0.01, e170, Eastflight, n
+	F-ABCD, 0.01, e55p, 0, s
+	FIA, 0.01, b737, Fia Airlines, e
 	FJO, 0.01, e550, Flex Europe, n
-	GCEZM-, 0.01, c152, gcezm, n
-	GCK, 0.01, cl35, Glock, s
-	GMA, 0.01, cl60, Gama, s
-	GWW, 0.01, cl60, Global Wings, e
-	HAI, 0.01, fa8x, Hotel Alpha India, e
-	HHN, 0.01, c25b, Rooster, e
-	ICE, 0.01, b752, Iceair, n
-	INI, 0.01, c560, Initium, s
-	ISR, 0.01, b737, Israir, e
-	IXR, 0.01, c25a, X-Bird, s
-	J-123, 0.01, glf4, 0, e
-	JAF, 0.01, b738, Beauty, e
-	JDI, 0.01, h25b, Jedi, e
-	JME, 0.01, glex, Jetman, e
-	JME, 0.01, galx, Jetman, w
-	JSD, 0.01, c650, Alpok, n
-	JSY, 0.01, c25a, Jung Sky, e
-	KRH, 0.01, c56x, Sparrowhawk, w
-	LSM, 0.01, fa7x, Titan, s
-	LUA, 0.01, c56x, Luminair, w
+	FSF, 0.01, pc12, Rocky, s
+	GMA, 0.01, be20, Gama, s
+	HAT, 0.01, b734, Sky Runner, e
+	HZ-AB1, 0.01, glf4, 0, e
+	IFA, 0.01, cl60, Red Angel, e
+	IFA, 0.01, lj60, Red Angel, s
+	JEI, 0.01, lj35, Jet Executive, s
+	JFA, 0.01, pc12, Mosquito, w
+	JFA, 0.01, pc24, Mosquito, n
+	JSD, 0.01, c650, Alpok, s
+	JTY, 0.01, e35l, Jetology, e
+	KLJ, 0.01, b733, Class Line, e
+	LLT, 0.01, h25b, Classic Jet, e
+	LTC, 0.01, h25b, Charter Jets, e
+	LXJ, 0.01, glex, Flexjet, w
+	M-ABCD, 0.01, cl60, 0, s
+	MBIG-ABCDE, 0.01, gl5t, 0, s
+	N-12AB, 0.01, lj35, 0, w
+	N-12AB, 0.01, f900, 0, e
 	NJU, 0.01, cl35, Artisan, n
-	NRL, 0.01, cl35, Nolinor, w
-	O-ABCD, 0.01, e55p, 0, n
-	OE-ABC, 0.01, glf5, 0, e
-	OK-ABC, 0.01, e550, 0, e
-	P4-ABC, 0.01, pc24, 0, s
-	P4-ABCD, 0.01, cl35, 0, s
+	OK-ABC, 0.01, cl30, 0, e
+	OO-ABC, 0.01, c56x, 0, e
+	PDY, 0.01, ga6c, Pendley, w
+	PEA, 0.01, e55p, Peach, s
 	PH-ABC, 0.01, c56x, 0, e
-	PKZ, 0.01, cl60, Pravi, s
-	PLF, 0.01, glf5, Polish Air Force, e
 	PNC, 0.01, c56x, Prince Aviation, e
-	PP-ABC, 0.01, fa7x, 0, s
-	PVG, 0.01, a321, Privilege, s
-	PYN, 0.01, c525, Poyston, n
-	QQE, 0.01, ga7c, Q-Rex, e
-	RYR, 0.01, b38m, Ryanair, n
-	S5-ABC, 0.01, c56x, 0, s
-	SJI, 0.01, c56x, Rhino, s
-	SKV, 0.01, f2th, Sky Side, e
-	SON, 0.01, glex, Sonas, s
-	SUA, 0.01, c56x, Air Silesia, s
-	SX-ABC, 0.01, c56x, 0, s
-	T7-ABC, 0.01, h25b, 0, s
-	T7-ABCD, 0.01, glf4, 0, e
-	T7-ABCDE, 0.01, gl5t, 0, e
+	PTN, 0.01, pc24, Platoon, w
+	QQE, 0.01, glf6, Q-Rex, n
+	RYR, 0.01, b738, Ryanair, n
+	SP-ABC, 0.01, c25b, 0, s
+	SUS, 0.01, j328, Sunscan, e
+	T7-ABC, 0.01, ga7c, 0, s
+	TC-ABC, 0.01, cl60, 0, e
 	TFL, 0.01, b38m, Orange, e
-	TIE, 0.01, be4w, Time Air, e
-	TOY, 0.01, e35l, Toyo Aviation, e
+	TJD, 0.01, h25b, Aliserio, e
+	TOM, 0.01, b788, Tomjet, s
 	TVS, 0.01, c680, Skytravel, e
-	UEE, 0.01, c525, Eagle Slovenia, s
-	V-ABCD, 0.01, glex, 0, s
-	VAJ, 0.01, gl5t, Trubadix, s
-	VCG, 0.01, e55p, Thunder Cat, n
-	VCG, 0.01, cl35, Thunder Cat, w
-	VCJ, 0.01, gl5t, Obelix, e
+	UAG, 0.01, e35l, Sakta, e
+	VCG, 0.01, c25m, Thunder Cat, n
+	VJA, 0.01, cl30, Iconic, e
+	VJH, 0.01, e55p, Vista Germany, n
 	VJH, 0.01, c56x, Vista Germany, w
-	VJT, 0.01, c56x, Vista, s
-	VLJ, 0.01, c25a, Valjet, s
-	WUK, 0.01, a21n, Wizz Go, w
-	WZZ, 0.01, a20n, Wizz Air, s
-	XAA, 0.01, ga7c, Rockfish, w
-	XRO, 0.01, fa8x, Cramer, s
-	YU-ABC, 0.01, c25m, 0, e
+	VLZ, 0.01, cl60, Volare, w
+	VP-ABC, 0.01, glf6, 0, w
+	VTB, 0.01, c650, Suxair, e
+	VVV, 0.01, c25b, Valairjet, s
+	WUK, 0.01, b38m, Wizz Go, e
+	XGO, 0.01, p180, Pastis, s
