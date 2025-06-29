@@ -135,49 +135,53 @@ export default class AirspaceLines {
 		// Gatwick CTA (D)
 		this.gen.line(
 			new Line([
-				new Fix(51.188489, -0.489750),
-				new Fix(51.269380, 0.099134),
-			], Line.ColourType.AIRSPACE).join(
-				Circle.from(
-					new Fix(51.016131, 0.088921),
-					new Fix(51.197418, 0.150375),
-					new Fix(51.269648, 0.099220),
-					75
-				).cutoff(f => f.latitude <= 51.269648 && f.longitude >= 0.099220)
-			).join(new Line([
-				new Fix(51.016131, 0.088921),
-				new Fix(51.016131, -0.418510),
-			])).join(Circle.from(
-				new Fix(51.188489, -0.489750),
-				new Fix(51.128307, -0.496616),
-				new Fix(51.016131, -0.418510),
-				75
-			).cutoff(f => f.latitude <= 51.188489 && f.longitude <= -0.418510))
+				Fix.fromDMS("510100N", "0000458E"),
+				Fix.fromDMS("510100N", "0002545W"),
+			], Line.ColourType.AIRSPACE)
+				.join(new Circle(
+					Fix.fromDMS("510853N", "0001125W"),
+					12 * Fix.NMI,
+					72
+				).arc(
+					Fix.fromDMS("510100N", "0002545W"),
+					Fix.fromDMS("511124N", "0003003W")
+				))
+				.append(Fix.fromDMS("511618N", "0000533E"))
+				.join(new Circle(
+					Fix.fromDMS("510853N", "0001125W"),
+					13 * Fix.NMI,
+					72
+				).arc(
+					Fix.fromDMS("511618N", "0000533E"),
+					Fix.fromDMS("510100N", "0000458E")
+				))
+				.append(Fix.fromDMS("510100N", "0000458E"))
 		);
 
 		// Gatwick CTR (D)
 		const GatwickCTRD = new Line([
-			new Fix(51.186875, -0.382290),
-			new Fix(51.214089, -0.183163),
-			new Fix(51.197849, 0.068150),
-		], [0x30, 0x30, 0x30]).join(Circle.from(
-			new Fix(51.197849, 0.068150),
-			new Fix(51.166697, 0.080509),
-			new Fix(51.096030, 0.068493),
-			75
-		).cutoff(f => f.latitude <= 51.197849 && f.longitude >= 0.068493))
-							  .join(new Line([
-								  new Fix(51.096030, 0.068493),
-								  new Fix(51.043660, -0.312767),
-							  ]))
-							  .join(Circle.from(
-									  new Fix(51.186875, -0.382290),
-									  new Fix(51.067075, -0.350361),
-									  new Fix(51.043660, -0.312767),
-									  75
-								  ).cutoff(f => f.latitude <= 51.186875 && f.longitude <= -0.312767)
-										  .append(new Fix(51.186875, -0.382290))
-							  );
+			Fix.fromDMS("511258N", "0001129W"),
+			Fix.fromDMS("511200N", "0000341E")
+		], [0x30, 0x30, 0x30])
+			.join(new Circle(
+				Fix.fromDMS("510853N", "0001125W"),
+				10 * Fix.NMI,
+				72
+			).arc(
+				Fix.fromDMS("511200N", "0000341E"),
+				Fix.fromDMS("510550N", "0000342E"),
+			))
+			.append(Fix.fromDMS("510240N", "0001923W"))
+			.join(new Circle(
+				Fix.fromDMS("510853N", "0001125W"),
+				8 * Fix.NMI,
+				72
+			).arc(
+				Fix.fromDMS("510240N", "0001923W"),
+				Fix.fromDMS("511118N", "0002332W")
+			))
+			.append(Fix.fromDMS("511258N", "0001129W"));
+
 		this.gen.area(new Area(
 			"KK",
 			2500,
