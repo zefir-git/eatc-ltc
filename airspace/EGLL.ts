@@ -20,7 +20,7 @@ export default class EGLL {
 			new Airport(
 				"London Heathrow Airport",
 				"Heathrow",
-				"LTCC",
+				process.env.NODE_ENV === "development" ? "TEST" : "LTCC",
 				60,
 				6000,
 				[
