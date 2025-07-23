@@ -39,7 +39,9 @@ export default class EGLC {
 						5.5
 					)
 				],
-				[],
+				[
+					new Airport.EntryPoint(138, Generator.getInstance().beacon("SOXUX"), 10000),
+				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLC.txt", "utf8")),
 				[
 					NamedFix.fromDMS("513623.75N", "0002328.43E", "SOQQA", "Soqqa"),
@@ -230,7 +232,7 @@ export default class EGLC {
 				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
 			{end: "hold"})
-		.withEntry(10000));
+		);
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("SIRIC", "1C"),

@@ -37,7 +37,9 @@ export default class EGMC {
                         3,
                     ),
                 ],
-                [],
+                [
+                    new Airport.EntryPoint(138, Generator.getInstance().beacon("SOXUX"), 12000),
+                ],
                 Airport.Airline.raw(await fs.readFile("./airlines/EGMC.txt", "utf8")),
                 [
                     NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
@@ -113,7 +115,7 @@ export default class EGMC {
                 Generator.getInstance().beacon("GEGMU", 6000, 195),
             ],
             {end: "hold"})
-            .withEntry(12000, 56));
+        );
 
         Generator.getInstance().arrival(new STAR(
             ...Generator.getInstance().pronounce("SAM", "1S"),
