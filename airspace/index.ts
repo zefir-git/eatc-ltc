@@ -260,7 +260,8 @@ await new AirspaceLines().withCoastline();
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 
-await fs.writeFile("./LTCC.txt", gen.generate(`
+const file = process.env.NODE_ENV === "development" ? "TEST.txt" : "LTCC.txt";
+await fs.writeFile(file, gen.generate(`
 #
 # London Terminal Control for EndlessATC
 # Version: ${project.version}
@@ -284,3 +285,4 @@ await fs.writeFile("./LTCC.txt", gen.generate(`
 # You should have received a copy of the GNU General Public License along with
 # this file. If not, see <https://www.gnu.org/licenses/>.
 #`));
+console.log(`Generated ${file}`);
