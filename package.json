@@ -23,7 +23,8 @@
   "scripts": {
     "build": "tsc",
     "gen": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "link": "for file in LTCC.txt TEST.txt; do ln -s \"$(realpath \"$file\")\" \"$(realpath ~/.local/share/Steam/steamapps/common/Endless\\ ATC/locations)\"; done",
+    "test": "NODE_ENV=development node ."
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
