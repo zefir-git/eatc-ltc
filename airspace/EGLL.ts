@@ -150,7 +150,7 @@ export default class EGLL {
 		// OCK 1Z omitted (OCK→BIG)
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("NUGRA1H"),
+			...Generator.getInstance().pronounce("NUGRA2H"),
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
 			Generator.getInstance().beacon("TOBID"),
@@ -158,7 +158,7 @@ export default class EGLL {
 			[
 				Generator.getInstance().beacon("TOBID"),
 				Generator.getInstance().fix("SOPIT", 15000),
-				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})
@@ -167,8 +167,8 @@ export default class EGLL {
 		// LAM 1Z omitted (LAM→BNN)
 
 		Generator.getInstance().arrival(new STAR(
-			"HON1H",
-			"Honiley one hotel",
+			"HON2H",
+			"Honiley two hotel",
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
 			Generator.getInstance().beacon("TOBID"),
@@ -176,7 +176,7 @@ export default class EGLL {
 			[
 				Generator.getInstance().beacon("TOBID"),
 				Generator.getInstance().fix("SOPIT", 15000),
-				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})
@@ -234,14 +234,14 @@ export default class EGLL {
 		// LAM 1Y omitted (LAM→OCK)
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("FITBO1H"),
+			...Generator.getInstance().pronounce("FITBO2H"),
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
 			Generator.getInstance().beacon("SOPIT"),
 			107,
 			[
 				Generator.getInstance().fix("SOPIT", 15000),
-				Generator.getInstance().beacon("WCO", void 0, 220),
+				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
 			{end: "hold"})

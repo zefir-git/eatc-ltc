@@ -24,7 +24,8 @@
     "build": "tsc",
     "gen": "node .",
     "link": "for file in LTCC.txt TEST.txt; do ln -s \"$(realpath \"$file\")\" \"$(realpath ~/.local/share/Steam/steamapps/common/Endless\\ ATC/locations)\"; done",
-    "test": "NODE_ENV=development node ."
+    "test": "NODE_ENV=development node .",
+    "optimise": "node dist/src/scripts/optimiseAirlines.js"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",

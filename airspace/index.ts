@@ -4,13 +4,13 @@ import Airspace from "../src/Airspace.js";
 import Fix from "../src/Fix.js";
 import Beacon from "../src/Beacon.js";
 import Polygon from "../src/Polygon.js";
+import AircraftTypes from "./AircraftTypes.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
 import EGMC from "./EGMC.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
-import Aircraft from "../src/Aircraft.js";
 import AirspaceLines from "./lines/AirspaceLines.js";
 import RunwayConfigs from "./RunwayConfigs.js";
 
@@ -71,7 +71,7 @@ gen.airspace(
 
 			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
-			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
+			Beacon.fromDMS("515110.51N", "0005744.67W", "WEZKO", "Wezko", 188),
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
@@ -197,62 +197,7 @@ await new EGLC().init();
 await new EGMC().init();
 
 new RunwayConfigs().init();
-
-gen.aircraft(new Aircraft(
-	"D228",
-	"Dornier",
-	Aircraft.WTC.LIGHT,
-	[160, 300],
-	140,
-	[0.8, 1.2],
-	1000,
-	1500,
-	[20, 25],
-	[2.5, 3.5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"GA6C",
-	"Gulfstream",
-	Aircraft.WTC.LOWER_MEDIUM,
-	[160, 300],
-	129,
-	[1.2, 1.4],
-	1400,
-	3620,
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"H25B",
-	"Raytheon",
-	Aircraft.WTC.LIGHT,
-	[160, 300],
-	125,
-	[1.2, 1.3],
-	[1500, 2500],
-	[2000, 3100],
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"F2TH",
-	"Dassault Falcon",
-	Aircraft.WTC.LOWER_MEDIUM,
-	[160, 300],
-	110,
-	[1.2, 1.3],
-	[1500, 4000],
-	[2000, 3000],
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
+AircraftTypes.init();
 
 gen.aircraft(new Aircraft(
 	"SR20",
