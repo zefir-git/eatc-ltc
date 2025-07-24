@@ -69,7 +69,7 @@ gen.airspace(
 
 			// STAR holding midpoints
 			Beacon.fromDMS("510401.82N", "0002621.54E", "TIGER", "Tiger", 315),
-			Beacon.fromDMS("515110.51N", "0005744.67W", "WCO", "Westcott", 188),
+			Beacon.fromDMS("515110.51N", "0005744.67W", "WEZKO", "Wezko", 188),
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
