@@ -160,6 +160,34 @@ export default class AircraftTypes {
         ));
 
         gen.aircraft(new Aircraft(
+            "HR20",
+            "Robin",
+            Aircraft.WTC.LIGHT,
+            [90, 120],
+            [60, 105],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "K100",
+            "Daher",
+            Aircraft.WTC.LIGHT,
+            [120, 180],
+            [78, 65],
+            [1.1, 1.2],
+            [1300, 1400],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
             "M600",
             "Piper",
             Aircraft.WTC.LIGHT,
@@ -188,11 +216,39 @@ export default class AircraftTypes {
         ));
 
         gen.aircraft(new Aircraft(
+            "PA32",
+            "Piper",
+            Aircraft.WTC.LIGHT,
+            [120, 150],
+            [100, 105],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
             "PA34",
             "Piper",
             Aircraft.WTC.LIGHT,
             [140, 160],
             [100, 110],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "PIVI",
+            "Pipistrel",
+            Aircraft.WTC.LIGHT,
+            [85, 150],
+            [60, 90],
             [1.1, 1.2],
             [1400, 1600],
             [2000, 2200],
@@ -224,6 +280,62 @@ export default class AircraftTypes {
             [1.1, 1.2],
             [1400, 1600],
             [1900, 2100],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "RV7",
+            "Van's Aircraft",
+            Aircraft.WTC.LIGHT,
+            [80, 190],
+            [60, 65],
+            [1.1, 1.2],
+            [1400, 1600],
+            [1900, 2100],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "S22T",
+            "Cirrus",
+            Aircraft.WTC.LIGHT,
+            [110, 180],
+            [75, 90],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "SR20",
+            "Cirrus",
+            Aircraft.WTC.LIGHT,
+            [85, 160],
+            [75, 90],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "T210",
+            "Cessna",
+            Aircraft.WTC.LIGHT,
+            [90, 200],
+            [75, 85],
+            [1.1, 1.2],
+            [1400, 1600],
+            [2000, 2200],
             [25, 30],
             [5, 7],
             [2.9, 3.1]
