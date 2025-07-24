@@ -379,7 +379,8 @@ export default class EGGW {
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MATCH"), "3Y"),
 			rwy,
 			[
-				rev.position.bearingIntersection(254, Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W"), 180 - 211),
+				Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W")
+					.bearingIntersection(31, rev.position, 254),
 				Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W"),
 				Generator.getInstance().fix("GWS06", "514705.83N", "0002928.41W"),
 				Generator.getInstance().fix("GWS12", "514656.85N", "0001944.38W"),
@@ -394,7 +395,8 @@ export default class EGGW {
 			...Generator.getInstance().pronounce("DET", "3Y"),
 			rwy,
 			[
-				rev.position.bearingIntersection(254, Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W"), 180 - 211),
+				Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W")
+					.bearingIntersection(31, rev.position, 254),
 				Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W"),
 				Generator.getInstance().fix("GWS06", "514705.83N", "0002928.41W"),
 				Generator.getInstance().fix("GWS12", "514656.85N", "0001944.38W"),
