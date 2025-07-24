@@ -28,7 +28,7 @@
 	G-ABCD, 0.39, c172, 0, w
 	G-ABCD, 0.36, aa5/be18/dr40/p210/tb20/toba, 0, w
 	G-ABCD, 0.36, ac11/c172/c210/eupa/pa31/pc12/r200/sr20/sr22, 0, n
-	G-ABCD, 0.34, aa5/be33/be76/c210/c310/clon/cruz/da40/da62/gyro/jab4/l8/lj40/pa34/s22t/sr20/sr22, 0, s
+	G-ABCD, 0.34, aa5/be33/be76/c210/c310/clon/cruz/da40/da62/jab4/l8/lj40/pa34/s22t/sr20/sr22, 0, s
 	BRO, 0.33, r722, Broadsword, w
 	G-ABCD, 0.32, aa5/be33/bolt/c150/c177/c310/c55b/e300/lj75/m600/p28u/pa23/pivi/s05r/s22t/spit, 0, n
 	G-ABCD, 0.31, m600, 0, w
