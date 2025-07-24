@@ -106,7 +106,7 @@ export default class EGMC {
             [Generator.getInstance().runway("mc")],
             true,
             Generator.getInstance().beacon("SOXUX"),
-            56,
+            57,
             [
                 Generator.getInstance().beacon("SOXUX"),
                 Generator.getInstance().fix("OKVAP", "505748.96N", "0011955.98E", 9000, 250),
