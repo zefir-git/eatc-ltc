@@ -7,6 +7,7 @@ import Polygon from "../src/Polygon.js";
 import AircraftTypes from "./AircraftTypes.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
+import EGMC from "./EGMC.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
@@ -53,6 +54,7 @@ gen.airspace(
 			Beacon.fromDMS("513723N", "0003107W", "CHT", "Chiltern", {left: 290}),
 			Beacon.fromDMS("515341N", "0001509W", "LUT", "Luton", 254),
 			Beacon.fromDMS("513016N", "0000403E", "LCY", "London City", 272),
+			Beacon.fromDMS("513434N", "0004201E", "SND", "Southend", {left: 53}),
 
 			// STAR holding endpoints
 			Beacon.fromDMS("513845.69N", "0000906.13E", "LAM", "Lambourne", {left: 263}),
@@ -73,6 +75,7 @@ gen.airspace(
 			Beacon.fromDMS("510325.98N", "0005552.98E", "ARNUN", "Arnun", 216),
 			Beacon.fromDMS("512603.83N", "0002056.10W", "VATON", "Vaton", {left: 25}),
 			Beacon.fromDMS("520614.46N", "0002917.16E", "ROPMU", "Ropmu", 97),
+			Beacon.fromDMS("514253.48N", "0010633.89E", "GEGMU", "Gegmu", 263),
 
 			// STAR entries
 			Beacon.fromDMS("504545.12N", "0011407.99W", "BEGTO", "Begto"),
@@ -129,19 +132,13 @@ gen.airspace(
 				new Fix(50.755138, 0.750332),
 				new Fix(50.979723, 1.040440),
 
-				// extension WORTHING CTA 1A
+				// extension
 				new Fix(51.000000, 1.466675),
 				new Fix(51.349485, 1.531906),
-				new Fix(51.357633, 1.362991),
-				// end extension WORTHING CTA 1A
-
-				// extension
-				new Fix(51.4061, 1.3896),
-				new Fix(51.5, 1.4),
-				new Fix(51.5637, 1.3681),
+				Fix.fromDMS("512715.96N", "0013016.98E"),
+				Fix.fromDMS("514053.03N", "0012633.13E"),
+				new Fix(51.6849, 1.4213),
 				// end extension
-
-				new Fix(51.649981, 1.416721),
 				new Fix(51.873206, 1.443844),
 				new Fix(51.984880, 1.384964),
 
@@ -197,6 +194,7 @@ await new EGKK().init();
 await new EGSS().init();
 await new EGGW().init();
 await new EGLC().init();
+await new EGMC().init();
 
 new RunwayConfigs().init();
 AircraftTypes.init();

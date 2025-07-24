@@ -412,8 +412,8 @@ export default class EGGW {
 			rwy,
 			[
 				Generator.getInstance().beacon("BNN").destination(31, 7),
-				Generator.getInstance().beacon("BNN").destination(31, 7).bearingIntersection(211, Generator.getInstance().fix("HEN", "514535N", "0004725W"), 255 - 180),
-				Generator.getInstance().fix("HEN", "514535N", "0004725W"),
+				Generator.getInstance().beacon("BNN").destination(31, 7).bearingIntersection(211, Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), 255 - 180),
+				Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
 				Generator.getInstance().fix("RODNI")
 			]
 		));
@@ -424,8 +424,8 @@ export default class EGGW {
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 3.8),
 				rwy.position.destination(rwy.reverseLocalizer, 3.8)
-				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().fix("HEN", "514535N", "0004725W"), 256 - 180),
-				Generator.getInstance().fix("HEN", "514535N", "0004725W"),
+				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), 256 - 180),
+				Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
 				Generator.getInstance().fix("RODNI")
 			],
 			true
@@ -436,7 +436,7 @@ export default class EGGW {
 			rwy,
 			[
 				Generator.getInstance().beacon("BNN").destination(31, 7),
-				Generator.getInstance().beacon("BNN").bearingIntersection(3, Generator.getInstance().fix("HEN", "514535N", "0004725W"), 255 - 180),
+				Generator.getInstance().beacon("BNN").bearingIntersection(3, Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), 255 - 180),
 				Generator.getInstance().beacon("BNN").destination(344, 6),
 				Generator.getInstance().beacon("BNN").destination(344, 9),
 				Generator.getInstance().beacon("BNN").destination(344, 15),
