@@ -377,7 +377,8 @@ export default class EGKK {
 			kks,
 			[
 				kksRev.position.destination(kks.heading, 2.3),
-				kksRev.position.destination(kks.heading, 2.3).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 31),
 				Generator.getInstance().beacon("DET").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
@@ -386,7 +387,9 @@ export default class EGKK {
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
@@ -394,7 +397,8 @@ export default class EGKK {
 			kkn,
 			[
 				kksRev.position.destination(kks.heading, 2.3),
-				kksRev.position.destination(kks.heading, 2.3).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 31),
 				Generator.getInstance().beacon("DET").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
@@ -403,7 +407,9 @@ export default class EGKK {
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
@@ -426,14 +432,17 @@ export default class EGKK {
 			kks,
 			[
 				kksRev.position.destination(kks.heading, 2.3),
-				kksRev.position.destination(kks.heading, 2.3).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 31),
 				Generator.getInstance().beacon("DET").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
 				Generator.getInstance().beacon("DET"),
 				Generator.getInstance().fix("FRANE")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
@@ -441,14 +450,17 @@ export default class EGKK {
 			kkn,
 			[
 				kksRev.position.destination(kks.heading, 2.3),
-				kksRev.position.destination(kks.heading, 2.3).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 31),
 				Generator.getInstance().beacon("DET").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
 				Generator.getInstance().beacon("DET"),
 				Generator.getInstance().fix("FRANE")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
@@ -764,24 +776,30 @@ export default class EGKK {
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MIMFO"), "1M"),
 			kks,
 			[
-				kksRev.position.destination(kks.heading, 3.5),
-				kksRev.position.destination(kks.heading, 3.5).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("MIMFO")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("MIMFO"), "1V"),
 			kkn,
 			[
-				kksRev.position.destination(kks.heading, 3.5),
-				kksRev.position.destination(kks.heading, 3.5).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
+				kksRev.position.destination(kks.heading, 2.3),
+				kksRev.position.destination(kks.heading, 2.3)
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
 				Generator.getInstance().beacon("DET").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("MIMFO")
-			]
+			],
+			false,
+			5000,
 		));
 
 		Generator.getInstance().departure(new SID(
