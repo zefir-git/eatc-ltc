@@ -138,13 +138,13 @@
 	SHT, 0.07, at76, Shuttle, n
 	SVA, 0.07, b78x, Saudia, e
 	TOM, 0.07, b38m, Tomjet, n
-	G-ABCD, 0.06, c42/d140/ev97/p28r/pup/rf6, 0, n
 	BAW, 0.06, b77w, Speedbird, w
 	CAI, 0.06, b38m, Corendon, e
 	CES, 0.06, a332, China Eastern, e
 	CXI, 0.06, b738, Touristic, e
 	EZS, 0.06, a20n, Topswiss, e
 	EZY, 0.06, a319/a320, Easy, w
+	G-ABCD, 0.06, c42/d140/ev97/p28r/pup/rf6, 0, n
 	THY, 0.06, b739, Turkish, e
 	UBD, 0.06, a320, Urair, e
 	VOE, 0.06, a320, Volotea, w
