@@ -4,12 +4,12 @@ import Airspace from "../src/Airspace.js";
 import Fix from "../src/Fix.js";
 import Beacon from "../src/Beacon.js";
 import Polygon from "../src/Polygon.js";
+import AircraftTypes from "./AircraftTypes.js";
 import EGLL from "./EGLL.js";
 import EGKK from "./EGKK.js";
 import EGSS from "./EGSS.js";
 import EGGW from "./EGGW.js";
 import EGLC from "./EGLC.js";
-import Aircraft from "../src/Aircraft.js";
 import AirspaceLines from "./lines/AirspaceLines.js";
 import RunwayConfigs from "./RunwayConfigs.js";
 
@@ -199,62 +199,7 @@ await new EGGW().init();
 await new EGLC().init();
 
 new RunwayConfigs().init();
-
-gen.aircraft(new Aircraft(
-	"D228",
-	"Dornier",
-	Aircraft.WTC.LIGHT,
-	[160, 300],
-	140,
-	[0.8, 1.2],
-	1000,
-	1500,
-	[20, 25],
-	[2.5, 3.5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"GA6C",
-	"Gulfstream",
-	Aircraft.WTC.LOWER_MEDIUM,
-	[160, 300],
-	129,
-	[1.2, 1.4],
-	1400,
-	3620,
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"H25B",
-	"Raytheon",
-	Aircraft.WTC.LIGHT,
-	[160, 300],
-	125,
-	[1.2, 1.3],
-	[1500, 2500],
-	[2000, 3100],
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
-
-gen.aircraft(new Aircraft(
-	"F2TH",
-	"Dassault Falcon",
-	Aircraft.WTC.LOWER_MEDIUM,
-	[160, 300],
-	110,
-	[1.2, 1.3],
-	[1500, 4000],
-	[2000, 3000],
-	[25, 30],
-	[3, 5],
-	[2.9, 3.1]
-));
+AircraftTypes.init();
 
 await new AirspaceLines().withCoastline();
 
