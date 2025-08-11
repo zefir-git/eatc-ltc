@@ -1,12 +1,13 @@
+import fs from "node:fs/promises";
+import Airport from "../src/Airport.js";
+import Beacon from "../src/Beacon.js";
+import Fix from "../src/Fix.js";
 import Generator from "../src/Generator.js";
+import NamedFix from "../src/NamedFix.js";
+import Runway from "../src/Runway.js";
+import SID from "../src/SID.js";
 import STAR from "../src/STAR.js";
 import StarFix from "../src/StarFix.js";
-import Airport from "../src/Airport.js";
-import Runway from "../src/Runway.js";
-import Fix from "../src/Fix.js";
-import SID from "../src/SID.js";
-import NamedFix from "../src/NamedFix.js";
-import fs from "node:fs/promises";
 
 export default class EGLL {
 	public async init() {
@@ -130,7 +131,19 @@ export default class EGLL {
 			{end: "hold"}
 		));
 
-		// LAM 1X omitted (LAM→BIG)
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("LAM", "1X"),
+            [Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
+            true,
+            Beacon.fromDMS("512006.04N", "0001437.38E", "HILLY", "Hilly"),
+            169,
+            [
+                Generator.getInstance().fix("HILLY", "512006.04N", "0001437.38E", void 0, 220),
+                Generator.getInstance().fix("HILLY", "512006.04N", "0001437.38E"),
+                Generator.getInstance().beacon("BIG", 7000, 220),
+            ],
+            {end: "hold"},
+        ));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("TANET", "1Z"),
@@ -147,7 +160,22 @@ export default class EGLL {
 			{end: "hold"}
 		));
 
-		// OCK 1Z omitted (OCK→BIG)
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("OCK", "1Z"),
+            [Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
+            true,
+            Beacon.fromDMS("511633.00N", "0001552.00W", "DORKI", "Dorky"),
+            104,
+            [
+                Generator.getInstance().fix("DORKI", "511633.00N", "0001552.00W", void 0, 250),
+                Generator.getInstance().fix("HILLY", "512006.04N", "0001437.38E", void 0, 220),
+                Generator.getInstance().fix("HILLY", "512006.04N", "0001437.38E"),
+                Generator.getInstance().fix("HILLY").bearingIntersection(180, Generator.getInstance().beacon("BIG"),
+                    302 - 180),
+                Generator.getInstance().beacon("BIG", 7000, 220),
+            ],
+            {end: "hold"},
+        ));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("NUGRA2H"),
@@ -164,9 +192,22 @@ export default class EGLL {
 			{end: "hold"})
 		.withEntry(15000).repeated(3));
 
-		// LAM 1Z omitted (LAM→BNN)
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("LAM", "1Z"),
+            [Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
+            true,
+            Beacon.fromDMS("514200.38N", "0004437.04W", "DONNA", "Donna"),
+            275,
+            [
+                Generator.getInstance().fix("DONNA", "514200.38N", "0004437.04W", void 0, 220),
+                Generator.getInstance().fix("DONNA", "514200.38N", "0004437.04W"),
+                Generator.getInstance().beacon("BNN", 7000, 220),
+            ],
+            {end: "hold"},
+        ));
 
-		Generator.getInstance().arrival(new STAR(
+
+        Generator.getInstance().arrival(new STAR(
 			"HON2H",
 			"Honiley two hotel",
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
@@ -230,8 +271,31 @@ export default class EGLL {
 			{end: "hold"}
 		));
 
-		// BIG 1Z omitted (BIG→OCK)
-		// LAM 1Y omitted (LAM→OCK)
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("BIG", "1Z"),
+            [Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
+            true,
+            Beacon.fromDMS("511633.00N", "0001552.00W", "DORKI", "Dorky"),
+            253,
+            [
+                Generator.getInstance().fix("DORKI", "511633.00N", "0001552.00W"),
+                Generator.getInstance().beacon("OCK", 7000, 220)
+            ],
+            {end: "hold"},
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("LAM", "1Y"),
+            [Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
+            true,
+            Beacon.fromDMS("511633.00N", "0001552.00W", "DORKI", "Dorky"),
+            215,
+            [
+                Generator.getInstance().fix("DORKI", "511633.00N", "0001552.00W"),
+                Generator.getInstance().beacon("OCK", 7000, 220)
+            ],
+            {end: "hold"},
+        ));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("FITBO2H"),
