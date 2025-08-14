@@ -39,6 +39,7 @@
 	FDX, 0.10, b763, Fedex, w
 	FPY, 0.10, a20n, Player, n
 	M-ABCD, 0.10, lj45, 0, e
+	M-ABCD, 0.08, cl35, 0, nesw
 	NJE, 0.08, e55p, Fraction, es
 	SXS, 0.08, b38m, Sunexpress, e
 	TAY, 0.08, b738, Quality, e
@@ -66,7 +67,6 @@
 	CAI, 0.04, b38m/b738, Corendon, e
 	FBB, 0.04, a321, Yerevan, e
 	FPY, 0.04, a21n, Player, n
-	M-ABCD, 0.04, cl35, 0, ne
 	M-ABCD, 0.04, lj45, 0, w
 	PGT, 0.04, b738, Sunturk, e
 	RYR, 0.04, a320, Ryanair, s
@@ -95,8 +95,6 @@
 	GAC, 0.02, c510, Dream Team, es
 	HYM, 0.02, a319, Sky Moldova, e
 	IFA, 0.02, cl60/lj60, Red Angel, e
-	M-ABCD, 0.02, cl35/e35l, 0, s
-	M-ABCD, 0.02, cl35/e55p, 0, w
 	M-ABCD, 0.02, f900/glex, 0, e
 	NJE, 0.02, e55p, Fraction, w
 	NJU, 0.02, c56x, Artisan, ns
@@ -118,6 +116,8 @@
 	KRH, 0.01, a21n, Sparrowhawk, e
 	LAV, 0.01, b738, Albastar, s
 	LNX, 0.01, e550, Lonex, e
+	M-ABCD, 0.01, e55p, 0, w
+	M-ABCD, 0.01, e35l, 0, s
 	N-123A, 0.01, b738, 0, s
 	NJE, 0.01, e55p, Fraction, n
 	NJE, 0.01, c56x, Fraction, s

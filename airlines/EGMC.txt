@@ -28,8 +28,8 @@
 	G-ABCD, 0.39, c172, 0, w
 	G-ABCD, 0.36, aa5/be18/dr40/p210/tb20/toba, 0, w
 	G-ABCD, 0.36, ac11/c172/c210/eupa/pa31/pc12/r200/sr20/sr22, 0, n
-	G-ABCD, 0.34, aa5/be33/be76/c210/c310/clon/cruz/da40/da62/jab4/l8/lj40/pa34/s22t/sr20/sr22, 0, s
 	BRO, 0.33, r722, Broadsword, w
+	G-ABCD, 0.32, aa5/be33/be76/c210/c310/clon/cruz/da40/da62/jab4/l8/lj40/pa34/s22t/sr20/sr22, 0, s
 	G-ABCD, 0.32, aa5/be33/bolt/c150/c177/c310/c55b/e300/lj75/m600/p28u/pa23/pivi/s05r/s22t/spit, 0, n
 	G-ABCD, 0.31, m600, 0, w
 	G-ABCD, 0.29, da42, 0, w
@@ -76,11 +76,11 @@
 	LJC, 0.14, c55b, Little Jet, n
 	NJU, 0.14, c56x, Artisan, w
 	SRD, 0.14, da62, Coastguard, s
-	G-ABCD, 0.12, da40/da42/m600/p28b/pa34/tb20, 0, e
 	CFE, 0.12, e190, Flyer, e
 	D-ABCD, 0.12, c25a/sr22, 0, e
 	EMC, 0.12, pc12, Nightingale, w
 	EZY, 0.12, a320, Easy, w
+	G-ABCD, 0.12, da40/da42/m600/p28b/pa34/tb20, 0, e
 	G-ABCD, 0.12, c182, 0, es
 	G-ABCD, 0.12, rf6, 0, s
 	G-ABCD, 0.12, da42, 0, n
@@ -300,7 +300,7 @@
 	JTI, 0.02, crj2, Jetclipper, e
 	KLM, 0.02, da42, KLM, n
 	LDG, 0.02, da40, Edge, w
-	LF36-AB123, 0.02, huri, 0, n
+	LF-123, 0.02, huri, 0, n
 	LJC, 0.02, c550, Little Jet, w
 	LX-ABC, 0.02, p210, 0, e
 	M-ABCD, 0.02, be20, 0, n
