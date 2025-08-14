@@ -114,9 +114,11 @@
 	EJU, 0.04, a320, Alpine, e
 	FJO, 0.04, glex/glf6, Flex Europe, e
 	FJO, 0.04, glf6, Flex Europe, es
+	IRL, 0.04, c295/pc12, Irish, w
 	JFA, 0.04, pc12/pc24, Mosquito, e
 	LNX, 0.04, e35l, Lonex, ne
 	LXJ, 0.04, glf6, Flexjet, w
+	M-ABCD, 0.04, gl5t/gl7t, 0, s
 	N-123AB, 0.04, cl60/glf5, 0, w
 	N-123AB, 0.04, cl60/gl5t/gl7t/glf6, 0, s
 	N-123AB, 0.04, c68a/c700/ga5c/glf6, 0, w
@@ -205,8 +207,6 @@
 	GFM, 0.02, h25b, Parrot, es
 	GMA, 0.02, be20, Gama, n
 	IFA, 0.02, lj60, Red Angel, e
-	IRL, 0.02, c295/pc12, Irish, w
-	IRL28-ABC123, 0.02, c295/pc12, 0, w
 	JME, 0.02, c56x/glex, Jetman, e
 	JME, 0.02, glex, Jetman, w
 	KRH, 0.02, c56x/e35l, Sparrowhawk, s
@@ -218,7 +218,6 @@
 	LXJ, 0.02, glf4/glf6, Flexjet, e
 	LXJ, 0.02, cl35/glf6, Flexjet, s
 	LXJ, 0.02, glf4, Flexjet, w
-	M-ABCD, 0.02, gl7t, 0, s
 	MHV, 0.02, cl60, Snowcap, es
 	MLM, 0.02, gl5t, Luxmalta, es
 	MNB, 0.02, a332/a333, Black Sea, e
@@ -293,7 +292,6 @@
 	LTC, 0.01, h25b, Charter Jets, e
 	LXJ, 0.01, glex, Flexjet, w
 	M-ABCD, 0.01, cl60, 0, s
-	MBIG-ABCDE, 0.01, gl5t, 0, s
 	N-12AB, 0.01, lj35, 0, w
 	N-12AB, 0.01, f900, 0, e
 	NJU, 0.01, cl35, Artisan, n
