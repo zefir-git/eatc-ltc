@@ -46,7 +46,7 @@ export default class EGMC {
                     NamedFix.fromDMS("510945N", "0012133E", "DVR", "Dover"),
                     NamedFix.fromDMS("505958.87N", "0005243.18E", "LYD", "Lydd"),
                     NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
-                    Generator.getInstance().beacon("BPK"),
+                    NamedFix.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
                 ],
                 Generator.getInstance().beacon("SND"),
             ),
@@ -163,7 +163,7 @@ export default class EGMC {
             [
                 Generator.getInstance().beacon("FINMA", 15000),
                 Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-                Generator.getInstance().beacon("BKY"),
+                Generator.getInstance().fix("BKY", "515923N", "0000343E"),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E")
                     .bearingIntersection(
@@ -186,7 +186,7 @@ export default class EGMC {
             [
                 Generator.getInstance().beacon("FINMA", 15000),
                 Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-                Generator.getInstance().beacon("BKY"),
+                Generator.getInstance().fix("BKY", "515923N", "0000343E"),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E")
                     .bearingIntersection(
@@ -210,7 +210,7 @@ export default class EGMC {
             [
                 Generator.getInstance().beacon("SILVA"),
                 Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-                Generator.getInstance().beacon("BKY"),
+                Generator.getInstance().fix("BKY", "515923N", "0000343E"),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
                 Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E")
                     .bearingIntersection(
@@ -244,7 +244,7 @@ export default class EGMC {
             rwy,
             [
                 rwy.reverse().position.destination(rwy.heading, 1.5),
-                Generator.getInstance().beacon("DET"),
+                Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
                 Generator.getInstance().sidFix("DVR"),
             ],
         ));
@@ -255,7 +255,7 @@ export default class EGMC {
             rwy,
             [
                 rwy.reverse().position.destination(rwy.heading, 1.5),
-                Generator.getInstance().beacon("DET"),
+                Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
                 Generator.getInstance().sidFix("LYD"),
             ],
         ));
@@ -268,7 +268,7 @@ export default class EGMC {
                 rwy.reverse().position.destination(rwy.heading, 1.5),
                 Generator.getInstance().fix("EVNAS", "514004.25N", "0002638.37E"),
                 Generator.getInstance().beacon("LAM"),
-                Generator.getInstance().beacon("BPK"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
                 Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
                 Generator.getInstance().sidFix("CPT"),
             ],

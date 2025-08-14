@@ -45,7 +45,7 @@ export default class EGLC {
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLC.txt", "utf8")),
 				[
 					NamedFix.fromDMS("513623.75N", "0002328.43E", "SOQQA", "Soqqa"),
-					Generator.getInstance().beacon("BPK"),
+					NamedFix.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
 					NamedFix.fromDMS("514504.03N", "0001113.77W", "SAXBI", "Saxbi"),
 					NamedFix.fromDMS("513531.78N", "0001715.47E", "ODUKU", "Oduku")
 				],
@@ -90,7 +90,7 @@ export default class EGLC {
 			[
 				Generator.getInstance().beacon("SILVA"),
 				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
 				Generator.getInstance().fix("BRAIN", "514839.91N", "0003906.00E", void 0, 220),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"),
 				Generator.getInstance().beacon("JACKO", 9000, 210)
@@ -462,14 +462,15 @@ export default class EGLC {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "1A"),
+			"BPK1A",
+            `Brookmans Park ${Generator.alphabet("1A")}`,
 			rwy,
 			[
 				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
 				Generator.getInstance().fix("LCN01", "513332.44N", "0000109.21W"),
 				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
 				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			]
 		));
 
@@ -481,18 +482,19 @@ export default class EGLC {
 				Generator.getInstance().fix("LCN01", "513332.44N", "0000109.21W"),
 				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
 				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("SAXBI")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "1H"),
+			"BPK1H",
+            `Brookmans Park ${Generator.alphabet("1H")}`,
 			rwy,
 			[
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			],
 			true
 		));
@@ -503,7 +505,7 @@ export default class EGLC {
 			[
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("SAXBI")
 			],
 			true

@@ -1,3 +1,4 @@
+import Beacon from "../src/Beacon.js";
 import Generator from "../src/Generator.js";
 import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
@@ -39,9 +40,9 @@ export default class EGSS {
 				[
 					NamedFix.fromDMS("515847N", "0000419W", "UTAVA", "Utava"),
 					NamedFix.fromDMS("515822N", "0000412W", "NUGBO", "Nugbo"),
-					Generator.getInstance().beacon("BKY"),
+                    NamedFix.fromDMS("515923N", "0000343E", "BKY", "Barkway"),
 					NamedFix.fromDMS("515054.50N", "0010851.32E", "CLN", "Clacton"),
-					Generator.getInstance().beacon("DET"),
+                    NamedFix.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 				],
 				Generator.getInstance().beacon("ABBOT")
 			)
@@ -58,8 +59,8 @@ export default class EGSS {
 			[
 				Generator.getInstance().beacon("TELTU", 19000),
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -80,8 +81,8 @@ export default class EGSS {
 			25,
 			[
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -97,7 +98,7 @@ export default class EGSS {
 			[
 				Generator.getInstance().beacon("FINMA", 15000),
 				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -105,13 +106,14 @@ export default class EGSS {
 		.withEntry(15000));
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("BKY", "1X"),
+			"BKY1X",
+            `Barkway ${Generator.alphabet("1X")}`,
 			[Generator.getInstance().runway("ss")],
 			true,
-			Generator.getInstance().beacon("BKY"),
+            Beacon.fromDMS("515923N", "0000343E", "BKY", "Barkway"),
 			void 0,
 			[
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
 				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
@@ -119,13 +121,14 @@ export default class EGSS {
 		));
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("BPK", "1X"),
+			"BPK1X",
+            `Brookmans Park ${Generator.alphabet("1X")}`,
 			[Generator.getInstance().runway("ss")],
 			true,
-			Generator.getInstance().beacon("BPK"),
+            Beacon.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
 			void 0,
 			[
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ADNAM", "520616.98N", "0004418.84E", void 0, 220),
 				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
@@ -143,8 +146,8 @@ export default class EGSS {
 				Generator.getInstance().beacon("UNDUG"),
 				Generator.getInstance().beacon("MAY", 20000),
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -165,8 +168,8 @@ export default class EGSS {
 				Generator.getInstance().beacon("UNDUG"),
 				Generator.getInstance().beacon("MAY", 20000),
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -185,8 +188,8 @@ export default class EGSS {
 			325,
 			[
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -217,7 +220,7 @@ export default class EGSS {
 			[
 				Generator.getInstance().beacon("FINMA", 15000),
 				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -233,7 +236,7 @@ export default class EGSS {
 			[
 				Generator.getInstance().beacon("SILVA"),
 				Generator.getInstance().fix("BOMBO", "515944.29N", "0002346.85W", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -250,8 +253,8 @@ export default class EGSS {
 				Generator.getInstance().beacon("AVANT", 19000),
 				Generator.getInstance().beacon("OCK"),
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -268,8 +271,8 @@ export default class EGSS {
 				Generator.getInstance().beacon("SIRIC", 18000),
 				Generator.getInstance().fix("NIGIT", "511846.96N", "0011014.71W"),
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -288,8 +291,8 @@ export default class EGSS {
 			76,
 			[
 				Generator.getInstance().beacon("VATON"),
-				Generator.getInstance().beacon("BPK", void 0, 250),
-				Generator.getInstance().beacon("BKY", void 0, 220),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E", void 0, 220),
 				Generator.getInstance().fix("BUSTA", "520534.45N", "0000403.92E", void 0, 220),
 				Generator.getInstance().beacon("LOREL", 7000, 220)
 			],
@@ -311,13 +314,14 @@ export default class EGSS {
 		.withEntry(10000, 290));
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("DET", "2A"),
+			"DET2A",
+            `Detling ${Generator.alphabet("2A")}`,
 			[Generator.getInstance().runway("ss")],
 			true,
-			Generator.getInstance().beacon("DET"),
+            Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 			void 0,
 			[
-				Generator.getInstance().beacon("DET", 17000),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E", 17000),
 				Generator.getInstance().fix("LOFFO", "515012.00N", "0003556.37E", void 0, 250),
 				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
@@ -351,9 +355,9 @@ export default class EGSS {
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				Generator.getInstance().beacon("BKY").destination(169, 8),
-				Generator.getInstance().beacon("BKY").destination(169, 5),
-				Generator.getInstance().beacon("BKY").destination(169, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 8),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 2),
 				Generator.getInstance().fix("UTAVA")
 			],
 			false,
@@ -365,9 +369,9 @@ export default class EGSS {
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				Generator.getInstance().beacon("BKY").destination(169, 8),
-				Generator.getInstance().beacon("BKY").destination(169, 5),
-				Generator.getInstance().beacon("BKY").destination(169, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 8),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 2),
 				Generator.getInstance().fix("NUGBO")
 			],
 			false,
@@ -375,15 +379,16 @@ export default class EGSS {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BKY", "5R"),
+			"BKY5R",
+            `Barkway ${Generator.alphabet("5R")}`,
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 3.1),
-				Generator.getInstance().beacon("BKY").destination(169, 8),
-				Generator.getInstance().beacon("BKY").destination(169, 5),
-				Generator.getInstance().beacon("BKY").destination(169, 2),
-				Generator.getInstance().beacon("BKY"),
-				Generator.getInstance().beacon("BKY").destination(357, 3),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 8),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(357, 3),
 			],
 			false,
 			4000
@@ -394,10 +399,10 @@ export default class EGSS {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				Generator.getInstance().beacon("BKY").destination(99, 7),
-				Generator.getInstance().beacon("BKY").destination(99, 5),
-				Generator.getInstance().beacon("BKY").destination(99, 2),
-				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 7),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
 				Generator.getInstance().fix("UTAVA")
 			],
 			true
@@ -408,25 +413,26 @@ export default class EGSS {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				Generator.getInstance().beacon("BKY").destination(99, 7),
-				Generator.getInstance().beacon("BKY").destination(99, 5),
-				Generator.getInstance().beacon("BKY").destination(99, 2),
-				Generator.getInstance().beacon("BKY"),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 7),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
 				Generator.getInstance().fix("NUGBO")
 			],
 			true
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BKY", "2S"),
+			"BKY2S",
+            `Barkway ${Generator.alphabet("2S")}`,
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 2),
-				Generator.getInstance().beacon("BKY").destination(99, 7),
-				Generator.getInstance().beacon("BKY").destination(99, 5),
-				Generator.getInstance().beacon("BKY").destination(99, 2),
-				Generator.getInstance().beacon("BKY").destination(357, 3),
-				Generator.getInstance().beacon("BKY").destination(357, 7),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 7),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 5),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 2),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(357, 3),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(357, 7),
 			],
 			true
 		));
@@ -453,9 +459,9 @@ export default class EGSS {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 1),
-				rwy.position.destination(rwy.reverseLocalizer, 1).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("BKY"), 114),
-				Generator.getInstance().beacon("BKY").destination(114, 14),
-				Generator.getInstance().beacon("BKY").destination(114, 17),
+				rwy.position.destination(rwy.reverseLocalizer, 1).bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().fix("BKY", "515923N", "0000343E"), 114),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(114, 14),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(114, 17),
 				Generator.getInstance().fix("CLN").destination(265, 20),
 				Generator.getInstance().fix("CLN").destination(265, 16),
 				Generator.getInstance().fix("CLN").destination(265, 13),
@@ -466,29 +472,31 @@ export default class EGSS {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "2R"),
+			"DET2R",
+            `Detling ${Generator.alphabet("2R")}`,
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 1.2),
-				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().beacon("DET"), 333),
-				Generator.getInstance().beacon("DET").destination(333, 32),
-				Generator.getInstance().beacon("DET").destination(333, 25),
+				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 32),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 25),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "2S"),
+			"DET2S",
+            `Detling ${Generator.alphabet("2S")}`,
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 0.8),
 				rwy.position.destination(rwy.reverseLocalizer, 0.8)
 				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().beacon("LAM"), 24),
 				Generator.getInstance().beacon("LAM").destination(24, 9),
-				Generator.getInstance().beacon("DET").destination(333, 25),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 25),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			],
 			true
 		));
@@ -498,8 +506,8 @@ export default class EGSS {
 			rwy,
 			[
 				rev.position.destination(rwy.heading, 1.2),
-				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().beacon("BKY"), 153),
-				Generator.getInstance().beacon("BKY").destination(153, 13.8),
+				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().fix("BKY", "515923N", "0000343E"), 153),
+				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(153, 13.8),
 				Generator.getInstance().fix("ROWAN", "514509N", "0001457E"),
 				Generator.getInstance().beacon("LAM")
 			]

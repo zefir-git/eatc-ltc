@@ -143,7 +143,7 @@ export default class EGKK {
         
         Generator.getInstance().arrival(new STAR(
             "MID1X",
-            "Midhurst one x-ray",
+            `Midhurst ${Generator.alphabet("1X")}`,
             [Generator.getInstance().runway("kkn"), Generator.getInstance().runway("kks")],
             true,
             Beacon.fromDMS("510314.23N", "0003730.01W", "MID", "Midhurst"),
@@ -361,11 +361,11 @@ export default class EGKK {
 			kks,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3.5),
-				kks.position.destination(kks.reverseLocalizer, 3.5).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 20),
+				kks.position.destination(kks.reverseLocalizer, 3.5).bearingIntersection(51, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().beacon("DET").destination(258, 10.5),
-				Generator.getInstance().beacon("DET").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
@@ -378,11 +378,11 @@ export default class EGKK {
 			kkn,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3.5),
-				kks.position.destination(kks.reverseLocalizer, 3.5).bearingIntersection(51, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 20),
+				kks.position.destination(kks.reverseLocalizer, 3.5).bearingIntersection(51, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().beacon("DET").destination(258, 10.5),
-				Generator.getInstance().beacon("DET").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
@@ -396,12 +396,12 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 31),
-				Generator.getInstance().beacon("DET").destination(258, 29),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 31),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().beacon("DET").destination(258, 10.5),
-				Generator.getInstance().beacon("DET").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
@@ -416,12 +416,12 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 31),
-				Generator.getInstance().beacon("DET").destination(258, 29),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 31),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().beacon("DET").destination(258, 10.5),
-				Generator.getInstance().beacon("DET").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
 				Generator.getInstance().beacon("LAM")
@@ -451,12 +451,12 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 31),
-				Generator.getInstance().beacon("DET").destination(258, 29),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 31),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("FRANE")
 			],
 			false,
@@ -469,12 +469,12 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 31),
-				Generator.getInstance().beacon("DET").destination(258, 29),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 31),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 29),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("FRANE")
 			],
 			false,
@@ -488,7 +488,7 @@ export default class EGKK {
 				Generator.getInstance().fix("DVR").destination(269, 52.7),
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("FRANE")
 			],
 			true
@@ -501,7 +501,7 @@ export default class EGKK {
 				Generator.getInstance().fix("DVR").destination(269, 52.7),
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("FRANE")
 			],
 			true
@@ -515,7 +515,7 @@ export default class EGKK {
 				Generator.getInstance().fix("KKE10", "510955.93N", "0000909.88E"),
 				Generator.getInstance().fix("KKE17", "510957.12N", "0001937.59E"),
 				Generator.getInstance().fix("KKE25", "510957.30N", "0003244.84E"),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("FRANE")
 			],
 			true
@@ -570,9 +570,9 @@ export default class EGKK {
 			kks,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3),
-				Generator.getInstance().beacon("DET").destination(259, 26),
-				Generator.getInstance().beacon("DET").destination(259, 36),
-				Generator.getInstance().beacon("DET").destination(259, 43),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 26),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 36),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM").destination(66, 20).bearingIntersection(246, Generator.getInstance().beacon("GWC"), 326),
 				Generator.getInstance().fix("KENET")
@@ -585,9 +585,9 @@ export default class EGKK {
 			kkn,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3),
-				Generator.getInstance().beacon("DET").destination(259, 26),
-				Generator.getInstance().beacon("DET").destination(259, 36),
-				Generator.getInstance().beacon("DET").destination(259, 43),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 26),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 36),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM").destination(66, 20).bearingIntersection(246, Generator.getInstance().beacon("GWC"), 326),
 				Generator.getInstance().fix("KENET")
@@ -622,9 +622,9 @@ export default class EGKK {
 			kks,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3),
-				Generator.getInstance().beacon("DET").destination(259, 26),
-				Generator.getInstance().beacon("DET").destination(259, 36),
-				Generator.getInstance().beacon("DET").destination(259, 43),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 26),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 36),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM")
 			],
@@ -636,9 +636,9 @@ export default class EGKK {
 			kkn,
 			[
 				kks.position.destination(kks.reverseLocalizer, 3),
-				Generator.getInstance().beacon("DET").destination(259, 26),
-				Generator.getInstance().beacon("DET").destination(259, 36),
-				Generator.getInstance().beacon("DET").destination(259, 43),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 26),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 36),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM")
 			],
@@ -796,8 +796,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 20),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("MIMFO")
 			],
@@ -811,8 +811,8 @@ export default class EGKK {
 			[
 				kksRev.position.destination(kks.heading, 2.3),
 				kksRev.position.destination(kks.heading, 2.3)
-					.bearingIntersection(kks.heading + 90, Generator.getInstance().beacon("DET"), 258),
-				Generator.getInstance().beacon("DET").destination(258, 20),
+					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("MIMFO")
 			],
@@ -894,7 +894,7 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("DAGGA"),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E")
 			]
@@ -910,7 +910,7 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("DAGGA"),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E")
 			]
@@ -940,7 +940,7 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS14", "510311.65N", "0000652.24W"),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("KKS36", "510503.33N", "0003055.89E"),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("DAGGA"),
 				Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E")
 			]

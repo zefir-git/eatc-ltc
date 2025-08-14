@@ -54,10 +54,10 @@ export default class EGLL {
 					NamedFix.fromDMS("512930N", "0011311W", "CPT", "Compton"),
 					NamedFix.fromDMS("511459N", "0003343W", "MAXIT", "Maxit"),
 					NamedFix.fromDMS("511401N", "0002910W", "MODMI", "Modmi"),
-					Generator.getInstance().beacon("BPK"),
+					NamedFix.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
 					NamedFix.fromDMS("514020N", "0004139W", "UMLAT", "Umlat"),
 					NamedFix.fromDMS("513936N", "0001644W", "ULTIB", "Ultib"),
-					Generator.getInstance().beacon("DET"),
+					NamedFix.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 					NamedFix.fromDMS("511727N", "0010002W", "GOGSI", "Gogsi"),
 					NamedFix.fromDMS("511224N", "0005736W", "GASGU", "Gasgu"),
 				],
@@ -153,7 +153,7 @@ export default class EGLL {
 			void 0,
 			[
 				Generator.getInstance().beacon("TANET"),
-				Generator.getInstance().beacon("DET"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
 				Generator.getInstance().fix("LLE02", "511857.68N", "0002109.87E", void 0, 250),
 				Generator.getInstance().beacon("BIG", 7000, 220)
 			],
@@ -444,7 +444,8 @@ export default class EGLL {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "7F"),
+			"BPK7F",
+            `Brookmans Park ${Generator.alphabet("7F")}`,
 			lln,
 			[
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llnRev.position, lln.heading),
@@ -454,12 +455,13 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "7G"),
+			"BPK7G",
+            `Brookmans Park ${Generator.alphabet("7G")}`,
 			lls,
 			[
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").bearingIntersection(297 - 180, llsRev.position, lls.heading),
@@ -469,36 +471,38 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "6J"),
+			"BPK6J",
+            `Brookmans Park ${Generator.alphabet("6J")}`,
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
 				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
 				Generator.getInstance().beacon("LON").destination(70, 10),
-				Generator.getInstance().beacon("BPK").destination(196, 10),
-				Generator.getInstance().beacon("BPK").destination(196, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
 				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			],
 			true
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("BPK", "6K"),
+			"BPK6K",
+            `Brookmans Park ${Generator.alphabet("6K")}`,
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
 				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
 				Generator.getInstance().beacon("LON").destination(70, 10),
-				Generator.getInstance().beacon("BPK").destination(196, 10),
-				Generator.getInstance().beacon("BPK").destination(196, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
 				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
-				Generator.getInstance().beacon("BPK")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			],
 			true
 		));
@@ -554,55 +558,59 @@ export default class EGLL {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "2F"),
+			"DET2F",
+            `Detling ${Generator.alphabet("2F")}`,
 			lln,
 			[
 				llnRev.position.destination(lln.heading, 2),
 				Generator.getInstance().fix("EPSOM", "511910N", "0002219W"),
-				Generator.getInstance().beacon("DET").destination(270, 32),
-				Generator.getInstance().beacon("DET").destination(270, 29),
-				Generator.getInstance().beacon("DET").destination(270, 5),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 32),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 29),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "2G"),
+			"DET2G",
+            `Detling ${Generator.alphabet("2G")}`,
 			lls,
 			[
 				llsRev.position.destination(lls.heading, 1),
 				Generator.getInstance().fix("EPSOM", "511910N", "0002219W"),
-				Generator.getInstance().beacon("DET").destination(270, 32),
-				Generator.getInstance().beacon("DET").destination(270, 29),
-				Generator.getInstance().beacon("DET").destination(270, 5),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 32),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 29),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "1J"),
+			"DET1J",
+            `Detling ${Generator.alphabet("1J")}`,
 			lls,
 			[
 				lls.position.destination(lls.reverseLocalizer, .4),
-				Generator.getInstance().beacon("DET").destination(282, 34),
-				Generator.getInstance().beacon("DET").destination(282, 29),
-				Generator.getInstance().beacon("DET").destination(282, 20),
-				Generator.getInstance().beacon("DET").destination(282, 5),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 34),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 29),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 20),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			],
 			true
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "1K"),
+			"DET1K",
+            `Detling ${Generator.alphabet("1K")}`,
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
-				Generator.getInstance().beacon("DET").destination(282, 34),
-				Generator.getInstance().beacon("DET").destination(282, 29),
-				Generator.getInstance().beacon("DET").destination(282, 20),
-				Generator.getInstance().beacon("DET").destination(282, 5),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 34),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 29),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 20),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 5),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			],
 			true
 		));

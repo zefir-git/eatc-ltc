@@ -47,7 +47,6 @@ gen.airspace(
 
 			// Manoeuvring/misc beacons
 			Beacon.fromDMS("510102N", "0000658E", "MAY", "Mayfield", {left: 87}),
-			Beacon.fromDMS("515923N", "0000343E", "BKY", "Barkway"),
 
 			// Missed approach holding
 			Beacon.fromDMS("511910N", "0002219W", "EPM", "Epsom", {left: 271}),
@@ -102,11 +101,9 @@ gen.airspace(
 			Beacon.fromDMS("503828.94N", "0011029.05W", "ABSAV", "Absav"),
 			Beacon.fromDMS("505118.79N", "0004524.25W", "GWC", "Goodwood", {left: 175}),
 			Beacon.fromDMS("515947.21N", "0010313.34W", "FINMA", "Finma"),
-			Beacon.fromDMS("514459.05N", "0000624.25W", "BPK", "Brookmans Park"),
 			Beacon.fromDMS("503242.00N", "0004512.00E", "BANVA", "Banva"),
 			Beacon.fromDMS("515051.34N", "0010019.40W", "SILVA", "Silva"),
 			Beacon.fromDMS("504912.00N", "0005618.05W", "AVANT", "Avant"),
-			Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 			Beacon.fromDMS("504723.71N", "0002530.03E", "UNDUG", "Undug", 319),
 			Beacon.fromDMS("504645.67N", "0012800.00E", "SOVAT", "Sovat"),
 			/**
