@@ -324,8 +324,20 @@ export default class EGSS {
 			{end: "hold"}
 		));
 
-		// BARMI 2A omitted (BARMI→ABBOT)
-		// RINIS 1A omitted (RINIS→ABBOT)
+        Generator.getInstance().arrival(new STAR(
+            ...Generator.getInstance().pronounce("MEGEL1A"),
+            [Generator.getInstance().runway("ss")],
+            true,
+            Generator.getInstance().beacon("LARPA"),
+            void 0,
+            [
+                Generator.getInstance().beacon("LARPA", 12000, 250),
+                Generator.getInstance().beacon("ABBOT", 8000, 220),
+            ],
+            {end: "hold"},
+        ).withEntry(12000, 246));
+
+        // RINIS 1A omitted (RINIS→ABBOT)
 		// XAMAN 1A omitted (XAMAN→ABBOT)
 		// TOSVA 1A omitted (TOSVA→ABBOT)
 	}

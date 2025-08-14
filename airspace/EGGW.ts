@@ -181,7 +181,7 @@ export default class EGGW {
 			{end: "hold"}
 		));
 
-		// BARMI 1N omitted (BARMI→ZAGZO)
+		// MEGEL 1N omitted (MEGEL→ZAGZO)
 		// RINIS 1N omitted (RINIS→ZAGZO)
 		// XAMAN 1N omitted (XAMAN→ZAGZO)
 		// TOSVA 1N omitted (TOSVA→ZAGZO)
