@@ -1,3 +1,4 @@
+import Beacon from "../src/Beacon.js";
 import Generator from "../src/Generator.js";
 import Airport from "../src/Airport.js";
 import Runway from "../src/Runway.js";
@@ -39,7 +40,7 @@ export default class EGGW {
 				Airport.Airline.raw(await fs.readFile("./airlines/EGGW.txt", "utf8")),
 				[
 					NamedFix.fromDMS("514645N", "0001500E", "MATCH", "Match"),
-					Generator.getInstance().beacon("DET"),
+                    NamedFix.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 					NamedFix.fromDMS("514257N", "0005142W", "RODNI", "Rodni"),
 					NamedFix.fromDMS("520740N", "0004403W", "OLNEY", "Olney"),
 				],
@@ -60,7 +61,7 @@ export default class EGGW {
 				Generator.getInstance().beacon("MAY", 20000),
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -83,7 +84,7 @@ export default class EGGW {
 			[
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -104,7 +105,7 @@ export default class EGGW {
 				Generator.getInstance().fix("NIGIT", "511846.96N", "0011014.71W"),
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -127,7 +128,7 @@ export default class EGGW {
 			[
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -148,7 +149,7 @@ export default class EGGW {
 				Generator.getInstance().fix("MOREZ", "511233.91N", "0002948.60W"),
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -171,7 +172,7 @@ export default class EGGW {
 			[
 				Generator.getInstance().beacon("VATON"),
 				Generator.getInstance().fix("OZZOT", "514028.93N", "0000952.93W", 15000),
-				Generator.getInstance().beacon("BPK", void 0, 250),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W", void 0, 250),
 				Generator.getInstance().fix("ILLOC", "515517.20N", "0001056.60E"),
 				Generator.getInstance().fix("OXDUF", "520636.20N", "0001900.00E"),
 				Generator.getInstance().fix("COCCU", "521604.34N", "0000322.02W", void 0, 220),
@@ -249,13 +250,14 @@ export default class EGGW {
 		.withEntry(10000, 290));
 
 		Generator.getInstance().arrival(new STAR(
-			...Generator.getInstance().pronounce("DET", "2A"),
+			"DET2A",
+            `Detling ${Generator.alphabet("2A")}`,
 			[Generator.getInstance().runway("gw")],
 			true,
-			Generator.getInstance().beacon("DET"),
+            Beacon.fromDMS("511814.41N", "0003550.19E", "DET", "Detling"),
 			void 0,
 			[
-				Generator.getInstance().beacon("DET", 17000),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E", 17000),
 				Generator.getInstance().fix("LOFFO", "515012.00N", "0003556.37E", void 0, 250),
 				Generator.getInstance().beacon("ABBOT", 8000, 220)
 			],
@@ -318,10 +320,10 @@ export default class EGGW {
 			rwy,
 			[
 				Generator.getInstance().beacon("BNN").destination(31, 7),
-				Generator.getInstance().beacon("BPK").destination(284, 10),
-				Generator.getInstance().beacon("BPK").destination(284, 6),
-				Generator.getInstance().beacon("BPK").destination(284, 3),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 10),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 3),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("CLN").destination(262, 40),
 				Generator.getInstance().fix("MATCH")
 			]
@@ -332,10 +334,10 @@ export default class EGGW {
 			rwy,
 			[
 				Generator.getInstance().fix("LUT", "515341N", "0001509W"),
-				Generator.getInstance().fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("BPK"), 336),
-				Generator.getInstance().beacon("BPK").destination(336, 6),
-				Generator.getInstance().beacon("BPK").destination(336, 3),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"), 336),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(336, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(336, 3),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("CLN").destination(262, 40),
 				Generator.getInstance().fix("MATCH")
 			],
@@ -343,34 +345,36 @@ export default class EGGW {
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "8B"),
+			"DET8B",
+            `Detling ${Generator.alphabet("8B")}`,
 			rwy,
 			[
 				Generator.getInstance().beacon("BNN").destination(31, 7),
-				Generator.getInstance().beacon("BPK").destination(284, 10),
-				Generator.getInstance().beacon("BPK").destination(284, 6),
-				Generator.getInstance().beacon("BPK").destination(284, 3),
-				Generator.getInstance().beacon("BPK"),
-				Generator.getInstance().beacon("BPK").destination(97, 7),
-				Generator.getInstance().beacon("BPK").destination(97, 7).bearingIntersection(97, Generator.getInstance().beacon("DET"), 333),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 10),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 3),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7).bearingIntersection(97, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "7C"),
+			"DET7C",
+            `Detling ${Generator.alphabet("7C")}`,
 			rwy,
 			[
 				Generator.getInstance().fix("LUT", "515341N", "0001509W"),
-				Generator.getInstance().fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().beacon("BPK"), 336),
-				Generator.getInstance().beacon("BPK").destination(336, 6),
-				Generator.getInstance().beacon("BPK").destination(336, 3),
-				Generator.getInstance().beacon("BPK"),
-				Generator.getInstance().beacon("BPK").destination(97, 7),
-				Generator.getInstance().beacon("BPK").destination(97, 7).bearingIntersection(97, Generator.getInstance().beacon("DET"), 333),
+				Generator.getInstance().fix("LUT", "515341N", "0001509W").bearingIntersection(rwy.reverseLocalizer, Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"), 336),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(336, 6),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(336, 3),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7).bearingIntersection(97, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			],
 			true
 		));
@@ -386,13 +390,14 @@ export default class EGGW {
 				Generator.getInstance().fix("GWS12", "514656.85N", "0001944.38W"),
 				Generator.getInstance().fix("GWE16", "514622.04N", "0001546.78W"),
 				Generator.getInstance().fix("GWE19", "514540.56N", "0001104.88W"),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("MATCH")
 			]
 		));
 
 		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("DET", "3Y"),
+			"DET3Y",
+            `Detling ${Generator.alphabet("3Y")}`,
 			rwy,
 			[
 				Generator.getInstance().fix("GWS01", "515119.98N", "0002514.51W")
@@ -402,10 +407,10 @@ export default class EGGW {
 				Generator.getInstance().fix("GWS12", "514656.85N", "0001944.38W"),
 				Generator.getInstance().fix("GWE16", "514622.04N", "0001546.78W"),
 				Generator.getInstance().fix("GWE19", "514540.56N", "0001104.88W"),
-				Generator.getInstance().beacon("BPK"),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("GWE37", "514259.91N", "0001658.25E"),
 				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().beacon("DET")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
 			]
 		));
 
@@ -453,8 +458,8 @@ export default class EGGW {
 			rwy,
 			[
 				rwy.position.destination(rwy.reverseLocalizer, 3.4),
-				Generator.getInstance().beacon("BPK").destination(314, 15),
-				Generator.getInstance().beacon("BPK").destination(314, 21),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(314, 15),
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(314, 21),
 				Generator.getInstance().fix("OLNEY")
 			],
 			true,

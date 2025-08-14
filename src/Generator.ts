@@ -298,6 +298,13 @@ export default class Generator {
 		Z: "zulu",
 	};
 
+    public static alphabet(string: string): string {
+        return string
+            .toUpperCase()
+            .split("")
+            .map(c => Generator.pronunciation[c] ?? c).join(" ");
+    }
+
 	public pronounce(beacon: NamedFix | string, suffix: string): [name: string, pronunciation: string];
 	public pronounce(name: string): [name: string, pronunciation: string];
 	public pronounce(...args: [NamedFix | string, string] | [string]): [name: string, pronunciation: string] {
@@ -316,11 +323,7 @@ export default class Generator {
 				name.trim(),
 				name.length <= 2
 				? waypointName
-				: waypointName + " "
-					+ name.slice(-2)
-						  .toUpperCase()
-						  .split("")
-						  .map(c => Generator.pronunciation[c] ?? c).join(" ")
+				: waypointName + " " + Generator.alphabet(name.slice(-2))
 			];
 		}
 
@@ -331,10 +334,7 @@ export default class Generator {
 		return [
 			beacon.name + suffix,
 			beacon.pronunciation + " "
-			+ suffix
-				.toUpperCase()
-				.split("")
-				.map(c => Generator.pronunciation[c] ?? c).join(" ")
+			+ Generator.alphabet(suffix)
 		]
 	}
 
