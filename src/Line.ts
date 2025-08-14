@@ -66,8 +66,8 @@ class Line extends Polygon {
 					break;
 
 				case "Polygon":
-					lines.push(...coordinates.map((ring: [number, number][]) =>
-						new Line(ring.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour)
+					lines.push(...coordinates.map((polygon: [number, number][]) =>
+						new Line(polygon.map(([lon, lat]: [number, number]) => new Fix(lat, lon)), colour)
 					));
 					break;
 

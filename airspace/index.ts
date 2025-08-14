@@ -197,7 +197,7 @@ await new EGMC().init();
 new RunwayConfigs().init();
 AircraftTypes.init();
 
-await new AirspaceLines().withCoastline();
+await new AirspaceLines().withCoastline().then(a => a.withThames());
 
 const project = JSON.parse(await fs.readFile("./package.json", "utf8"));
 

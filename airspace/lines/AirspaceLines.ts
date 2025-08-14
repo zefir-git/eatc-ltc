@@ -626,5 +626,16 @@ export default class AirspaceLines {
 				// ignore islands etc. north of 52.5, west of -2
 				   .filter(line => !line.vertices.every(fix => fix.latitude > 52.5 || fix.longitude < -2))
 		);
+        return this;
 	}
+
+    public async withThames() {
+        this.gen.line(
+            ...Line.fromGeoJSON(
+                JSON.parse(await fs.readFile("./coastline/thames.geojson", "utf8")),
+                Line.ColourType.COAST
+            )
+        );
+        return this;
+    }
 }
