@@ -140,8 +140,26 @@ export default class EGKK {
 			],
 			{end: "hold"}
 		));
-
-		// MID 1X omitted (MID→TIMBA)
+        
+        Generator.getInstance().arrival(new STAR(
+            "MID1X",
+            "Midhurst one x-ray",
+            [Generator.getInstance().runway("kkn"), Generator.getInstance().runway("kks")],
+            true,
+            Beacon.fromDMS("510314.23N", "0003730.01W", "MID", "Midhurst"),
+            void 0,
+            [
+                Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"),
+                Generator.getInstance().fix("ZOPHI", "510126.60N", "0000055.43W", void 0, 250),
+                Generator.getInstance().beacon("MAY"),
+                Generator.getInstance().fix("OSDEB", "505654.53N", "0002447.85E", void 0, 220),
+                Generator.getInstance().fix("OSDEB", "505654.53N", "0002447.85E"),
+                Generator.getInstance().fix("OSDEB", "505654.53N", "0002447.85E")
+                    .bearingIntersection(128 - 90, Generator.getInstance().beacon("TIMBA"), 128),
+                Generator.getInstance().beacon("TIMBA", 7000, 220)
+            ],
+            {end: "hold"}
+        ));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("NEVIL1G"),
