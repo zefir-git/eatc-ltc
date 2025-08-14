@@ -521,11 +521,22 @@ export default class EGKK {
 			true
 		));
 
-		// BOGNA 1M omitted (26L→BOGNA)
+		Generator.getInstance().departure(new SID(
+            ...Generator.getInstance().pronounce(Generator.getInstance().sidFix("BOGNA"), "1M"),
+            kks,
+            [
+                kksRev.position.destination(257, 10.5),
+                Generator.getInstance().beacon("OCK").destination(175, 13),
+                Generator.getInstance().beacon("OCK").destination(175, 18),
+                Generator.getInstance().beacon("OCK").destination(175, 23),
+                Generator.getInstance().beacon("OCK").destination(175, 28),
+                Generator.getInstance().fix("BOGNA")
+            ]
+        ));
 
 		Generator.getInstance().departure(new SID(
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("BOGNA"), "1V"),
-			kks,
+			kkn,
 			[
 				kksRev.position.destination(257, 6.4),
 				Generator.getInstance().beacon("OCK").destination(175, 13),
