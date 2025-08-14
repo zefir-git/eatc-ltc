@@ -185,7 +185,7 @@ export default class EGLL {
 			147,
 			[
 				Generator.getInstance().beacon("TOBID"),
-				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().fix("SOPIT", 15000, 220),
 				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
@@ -209,14 +209,14 @@ export default class EGLL {
 
         Generator.getInstance().arrival(new STAR(
 			"HON2H",
-			"Honiley two hotel",
+			`Honiley ${Generator.alphabet("2H")}`,
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
 			Generator.getInstance().beacon("TOBID"),
 			139,
 			[
 				Generator.getInstance().beacon("TOBID"),
-				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().fix("SOPIT", 15000, 220),
 				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
@@ -304,7 +304,7 @@ export default class EGLL {
 			Generator.getInstance().beacon("SOPIT"),
 			107,
 			[
-				Generator.getInstance().fix("SOPIT", 15000),
+				Generator.getInstance().fix("SOPIT", 15000, 220),
 				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],

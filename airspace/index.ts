@@ -83,7 +83,7 @@ gen.airspace(
 			Beacon.fromDMS("515729.84N", "0010626.35W", "SOPIT", "Sopit"),
 			/**
 			 * TOBID: moved closer to SOPIT to fit within airspace.
-			 * Use this beacon only for NUGRA 1H HON 1H
+			 * Use this beacon only for NUGRA 2H HON 2H
 			 */
 			Beacon.from("TOBID", "Tobid",
 				gen.fix("SOPIT", "515729.84N", "0010626.35W")
