@@ -781,7 +781,7 @@ export default class EGKK {
 			kks,
 			[
 				kksRev.position.destination(257, 2.3),
-                kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
@@ -796,7 +796,7 @@ export default class EGKK {
 			kkn,
 			[
 				kksRev.position.destination(257, 2.3),
-				kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
@@ -891,7 +891,7 @@ export default class EGKK {
 			kks,
 			[
 				kksRev.position.destination(257, 2.3),
-				kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
@@ -908,7 +908,7 @@ export default class EGKK {
 			kkn,
 			[
 				kksRev.position.destination(257, 2.3),
-				kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
@@ -925,7 +925,7 @@ export default class EGKK {
 			kks,
 			[
 				kksRev.position.destination(257, 2.3),
-				kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
@@ -944,7 +944,7 @@ export default class EGKK {
 			kkn,
 			[
 				kksRev.position.destination(257, 2.3),
-				kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("MAY"), 257 + 90),
+				kksRev.position.destination(257, 2.3),
 				Generator.getInstance().beacon("MAY").destination(282, 16),
 				Generator.getInstance().beacon("MAY").destination(282, 13),
 				Generator.getInstance().beacon("MAY").destination(282, 9),
