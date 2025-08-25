@@ -94,6 +94,7 @@ export default class RunwayConfigs {
         this.westerlyEgkkEasterly();
         this.westerlyEglcEasterly();
         this.westerlyEgkkEglcEasterly();
+        this.westerlyEgssEggwEasterly();
     }
 
     /**
@@ -158,12 +159,34 @@ export default class RunwayConfigs {
     }
 
     /**
+     * Westerly Operations — EGSS & EGGW Easterly
+     */
+    private westerlyEgssEggwEasterly() {
+        for (const scores of this.westerly) {
+            if (!scores.some(s => (s.runway.id === "ss" || s.runway.id === "gw") && !s.reverse)) continue;
+            this.gen.runway(scores.map(
+                config => (config.runway.id !== "ss" && config.runway.id !== "gw") || config.reverse
+                    ? config
+                    : new RunwayConfiguration(config.score, config.runway, {
+                        reverse: true,
+                        arrivals: config.arrivals,
+                        departures: config.departures,
+                        intersection: config.intersection,
+                        backtrack: config.backtrack,
+                        noSid: config.noSid,
+                        offsetHeading: config.offsetHeading,
+                    })));
+        }
+    }
+
+    /**
      * Easterly Operations With Some Airports Westerly
      */
     private easterlyOpposing() {
         this.easterlyEgkkWesterly();
         this.easterlyEglcWesterly();
         this.easterlyEgkkEglcWesterly();
+        this.easterlyEgssEggwWesterly();
     }
 
     /**
@@ -214,6 +237,27 @@ export default class RunwayConfigs {
             if (!scores.some(s => (s.runway.id === "kks" || s.runway.id === "lc") && s.reverse)) continue;
             this.gen.runway(scores.map(
                 config => (config.runway.id !== "kks" && config.runway.id !== "lc") || !config.reverse
+                    ? config
+                    : new RunwayConfiguration(config.score, config.runway, {
+                        reverse: false,
+                        arrivals: config.arrivals,
+                        departures: config.departures,
+                        intersection: config.intersection,
+                        backtrack: config.backtrack,
+                        noSid: config.noSid,
+                        offsetHeading: config.offsetHeading,
+                    })));
+        }
+    }
+
+    /**
+     * Easterly Operations — EGSS & EGGW Westerly
+     */
+    private easterlyEgssEggwWesterly() {
+        for (const scores of this.easterly) {
+            if (!scores.some(s => (s.runway.id === "ss" || s.runway.id === "gw") && s.reverse)) continue;
+            this.gen.runway(scores.map(
+                config => (config.runway.id !== "ss" && config.runway.id !== "gw") || !config.reverse
                     ? config
                     : new RunwayConfiguration(config.score, config.runway, {
                         reverse: false,
