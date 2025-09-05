@@ -485,7 +485,6 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
-				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			],
 			true
@@ -493,7 +492,7 @@ export default class EGLL {
 
 		Generator.getInstance().departure(new SID(
 			"BPK6K",
-            `Brookmans Park ${Generator.alphabet("6K")}`,
+            `Brookmans Park ${Generator.alphabet("5K")}`,
 			lln,
 			[
 				lln.position.destination(lln.reverseLocalizer, .1),
@@ -501,7 +500,6 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
-				Generator.getInstance().fix("BAPAG", "514305N", "0000724W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
 			],
 			true
