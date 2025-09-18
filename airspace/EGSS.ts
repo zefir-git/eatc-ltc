@@ -7,12 +7,14 @@ import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
+import StarFix from "../src/StarFix.js";
 
 export default class EGSS {
 	public async init() {
 		await this.airport();
 		this.star();
 		this.sid();
+        this.rnp();
 	}
 
 	private async airport() {
@@ -543,4 +545,39 @@ export default class EGSS {
 			6000
 		));
 	}
+
+    private rnp() {
+        const rwy = Generator.getInstance().runway("ss");
+
+        const EKVEG = Beacon.fromDMS("514458.16N", "0000156.61E", "EKVEG", "Ekveg");
+        const TOTVO = Beacon.fromDMS("520118.82N", "0002627.79E", "TOTVO", "Totvo");
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP Z",
+            "R-N-P Zulu",
+            [rwy],
+            "only",
+            EKVEG,
+            void 0,
+            [StarFix.from(EKVEG, 2500, 200)],
+            // SS04F
+            {ils: {dme: 6.6, altitude: 2500}}
+        ));
+
+        // RNP Y 04 omitted (maintenance THR)
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP Z",
+            "R-N-P Zulu",
+            [rwy],
+            false,
+            TOTVO,
+            void 0,
+            [StarFix.from(TOTVO, 2500, 200)],
+            // SS22F
+            {ils: {dme: 6.6, altitude: 2500}}
+        ));
+
+        // RNP Y 22 omitted (maintenance THR)
+    }
 }
