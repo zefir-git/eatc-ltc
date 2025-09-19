@@ -14,6 +14,7 @@ export default class EGLC {
 		this.star();
 		this.transition();
 		this.sid();
+        this.ils();
 	}
 
 	private async airport() {
@@ -533,4 +534,46 @@ export default class EGLC {
 			true
 		));
 	}
+
+    private ils() {
+        const rwy = Generator.getInstance().runway("lc");
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            false,
+            Generator.getInstance().beacon("LCY"),
+            void 0,
+            [
+                Generator.getInstance().beacon("LCY", 2000),
+                Generator.getInstance().beacon("LCY"),
+                new Fix(51.5397, 0.0678),
+                rwy.position.destination(rwy.localizer - 180, 6)
+                    .bearingIntersection(360, new Fix(51.5397, 0.0678), 92),
+                rwy.position.destination(rwy.localizer - 180, 6)
+                    .bearingIntersection(360, new Fix(51.5397, 0.0678), 92),
+                rwy.position.destination(rwy.localizer - 180, 6),
+            ],
+            {ils: {dme: 6}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            "only",
+            Generator.getInstance().beacon("LCY"),
+            void 0,
+            [
+                Generator.getInstance().beacon("LCY", 2000),
+                Generator.getInstance().beacon("LCY")
+                    .destination(304, 5), // technically D is from I-LST…
+                Generator.getInstance().beacon("LCY")
+                    .destination(304, 5),
+                rwy.reverse().position.destination(rwy.reverseLocalizer + 180, 4.9),
+            ],
+            {ils: {dme: 4.9}}
+        ));
+    }
 }

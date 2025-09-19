@@ -7,6 +7,7 @@ import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
+import StarFix from "../src/StarFix.js";
 
 export default class EGGW {
 	public async init() {
@@ -14,6 +15,7 @@ export default class EGGW {
 		this.star();
 		this.transition();
 		this.sid();
+        this.ils();
 	}
 
 	private async airport() {
@@ -29,8 +31,8 @@ export default class EGGW {
 						Fix.fromDMS("515237.36N", "0002116.15W"),
 						254.4, 508,
 						2162 / Fix.FT, 82 / Fix.FT, 0,
-						{name: "FITME", distance: 10.7},
-						{name: "ODWAD", distance: 10.5},
+						void 0,
+                        void 0,
 						132.55,
 						"Luton Tower",
 						74.38
@@ -266,11 +268,6 @@ export default class EGGW {
 	}
 
 	private transition() {
-		const rwy25 = Generator.getInstance().runway("gw");
-		const rwy07 = rwy25.reverse();
-		Generator.getInstance().fix("FITME", rwy25.position.destination(rwy25.reverseLocalizer, 10.7));
-		Generator.getInstance().fix("ODWAD", rwy07.position.destination(rwy07.reverseLocalizer, 10.5));
-
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("ZAGZO", "1T"),
 			[Generator.getInstance().runway("gw")],
@@ -284,9 +281,9 @@ export default class EGGW {
 				Generator.getInstance().fix("GWN26", "520307.39N", "0001807.70W", 5000),
 				Generator.getInstance().fix("GWN22", "515948.29N", "0001637.97W"),
 				Generator.getInstance().fix("GWE17", "520016.82N", "0000645.79W", 5000, 185),
-				Generator.getInstance().fix("FITME", 3000)
+				Generator.getInstance().fix("FITME", "515528.51N", "0000437.36W", 3000)
 			],
-			{ils: {dme: 7.7, altitude: 3000}}
+            {end: "hold"}
 		));
 
 		Generator.getInstance().arrival(new STAR(
@@ -305,9 +302,10 @@ export default class EGGW {
 				Generator.getInstance().fix("GWW24", "515404.06N", "0003649.52W"),
 				Generator.getInstance().fix("GWW18", "515230.10N", "0004544.14W", 5000, 185),
 				Generator.getInstance().fix("GWW14", "514839.58N", "0004358.20W", 4000),
-				Generator.getInstance().fix("ODWAD", 3000)
+				Generator.getInstance().fix("GWW14", "514839.58N", "0004358.20W"),
+				Generator.getInstance().fix("ODWAD", "514928.66N", "0003919.43W", 3000),
 			],
-			{ils: {dme: 4.5, altitude: 2000}}
+			{end: "hold"}
 		));
 	}
 
@@ -466,4 +464,57 @@ export default class EGGW {
 			6000
 		));
 	}
+
+    private ils() {
+        const rwy = Generator.getInstance().runway("gw");
+
+        const ODWAD = Beacon.fromDMS("514928.66N", "0003919.43W", "ODWAD", "Odwad");
+        const FITME = Beacon.fromDMS("515528.51N", "0000437.36W", "FITME", "Fitme");
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            "only",
+            ODWAD,
+            void 0,
+            [StarFix.from(ODWAD, 3000)],
+            {ils: {dme: 4.5, altitude: 2000}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            "only",
+            Generator.getInstance().beacon("LUT"),
+            void 0,
+            [
+                Generator.getInstance().beacon("LUT", 3000),
+                rwy.reverse().position.destination(254, 2),
+                StarFix.from(rwy.reverse().position.destination(254, 5.5), 2000),
+                rwy.reverse().position.destination(254, 5.5).destination(209, 2.5),
+                rwy.reverse().position.destination(254, 5.5).destination(209, 2.5),
+                rwy.reverse().position.destination(254, 5.5)
+                    .destination(209, 2.5)
+                    .bearingIntersection(344, Generator.getInstance().fix("LUT"), 254),
+                rwy.reverse().position.destination(254, 5.5)
+                    .destination(209, 2.5)
+                    .bearingIntersection(344, Generator.getInstance().fix("LUT"), 254),
+                StarFix.from(rwy.reverse().position.destination(254, 5.5), 2000),
+            ],
+            {ils: {dme: 4.5, altitude: 2000}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            false,
+            FITME,
+            void 0,
+            [StarFix.from(FITME, 3000)],
+            {ils: {dme: 4.5, altitude: 2000}}
+        ));
+    }
 }

@@ -6,12 +6,14 @@ import NamedFix from "../src/NamedFix.js";
 import Runway from "../src/Runway.js";
 import SID from "../src/SID.js";
 import STAR from "../src/STAR.js";
+import StarFix from "../src/StarFix.js";
 
 export default class EGMC {
     public async init() {
         await this.airport();
-        await this.star();
-        await this.departures();
+        this.star();
+        this.departures();
+        this.ils();
     }
 
     private async airport() {
@@ -53,7 +55,7 @@ export default class EGMC {
         );
     }
 
-    private async star() {
+    private star() {
         Generator.getInstance().arrival(new STAR(
             ...Generator.getInstance().pronounce("SUMUM1S"),
             [Generator.getInstance().runway("mc")],
@@ -225,7 +227,7 @@ export default class EGMC {
         ));
     }
 
-    private async departures() {
+    private departures() {
         const rwy = Generator.getInstance().runway("mc");
 
         Generator.getInstance().departure(new SID(
@@ -284,6 +286,56 @@ export default class EGMC {
                 Generator.getInstance().beacon("LAM"),
                 Generator.getInstance().sidFix("BPK"),
             ],
+        ));
+    }
+
+    private ils() {
+        const rwy = Generator.getInstance().runway("mc");
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            "only",
+            Generator.getInstance().beacon("SND"),
+            void 0,
+            [
+                Generator.getInstance().beacon("SND", 2500),
+                StarFix.from(
+                    Generator.getInstance().beacon("SND")
+                        .destination(246, 9),  // technically it's D8.1 from I-SO…
+                    void 0, 165),
+                Generator.getInstance().beacon("SND")
+                    .destination(246, 9),
+                StarFix.from(
+                    rwy.reverse().position.destination(rwy.reverseLocalizer + 180, 8.1),
+                    2000
+                ),
+            ],
+            {ils: {dme: 8.1}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "ILS",
+            "ILS",
+            [rwy],
+            false,
+            Generator.getInstance().beacon("SND"),
+            void 0,
+            [
+                Generator.getInstance().beacon("SND", 2500),
+                StarFix.from(
+                    Generator.getInstance().beacon("SND")
+                        .destination(38, 9),
+                    void 0, 185),
+                Generator.getInstance().beacon("SND")
+                    .destination(38, 9),
+                StarFix.from(
+                    rwy.position.destination(rwy.localizer + 180, 9),
+                    2000
+                ),
+            ],
+            {ils: {dme: 9}}
         ));
     }
 }
