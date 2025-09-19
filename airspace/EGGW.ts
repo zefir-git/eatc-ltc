@@ -473,7 +473,7 @@ export default class EGGW {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             "only",
             ODWAD,
@@ -484,7 +484,7 @@ export default class EGGW {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             "only",
             Generator.getInstance().beacon("LUT"),
@@ -508,7 +508,7 @@ export default class EGGW {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             false,
             FITME,

@@ -543,7 +543,7 @@ export default class EGLC {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             false,
             Generator.getInstance().beacon("LCY"),
@@ -563,7 +563,7 @@ export default class EGLC {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             "only",
             Generator.getInstance().beacon("LCY"),
