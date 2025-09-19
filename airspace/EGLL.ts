@@ -12,6 +12,7 @@ import StarFix from "../src/StarFix.js";
 export default class EGLL {
 	public async init() {
 		await this.airport();
+        this.rnp();
 		this.star();
 		this.sid();
 	}
@@ -670,4 +671,70 @@ export default class EGLL {
 			true
 		));
 	}
+
+    private rnp() {
+        const lln = Generator.getInstance().runway("lln");
+        const lls = Generator.getInstance().runway("lls");
+
+        const ABAVI = Beacon.fromDMS("512834.45N", "0004505.67W", "ABAVI", "Abavi");
+        const BEMPA = Beacon.fromDMS("512748.76N", "0004455.76W", "BENPA", "Benpa");
+        const NEKSA = Beacon.fromDMS("512755.72N", "0001001.89W", "NEKSA", "Neksa");
+        const IVLAR = Beacon.fromDMS("512841.57N", "0001000.08W", "IVLAR", "Ivlar");
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [lln],
+            "only",
+            ABAVI,
+            void 0,
+            [
+                StarFix.from(ABAVI, 3000),
+                Generator.getInstance().fix("L09LF", "512836.05N", "0004015.82W", 2500),
+            ],
+            {ils: {dme: 4, altitude: 1400}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [lls],
+            "only",
+            BEMPA,
+            void 0,
+            [
+                StarFix.from(BEMPA, 3000),
+                Generator.getInstance().fix("L09RF", "512750.34N", "0004007.13W", 2500),
+            ],
+            {ils: {dme: 4, altitude: 1400}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [lls],
+            false,
+            NEKSA,
+            void 0,
+            [
+                StarFix.from(NEKSA, 3000),
+                Generator.getInstance().fix("L27LF", "512755.40N", "0001452.50W", 2500)
+            ],
+            {ils: {dme: 4, altitude: 1400}}
+        ));
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [lln],
+            false,
+            IVLAR,
+            void 0,
+            [
+                StarFix.from(IVLAR, 3000),
+                Generator.getInstance().fix("L27RF", "512841.22N", "0001449.66W", 2500),
+            ],
+            {ils: {dme: 4, altitude: 1410}}
+        ));
+    }
 }

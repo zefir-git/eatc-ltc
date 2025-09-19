@@ -7,6 +7,7 @@ import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
 import Beacon from "../src/Beacon.js";
+import StarFix from "../src/StarFix.js";
 
 export default class EGKK {
 	public async init() {
@@ -994,37 +995,59 @@ export default class EGKK {
 	}
 
 	private rnp() {
-		const rwy26r = Generator.getInstance().runway("kkn");
-		const rwy08l = rwy26r.reverse();
+		const kkn = Generator.getInstance().runway("kkn");
+		const kks = Generator.getInstance().runway("kks");
 
-		Generator.getInstance().fix("ARPIT", rwy26r.position.destination(rwy26r.reverseLocalizer, 10.6));
-		Generator.getInstance().fix("MEBIG", rwy08l.position.destination(rwy08l.reverseLocalizer, 10.6));
+        const ABIBI = Beacon.fromDMS("510627.14N", "0002853.92W", "ABIBI", "Abibi");
+        const OLEVI = Beacon.fromDMS("511117.40N", "0000611.30E", "OLEVI", "Olevi");
+        const MEBIG = Beacon.fromDMS("510632.92N", "0002900.23W", "MEBIG", "Mebig");
+        const ARPIT = Beacon.fromDMS("511119.23N", "0000535.33E", "ARPIT", "Arpit");
+
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [kks],
+            "only",
+            ABIBI,
+            void 0,
+            [StarFix.from(ABIBI, 3000)],
+            // K08RF
+            {ils: {dme: 8.6, altitude: 3000}}
+        ));
 
 		Generator.getInstance().arrival(new STAR(
 			"RNP",
 			"R-N-P",
-			[rwy26r],
+			[kks],
 			false,
-			Beacon.from("ARPIT", "Arpit", Generator.getInstance().fix("ARPIT")),
+			OLEVI,
 			void 0,
-			[
-				Generator.getInstance().fix("ARPIT", 3000)
-			],
-			// K26RF
+			[StarFix.from(OLEVI, 3000)],
+			// K26LF
 			{ils: {dme: 8.6, altitude: 3000}}
 		));
 
+        Generator.getInstance().arrival(new STAR(
+            "RNP",
+            "R-N-P",
+            [kkn],
+            "only",
+            MEBIG,
+            void 0,
+            [StarFix.from(MEBIG, 3000)],
+            // K08LF
+            {ils: {dme: 8.6, altitude: 3000}}
+        ));
+
 		Generator.getInstance().arrival(new STAR(
 			"RNP",
 			"R-N-P",
-			[rwy26r],
-			"only",
-			Beacon.from("MEBIG", "Mebig", Generator.getInstance().fix("MEBIG")),
+			[kkn],
+			false,
+			ARPIT,
 			void 0,
-			[
-				Generator.getInstance().fix("MEBIG", 3000)
-			],
-			// K08LF
+			[StarFix.from(ARPIT, 3000)],
+			// K26RF
 			{ils: {dme: 8.6, altitude: 3000}}
 		));
 	}
