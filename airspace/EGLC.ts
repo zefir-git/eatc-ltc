@@ -7,6 +7,7 @@ import STAR from "../src/STAR.js";
 import SID from "../src/SID.js";
 import NamedFix from "../src/NamedFix.js";
 import fs from "node:fs/promises";
+import StarFix from "../src/StarFix.js";
 
 export default class EGLC {
 	public async init() {
@@ -252,6 +253,8 @@ export default class EGLC {
 	}
 
 	private transition() {
+        const rwy = Generator.getInstance().runway("lc");
+
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("LAVNO1G"),
 			[Generator.getInstance().runway("lc")],
@@ -269,9 +272,9 @@ export default class EGLC {
 				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
 				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
 				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+                Generator.getInstance().fix("LAVNO", StarFix.from(rwy.position.destination(rwy.localizer - 180, 6), 3000, 185)),
 			],
-			// LAVNO
-			{ils: {dme: 6, altitude: 3000, speed: 185}}
+			{end: rwy.localizer}
 		));
 
 		/**
@@ -289,9 +292,9 @@ export default class EGLC {
 				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
 				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
 				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+                Generator.getInstance().fix("LAVNO", StarFix.from(rwy.position.destination(rwy.localizer - 180, 6), 3000, 185)),
 			],
-			// LAVNO
-			{ils: {dme: 6, altitude: 3000, speed: 185}}
+			{end: rwy.localizer}
 		));
 
 
@@ -313,9 +316,9 @@ export default class EGLC {
 				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
 				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
 				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+                Generator.getInstance().fix("LAVNO", StarFix.from(rwy.position.destination(rwy.localizer - 180, 6), 3000, 185)),
 			],
-			// LAVNO
-			{ils: {dme: 6, altitude: 3000, speed: 185}}
+			{end: rwy.localizer}
 		));
 
 		/**
@@ -333,9 +336,9 @@ export default class EGLC {
 				Generator.getInstance().fix("ATPEV", "512918.05N", "0003322.74E"),
 				Generator.getInstance().fix("LCE07", "512929.22N", "0002807.69E", 4000),
 				Generator.getInstance().fix("TOPDU", "512945.72N", "0002009.82E", void 0, 210),
+                Generator.getInstance().fix("LAVNO", StarFix.from(rwy.position.destination(rwy.localizer - 180, 6), 3000, 185)),
 			],
-			// LAVNO
-			{ils: {dme: 6, altitude: 3000, speed: 185}}
+			{end: rwy.localizer}
 		));
 
 		Generator.getInstance().arrival(new STAR(
