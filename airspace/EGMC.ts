@@ -294,7 +294,7 @@ export default class EGMC {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             "only",
             Generator.getInstance().beacon("SND"),
@@ -317,7 +317,7 @@ export default class EGMC {
 
         Generator.getInstance().arrival(new STAR(
             "ILS",
-            "ILS",
+            "I-L-S",
             [rwy],
             false,
             Generator.getInstance().beacon("SND"),
