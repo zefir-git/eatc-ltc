@@ -454,18 +454,6 @@ export default class AirspaceLines {
 		));
 		this.gen.line(SouthendCTR3);
 
-		// Southend SND D9 for ILS/DME/NDB(L) RWY 23
-		this.gen.line(new Line([
-			this.gen.beacon("SND").destination(38, 9),
-			this.gen.beacon("SND").destination(43, 9)
-		], Line.ColourType.RUNWAY));
-
-		// Southend SND D8.1 for ILS/DME/NDB(L) RWY 05
-		this.gen.line(new Line([
-			this.gen.beacon("SND").destination(249, 8.1),
-			this.gen.beacon("SND").destination(244, 8.1)
-		], Line.ColourType.RUNWAY));
-
 		// Southend CTA 1 (D)
 		this.gen.line(new Line([
 			Fix.fromDMS("513437N", "0002440E"),
