@@ -334,10 +334,10 @@ export default class EGSS {
             ...Generator.getInstance().pronounce("MEGEL1A"),
             [Generator.getInstance().runway("ss")],
             true,
-            Generator.getInstance().beacon("LARPA"),
+            Generator.getInstance().beacon("LAPRA"),
             void 0,
             [
-                Generator.getInstance().beacon("LARPA", 12000, 250),
+                Generator.getInstance().beacon("LAPRA", 12000, 250),
                 Generator.getInstance().beacon("ABBOT", 8000, 220),
             ],
             {end: "hold"},

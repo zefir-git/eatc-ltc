@@ -118,7 +118,7 @@ gen.airspace(
 			Beacon.fromDMS("504338.76N", "0005839.48W", "BIDVA", "Bidva"),
 			Beacon.fromDMS("505718.90N", "0012042.20W", "SAM", "Southampton"),
 			Beacon.fromDMS("503546.32N", "0005545.48E", "SOXUX", "Soxux"),
-            Beacon.fromDMS("520707.18N", "0011236.45E", "LARPA", "Larpa", 244),
+            Beacon.fromDMS("520707.18N", "0011236.45E", "LAPRA", "Lapra", 244),
 		],
 		new Map([
 			[360, {callsign: "LON_C_CTR", pronunciation: "London Control", frequency: 127.105}],
