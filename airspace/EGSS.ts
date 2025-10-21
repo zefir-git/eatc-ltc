@@ -503,30 +503,7 @@ export default class EGSS {
 			true
 		));
 
-		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("LAM", "4R"),
-			rwy,
-			[
-				rev.position.destination(rwy.heading, 1.2),
-				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().fix("BKY", "515923N", "0000343E"), 153),
-				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(153, 13.8),
-				Generator.getInstance().fix("ROWAN", "514509N", "0001457E"),
-				Generator.getInstance().beacon("LAM")
-			]
-		));
-
-		Generator.getInstance().departure(new SID(
-			...Generator.getInstance().pronounce("LAM", "3S"),
-			rwy,
-			[
-				rwy.position.destination(rwy.reverseLocalizer, 0.8),
-				rwy.position.destination(rwy.reverseLocalizer, 0.8)
-				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().beacon("LAM"), 24),
-				Generator.getInstance().beacon("LAM").destination(24, 9),
-				Generator.getInstance().fix("LAM")
-			],
-			true
-		));
+		// LAM 4R 3S omitted (for landing at Heathrow only)
 
 		Generator.getInstance().departure(new SID(
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("CLN"), "2E"),
