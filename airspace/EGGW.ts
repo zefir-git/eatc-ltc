@@ -323,7 +323,8 @@ export default class EGGW {
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(284, 3),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("CLN").destination(262, 40),
-				Generator.getInstance().fix("MATCH")
+				Generator.getInstance().fix("MATCH"),
+                Generator.getInstance().fix("CLN") // Q295
 			]
 		));
 
@@ -337,7 +338,8 @@ export default class EGGW {
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(336, 3),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("CLN").destination(262, 40),
-				Generator.getInstance().fix("MATCH")
+				Generator.getInstance().fix("MATCH"),
+                Generator.getInstance().fix("CLN") // Q295
 			],
 			true
 		));
@@ -354,8 +356,9 @@ export default class EGGW {
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7).bearingIntersection(97, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
-				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			]
 		));
 
@@ -371,8 +374,9 @@ export default class EGGW {
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(97, 7).bearingIntersection(97, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
-				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			],
 			true
 		));
@@ -389,7 +393,8 @@ export default class EGGW {
 				Generator.getInstance().fix("GWE16", "514622.04N", "0001546.78W"),
 				Generator.getInstance().fix("GWE19", "514540.56N", "0001104.88W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
-				Generator.getInstance().fix("MATCH")
+				Generator.getInstance().fix("MATCH"),
+                Generator.getInstance().fix("CLN") // Q295
 			]
 		));
 
@@ -407,8 +412,9 @@ export default class EGGW {
 				Generator.getInstance().fix("GWE19", "514540.56N", "0001104.88W"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
 				Generator.getInstance().fix("GWE37", "514259.91N", "0001658.25E"),
-				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			]
 		));
 
@@ -419,7 +425,9 @@ export default class EGGW {
 				Generator.getInstance().beacon("BNN").destination(31, 7),
 				Generator.getInstance().beacon("BNN").destination(31, 7).bearingIntersection(211, Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), 255 - 180),
 				Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
-				Generator.getInstance().fix("RODNI")
+				Generator.getInstance().fix("RODNI"),
+                Generator.getInstance().fix("ICTAM", "513137.37N", "0010948.12W"), // N27
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // L9
 			]
 		));
 
@@ -431,7 +439,9 @@ export default class EGGW {
 				rwy.position.destination(rwy.reverseLocalizer, 3.8)
 				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), 256 - 180),
 				Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
-				Generator.getInstance().fix("RODNI")
+				Generator.getInstance().fix("RODNI"),
+                Generator.getInstance().fix("ICTAM", "513137.37N", "0010948.12W"), // N27
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // L9
 			],
 			true
 		));
