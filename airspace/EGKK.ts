@@ -532,7 +532,8 @@ export default class EGKK {
             ...Generator.getInstance().pronounce(Generator.getInstance().sidFix("BOGNA"), "1M"),
             kks,
             [
-                kksRev.position.destination(257, 10.5),
+                kksRev.position.destination(257, 6.2),
+                kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("OCK"), 175),
                 Generator.getInstance().beacon("OCK").destination(175, 13),
                 Generator.getInstance().beacon("OCK").destination(175, 18),
                 Generator.getInstance().beacon("OCK").destination(175, 23),
@@ -545,7 +546,8 @@ export default class EGKK {
 			...Generator.getInstance().pronounce(Generator.getInstance().sidFix("BOGNA"), "1V"),
 			kkn,
 			[
-				kksRev.position.destination(257, 6.4),
+				kksRev.position.destination(257, 6.2),
+                kksRev.position.bearingIntersection(257, Generator.getInstance().beacon("OCK"), 175),
 				Generator.getInstance().beacon("OCK").destination(175, 13),
 				Generator.getInstance().beacon("OCK").destination(175, 18),
 				Generator.getInstance().beacon("OCK").destination(175, 23),
