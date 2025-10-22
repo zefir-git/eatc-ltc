@@ -369,7 +369,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W") // L10
 			],
 			true,
             5000
@@ -387,7 +388,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W") // L10
 			],
 			true,
             5000
@@ -407,7 +409,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W") // L10
 			],
 			false,
 			5000,
@@ -427,7 +430,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 10.5).bearingIntersection(78, Generator.getInstance().beacon("LAM"), 156),
 				Generator.getInstance().beacon("LAM").destination(156, 15),
 				Generator.getInstance().beacon("LAM").destination(156, 10),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W") // L10
 			],
 			false,
 			5000,
@@ -443,7 +447,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKE35", "511659.04N", "0002316.22E"),
 				Generator.getInstance().fix("KKN43", "512453.61N", "0001809.13E"),
 				Generator.getInstance().fix("KKN48", "512931.14N", "0001508.68E"),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W") // L10
 			],
 			true,
             5000
@@ -461,7 +466,9 @@ export default class EGKK {
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
-				Generator.getInstance().fix("FRANE")
+				Generator.getInstance().fix("FRANE"),
+                Generator.getInstance().fix("DAGGA"), // M604
+                Generator.getInstance().fix("LAPRA"), // M604
 			],
 			false,
 			5000,
@@ -479,7 +486,9 @@ export default class EGKK {
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
 				Generator.getInstance().fix("DVR").destination(276, 31.9),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
-				Generator.getInstance().fix("FRANE")
+				Generator.getInstance().fix("FRANE"),
+                Generator.getInstance().fix("DAGGA"), // M604
+                Generator.getInstance().fix("LAPRA"), // M604
 			],
 			false,
 			5000,
@@ -493,7 +502,9 @@ export default class EGKK {
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
-				Generator.getInstance().fix("FRANE")
+				Generator.getInstance().fix("FRANE"),
+                Generator.getInstance().fix("DAGGA"), // M604
+                Generator.getInstance().fix("LAPRA"), // M604
 			],
 			true,
             5000
@@ -507,7 +518,9 @@ export default class EGKK {
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 31),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
-				Generator.getInstance().fix("FRANE")
+				Generator.getInstance().fix("FRANE"),
+                Generator.getInstance().fix("DAGGA"), // M604
+                Generator.getInstance().fix("LAPRA"), // M604
 			],
 			true,
             5000
@@ -522,7 +535,9 @@ export default class EGKK {
 				Generator.getInstance().fix("KKE17", "510957.12N", "0001937.59E"),
 				Generator.getInstance().fix("KKE25", "510957.30N", "0003244.84E"),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
-				Generator.getInstance().fix("FRANE")
+				Generator.getInstance().fix("FRANE"),
+                Generator.getInstance().fix("DAGGA"), // M604
+                Generator.getInstance().fix("LAPRA"), // M604
 			],
 			true,
             5000
@@ -538,7 +553,8 @@ export default class EGKK {
                 Generator.getInstance().beacon("OCK").destination(175, 18),
                 Generator.getInstance().beacon("OCK").destination(175, 23),
                 Generator.getInstance().beacon("OCK").destination(175, 28),
-                Generator.getInstance().fix("BOGNA")
+                Generator.getInstance().fix("BOGNA"),
+                Generator.getInstance().fix("BENBO", "502704.76N", "0000036.71E") // L612
             ]
         ));
 
@@ -552,7 +568,8 @@ export default class EGKK {
 				Generator.getInstance().beacon("OCK").destination(175, 18),
 				Generator.getInstance().beacon("OCK").destination(175, 23),
 				Generator.getInstance().beacon("OCK").destination(175, 28),
-				Generator.getInstance().fix("BOGNA")
+				Generator.getInstance().fix("BOGNA"),
+                Generator.getInstance().fix("BENBO", "502704.76N", "0000036.71E") // L612
 			]
 		));
 
@@ -566,7 +583,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS17", "510022.73N", "0002432.75W"),
 				Generator.getInstance().fix("KKS20", "505524.03N", "0002354.89W"),
 				Generator.getInstance().fix("KKS25", "504958.32N", "0002313.74W"),
-				Generator.getInstance().fix("BOGNA")
+				Generator.getInstance().fix("BOGNA"),
+                Generator.getInstance().fix("BENBO", "502704.76N", "0000036.71E") // L612
 			]
 		));
 
@@ -581,7 +599,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS20", "505524.03N", "0002354.89W"),
 				Generator.getInstance().fix("KKS25", "504958.32N", "0002313.74W"),
 				Generator.getInstance().fix("BOGNA"),
-				Generator.getInstance().fix("HARDY")
+				Generator.getInstance().fix("HARDY"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			]
 		));
 
@@ -595,7 +614,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM").destination(66, 20).bearingIntersection(246, Generator.getInstance().beacon("GWC"), 326),
-				Generator.getInstance().fix("KENET")
+				Generator.getInstance().fix("KENET"),
+                Generator.getInstance().fix("BIBPE", "514258.91N", "0015108.70W") // L9, N14
 			],
 			true,
             4000
@@ -611,7 +631,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(259, 43),
 				Generator.getInstance().beacon("SAM").destination(66, 20),
 				Generator.getInstance().beacon("SAM").destination(66, 20).bearingIntersection(246, Generator.getInstance().beacon("GWC"), 326),
-				Generator.getInstance().fix("KENET")
+				Generator.getInstance().fix("KENET"),
+                Generator.getInstance().fix("BIBPE", "514258.91N", "0015108.70W") // L9, N14
 			],
 			true,
             4000
@@ -624,7 +645,8 @@ export default class EGKK {
 				kksRev.position.destination(257, 6.7),
 				kksRev.position.destination(257, 8.7),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"),
-				Generator.getInstance().fix("NOVMA")
+				Generator.getInstance().fix("NOVMA"),
+                Generator.getInstance().fix("SAM") // L620
 			],
             false,
             4000
@@ -637,7 +659,8 @@ export default class EGKK {
 				kksRev.position.destination(257, 6.7),
 				kksRev.position.destination(257, 8.7),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"),
-				Generator.getInstance().fix("NOVMA")
+				Generator.getInstance().fix("NOVMA"),
+                Generator.getInstance().fix("SAM") // L620
 			],
             false,
             4000
@@ -680,7 +703,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKW07", "510717.20N", "0002300.00W"),
 				Generator.getInstance().fix("KKW09", "510654.30N", "0002544.30W"),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"),
-				Generator.getInstance().fix("NOVMA")
+				Generator.getInstance().fix("NOVMA"),
+                Generator.getInstance().fix("SAM") // L620
 			],
             false,
             4000
@@ -693,7 +717,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKE05", "511005.90N", "0000235.70W"),
 				Generator.getInstance().fix("KKN09", "511353.10N", "0000355.30W"),
 				Generator.getInstance().fix("KKW19", "511158.00N", "0002034.30W"),
-				Generator.getInstance().fix("IMVUR")
+				Generator.getInstance().fix("IMVUR"),
+                Generator.getInstance().fix("SAM") // N63
 			],
 			true,
             4000
@@ -707,7 +732,8 @@ export default class EGKK {
 				Generator.getInstance().fix("SFD").destination(310, 25),
 				Generator.getInstance().fix("SFD").destination(310, 18),
 				Generator.getInstance().fix("SFD").destination(310, 16),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			]
 		));
 
@@ -719,7 +745,8 @@ export default class EGKK {
 				Generator.getInstance().fix("SFD").destination(310, 25),
 				Generator.getInstance().fix("SFD").destination(310, 18),
 				Generator.getInstance().fix("SFD").destination(310, 16),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			]
 		));
 
@@ -732,7 +759,8 @@ export default class EGKK {
 				Generator.getInstance().fix("SFD").destination(342, 17),
 				Generator.getInstance().fix("SFD").destination(342, 13),
 				Generator.getInstance().fix("SFD").destination(342, 7),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			],
 			true
 		));
@@ -746,7 +774,8 @@ export default class EGKK {
 				Generator.getInstance().fix("SFD").destination(342, 17),
 				Generator.getInstance().fix("SFD").destination(342, 13),
 				Generator.getInstance().fix("SFD").destination(342, 7),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			],
 			true
 		));
@@ -760,7 +789,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS12", "510155.10N", "0000020.40W"),
 				Generator.getInstance().fix("KKS16", "505805.21N", "0000128.29E"),
 				Generator.getInstance().fix("KKS22", "505220.70N", "0000410.60E"),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			],
 			true
 		));
@@ -775,7 +805,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS13", "510205.06N", "0002223.13W"),
 				Generator.getInstance().fix("KKS19", "505729.42N", "0001402.01W"),
 				Generator.getInstance().fix("KKS21", "505610.56N", "0001139.14W"),
-				Generator.getInstance().fix("SFD")
+				Generator.getInstance().fix("SFD"),
+                Generator.getInstance().fix("XIDIL", "502106.15N", "0003829.37E") // M605
 			]
 		));
 
@@ -790,7 +821,9 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("DVR").destination(258, 36),
-				Generator.getInstance().fix("WIZAD")
+				Generator.getInstance().fix("WIZAD"),
+                Generator.getInstance().fix("DVR"), // L9
+                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
 			]
 		));
 
@@ -805,7 +838,8 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("DVR").destination(258, 36),
-				Generator.getInstance().fix("WIZAD")
+				Generator.getInstance().fix("WIZAD"), // L9
+                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
 			]
 		));
 
@@ -819,7 +853,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS14", "510311.65N", "0000652.24W"),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("KKS33", "510327.27N", "0002657.12E"),
-				Generator.getInstance().fix("WIZAD")
+				Generator.getInstance().fix("WIZAD"), // L9
+                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
 			]
 		));
 
@@ -832,7 +867,8 @@ export default class EGKK {
 					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().fix("MIMFO")
+				Generator.getInstance().fix("MIMFO"),
+                Generator.getInstance().fix("DVR") // Y312
 			],
 			false,
 			5000,
@@ -847,7 +883,8 @@ export default class EGKK {
 					.bearingIntersection(kks.heading + 90, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 258),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(258, 20),
 				Generator.getInstance().fix("ACORN", "511519N", "0001146E"),
-				Generator.getInstance().fix("MIMFO")
+				Generator.getInstance().fix("MIMFO"),
+                Generator.getInstance().fix("DVR") // Y312
 			],
 			false,
 			5000,
@@ -860,7 +897,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DVR").destination(269, 52.7),
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
-				Generator.getInstance().fix("DVR")
+				Generator.getInstance().fix("DVR"),
+                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
 			],
 			true
 		));
@@ -872,7 +910,8 @@ export default class EGKK {
 				Generator.getInstance().fix("DVR").destination(269, 52.7),
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
-				Generator.getInstance().fix("DVR")
+				Generator.getInstance().fix("DVR"),
+                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
 			],
 			true
 		));
@@ -884,7 +923,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKE04", "511008.38N", "0000218.83W"),
 				Generator.getInstance().fix("KKE10", "510955.93N", "0000909.88E"),
 				Generator.getInstance().fix("KKE17", "510957.12N", "0001937.59E"),
-				Generator.getInstance().fix("ODVIK")
+				Generator.getInstance().fix("ODVIK"),
+                Generator.getInstance().fix("DVR") // Y311
 			],
 			true
 		));
@@ -900,7 +940,9 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"), // N601
+                Generator.getInstance().fix("POTON", "520504.32N", "0002537.78W") // N601
 			],
             false,
             5000
@@ -917,7 +959,9 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY").destination(282, 9),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().beacon("TIGER"),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"), // N601
+                Generator.getInstance().fix("POTON", "520504.32N", "0002537.78W") // N601
 			],
             false,
             5000
@@ -971,7 +1015,8 @@ export default class EGKK {
 				Generator.getInstance().fix("KKS14", "510311.65N", "0000652.24W"),
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("KKS36", "510503.33N", "0003055.89E"),
-				Generator.getInstance().beacon("LAM")
+				Generator.getInstance().beacon("LAM"),
+                Generator.getInstance().fix("WELIN", "521450.25N", "0005108.41W") // N57
 			],
             false,
             5000

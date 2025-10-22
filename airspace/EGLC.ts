@@ -449,7 +449,11 @@ export default class EGLC {
 				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
 				Generator.getInstance().fix("LCN02", "513408.09N", "0000016.11W"),
 				Generator.getInstance().fix("LCN06", "513608.68N", "0001118.82E"),
-				Generator.getInstance().fix("SOQQA")
+				Generator.getInstance().fix("SOQQA"),
+                Generator.getInstance().fix("SODVU", "513515.48N", "0003446.80E"), // M87
+                Generator.getInstance().fix("EKNIV", "512425.62N", "0003731.08E"), // M87
+                Generator.getInstance().fix("UMTUM", "511227.30N", "0010102.78E"), // M87
+                Generator.getInstance().fix("DVR") // L9
 			]
 		));
 
@@ -460,7 +464,11 @@ export default class EGLC {
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCE02", "513316.42N", "0000950.44E"),
 				Generator.getInstance().fix("LCE03", "513346.90N", "0001436.66E"),
-				Generator.getInstance().fix("SOQQA")
+				Generator.getInstance().fix("SOQQA"),
+                Generator.getInstance().fix("SODVU", "513515.48N", "0003446.80E"), // M87
+                Generator.getInstance().fix("EKNIV", "512425.62N", "0003731.08E"), // M87
+                Generator.getInstance().fix("UMTUM", "511227.30N", "0010102.78E"), // M87
+                Generator.getInstance().fix("DVR") // L9
 			],
 			true
 		));
@@ -474,7 +482,8 @@ export default class EGLC {
 				Generator.getInstance().fix("LCN01", "513332.44N", "0000109.21W"),
 				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
 				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("POTON", "520504.32N", "0002537.78W") // N601
 			]
 		));
 
@@ -487,7 +496,10 @@ export default class EGLC {
 				Generator.getInstance().fix("LCN04", "513436.75N", "0000056.79E"),
 				Generator.getInstance().fix("LCN05", "513538.42N", "0000257.77E"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
-				Generator.getInstance().fix("SAXBI")
+				Generator.getInstance().fix("SAXBI"),
+                Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), // N27
+                Generator.getInstance().fix("ICTAM", "513137.37N", "0010948.12W"), // N27
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // L9
 			]
 		));
 
@@ -498,7 +510,8 @@ export default class EGLC {
 			[
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("POTON", "520504.32N", "0002537.78W") // N601
 			],
 			true
 		));
@@ -510,7 +523,10 @@ export default class EGLC {
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCN03", "513424.02N", "0000750.39E"),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
-				Generator.getInstance().fix("SAXBI")
+				Generator.getInstance().fix("SAXBI"),
+                Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"), // N27
+                Generator.getInstance().fix("ICTAM", "513137.37N", "0010948.12W"), // N27
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // L9
 			],
 			true
 		));
@@ -522,7 +538,8 @@ export default class EGLC {
 				Generator.getInstance().fix("LCW01", "513024.40N", "0000020.78E"),
 				Generator.getInstance().fix("LCN02", "513408.09N", "0000016.11W"),
 				Generator.getInstance().fix("LCE04", "513619.70N", "0001222.73E"),
-				Generator.getInstance().fix("ODUKU")
+				Generator.getInstance().fix("ODUKU"),
+                Generator.getInstance().fix("CLN") // M84
 			]
 		));
 
@@ -532,7 +549,8 @@ export default class EGLC {
 			[
 				Generator.getInstance().fix("LCE01", "513014.67N", "0000529.91E"),
 				Generator.getInstance().fix("LCE02", "513316.42N", "0000950.44E"),
-				Generator.getInstance().fix("ODUKU")
+				Generator.getInstance().fix("ODUKU"),
+                Generator.getInstance().fix("CLN") // M84
 			],
 			true
 		));
