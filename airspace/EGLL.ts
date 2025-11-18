@@ -344,7 +344,10 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(255, 7),
 				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
 				Generator.getInstance().fix("CPT").destination(100, 8),
-				Generator.getInstance().fix("CPT")
+				Generator.getInstance().fix("CPT"),
+                Generator.getInstance().fix("HEKXA", "513103.61N", "0012026.55W"), // Q63
+                Generator.getInstance().fix("SAWPE", "513504.67N", "0013916.42W"), // Q63
+                Generator.getInstance().fix("ASHUM", "513607.25N", "0015336.46W") // Q63
 			]
 		));
 
@@ -356,7 +359,10 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(255, 7),
 				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
 				Generator.getInstance().fix("CPT").destination(100, 8),
-				Generator.getInstance().fix("CPT")
+				Generator.getInstance().fix("CPT"),
+                Generator.getInstance().fix("HEKXA", "513103.61N", "0012026.55W"), // Q63
+                Generator.getInstance().fix("SAWPE", "513504.67N", "0013916.42W"), // Q63
+                Generator.getInstance().fix("ASHUM", "513607.25N", "0015336.46W") // Q63
 			]
 		));
 
@@ -370,7 +376,10 @@ export default class EGLL {
 				lls.position.bearingIntersection(180, Generator.getInstance().fix("WOD", "512710N", "0005244W"), 101),
 				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
 				Generator.getInstance().fix("CPT").destination(100, 8),
-				Generator.getInstance().fix("CPT")
+				Generator.getInstance().fix("CPT"),
+                Generator.getInstance().fix("HEKXA", "513103.61N", "0012026.55W"), // Q63
+                Generator.getInstance().fix("SAWPE", "513504.67N", "0013916.42W"), // Q63
+                Generator.getInstance().fix("ASHUM", "513607.25N", "0015336.46W") // Q63
 			],
 			true
 		));
@@ -385,7 +394,10 @@ export default class EGLL {
 				lln.position.bearingIntersection(180, Generator.getInstance().fix("WOD", "512710N", "0005244W"), 101),
 				Generator.getInstance().fix("WOD", "512710N", "0005244W"),
 				Generator.getInstance().fix("CPT").destination(100, 8),
-				Generator.getInstance().fix("CPT")
+				Generator.getInstance().fix("CPT"),
+                Generator.getInstance().fix("HEKXA", "513103.61N", "0012026.55W"), // Q63
+                Generator.getInstance().fix("SAWPE", "513504.67N", "0013916.42W"), // Q63
+                Generator.getInstance().fix("ASHUM", "513607.25N", "0015336.46W") // Q63
 			],
 			true
 		));
@@ -399,7 +411,8 @@ export default class EGLL {
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 7.9),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 10.5),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 14),
-				Generator.getInstance().fix("MAXIT")
+				Generator.getInstance().fix("MAXIT"),
+                Generator.getInstance().fix("MID", "510314.23N", "0003730.01W") // Y803
 			]
 		));
 
@@ -412,7 +425,8 @@ export default class EGLL {
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 7.9),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 10.5),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(161, 14),
-				Generator.getInstance().fix("MAXIT")
+				Generator.getInstance().fix("MAXIT"),
+                Generator.getInstance().fix("MID", "510314.23N", "0003730.01W") // Y803
 			]
 		));
 
@@ -425,7 +439,8 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(124, Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"), 25.6),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
-				Generator.getInstance().fix("MODMI")
+				Generator.getInstance().fix("MODMI"),
+                Generator.getInstance().fix("MID", "510314.23N", "0003730.01W") // M185
 			],
 			true
 		));
@@ -439,7 +454,8 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(124, Generator.getInstance().fix("MID", "510314.23N", "0003730.01W"), 25.6),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 18),
 				Generator.getInstance().fix("MID", "510314.23N", "0003730.01W").destination(25.6, 15),
-				Generator.getInstance().fix("MODMI")
+				Generator.getInstance().fix("MODMI"),
+                Generator.getInstance().fix("MID", "510314.23N", "0003730.01W") // M185
 			],
 			true
 		));
@@ -456,7 +472,9 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"), // L620,
+                Generator.getInstance().fix("REDFA", "520652.75N", "0022916.81E") // L620
 			]
 		));
 
@@ -472,7 +490,9 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").bearingIntersection(304, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().beacon("LON").bearingIntersection(325, Generator.getInstance().fix("CHT", "513723N", "0003107W"), 53 + 180),
 				Generator.getInstance().fix("CHT", "513723N", "0003107W"),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"), // L620,
+                Generator.getInstance().fix("REDFA", "520652.75N", "0022916.81E") // L620
 			]
 		));
 
@@ -486,7 +506,9 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"), // L620,
+                Generator.getInstance().fix("REDFA", "520652.75N", "0022916.81E") // L620
 			],
 			true
 		));
@@ -501,7 +523,9 @@ export default class EGLL {
 				Generator.getInstance().beacon("LON").destination(70, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 10),
 				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W").destination(196, 6),
-				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W")
+				Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
+                Generator.getInstance().fix("CLN", "515054.50N", "0010851.32E"), // L620,
+                Generator.getInstance().fix("REDFA", "520652.75N", "0022916.81E") // L620
 			],
 			true
 		));
@@ -514,7 +538,8 @@ export default class EGLL {
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
-				Generator.getInstance().fix("UMLAT")
+				Generator.getInstance().fix("UMLAT"),
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W") // T418
 			]
 		));
 
@@ -526,7 +551,8 @@ export default class EGLL {
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 4.35),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W").destination(297 - 180, 2.2),
 				Generator.getInstance().fix("BUR", "513108N", "0004038W"),
-				Generator.getInstance().fix("UMLAT")
+				Generator.getInstance().fix("UMLAT"),
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W") // T418
 			]
 		));
 
@@ -538,7 +564,8 @@ export default class EGLL {
 				lls.position.destination(lls.reverseLocalizer, .4).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
 				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
 				Generator.getInstance().beacon("BIG").destination(328, 20),
-				Generator.getInstance().fix("ULTIB")
+				Generator.getInstance().fix("ULTIB"),
+                Generator.getInstance().fix("BUZAD", "515632.08N", "0003308.21W") // T420
 			],
 			true
 		));
@@ -551,7 +578,8 @@ export default class EGLL {
 				lln.position.destination(lln.reverseLocalizer, .1).bearingIntersection(50, Generator.getInstance().beacon("LON"), 70),
 				Generator.getInstance().beacon("LON").bearingIntersection(70, Generator.getInstance().beacon("BIG"), 328),
 				Generator.getInstance().beacon("BIG").destination(328, 20),
-				Generator.getInstance().fix("ULTIB")
+				Generator.getInstance().fix("ULTIB"),
+                Generator.getInstance().fix("BUZAD", "515632.08N", "0003308.21W") // T420
 			],
 			true
 		));
@@ -566,7 +594,8 @@ export default class EGLL {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 32),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 29),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 5),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			]
 		));
 
@@ -580,7 +609,8 @@ export default class EGLL {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 32),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 29),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(270, 5),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			]
 		));
 
@@ -594,7 +624,8 @@ export default class EGLL {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 29),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 20),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 5),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			],
 			true
 		));
@@ -609,7 +640,8 @@ export default class EGLL {
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 29),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 20),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(282, 5),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			],
 			true
 		));
@@ -624,7 +656,8 @@ export default class EGLL {
 				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
 				Generator.getInstance().beacon("SAM").destination(32, 32.8),
 				Generator.getInstance().beacon("SAM").destination(32, 29.6),
-				Generator.getInstance().fix("GOGSI")
+				Generator.getInstance().fix("GOGSI"),
+                Generator.getInstance().beacon("SAM"), // N621
 			]
 		));
 
@@ -637,7 +670,8 @@ export default class EGLL {
 				Generator.getInstance().fix("WOD", "512710N", "0005244W").destination(268 - 180, .9),
 				Generator.getInstance().beacon("SAM").destination(32, 32.8),
 				Generator.getInstance().beacon("SAM").destination(32, 29.6),
-				Generator.getInstance().fix("GOGSI")
+				Generator.getInstance().fix("GOGSI"),
+                Generator.getInstance().beacon("SAM"), // N621
 			]
 		));
 
@@ -651,7 +685,8 @@ export default class EGLL {
 				Generator.getInstance().beacon("OCK"),
 				Generator.getInstance().beacon("OCK").destination(253, 1.4),
 				Generator.getInstance().beacon("OCK").destination(253, 4.7),
-				Generator.getInstance().fix("GASGU")
+				Generator.getInstance().fix("GASGU"),
+                Generator.getInstance().beacon("SAM"), // N866
 			],
 			true
 		));
@@ -666,7 +701,8 @@ export default class EGLL {
 				Generator.getInstance().beacon("OCK"),
 				Generator.getInstance().beacon("OCK").destination(253, 1.4),
 				Generator.getInstance().beacon("OCK").destination(253, 4.7),
-				Generator.getInstance().fix("GASGU")
+				Generator.getInstance().fix("GASGU"),
+                Generator.getInstance().beacon("SAM"), // N866
 			],
 			true
 		));

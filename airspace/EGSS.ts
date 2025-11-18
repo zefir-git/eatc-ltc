@@ -360,7 +360,9 @@ export default class EGSS {
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 8),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 5),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 2),
-				Generator.getInstance().fix("UTAVA")
+				Generator.getInstance().fix("UTAVA"),
+                Generator.getInstance().fix("BUZAD", "515632.08N", "0003308.21W"), // Q75
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W") // L10
 			],
 			false,
 			4000
@@ -374,7 +376,9 @@ export default class EGSS {
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 8),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 5),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(169, 2),
-				Generator.getInstance().fix("NUGBO")
+				Generator.getInstance().fix("NUGBO"),
+                Generator.getInstance().fix("SILVA"), // M183
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // P86
 			],
 			false,
 			4000
@@ -405,7 +409,9 @@ export default class EGSS {
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 5),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 2),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
-				Generator.getInstance().fix("UTAVA")
+				Generator.getInstance().fix("UTAVA"),
+                Generator.getInstance().fix("BUZAD", "515632.08N", "0003308.21W"), // Q75
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W") // L10
 			],
 			true
 		));
@@ -419,7 +425,9 @@ export default class EGSS {
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 5),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E").destination(99, 2),
 				Generator.getInstance().fix("BKY", "515923N", "0000343E"),
-				Generator.getInstance().fix("NUGBO")
+				Generator.getInstance().fix("NUGBO"),
+                Generator.getInstance().fix("SILVA"), // M183
+                Generator.getInstance().fix("DIDZA", "513627.71N", "0012343.46W") // P86
 			],
 			true
 		));
@@ -482,8 +490,9 @@ export default class EGSS {
 				rev.position.destination(rwy.heading, 1.2).bearingIntersection(rwy.heading, Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"), 333),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 32),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 25),
-				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			]
 		));
 
@@ -497,8 +506,9 @@ export default class EGSS {
 				   .bearingIntersection(rwy.reverseLocalizer + 90, Generator.getInstance().beacon("LAM"), 24),
 				Generator.getInstance().beacon("LAM").destination(24, 9),
 				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E").destination(333, 25),
-				Generator.getInstance().fix("NEPNA", "512958.33N", "0002656.55E"),
-				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E")
+				Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+				Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
 			],
 			true
 		));
@@ -521,6 +531,24 @@ export default class EGSS {
 			false,
 			6000
 		));
+
+        Generator.getInstance().departure(new SID(
+            "DET2D",
+            `Detling ${Generator.alphabet("2D")}`,
+            rwy,
+            [
+                Generator.getInstance().fix("SSN01", "515417.69N", "0001552.90E"),
+                Generator.getInstance().fix("SSE02", "515439.01N", "0001737.69E"),
+                Generator.getInstance().fix("SSE05", "515229.73N", "0001924.75E"),
+                Generator.getInstance().fix("SSS11", "514654.90N", "0001512.38E"),
+                Generator.getInstance().fix("SSS12", "514553.58N", "0001426.28E"),
+                Generator.getInstance().fix("SSS18", "514045.12N", "0001831.92E"),
+                Generator.getInstance().fix("NEPNA", "512958.40N", "0002656.78E"),
+                Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
+                Generator.getInstance().fix("DVR", "510945.44N", "0012132.71E") // L6
+            ],
+            true
+        ));
 	}
 
     private rnp() {

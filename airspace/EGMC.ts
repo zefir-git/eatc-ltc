@@ -237,6 +237,7 @@ export default class EGMC {
             [
                 rwy.reverse().position.destination(rwy.heading, 1.5),
                 Generator.getInstance().sidFix("CLN"),
+                Generator.getInstance().fix("REDFA", "520652.75N", "0022916.81E") // L620
             ],
         ));
 
@@ -259,6 +260,8 @@ export default class EGMC {
                 rwy.reverse().position.destination(rwy.heading, 1.5),
                 Generator.getInstance().fix("DET", "511814.41N", "0003550.19E"),
                 Generator.getInstance().sidFix("LYD"),
+                Generator.getInstance().fix("HASTY", "504342.46N", "0003200.37E"), // M189
+                Generator.getInstance().fix("WAFFU", "503456.89N", "0002059.29E"), // M189
             ],
         ));
 
@@ -273,6 +276,9 @@ export default class EGMC {
                 Generator.getInstance().fix("BPK", "514459.05N", "0000624.25W"),
                 Generator.getInstance().fix("HEN", "514535.07N", "0004725.05W"),
                 Generator.getInstance().sidFix("CPT"),
+                Generator.getInstance().fix("HEKXA", "513103.61N", "0012026.55W"), // Q63
+                Generator.getInstance().fix("SAWPE", "513504.67N", "0013916.42W"), // Q63
+                Generator.getInstance().fix("ASHUM", "513607.25N", "0015336.46W") // Q63
             ],
         ));
 
@@ -285,6 +291,8 @@ export default class EGMC {
                 Generator.getInstance().fix("EVNAS", "514004.25N", "0002638.37E"),
                 Generator.getInstance().beacon("LAM"),
                 Generator.getInstance().sidFix("BPK"),
+                Generator.getInstance().fix("BUZAD", "515632.08N", "0003308.21W"), // L10
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W") // L10
             ],
         ));
     }
