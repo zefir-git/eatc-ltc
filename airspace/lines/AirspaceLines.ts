@@ -133,63 +133,57 @@ export default class AirspaceLines {
 		this.gen.line(LondonCityCTRD);
 
 		// Gatwick CTA (D)
-		this.gen.line(
-			new Line([
-				Fix.fromDMS("510100N", "0000458E"),
-				Fix.fromDMS("510100N", "0002545W"),
-			], Line.ColourType.AIRSPACE)
-				.join(new Circle(
-					Fix.fromDMS("510853N", "0001125W"),
-					12 * Fix.NMI,
-					72
-				).arc(
-					Fix.fromDMS("510100N", "0002545W"),
-					Fix.fromDMS("511124N", "0003003W")
-				))
-				.append(Fix.fromDMS("511618N", "0000533E"))
-				.join(new Circle(
-					Fix.fromDMS("510853N", "0001125W"),
-					13 * Fix.NMI,
-					72
-				).arc(
-					Fix.fromDMS("511618N", "0000533E"),
-					Fix.fromDMS("510100N", "0000458E")
-				))
-				.append(Fix.fromDMS("510100N", "0000458E"))
-		);
+        this.gen.area(new Area(
+            "KK",
+            2500,
+            new Fix(51.0650, 0.0100),
+            new Line([
+                Fix.fromDMS("510100N", "0000458E"),
+                Fix.fromDMS("510100N", "0002545W"),
+            ], Line.ColourType.AIRSPACE)
+                .join(new Circle(
+                    Fix.fromDMS("510853N", "0001125W"),
+                    12 * Fix.NMI,
+                    72
+                ).arc(
+                    Fix.fromDMS("510100N", "0002545W"),
+                    Fix.fromDMS("511124N", "0003003W")
+                ))
+                .append(Fix.fromDMS("511618N", "0000533E"))
+                .join(new Circle(
+                    Fix.fromDMS("510853N", "0001125W"),
+                    13 * Fix.NMI,
+                    72
+                ).arc(
+                    Fix.fromDMS("511618N", "0000533E"),
+                    Fix.fromDMS("510100N", "0000458E")
+                ))
+                .append(Fix.fromDMS("510100N", "0000458E")),
+        ));
 
 		// Gatwick CTR (D)
-		const GatwickCTRD = new Line([
-			Fix.fromDMS("511258N", "0001129W"),
-			Fix.fromDMS("511200N", "0000341E")
-		], [0x30, 0x30, 0x30])
-			.join(new Circle(
-				Fix.fromDMS("510853N", "0001125W"),
-				10 * Fix.NMI,
-				72
-			).arc(
-				Fix.fromDMS("511200N", "0000341E"),
-				Fix.fromDMS("510550N", "0000342E"),
-			))
-			.append(Fix.fromDMS("510240N", "0001923W"))
-			.join(new Circle(
-				Fix.fromDMS("510853N", "0001125W"),
-				8 * Fix.NMI,
-				72
-			).arc(
-				Fix.fromDMS("510240N", "0001923W"),
-				Fix.fromDMS("511118N", "0002332W")
-			))
-			.append(Fix.fromDMS("511258N", "0001129W"));
-
-		this.gen.area(new Area(
-			"KK",
-			2500,
-			new Fix(51.13, -.214),
-			GatwickCTRD,
-			GatwickCTRD.vertices.length
-		));
-		this.gen.line(GatwickCTRD);
+		this.gen.line(new Line([
+            Fix.fromDMS("511258N", "0001129W"),
+            Fix.fromDMS("511200N", "0000341E")
+        ], [0x30, 0x30, 0x30])
+            .join(new Circle(
+                Fix.fromDMS("510853N", "0001125W"),
+                10 * Fix.NMI,
+                72
+            ).arc(
+                Fix.fromDMS("511200N", "0000341E"),
+                Fix.fromDMS("510550N", "0000342E"),
+            ))
+            .append(Fix.fromDMS("510240N", "0001923W"))
+            .join(new Circle(
+                Fix.fromDMS("510853N", "0001125W"),
+                8 * Fix.NMI,
+                72
+            ).arc(
+                Fix.fromDMS("510240N", "0001923W"),
+                Fix.fromDMS("511118N", "0002332W")
+            ))
+            .append(Fix.fromDMS("511258N", "0001129W")));
 
 		// Luton CTR (D)
 		const LutonCTRD = new Line([
