@@ -564,47 +564,112 @@ export default class AirspaceLines {
 			Fix.fromDMS("513653N", "0010414E"),
 		], [0x30, 0x30, 0x30]));
 
-		// LTMA 23 (A) / LTMA 11 (A)
-		this.gen.line(new Line([
-			new Fix(51.569281, -1.195107),
-			new Fix(51.406274, -1.246605),
-		], [0x30, 0x30, 0x30]));
+        // LTMA 19 (A)
+        this.gen.line(new Line([
+            Fix.fromDMS("515745N", "0011126W"),
+            Fix.fromDMS("520421N", "0003712W"),
+            Fix.fromDMS("520316N", "0003441W"),
+            Fix.fromDMS("521126N", "0002220W"),
+        ], [0x22, 0x22, 0x22]));
 
-		// LTC boundary
-		this.gen.line(new Line([
-				new Fix(50.668994, -0.373578),
-				new Fix(50.669484, 0.500093),
-				new Fix(50.755138, 0.750332),
-				new Fix(50.979723, 1.040440),
-				new Fix(51.649981, 1.416721),
-				new Fix(51.873206, 1.443844),
-				new Fix(51.984880, 1.384964),
-				new Fix(51.930718, 1.118546),
-				new Fix(51.970183, 0.964737),
-				new Fix(52.207501, 0.806808),
-				new Fix(52.186037, 0.546227),
-				new Fix(52.191404, -0.371819),
-				new Fix(52.054417, -0.578971),
-				new Fix(52.071910, -0.619354),
-				new Fix(51.960029, -1.190300),
-				new Fix(51.735906, -1.014090),
-				new Fix(51.569281, -1.195107),
-				new Fix(51.597868, -1.432171),
-				new Fix(51.434748, -1.482811),
-				new Fix(51.392351, -1.142578),
-				new Fix(51.055963, -1.222057),
-				new Fix(51.068639, -1.118717),
-				new Fix(50.908554, -1.063185),
-				new Fix(50.823180, -1.285658),
-				new Fix(50.813935, -0.873585),
-				new Fix(50.773922, -0.830669),
-				new Fix(50.775224, -0.487432),
-			],
-			[0x22, 0x22, 0x22]
-		));
-	}
+        // DAVENTRY CTA 5 (A)
+        this.gen.line(new Line([
+            Fix.fromDMS("521222N", "0005608W"),
+            Fix.fromDMS("520843N", "0010339W"),
+            Fix.fromDMS("520428N", "0012245W"),
+            Fix.fromDMS("515745N", "0011126W"),
+            Fix.fromDMS("520421N", "0003712W"),
+            Fix.fromDMS("521222N", "0005608W"),
+        ], [0x22, 0x22, 0x22]));
 
-	public async withCoastline() {
+        // DAVENTRY CTA 13 (A)
+        this.gen.line(new Line([
+            Fix.fromDMS("523406N", "0011224W"),
+            Fix.fromDMS("521118N", "0003323W"),
+            Fix.fromDMS("521002N", "0002427W"),
+            Fix.fromDMS("520316N", "0003441W"),
+            Fix.fromDMS("521403N", "0010009W"),
+            Fix.fromDMS("523406N", "0011224W"),
+        ], [0x22, 0x22, 0x22]));
+
+        // DAVENTRY CTA 25 (C)
+        this.gen.line(new Line([
+            Fix.fromDMS("521658N", "0002741W"),
+            Fix.fromDMS("521126N", "0002220W"),
+            Fix.fromDMS("521002N", "0002427W"),
+            Fix.fromDMS("521118N", "0003323W"),
+            Fix.fromDMS("521332N", "0002806W"),
+            Fix.fromDMS("521658N", "0002741W"),
+        ], [0x22, 0x22, 0x22]));
+
+        // DAVENTRY CTA 21 (C)
+        this.gen.line(new Line([
+            Fix.fromDMS("522632N", "0003702W"),
+            Fix.fromDMS("522627N", "0001416W"),
+            Fix.fromDMS("521855N", "0000659W"),
+            Fix.fromDMS("521832N", "0000507W"),
+            Fix.fromDMS("521126N", "0002220W"),
+            Fix.fromDMS("521658N", "0002741W"),
+            Fix.fromDMS("522632N", "0003702W"),
+        ], [0x22, 0x22, 0x22]));
+
+        // CLACTON CTA 10 (C)
+        this.gen.line(new Line([
+            Fix.fromDMS("521832N", "0000507W"),
+            Fix.fromDMS("521802N", "0000240W"),
+            Fix.fromDMS("521712N", "0000935E"),
+            Fix.fromDMS("521105N", "0001412E"),
+            Fix.fromDMS("521104N", "0000528E"),
+            Fix.fromDMS("521104N", "0002159W"),
+            Fix.fromDMS("521126N", "0002220W"),
+            //Fix.fromDMS("521832N", "0000507W"),
+        ], [0x22, 0x22, 0x22]));
+
+        // CLACTON CTA 3 (A)
+        this.gen.line(new Line([
+            Fix.fromDMS("521032N", "0010200E"),
+            Fix.fromDMS("520707N", "0011236E"),
+            Fix.fromDMS("515808N", "0011829E"),
+            Fix.fromDMS("515548N", "0010705E"),
+            Fix.fromDMS("515806N", "0005800E"),
+            Fix.fromDMS("520839N", "0005047E"),
+            Fix.fromDMS("521032N", "0010200E"),
+        ], [0x22, 0x22, 0x22]));
+
+		// WORTHING CTA 1 (A)
+		this.gen.line(new Line([
+            Fix.fromDMS("512247N", "0011549E"),
+            Fix.fromDMS("512130N", "0012140E"),
+            Fix.fromDMS("512106N", "0013052E"),
+            Fix.fromDMS("512053N", "0013611E"),
+            Fix.fromDMS("511826N", "0013519E"),
+            Fix.fromDMS("511929N", "0013040E"),
+            Fix.fromDMS("511422N", "0013004E"),
+            Fix.fromDMS("510600N", "0014138E"),
+            Fix.fromDMS("510354N", "0014545E"),
+            Fix.fromDMS("510000N", "0012800E"),
+            Fix.fromDMS("505842N", "0010227E"),
+            Fix.fromDMS("512247N", "0011549E"),
+        ], [0x22, 0x22, 0x22]));
+
+		// CLACTON CTA 7 (A)
+		this.gen.line(new Line([
+            Fix.fromDMS("515222N", "0012635E"),
+            Fix.fromDMS("515220N", "0021737E"),
+            Fix.fromDMS("513000N", "0020000E"),
+            Fix.fromDMS("512922N", "0020000E"),
+            Fix.fromDMS("513024N", "0013733E"),
+            Fix.fromDMS("512708N", "0013826E"),
+            Fix.fromDMS("512053N", "0013611E"),
+            Fix.fromDMS("512106N", "0013052E"),
+            Fix.fromDMS("512130N", "0012140E"),
+            Fix.fromDMS("512247N", "0011549E"),
+            Fix.fromDMS("513905N", "0012500E"),
+            Fix.fromDMS("515222N", "0012635E"),
+        ], [0x22, 0x22, 0x22]));
+    }
+
+    public async withCoastline() {
 		// Great Britain coastline
 		this.gen.line(
 			...Line.fromGeoJSON(

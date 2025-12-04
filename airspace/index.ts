@@ -125,65 +125,90 @@ gen.airspace(
 			[182, {callsign: "LON_S_CTR", pronunciation: "London Control", frequency: 129.43}],
 		]),
 		new Polygon([
-				new Fix(50.668994, -0.373578),
-				new Fix(50.669484, 0.500093),
-				new Fix(50.755138, 0.750332),
-				new Fix(50.979723, 1.040440),
+            // LTMA 21 (A)
+            Fix.fromDMS("504626N", "0002908W"),
+            Fix.fromDMS("504626N", "0004942W"),
 
-				// extension
-				new Fix(51.000000, 1.466675),
-				new Fix(51.349485, 1.531906),
-				Fix.fromDMS("512715.96N", "0013016.98E"),
-				Fix.fromDMS("514053.03N", "0012633.13E"),
-				new Fix(51.6849, 1.4213),
-				// end extension
-				new Fix(51.873206, 1.443844),
-				new Fix(51.984880, 1.384964),
+            // LTMA 13 (A)
+            Fix.fromDMS("504848N", "0005214W"),
+            Fix.fromDMS("504928N", "0011714W"),
+            Fix.fromDMS("505435N", "0010335W"),
+            Fix.fromDMS("510420N", "0010657W"),
+            Fix.fromDMS("510329N", "0011312W"),
 
-				// extension CLACTON CTA 3A
-				new Fix(51.969759, 1.308231),
-				new Fix(52.120104, 1.211243),
-				new Fix(52.177300, 1.034088),
-				new Fix(52.145657, 0.848351),
-				// end extension CLACTON CTA 3A
+            // LTMA 11 (A)
+            Fix.fromDMS("511956N", "0010918W"),
+            Fix.fromDMS("512348N", "0010822W"),
 
-				new Fix(52.207501, 0.806808),
-				new Fix(52.186037, 0.546227),
+            // LTMA 23 (A)
+            Fix.fromDMS("512435N", "0011444W"),
+            Fix.fromDMS("512619N", "0012850W"),
+            Fix.fromDMS("513607N", "0012547W"),
 
-				// extension CLACTON CTA 10C
-				new Fix(52.1878, 0.2364),
-				new Fix(52.288428, 0.161018),
-				new Fix(52.291263, -0.030556),
-				new Fix(52.307009, -0.104370),
-				new Fix(52.399486, -0.191917),
-				new Fix(52.397601, -0.569229),
-				// end extension CLACTON CTA 10C
+            // LTMA 10 (A)
+            Fix.fromDMS("513423N", "0011138W"),
 
-				// extension
-				new Fix(52.248403, -0.427780),
-				new Fix(52.114939, -0.721664),
-				// end extension
+            // LTMA 19 (A)
+            Fix.fromDMS("514420N", "0010041W"),
+            Fix.fromDMS("515745N", "0011126W"),
+            Fix.fromDMS("515745N", "0011126W"),
 
-				// extension
-				new Fix(52.08, -0.6383),
-				new Fix(52.0638, -0.6613),
-				// end extension
+            // extension…
+            new Fix(52.0653, -0.6576),
+            new Fix(52.1233, -0.5606),
 
-				new Fix(51.960029, -1.190300),
-				new Fix(51.735906, -1.014090),
-				new Fix(51.569281, -1.195107),
-				new Fix(51.597868, -1.432171),
-				new Fix(51.434748, -1.482811),
-				new Fix(51.392351, -1.142578),
-				new Fix(51.055963, -1.222057),
-				new Fix(51.068639, -1.118717),
-				new Fix(50.908554, -1.063185),
-				new Fix(50.823180, -1.285658),
-				new Fix(50.813935, -0.873585),
-				new Fix(50.773922, -0.830669),
-				new Fix(50.775224, -0.487432),
-			]
-		),
+            // DAVENTRY CTA 25 (C)
+            Fix.fromDMS("521118N", "0003323W"),
+            Fix.fromDMS("521332N", "0002806W"),
+            Fix.fromDMS("521658N", "0002741W"),
+
+            // DAVENTRY CTA 21 (C)
+            Fix.fromDMS("522632N", "0003702W"),
+            Fix.fromDMS("522627N", "0001416W"),
+            Fix.fromDMS("521855N", "0000659W"),
+
+            // CLACTON CTA 10 (C)
+            Fix.fromDMS("521832N", "0000507W"),
+            Fix.fromDMS("521802N", "0000240W"),
+            Fix.fromDMS("521712N", "0000935E"),
+            Fix.fromDMS("521105N", "0001412E"),
+
+            // LTMA 18 (A)
+            Fix.fromDMS("521104N", "0003242E"),
+            Fix.fromDMS("521221N", "0004819E"),
+
+            // CLACTON CTA 3 (A)
+            Fix.fromDMS("520839N", "0005047E"),
+            Fix.fromDMS("521032N", "0010200E"),
+            Fix.fromDMS("520707N", "0011236E"),
+            Fix.fromDMS("515808N", "0011829E"),
+
+            // LTMA 8 (A)
+            Fix.fromDMS("515904N", "0012302E"),
+            Fix.fromDMS("515222N", "0012635E"),
+            Fix.fromDMS("513905N", "0012500E"),
+
+            // CLACTON CTA 7 (A)
+            Fix.fromDMS("513024N", "0013733E"),
+            Fix.fromDMS("512708N", "0013826E"),
+            Fix.fromDMS("512053N", "0013611E"),
+
+            // WORTHING CTA 1 (A)
+            Fix.fromDMS("512053N", "0013611E"),
+            Fix.fromDMS("511826N", "0013519E"),
+            Fix.fromDMS("511929N", "0013040E"),
+            Fix.fromDMS("511422N", "0013004E"),
+            Fix.fromDMS("510600N", "0014138E"),
+            Fix.fromDMS("510354N", "0014545E"),
+            Fix.fromDMS("510000N", "0012800E"),
+            Fix.fromDMS("505842N", "0010227E"),
+
+            // LTMA 8 (A)
+            Fix.fromDMS("505842N", "0010227E"),
+            Fix.fromDMS("504507N", "0004500E"),
+            Fix.fromDMS("504000N", "0003000E"),
+            Fix.fromDMS("504000N", "0002220W"),
+        ]),
 	)
 );
 
