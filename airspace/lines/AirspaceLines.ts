@@ -140,7 +140,7 @@ export default class AirspaceLines {
             new Line([
                 Fix.fromDMS("510100N", "0000458E"),
                 Fix.fromDMS("510100N", "0002545W"),
-            ], Line.ColourType.AIRSPACE)
+            ])
                 .join(new Circle(
                     Fix.fromDMS("510853N", "0001125W"),
                     12 * Fix.NMI,
