@@ -62,6 +62,12 @@ export default class Circle extends Line {
 		}
 	}
 
+    public arcACW(start: number, end: number): Line;
+    public arcACW(start: Fix, end: Fix): Line;
+    public arcACW(...args: [start: number, end: number] | [start: Fix, end: Fix]): Line {
+        return new Line(this.arc(...args.reverse() as [any, any]).vertices.toReversed());
+    }
+
 	public static from(a: Fix, b: Fix, c: Fix, precision: number, colour?: Line.Colour): Circle {
 		const [xₐ, yₐ, zₐ] = a.cartesian();
 		const [xᵦ, yᵦ, zᵦ] = b.cartesian();
