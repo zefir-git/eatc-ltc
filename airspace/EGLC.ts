@@ -19,6 +19,8 @@ export default class EGLC {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-LC", "513019N", "0000319E");
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London City Airport",

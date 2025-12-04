@@ -18,6 +18,8 @@ export default class EGKK {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-KK", "510853N", "0001125W")
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London Gatwick Airport",

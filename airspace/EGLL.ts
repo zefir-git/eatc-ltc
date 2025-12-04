@@ -18,6 +18,8 @@ export default class EGLL {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-LL", "512839N", "0002741W");
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London Heathrow Airport",
