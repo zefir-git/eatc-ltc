@@ -22,10 +22,10 @@
   "main": "dist/airspace/index.js",
   "scripts": {
     "build": "tsc",
-    "gen": "node .",
+    "gen": "node --enable-source-maps .",
     "link": "for file in LTCC.txt TEST.txt; do ln -s \"$(realpath \"$file\")\" \"$(realpath ~/.local/share/Steam/steamapps/common/Endless\\ ATC/locations)\"; done",
-    "test": "NODE_ENV=development node .",
-    "optimise": "node dist/src/scripts/optimiseAirlines.js"
+    "test": "NODE_ENV=development node --enable-source-maps .",
+    "optimise": "node --enable-source-maps dist/src/scripts/optimiseAirlines.js"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
