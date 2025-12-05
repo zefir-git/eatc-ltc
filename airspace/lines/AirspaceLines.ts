@@ -1054,14 +1054,14 @@ Class: A`, [0x14, 0x14, 0x14]);
         let lineObj: Line | null = null;
         let lastFix: Fix | null = null;
 
-        const instructionRegex = /thence (?:anti-)?clockwise by the arc of a circle radius \d+(?:\.\d+)? NM centred on \d{6}[NS] \d{6,}[EW] to \d{6}[NS] \d{6,}[EW]|\d{6}[NS] \d{6,}[EW]/g;
+        const instructionRegex = /thence (?:anti-)?clockwise by the arc of a circle radius \d+(?:\.\d+)? NM centred on \d{6}[NS] \d{6,}[EW] to (?:- )?\d{6}[NS] \d{6,}[EW]|\d{6}[NS] \d{6,}[EW]/g;
         const matches = normalized.matchAll(instructionRegex);
 
         for (const match of matches) {
             const instr = match[0]!;
 
             const arcMatch = instr.match(
-                /^thence ((?:anti-)?clockwise) by the arc of a circle radius (\d+(?:\.\d+)?) NM centred on (\d{6}[NS]) (\d{6,}[EW]) to (\d{6}[NS]) (\d{6,}[EW])$/
+                /^thence ((?:anti-)?clockwise) by the arc of a circle radius (\d+(?:\.\d+)?) NM centred on (\d{6}[NS]) (\d{6,}[EW]) to (?:- )?(\d{6}[NS]) (\d{6,}[EW])$/
             );
             if (arcMatch) {
                 if (!lastFix) throw new Error("Arc found without a previous fix");
