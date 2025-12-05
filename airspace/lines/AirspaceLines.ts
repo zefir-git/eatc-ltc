@@ -1050,47 +1050,43 @@ Class: A`, [0x14, 0x14, 0x14]);
     }
 
     private static fromAIP(aip: string, colour?: Line.Colour): Line {
-        const lines = aip.split("\n").map(l => l.trim());
+        const normalized = aip.replaceAll("\n", " ").trim();
         let lineObj: Line | null = null;
         let lastFix: Fix | null = null;
 
-        for (let i = 0; i < lines.length; ++i) {
-            const line = lines[i]!;
+        const instructionRegex = /thence (?:anti-)?clockwise by the arc of a circle radius \d+(?:\.\d+)? NM centred on \d{6}[NS] \d{6,}[EW] to \d{6}[NS] \d{6,}[EW]|\d{6}[NS] \d{6,}[EW]/g;
+        const matches = normalized.matchAll(instructionRegex);
 
-            const dmsMatch = line.match(/^(\d{6}[NS]) (\d{6,}[EW])/);
-            if (!dmsMatch) continue;
+        for (const match of matches) {
+            const instr = match[0]!;
 
-            const fix = Fix.fromDMS(dmsMatch[1]!, dmsMatch[2]!);
-            if (!lineObj) lineObj = new Line([fix], colour);
-            else lineObj = lineObj.append(fix);
-            lastFix = fix;
-
-            const arcMatch = line.match(/thence (clockwise|anti-clockwise) by the arc of a circle radius (\d(?:\.\d+)+) NM centred on (\d{6}[NS]) (\d{6,}[EW]) to/);
+            const arcMatch = instr.match(
+                /^thence ((?:anti-)?clockwise) by the arc of a circle radius (\d+(?:\.\d+)?) NM centred on (\d{6}[NS]) (\d{6,}[EW]) to (\d{6}[NS]) (\d{6,}[EW])$/
+            );
             if (arcMatch) {
                 if (!lastFix) throw new Error("Arc found without a previous fix");
 
                 const direction = arcMatch[1]!;
                 const radius = Number.parseFloat(arcMatch[2]!) * Fix.NMI;
                 const center = Fix.fromDMS(arcMatch[3]!, arcMatch[4]!);
-
-                const destLine = lines[++i]!;
-                const destMatch = destLine.match(/^(\d{6}[NS]) (\d{6,}[EW])(?:\s*-\s*)?$/);
-                if (!destMatch) throw new Error("Expected destination after arc");
-                const dest = Fix.fromDMS(destMatch[1]!, destMatch[2]!);
+                const dest = Fix.fromDMS(arcMatch[5]!, arcMatch[6]!);
 
                 const circle = new Circle(center, radius, 50);
-                if (direction === "clockwise") {
-                    lineObj = lineObj!.join(circle.arc(lastFix, dest));
-                } else {
-                    lineObj = lineObj!.join(circle.arcACW(lastFix, dest));
-                }
+                if (direction === "clockwise") lineObj = lineObj!.join(circle.arc(lastFix, dest));
+                else lineObj = lineObj!.join(circle.arcACW(lastFix, dest));
 
                 lineObj.append(dest);
                 lastFix = dest;
                 continue;
             }
 
-            void 0;
+            const fixMatch = instr.match(/^(\d{6}[NS]) (\d{6,}[EW])$/);
+            if (fixMatch) {
+                const fix = Fix.fromDMS(fixMatch[1]!, fixMatch[2]!);
+                if (!lineObj) lineObj = new Line([fix], colour);
+                else lineObj = lineObj!.append(fix);
+                lastFix = fix;
+            }
         }
 
         if (!lineObj) throw new Error("No line generated from AIP");
