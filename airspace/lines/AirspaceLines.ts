@@ -1071,7 +1071,7 @@ Class: A`, [0x14, 0x14, 0x14]);
                 const center = Fix.fromDMS(arcMatch[3]!, arcMatch[4]!);
                 const dest = Fix.fromDMS(arcMatch[5]!, arcMatch[6]!);
 
-                const circle = new Circle(center, radius, 50);
+                const circle = new Circle(center, radius, Math.ceil(radius / 185));
                 if (direction === "clockwise") lineObj = lineObj!.join(circle.arc(lastFix, dest));
                 else lineObj = lineObj!.join(circle.arcACW(lastFix, dest));
 
