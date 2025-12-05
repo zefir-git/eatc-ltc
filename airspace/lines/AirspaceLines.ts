@@ -76,16 +76,6 @@ export default class AirspaceLines {
 		);
 		this.gen.line(LondonCTRTMZ);
 
-		this.gen.line(new Line([
-			new Fix(51.353130, -0.713382),
-			new Fix(51.393422, -0.919590),
-			new Fix(51.568854, -0.921907),
-			new Fix(51.5854, -0.8835),
-			new Fix(51.589976, -0.818310),
-			new Fix(51.611514, -0.768185),
-			new Fix(51.6459, -0.7401),
-		], [0x30, 0x30, 0x30]));
-
 		// London City CTA (D)
 		this.gen.line(
 			new Line([
@@ -558,13 +548,393 @@ export default class AirspaceLines {
 			Fix.fromDMS("513653N", "0010414E"),
 		], [0x30, 0x30, 0x30]));
 
-        // LTMA 19 (A)
-        this.gen.line(new Line([
-            Fix.fromDMS("515745N", "0011126W"),
-            Fix.fromDMS("520421N", "0003712W"),
-            Fix.fromDMS("520316N", "0003441W"),
-            Fix.fromDMS("521126N", "0002220W"),
-        ], [0x22, 0x22, 0x22]));
+        // London TMA 1 (A)
+        this.aipLine(`LONDON TMA 1
+
+513451N 0005516W -
+513515N 0004901W -
+513632N 0004606W -
+514226N 0004110W -
+514409N 0004005W -
+514830N 0001506W -
+515102N 0000030W -
+515146N 0000006W -
+515155N 0000120E thence anti-clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to
+514508N 0001309E -
+514556N 0002309E -
+513908N 0001416E -
+513430N 0002136E -
+512046N 0003338E -
+511621N 0003054E -
+511217N 0002018E -
+510002N 0001541E -
+505900N 0001333E -
+505541N 0001007W -
+505832N 0003428W -
+510832N 0004055W -
+511014N 0003325W -
+512035N 0003959W -
+512103N 0004236W thence clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to
+512112N 0004247W -
+512108N 0004300W -
+512335N 0005516W -
+513451N 0005516W
+
+Upper limit: FL195
+
+Lower limit: 2500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 3
+
+520608N 0001350E -
+520606N 0002550E -
+520226N 0004040E -
+514401N 0004412E -
+513417N 0005000E -
+512120N 0005000E -
+510906N 0004618E -
+510051N 0002141E -
+510426N 0001721E -
+511217N 0002018E -
+511621N 0003054E -
+512046N 0003338E -
+513430N 0002136E -
+513908N 0001416E -
+514556N 0002309E -
+514508N 0001309E thence clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to
+515155N 0000120E -
+515146N 0000006W -
+515102N 0000030W -
+514830N 0001506W -
+514409N 0004005W -
+514226N 0004110W -
+513632N 0004606W -
+513515N 0004901W -
+514021N 0004916W -
+514542N 0005550W -
+515021N 0002931W -
+515743N 0002145W -
+520300N 0000907E -
+520608N 0001350E
+
+Upper limit: FL195
+
+Lower limit: 3500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 4
+
+512430N 0010000W -
+513433N 0010000W -
+513451N 0005516W -
+512335N 0005516W -
+512108N 0004300W -
+512112N 0004247W thence anti-clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to
+512103N 0004236W -
+512035N 0003959W -
+511014N 0003325W -
+510832N 0004055W -
+505832N 0003428W -
+505739N 0004104W -
+505728N 0004224W -
+510652N 0004829W -
+511035N 0005054W -
+511705N 0005508W -
+512430N 0010000W
+
+Upper limit: FL195
+
+Lower limit: 3500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 5
+
+513451N 0005516W -
+514457N 0010000W -
+514542N 0005550W -
+514021N 0004916W -
+513515N 0004901W -
+513451N 0005516W
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 6
+
+520606N 0001712W -
+520608N 0001350E -
+520300N 0000907E -
+515743N 0002145W -
+520038N 0002832W -
+520606N 0001712W
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 7
+
+514401N 0004412E -
+520226N 0004040E -
+520045N 0004724E -
+514431N 0005038E -
+513618N 0005532E -
+513417N 0005000E -
+514401N 0004412E
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 8
+
+520045N 0004724E -
+515548N 0010705E -
+515904N 0012302E -
+515222N 0012635E -
+513905N 0012500E -
+512247N 0011549E -
+505842N 0010227E -
+504507N 0004500E -
+504000N 0003000E following the line of latitude to -
+504000N 0002220W -
+505500N 0003814W following the line of latitude to -
+505500N 0002256W -
+505429N 0002115W -
+505157N 0000418W -
+510906N 0004618E -
+512120N 0005000E -
+512829N 0005000E -
+513417N 0005000E -
+513618N 0005532E -
+514431N 0005038E -
+520045N 0004724E
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 9
+
+521104N 0002159W -
+521104N 0000528E -
+520606N 0002550E -
+520606N 0001712W -
+521104N 0002159W
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 10
+
+514457N 0010000W -
+513451N 0005516W -
+513433N 0010000W -
+513302N 0010000W -
+513423N 0011138W -
+514457N 0010000W
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 11
+
+513423N 0011138W -
+513302N 0010000W -
+512430N 0010000W -
+511705N 0005508W thence anti-clockwise by the arc of a circle radius 4.7168 NM centred on 511256N 0005136W to
+511535N 0005748W -
+511956N 0010918W -
+512348N 0010822W -
+512435N 0011444W -
+513423N 0011138W
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 13
+
+511956N 0010918W -
+511535N 0005748W thence clockwise by the arc of a circle radius 4.7168 NM centred on 511256N 0005136W to
+511705N 0005508W -
+510652N 0004829W -
+510602N 0005439W -
+505616N 0005119W -
+505512N 0005908W -
+505119N 0005457W -
+504848N 0005214W -
+504928N 0011714W -
+505435N 0010335W -
+510420N 0010657W -
+510329N 0011312W -
+511956N 0010918W
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 14
+
+505739N 0004104W -
+505832N 0003428W -
+505500N 0002256W -
+505500N 0003814W -
+505739N 0004104W
+
+Upper limit: FL195
+
+Lower limit: 5000 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 16
+
+520548N 0002701E -
+520713N 0005149E -
+520024N 0004848E -
+520548N 0002701E
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 17
+
+520024N 0004848E -
+520713N 0005149E -
+515806N 0005800E -
+520024N 0004848E
+
+Upper limit: FL195
+
+Lower limit: FL75
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 18
+
+520548N 0002701E -
+521104N 0000528E -
+521104N 0003242E -
+521221N 0004819E -
+520713N 0005149E -
+520548N 0002701E
+
+Upper limit: FL195
+
+Lower limit: FL75
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 19
+
+515745N 0011126W -
+520421N 0003712W -
+520316N 0003441W -
+521126N 0002220W -
+520606N 0001712W -
+520038N 0002832W -
+515743N 0002145W -
+515021N 0002931W -
+514457N 0010000W -
+514420N 0010041W -
+515745N 0011126W
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 20
+
+510426N 0001721E -
+510051N 0002141E -
+505157N 0000418W -
+505429N 0002115W -
+505832N 0003428W -
+505541N 0001007W -
+505900N 0001333E -
+510002N 0001541E -
+510426N 0001721E
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 21
+
+505739N 0004104W -
+504626N 0002908W -
+504626N 0004942W -
+504848N 0005214W -
+505119N 0005457W -
+505512N 0005908W -
+505616N 0005119W -
+505728N 0004224W -
+505739N 0004104W
+
+Upper limit: FL195
+
+Lower limit: FL65
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 23
+
+513607N 0012547W -
+513423N 0011138W -
+512435N 0011444W -
+512619N 0012850W -
+513607N 0012547W
+
+Upper limit: FL195
+
+Lower limit: 5500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
+
+        this.aipLine(`LONDON TMA 24
+
+510652N 0004829W -
+505728N 0004224W -
+505616N 0005119W -
+510602N 0005439W -
+510652N 0004829W
+
+Upper limit: FL195
+
+Lower limit: 4500 FT ALT
+
+Class: A`, [0x14, 0x14, 0x14]);
 
         // DAVENTRY CTA 5 (A)
         this.gen.line(new Line([
@@ -674,4 +1044,56 @@ export default class AirspaceLines {
 				   .filter(line => !line.vertices.every(fix => fix.latitude > 52.5 || fix.longitude < -2))
 		);
 	}
+
+    private aipLine(aip: string, colour?: Line.Colour) {
+        this.gen.line(AirspaceLines.fromAIP(aip, colour));
+    }
+
+    private static fromAIP(aip: string, colour?: Line.Colour): Line {
+        const lines = aip.split("\n").map(l => l.trim());
+        let lineObj: Line | null = null;
+        let lastFix: Fix | null = null;
+
+        for (let i = 0; i < lines.length; ++i) {
+            const line = lines[i]!;
+
+            const dmsMatch = line.match(/^(\d{6}[NS]) (\d{6,}[EW])/);
+            if (!dmsMatch) continue;
+
+            const fix = Fix.fromDMS(dmsMatch[1]!, dmsMatch[2]!);
+            if (!lineObj) lineObj = new Line([fix], colour);
+            else lineObj = lineObj.append(fix);
+            lastFix = fix;
+
+            const arcMatch = line.match(/thence (clockwise|anti-clockwise) by the arc of a circle radius (\d(?:\.\d+)+) NM centred on (\d{6}[NS]) (\d{6,}[EW]) to/);
+            if (arcMatch) {
+                if (!lastFix) throw new Error("Arc found without a previous fix");
+
+                const direction = arcMatch[1]!;
+                const radius = Number.parseFloat(arcMatch[2]!) * Fix.NMI;
+                const center = Fix.fromDMS(arcMatch[3]!, arcMatch[4]!);
+
+                const destLine = lines[++i]!;
+                const destMatch = destLine.match(/^(\d{6}[NS]) (\d{6,}[EW])(?:\s*-\s*)?$/);
+                if (!destMatch) throw new Error("Expected destination after arc");
+                const dest = Fix.fromDMS(destMatch[1]!, destMatch[2]!);
+
+                const circle = new Circle(center, radius, 50);
+                if (direction === "clockwise") {
+                    lineObj = lineObj!.join(circle.arc(lastFix, dest));
+                } else {
+                    lineObj = lineObj!.join(circle.arcACW(lastFix, dest));
+                }
+
+                lineObj.append(dest);
+                lastFix = dest;
+                continue;
+            }
+
+            void 0;
+        }
+
+        if (!lineObj) throw new Error("No line generated from AIP");
+        return lineObj;
+    }
 }
