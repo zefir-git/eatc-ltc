@@ -44,7 +44,7 @@ jobs:
           path: LTCC.txt
 
       - name: Upload to release
-        uses: cloudnode-pro/release-upload-asset@1.0.2
+        uses: cloudnode-pro/release-upload-asset@v1
         with:
           gh-token: ${{ github.token }}
           files: LTCC.txt; type=text/plain
