@@ -18,6 +18,8 @@ export default class EGSS {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-SS", "515306N", "0001406E");
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London Stansted Airport",

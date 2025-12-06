@@ -19,6 +19,8 @@ export default class EGGW {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-GW", "515229N", "0002206W");
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London Luton Airport",

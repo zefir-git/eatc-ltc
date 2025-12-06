@@ -38,6 +38,38 @@ class Line extends Polygon {
 			+ this.toString();
 	}
 
+    public rotate(steps: number) {
+        if (this._vertices.length === 0)
+            return this;
+
+        const selfClosing =
+            this._vertices.at(0)!.toString() ===
+            this._vertices.at(-1)!.toString();
+
+        const length = selfClosing
+            ? this._vertices.length - 1
+            : this._vertices.length;
+
+        if (length === 0)
+            return this;
+
+        const normalised =
+            ((steps % length) + length) % length;
+
+        if (normalised === 0)
+            return this;
+
+        const rotated =
+            this._vertices
+                .slice(length - normalised, length)
+                .concat(this._vertices.slice(0, length - normalised));
+
+        if (selfClosing)
+            rotated.push(rotated.at(0)!);
+
+        return new Line(rotated, this.colour);
+    }
+
 	/**
 	 * Get lines from GeoJSON
 	 */

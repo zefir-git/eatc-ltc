@@ -120,9 +120,13 @@ export default class Generator {
 
 	#lines: Polygon[] = [];
 
-	public line(...line: Polygon[]) {
-		this.#lines.push(...line);
-	}
+	public line(...lines: Polygon[]): void;
+    public line(line: Polygon, index?: number): void;
+	public line(...args: Polygon[] | [line: Polygon, index?: number]): void {
+        if (args.length === 2 && (args[1] === undefined || typeof args[1] === "number"))
+            this.#lines.splice(args[1] ?? args.length, 0, args[0]);
+        else this.#lines.push(...args as Polygon[]);
+    }
 
 	// Map<runway, Map<beacon, STAR[]>>
 	#arrivals = new Map<string, Map<string, STAR[]>>;

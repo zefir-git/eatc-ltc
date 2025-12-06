@@ -18,6 +18,8 @@ export default class EGLL {
 	}
 
 	private async airport() {
+        Generator.getInstance().fix("ARP-LL", "512839N", "0002741W");
+
 		Generator.getInstance().airport(
 			new Airport(
 				"London Heathrow Airport",
@@ -49,6 +51,7 @@ export default class EGLL {
 				],
 				[
 					...new Array(3).fill(new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000)),
+					...new Array(3).fill(new Airport.EntryPoint(319, Generator.getInstance().beacon("TOBID"), 15000)),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
@@ -190,8 +193,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
-			{end: "hold"})
-		.withEntry(15000).repeated(3));
+			{end: "hold"}));
 
         Generator.getInstance().arrival(new STAR(
             ...Generator.getInstance().pronounce("LAM", "1Z"),
@@ -221,8 +223,7 @@ export default class EGLL {
 				Generator.getInstance().beacon("WEZKO", void 0, 220),
 				Generator.getInstance().beacon("BNN", 7000, 220)
 			],
-			{end: "hold"})
-		.withEntry(15000).repeated(3));
+			{end: "hold"}));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("BARMI1H"),

@@ -78,7 +78,7 @@ export default class Polygon {
 		return null;
 	}
 
-	public intersection(origin: Fix, bearing: number) {
+	public intersection(origin: Fix, bearing: number, nth = 0) {
 		const intersections: Fix[] = [];
 		for (let i = 0; i < this.vertices.length; ++i) {
 			const a = this.vertices[i]!;
@@ -90,6 +90,6 @@ export default class Polygon {
 		}
 		if (intersections.length === 0) return null;
 		// return the farthest intersection
-		return intersections.sort((a, b) => b.distance(origin) - a.distance(origin))[0]!;
+		return intersections.sort((a, b) => a.distance(origin) - b.distance(origin)).at(nth)!;
 	}
 }
