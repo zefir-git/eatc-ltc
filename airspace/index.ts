@@ -87,7 +87,7 @@ gen.airspace(
 			 */
 			Beacon.from("TOBID", "Tobid",
 				gen.fix("SOPIT", "515729.84N", "0010626.35W")
-				   .destination(319, 10)
+				   .destination(319, 13.5)
 			),
 			Beacon.fromDMS("514451.32N", "0013642.58E", "LOGAN", "Logan", {left: 289}),
 			Beacon.fromDMS("510019.03N", "0005904.06W", "HAZEL", "Hazel"),
