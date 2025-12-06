@@ -36,519 +36,689 @@ export default class AirspaceLines {
 				.destination(337, 7)
 				.destination(360, 7.5),
 			this.gen.beacon("BNN"),
-		]));
+		], [0x30, 0x30, 0x30]));
 
-		// London CTR TMZ
-		const LondonCTRTMZ = new Line([
-			new Fix(51.606291, -0.693555),
-			new Fix(51.606291, -0.217152),
-		], [0x30, 0x30, 0x30])
-			.join(Circle.from(
-					new Fix(51.606291, -0.217152),
-					new Fix(51.581710, -0.187025),
-					new Fix(51.336537, -0.214834),
-					75
-				).cutoff(f => f.latitude <= 51.606291 && f.longitude >= -.217152)
-			)
-			.join((new Line([
-					new Fix(51.336537, -0.214834),
-					new Fix(51.336537, -0.631714),
-					new Fix(51.353130, -0.713382),
-				]))
-			)
-			.join(Circle.from(
-					new Fix(51.353130, -0.713382),
-					new Fix(51.468232, -0.773377),
-					new Fix(51.606291, -0.693555),
-					75
-				).cutoff(f => f.latitude <= 51.606291 && f.latitude >= 51.353130 && f.longitude <= -0.693555)
-						.append(new Fix(51.606291, -0.693555))
-			);
-
-		this.gen.area(
-			new Area<Polygon>(
-				null,
-				2500,
-				new Fix(51.4431, -0.47),
-				LondonCTRTMZ,
-				LondonCTRTMZ.vertices.length
-			)
-		);
-		this.gen.line(LondonCTRTMZ);
-
-		// London City CTA (D)
-		this.gen.line(
-			new Line([
-				new Fix(51.599147, -0.208225),
-				new Fix(51.587176, 0.172005),
-			], [0x30, 0x30, 0x30]).join(
-				Circle.from(
-					new Fix(51.587176, 0.172005),
-					new Fix(51.497843, 0.230026),
-					new Fix(51.419764, 0.159473),
-					75
-				).cutoff(f => f.latitude <= 51.587176 && f.longitude >= 0.1594)
-			).join(
-				new Line([
-					new Fix(51.419764, 0.159473),
-					new Fix(51.429063, -0.139818),
-				])
-			)
+		// London CTR (D)
+		this.aipArea(
+            null,
+            2500,
+            new Fix(51.3819, -0.2989),
+            "513611N 0004133W - 513611N 0001253W thence clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to 512013N 0001255W - 512013N 0003800W - 512103N 0004236W thence clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to 513611N 0004133W",
 		);
 
-		// London City CTR (D)
-		const LondonCityCTRD = new Line([
-			new Fix(51.581710, -0.187025),
-			new Fix(51.571735, 0.139732),
-		], [0x30, 0x30, 0x30]).join(
-			Circle.from(
-				new Fix(51.571735, 0.139732),
-				new Fix(51.502545, 0.189857),
-				new Fix(51.437531, 0.131149),
-				75
-			)
-				  .cutoff(f => f.latitude <= 51.571735 && f.longitude >= 0.131149)
-		).join(new Line([
-			new Fix(51.437531, 0.131149),
-			new Fix(51.445449, -0.134926),
-		]));
+		// London/City CTR (D)
+        this.aipLine(
+            "513445N 0001108W - 513409N 0000826E thence clockwise by the arc of a circle radius 5 NM centred on 513019N 0000319E to 512610N 0000747E - 512640N 0000811W thence anti-clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to 513445N 0001108W",
+            [0x30, 0x30, 0x30],
+        );
 
-		this.gen.area(new Area<Polygon>(
-			"LC",
-			2500,
-			new Fix(51.555, 0.025),
-			LondonCityCTRD,
-			LondonCityCTRD.vertices.length
-		));
-		this.gen.line(LondonCityCTRD);
+        this.aipArea(
+            "LC",
+            2500,
+            new Fix(51.555, 0.025),
+            "LONDON/CITY CTA\n" +
+            "513547N 0001221W -\n" +
+            "513505N 0001022E thence clockwise by the arc of a circle radius 6.5 NM centred on 513019N 0000319E to\n" +
+            "512507N 0000932E -\n" +
+            "512541N 0000828W thence anti-clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to\n" +
+            // "512640N 0000811W -\n" +
+            // "512610N 0000747E thence anti-clockwise by the arc of a circle radius 5 NM centred on 513019N 0000319E to\n" +
+            // "513409N 0000826E -\n" +
+            // "513445N 0001108W thence anti-clockwise by the arc of a circle radius 12 NM centred on 512812N 0002713W to -\n" +
+            "513547N 0001221W\n" +
+            "Upper limit: 2500 FT ALT\n" +
+            "Lower limit: 1500 FT ALT\n" +
+            "Class: D\n",
+        );
 
 		// Gatwick CTA (D)
-        this.gen.area(new Area(
+        this.aipArea(
             "KK",
             2500,
             new Fix(51.0650, 0.0100),
-            new Line([
-                Fix.fromDMS("510100N", "0000458E"),
-                Fix.fromDMS("510100N", "0002545W"),
-            ])
-                .join(new Circle(
-                    Fix.fromDMS("510853N", "0001125W"),
-                    12 * Fix.NMI,
-                    72
-                ).arc(
-                    Fix.fromDMS("510100N", "0002545W"),
-                    Fix.fromDMS("511124N", "0003003W")
-                ))
-                .append(Fix.fromDMS("511618N", "0000533E"))
-                .join(new Circle(
-                    Fix.fromDMS("510853N", "0001125W"),
-                    13 * Fix.NMI,
-                    72
-                ).arc(
-                    Fix.fromDMS("511618N", "0000533E"),
-                    Fix.fromDMS("510100N", "0000458E")
-                ))
-                .append(Fix.fromDMS("510100N", "0000458E")),
-        ));
+            `LONDON GATWICK CTA
+
+510100N 0000458E -
+510100N 0002545W thence clockwise by the arc of a circle radius 12 NM centred on 510853N 0001125W to
+511124N 0003003W -
+511618N 0000533E thence clockwise by the arc of a circle radius 13 NM centred on 510853N 0001125W to -
+510100N 0000458E
+
+but excluding the Gatwick CTR.
+
+Upper limit: 2500 FT ALT
+
+Lower limit: 1500 FT ALT
+
+Class: D`
+        );
 
 		// Gatwick CTR (D)
-		this.gen.line(new Line([
-            Fix.fromDMS("511258N", "0001129W"),
-            Fix.fromDMS("511200N", "0000341E")
-        ], [0x30, 0x30, 0x30])
-            .join(new Circle(
-                Fix.fromDMS("510853N", "0001125W"),
-                10 * Fix.NMI,
-                72
-            ).arc(
-                Fix.fromDMS("511200N", "0000341E"),
-                Fix.fromDMS("510550N", "0000342E"),
-            ))
-            .append(Fix.fromDMS("510240N", "0001923W"))
-            .join(new Circle(
-                Fix.fromDMS("510853N", "0001125W"),
-                8 * Fix.NMI,
-                72
-            ).arc(
-                Fix.fromDMS("510240N", "0001923W"),
-                Fix.fromDMS("511118N", "0002332W")
-            ))
-            .append(Fix.fromDMS("511258N", "0001129W")));
-
-		// Luton CTR (D)
-		const LutonCTRD = new Line([
-			new Fix(51.846596, -0.160847),
-			new Fix(51.813497, -0.248909),
-			new Fix(51.756153, -0.586567),
-			new Fix(51.820607, -0.615406),
-			new Fix(51.841505, -0.494041),
-			new Fix(51.960558, -0.359802),
-			new Fix(51.980440, -0.241013),
-		], [0x30, 0x30, 0x30]).join(Circle.from(
-				new Fix(51.980440, -0.241013),
-				this.gen.runway("gw").position.destination(this.gen.runway("gw").reverseLocalizer, 7 + 1/3),
-				new Fix(51.846596, -0.160847),
-				75
-			).cutoff(f => f.latitude <= 51.980440 && f.latitude >= 51.846596 && f.longitude >= -0.241013)
-										  .append(new Fix(51.846596, -0.160847))
-		);
-		this.gen.area(new Area(
-			"GW",
-			3500,
-			new Fix(51.855, -0.39),
-			LutonCTRD,
-			LutonCTRD.vertices.length
-		));
-		this.gen.line(LutonCTRD);
-
-		// Luton CTA 1 (D)
-		this.gen.line(new Line([
-			new Fix(51.846596, -0.160847),
-			new Fix(51.854867, -0.007210),
-			new Fix(51.865521, -0.001287),
-			new Fix(52.021365, 0.004292),
-			new Fix(51.980440, -0.241013),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 2 (D)
-		this.gen.line(new Line([
-			new Fix(51.756153, -0.586567),
-			new Fix(51.741380, -0.672226),
-			new Fix(51.805961, -0.701408),
-			new Fix(51.820607, -0.615406),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 3 (D)
-		this.gen.line(new Line([
-			new Fix(51.805961, -0.701408),
-			new Fix(51.864620, -0.727158),
-			new Fix(51.879352, -0.641670),
-			new Fix(51.820607, -0.615406),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 4 (D)
-		this.gen.line(new Line([
-			new Fix(51.805961, -0.701408),
-			new Fix(51.786533, -0.813332),
-			new Fix(51.848929, -0.826035),
-			new Fix(51.864620, -0.727158),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 5 (D)
-		this.gen.line(new Line([
-			new Fix(51.960558, -0.359802),
-			new Fix(52.007287, -0.472069),
-			new Fix(51.883326, -0.618324),
-			new Fix(51.918809, -0.406752),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 6 (D)
-		this.gen.line(new Line([
-			new Fix(51.883326, -0.618324),
-			new Fix(51.879352, -0.641670),
-			new Fix(51.916321, -0.729733),
-			new Fix(52.054417, -0.578971),
-			new Fix(52.007287, -0.472069),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 7 (D)
-		this.gen.line(new Line([
-			new Fix(52.007287, -0.472069),
-			new Fix(52.096646, -0.280151),
-			new Fix(51.990536, -0.177069),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 8 (D)
-		this.gen.line(new Line([
-			new Fix(51.864620, -0.727158),
-			new Fix(51.916321, -0.729733),
-		], [0x30, 0x30, 0x30]));
-
-		// Luton CTA 9 (D)
-		this.gen.line(new Line([
-			new Fix(51.958654, -0.683041),
-			new Fix(51.898741, -0.834618),
-			new Fix(51.848929, -0.826035),
-		], [0x30, 0x30, 0x30]));
+		this.aipLine(
+            "LONDON GATWICK CTR\n" +
+            "\n" +
+            "511258N 0001129W - 511200N 0000341E thence clockwise by the arc of a circle radius 10 NM centred on 510853N 0001125W to 510550N 0000342E - 510240N 0001923W thence clockwise by the arc of a circle radius 8 NM centred on 510853N 0001125W to 511118N 0002332W - 511258N 0001129W",
+            [0x30, 0x30, 0x30]
+        );
 
 		// Stansted CTR (D)
-		const StanstedCTRD = new Line([
-			new Fix(51.867270, 0.022402),
-			new Fix(51.867270, 0.022402).destination(44, 12.4),
-		], [0x30, 0x30, 0x30]).join(Circle.from(
-				new Fix(51.867270, 0.022402).destination(44, 12.4),
-				this.gen.runway("ss").position.destination(this.gen.runway("ss").reverseLocalizer, 7.3),
-				new Fix(51.758544, 0.217581).destination(44, 12.4),
-				75
-			).cutoff(f =>
-				f.latitude <= new Fix(51.867270, 0.022402).destination(44, 12.4).latitude
-				&& f.latitude >= new Fix(51.758544, 0.217581).destination(44, 12.4).latitude
-				&& f.longitude >= new Fix(51.867270, 0.022402).destination(44, 12.4).longitude)
-		).join(new Line([
-			new Fix(51.758544, 0.217581).destination(44, 12.4),
-			new Fix(51.758544, 0.217581),
-		])).join(Circle.from(
-			new Fix(51.867270, 0.022402),
-			this.gen.runway("ss").reverse().position.destination(this.gen.runway("ss").heading, 7.4),
-			new Fix(51.758544, 0.217581),
-			75
-		).cutoff(f => f.latitude <= 51.867270 && f.longitude <= 0.217581)
-					   .append(new Fix(51.867270, 0.022402)));
+		const stanstedCTR = AirspaceLines.fromAIP(
+            "515416N 0002653E - 514508N 0001309E thence clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to 515155N 0000120E - 520104N 0001503E thence clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to 515416N 0002653E",
+            [0x30, 0x30, 0x30]
+        );
 		this.gen.area(new Area(
 			"SS",
 			3500,
 			new Fix(51.8697, 0.2598),
-			StanstedCTRD,
-			StanstedCTRD.vertices.length
+			stanstedCTR,
+			stanstedCTR.vertices.length
 		));
-		this.gen.line(StanstedCTRD);
+		this.gen.line(stanstedCTR);
 
 		// Stansted CTA 1 (D)
-		this.gen.line(new Line([
-			new Fix(51.867270, 0.022402).destination(44, 12.4),
-			new Fix(52.083831, 0.361691),
-		], [0x30, 0x30, 0x30]).join(
-			Circle.from(
-				new Fix(52.083831, 0.361691),
-				this.gen.runway("ss").position.destination(this.gen.runway("ss").reverseLocalizer, 13),
-				new Fix(51.973884, 0.556526),
-				75
-			).cutoff(f => f.latitude <= 52.083831 && f.latitude >= 51.973884 && f.longitude >= 0.361691)
-		).join(new Line([
-			new Fix(51.973884, 0.556526),
-			new Fix(51.758544, 0.217581).destination(44, 12.4),
-		])));
+        const stanstedCTA1 = AirspaceLines.fromAIP(`LONDON STANSTED CTA 1
+
+515416N 0002653E thence anti-clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to
+520104N 0001503E -
+520517N 0002124E thence clockwise by the arc of a circle radius 13 NM centred on 515306N 0001406E to
+515828N 0003314E -
+515416N 0002653E
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 1500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]).rotate(18);
+        this.gen.area(new Area(
+            "SS",
+            3500,
+            new Fix(51.9774, 0.4648),
+            stanstedCTA1,
+            22
+        ));
+        this.gen.line(stanstedCTA1);
 
 		// Stansted CTA 2 (D)
-		this.gen.line(new Line([
-			new Fix(51.758384, 0.217323),
-			new Fix(51.690596, 0.109091),
-		], [0x30, 0x30, 0x30]).join(
-			Circle.from(
-				new Fix(51.769115, -0.056992),
-				this.gen.runway("ss").reverse().position.destination(this.gen.runway("ss").heading, 12.3),
-				new Fix(51.690596, 0.109091),
-				75
-			).cutoff(f => f.latitude <= 51.769115 && f.longitude <= 0.109091)
-		).join(new Line([
-			new Fix(51.769115, -0.056992),
-			new Fix(51.854867, -0.007210),
-			new Fix(51.865521, -0.001287),
-			new Fix(51.867270, 0.022402),
-		], [0x30, 0x30, 0x30])));
+        const stanstedCTA2 = AirspaceLines.fromAIP(`LONDON STANSTED CTA 2
 
-		// Stansted CTA 3 (D)
-		this.gen.line(Circle.from(
-				new Fix(51.973884, 0.556526),
-				new Fix(51.923097, 0.581589),
-				new Fix(51.900223, 0.586395),
-				75,
-				[0x30, 0x30, 0x30]
-			).cutoff(f => f.latitude <= 51.973884 && f.latitude >= 51.900223 && f.longitude >= 0.556526)
-							.prepend(new Fix(51.973884, 0.556526)
-							)
-							.join(new Line([
-								new Fix(51.900223, 0.586395),
-								new Fix(51.900223, 0.586395).destination(225, 11.2),
-								new Fix(51.758384, 0.217323),
-							], [0x30, 0x30, 0x30]))
-		);
+514508N 0001309E -
+514055N 0000652E thence clockwise by the arc of a circle radius 13 NM centred on 515306N 0001406E to
+514550N 0000316W -
+515146N 0000006W -
+515155N 0000120E thence anti-clockwise by the arc of a circle radius 8 NM centred on 515306N 0001406E to -
+514508N 0001309E
 
-		// Stansted CTA 4 (D)
-		this.gen.line(new Line([
-			new Fix(52.021365, 0.004292),
-			new Fix(52.083831, 0.361691),
-		], [0x30, 0x30, 0x30]))
+Upper limit: 2500 FT ALT
+
+Lower limit: 1500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "SS",
+            2500,
+            new Fix(51.7500, 0.0500),
+            stanstedCTA2,
+            20
+        ));
+        this.gen.line(stanstedCTA2);
+
+        // Stansted CTA 3 (D)
+        this.aipArea(
+            "SS",
+            3500,
+            new Fix(51.8250, 0.3700),
+            `LONDON STANSTED CTA 3
+
+515828N 0003314E thence clockwise by the arc of a circle radius 13 NM centred on 515306N 0001406E to
+515349N 0003503E -
+514556N 0002309E -
+514508N 0001309E -
+515828N 0003314E
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`,
+            2
+        );
+
+        // Stansted CTA 4 (D)
+        this.aipArea(
+            "SS",
+            3500,
+            new Fix(51.9470, 0.0597),
+            `LONDON STANSTED CTA 4
+
+520300N 0000907E -
+520517N 0002124E -
+515155N 0000120E -
+515146N 0000006W -
+520127N 0000000E -
+520300N 0000907E
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`,
+            3,
+            2
+        );
+
+        // Luton CTR (D)
+        const lutonCTR = AirspaceLines.fromAIP(
+            "515244N 0003828W - 515511N 0002426W - 515743N 0002145W - 515857N 0001434W thence clockwise by the arc of a circle radius 8 NM centred on 515229N 0002206W to 515042N 0000931W - 514830N 0001506W - 514503N 0003457W - 515244N 0003828W",
+            [0x30, 0x30, 0x30],
+        ).rotate(2);
+        this.gen.area(new Area(
+            "GW",
+            3500,
+            new Fix(51.8705, -0.2700),
+            lutonCTR,
+            lutonCTR.vertices.length - 1
+        ));
+        this.gen.line(lutonCTR);
+
+        // Luton CTA 1 (D)
+        this.aipArea(
+            "GW",
+            3500,
+            new Fix(51.8948, -0.0694),
+            `LONDON LUTON CTA 1
+
+515857N 0001434W -
+/* Added manually for better rendering */ 515935N 0001056W -
+520127N 0000000E -
+515146N 0000006W -
+515102N 0000030W -
+514830N 0001506W -
+515042N 0000931W thence anti-clockwise by the arc of a circle radius 8 NM centred on 515229N 0002206W to -
+515857N 0001434W
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`,
+            19,
+            -1
+        );
+
+        // Luton CTA 2 (D)
+        const lutonCTA2 = AirspaceLines.fromAIP(`LONDON LUTON CTA 2
+
+514810N 0004155W -
+514905N 0003647W -
+514503N 0003457W -
+514409N 0004005W -
+514810N 0004155W
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            3500,
+            new Fix(51.7800, -0.6565),
+            lutonCTA2.rotate(2),
+            3
+        ));
+        this.gen.line(lutonCTA2);
+
+        // Luton CTA 3 (D)
+        this.aipArea(
+            "GW",
+            5500,
+            new Fix(51.8616, -0.6944),
+            `LONDON LUTON CTA 3
+
+514810N 0004155W -
+515150N 0004336W -
+515244N 0003828W -
+514905N 0003647W -
+514810N 0004155W
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`,
+            1000
+        );
+
+        // Luton CTA 4 (D)
+        const lutonCTA4 = AirspaceLines.fromAIP(`LONDON LUTON CTA 4
+
+515150N 0004336W -
+514810N 0004155W -
+514659N 0004838W -
+515048N 0004926W -
+515150N 0004336W
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            5500,
+            new Fix(51.8490, -0.7729),
+            lutonCTA4.rotate(-1),
+            3
+        ));
+        this.gen.line(lutonCTA4);
+
+        // Luton CTA 5 (D)
+        const lutonCTA5 = AirspaceLines.fromAIP(`LONDON LUTON CTA 5
+
+520038N 0002832W -
+515743N 0002145W -
+515021N 0002931W -
+514905N 0003647W -
+515244N 0003828W -
+515258N 0003709W -
+520038N 0002832W`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            5500,
+            new Fix(51.9375, -0.5350),
+            lutonCTA5,
+            lutonCTA5.vertices.length
+        ));
+        this.gen.line(lutonCTA5);
+
+        // Luton CTA 6 (D)
+        this.aipArea(
+            "GW",
+            5500,
+            new Fix(51.9801, -0.5983),
+            `LONDON LUTON CTA 6
+
+520316N 0003441W -
+520038N 0002832W -
+515258N 0003709W -
+515244N 0003828W -
+515503N 0004353W -
+/* Added manually for better rendering */ 515749N 0004048W -
+520316N 0003441W
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 4500 FT ALT
+
+Class: D`,
+            5,
+            1
+        );
+
+        // Luton CTA 7 (D)
+        const lutonCTA7 = AirspaceLines.fromAIP(`LONDON LUTON CTA 7
+
+520606N 0001712W -
+515935N 0001056W -
+515743N 0002145W -
+520038N 0002832W -
+520606N 0001712W
+
+Upper limit: 4500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            4500,
+            new Fix(52.0481, -0.3477),
+            lutonCTA7.rotate(1),
+            3
+        ));
+        this.gen.line(lutonCTA7);
+
+        // Luton CTA 8 (D)
+        const lutonCTA8 = AirspaceLines.fromAIP(`LONDON LUTON CTA 8
+
+515150N 0004336W -
+515244N 0003828W -
+515503N 0004353W -
+515150N 0004336W
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            5500,
+            new Fix(51.9000, -0.7147),
+            lutonCTA8,
+            lutonCTA8.vertices.length
+        ));
+        this.gen.line(lutonCTA8);
+
+        // Luton CTA 9 (D)
+        const lutonCTA9 = AirspaceLines.fromAIP(`LONDON LUTON CTA 9
+
+515150N 0004336W -
+515503N 0004353W -
+515749N 0004048W -
+515356N 0005006W -
+515048N 0004926W -
+515150N 0004336W
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 4500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "GW",
+            5500,
+            new Fix(51.8932, -0.8083),
+            lutonCTA9.rotate(3),
+            4
+        ));
+        this.gen.line(lutonCTA9);
 
 		// Southend CTR 1 (D)
-		const SouthendCTR1 = new Line([
-			Fix.fromDMS("513445N", "0002903E"),
-			Fix.fromDMS("514206N", "0004521E"),
-			Fix.fromDMS("513417N", "0005000E"),
-			Fix.fromDMS("513151N", "0005000E"),
-			Fix.fromDMS("512719N", "0003955E"),
-			Fix.fromDMS("512701N", "0003630E"),
-		], [0x30, 0x30, 0x30]).join(
-			new Circle(
-				Fix.fromDMS("513357N", "0004100E"),
-				7.5 * Fix.NMI,
-				50
-			).cutoff(f =>
-				f.longitude <= Fix.fromDMS("512701N", "0003630E").longitude
-				&& f.latitude <= Fix.fromDMS("513445N", "0002903E").latitude
-			).append(Fix.fromDMS("513445N", "0002903E"))
-		);
-		this.gen.area(new Area(
-			"MC",
-			3500,
-			new Fix(51.625, 0.6356),
-			SouthendCTR1,
-			SouthendCTR1.vertices.length
-		));
-		this.gen.line(SouthendCTR1);
+        const southendCTR1 = AirspaceLines.fromAIP(
+            "513445N 0002903E - 514206N 0004521E - 513417N 0005000E - 513151N 0005000E - 512719N 0003955E - 512701N 0003630E thence clockwise by the arc of a circle radius 7.5 NM centred on 513357N 0004100E to 513445N 0002903E",
+            [0x30, 0x30, 0x30],
+        );
+        this.gen.area(new Area(
+            "MC",
+            3500,
+            new Fix(51.625, 0.6356),
+            southendCTR1,
+            southendCTR1.vertices.length
+        ));
+        this.gen.line(southendCTR1);
 
 		// Southend CTR 2 (D)
-		// 514206N 0004521E - 514312N 0004748E - 514138N 0005222E - 513618N 0005532E - 513417N 0005000E - 514206N 0004521E
-		const SouthendCTR2 = new Line([
-			Fix.fromDMS("514206N", "0004521E"),
-			Fix.fromDMS("514312N", "0004748E"),
-			Fix.fromDMS("514138N", "0005222E"),
-			Fix.fromDMS("513618N", "0005532E"),
-			Fix.fromDMS("513417N", "0005000E"),
-		], [0x30, 0x30, 0x30]);
-		this.gen.area(new Area(
-			"MC",
-			4500,
-			new Fix(51.7, 0.795),
-			SouthendCTR2,
-			SouthendCTR2.vertices.length
-		));
-		this.gen.line(SouthendCTR2);
+        const southendCTR2 = AirspaceLines.fromAIP(
+            "514206N 0004521E - 514312N 0004748E - 514138N 0005222E - 513618N 0005532E - 513417N 0005000E - 514206N 0004521E",
+            [0x30, 0x30, 0x30],
+        );
+        this.gen.area(new Area(
+            "MC",
+            4500,
+            new Fix(51.7, 0.795),
+            southendCTR2,
+            southendCTR2.vertices.length
+        ));
+        this.gen.line(southendCTR2);
 
 		// Southend CTR 3 (D)
-		// 514138N 0005222E - 514057N 0005420E thence clockwise by the arc of a circle radius 10 NM centred on 513428N 0004207E to 513528N 0005805E - 513151N 0005000E - 513417N 0005000E - 513618N 0005532E - 514138N 0005222E
-		const SouthendCTR3 = new Line([
-			Fix.fromDMS("514138N", "0005222E"),
-			Fix.fromDMS("514057N", "0005420E"),
-		], [0x30, 0x30, 0x30]).join(
-			new Circle(
-				Fix.fromDMS("513428N", "0004207E"),
-				10 * Fix.NMI,
-				50
-			).cutoff(f =>
-				f.latitude <= Fix.fromDMS("514057N", "0005420E").latitude
-				&& f.longitude >= Fix.fromDMS("514057N", "0005420E").longitude
-				&& f.longitude <= Fix.fromDMS("513528N", "0005805E").longitude
-				&& f.latitude >= Fix.fromDMS("513528N", "0005805E").latitude
-			)
-		).join(new Line([
-			Fix.fromDMS("513528N", "0005805E"),
-			Fix.fromDMS("513151N", "0005000E"),
-		]));
-		this.gen.area(new Area(
-			"MC",
-			5500,
-			new Fix(51.58, 0.8527),
-			SouthendCTR3.join(new Line([
-				Fix.fromDMS("513417N", "0005000E"),
-				Fix.fromDMS("513618N", "0005532E"),
-				Fix.fromDMS("514138N", "0005222E")
-			])),
-			SouthendCTR3.vertices.length + 3
-		));
-		this.gen.line(SouthendCTR3);
+        const southendCTR3 = AirspaceLines.fromAIP(
+            "514138N 0005222E - 514057N 0005420E thence clockwise by the arc of a circle radius 10 NM centred on 513428N 0004207E to 513528N 0005805E - 513151N 0005000E - 513417N 0005000E - 513618N 0005532E - 514138N 0005222E",
+            [0x30, 0x30, 0x30],
+        );
+        this.gen.area(new Area(
+            "MC",
+            5500,
+            new Fix(51.58, 0.8527),
+            southendCTR3,
+            southendCTR3.vertices.length
+        ));
+        this.gen.line(southendCTR3);
 
-		// Southend CTA 1 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("513437N", "0002440E"),
-			Fix.fromDMS("514333N", "0004429E"),
-			Fix.fromDMS("514206N", "0004521E"),
-		], [0x30, 0x30, 0x30]));
-		this.gen.line(new Line([
-			Fix.fromDMS("513151N", "0005000E"),
-			Fix.fromDMS("513000N", "0005000E"),
-			Fix.fromDMS("512528N", "0003956E"),
-			Fix.fromDMS("512446N", "0003202E"),
-			Fix.fromDMS("512757N", "0002721E"),
-			Fix.fromDMS("513146N", "0002401E"),
-			Fix.fromDMS("513437N", "0002440E"),
-		], [0x30, 0x30, 0x30]));
+        // Southend CTA 1 (D)
+        this.aipArea(
+            "MC",
+            3500,
+            new Fix(51.5504, 0.4266),
+            `SOUTHEND CTA 1
 
-		// Southend CTA 2 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514333N", "0004429E"),
-			Fix.fromDMS("514420N", "0004614E"),
-			Fix.fromDMS("514440N", "0005036E"),
-			Fix.fromDMS("514431N", "0005038E"),
-			Fix.fromDMS("514138N", "0005222E"),
-		], [0x30, 0x30, 0x30]));
+513437N 0002440E -
+514333N 0004429E -
+514206N 0004521E -
+513445N 0002903E thence anti-clockwise by the arc of a circle radius 7.5 NM centred on 513357N 0004100E to
+512701N 0003630E -
+512719N 0003955E -
+513151N 0005000E -
+513000N 0005000E -
+512528N 0003956E -
+512446N 0003202E -
+512757N 0002721E -
+513146N 0002401E -
+513437N 0002440E
 
-		// Southend CTA 3 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514440N", "0005036E"),
-			Fix.fromDMS("514446N", "0005158E"),
-		], [0x30, 0x30, 0x30]).join(new Circle(
-			Fix.fromDMS("513428N", "0004207E"),
-			12 * Fix.NMI,
-			50
-		).cutoff(f =>
-			f.longitude >= Fix.fromDMS("514446N", "0005158E").longitude
-			&& f.latitude >= Fix.fromDMS("513504N", "0010120E").latitude
-		)).join(new Line([
-			Fix.fromDMS("513504N", "0010120E"),
-			Fix.fromDMS("513000N", "0005000E"),
-		])));
+Upper limit: 3500 FT ALT
 
-		// Southend CTA 4 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("513437N", "0002440E"),
-			Fix.fromDMS("513943N", "0002551E"),
-			Fix.fromDMS("514353N", "0003508E"),
-			Fix.fromDMS("514435N", "0004406E"),
-			Fix.fromDMS("514401N", "0004412E"),
-			Fix.fromDMS("514333N", "0004429E"),
-		], [0x30, 0x30, 0x30]));
+Lower limit: 1500 FT ALT
 
-		// Southend CTA 5 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514435N", "0004406E"),
-			Fix.fromDMS("514506N", "0004514E"),
-			Fix.fromDMS("514530N", "0005026E"),
-			Fix.fromDMS("514440N", "0005036E"),
-		], [0x30, 0x30, 0x30]));
+Class: D`,
+            27,
+            2
+        );
 
-		// Southend CTA 6 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514530N", "0005026E"),
-			Fix.fromDMS("514551N", "0005510E"),
-		], [0x30, 0x30, 0x30]).join(new Circle(
-			Fix.fromDMS("513428N", "0004207E"),
-			14 * Fix.NMI,
-			50
-		).cutoff(f =>
-			f.longitude >= Fix.fromDMS("514551N", "0005510E").longitude
-			&& f.latitude >= Fix.fromDMS("513653N", "0010414E").latitude
-		)).join(new Line([
-			Fix.fromDMS("513653N", "0010414E"),
-			Fix.fromDMS("513535N", "0010117E"),
-		])));
+        // Southend CTA 2 (D)
+        const southendCTA2 = AirspaceLines.fromAIP(`SOUTHEND CTA 2
 
-		// Southend CTA 7 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("513000N", "0005000E"),
-			Fix.fromDMS("512120N", "0005000E"),
-			Fix.fromDMS("512046N", "0003338E"),
-			Fix.fromDMS("512757N", "0002721E"),
-		], [0x30, 0x30, 0x30]));
+514333N 0004429E -
+514420N 0004614E -
+514440N 0005036E -
+514431N 0005038E -
+514138N 0005222E -
+514312N 0004748E -
+514206N 0004521E -
+514333N 0004429E
 
-		// Southend CTA 8 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("512829N", "0005000E"),
-			Fix.fromDMS("512555N", "0005625E"),
-			Fix.fromDMS("512124N", "0005144E"),
-			Fix.fromDMS("512120N", "0005000E"),
-		], [0x30, 0x30, 0x30]));
+Upper limit: 4500 FT ALT
 
-		// Southend CTA 9 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514506N", "0004514E"),
-			Fix.fromDMS("514716N", "0005005E"),
-			Fix.fromDMS("514530N", "0005026E"),
-		], [0x30, 0x30, 0x30]));
+Lower limit: 1500 FT ALT
 
-		// Southend CTA 10 (D)
-		this.gen.line(new Line([
-			Fix.fromDMS("514716N", "0005005E"),
-			Fix.fromDMS("515032N", "0005922E"),
-			Fix.fromDMS("515158N", "0011450E"),
-			Fix.fromDMS("514921N", "0012014E"),
-			Fix.fromDMS("514212N", "0012127E"),
-			Fix.fromDMS("513836N", "0011744E"),
-			Fix.fromDMS("513751N", "0010627E"),
-			Fix.fromDMS("513653N", "0010414E"),
-		], [0x30, 0x30, 0x30]));
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            4500,
+            new Fix(51.7600, 0.7834),
+            southendCTA2,
+            southendCTA2.vertices.length
+        ));
+        this.gen.line(southendCTA2);
 
-        // London TMA 1 (A)
+        // Southend CTA 3 (D)
+        const southendCTA3 = AirspaceLines.fromAIP(`SOUTHEND CTA 3
+
+514440N 0005036E -
+514446N 0005158E thence clockwise by the arc of a circle radius 12 NM centred on 513428N 0004207E to
+513504N 0010120E -
+513000N 0005000E -
+513151N 0005000E -
+513528N 0005805E thence anti-clockwise by the arc of a circle radius 10 NM centred on 513428N 0004207E to
+514057N 0005420E -
+514138N 0005222E -
+514431N 0005038E -
+514440N 0005036E
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 1500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            5500,
+            new Fix(51.6894, 0.9707),
+            southendCTA3.rotate(-19),
+            southendCTA3.vertices.length - 3
+        ));
+        this.gen.line(southendCTA3);
+
+        // Southend CTA 4 (D)
+        const southendCTA4 = AirspaceLines.fromAIP(`SOUTHEND CTA 4
+
+513437N 0002440E -
+513943N 0002551E -
+514353N 0003508E -
+514435N 0004406E -
+514401N 0004412E -
+514333N 0004429E -
+513437N 0002440E
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            3500,
+            new Fix(51.6863, 0.5278),
+            southendCTA4,
+            4
+        ));
+        this.gen.line(southendCTA4);
+
+        // Southend CTA 5 (D)
+        this.aipArea(
+            "MC",
+            4500,
+            new Fix(0, 0),
+            `SOUTHEND CTA 5
+
+514435N 0004406E -
+514506N 0004514E -
+514530N 0005026E -
+514440N 0005036E -
+514420N 0004614E -
+514333N 0004429E -
+514401N 0004412E -
+514435N 0004406E
+
+Upper limit: 4500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`,
+            7
+        );
+
+        // Southend CTA 6 (D)
+        const southendCTA6 = AirspaceLines.fromAIP(`SOUTHEND CTA 6
+
+514530N 0005026E -
+514551N 0005510E thence clockwise by the arc of a circle radius 14 NM centred on 513428N 0004207E to
+513653N 0010414E -
+513535N 0010117E thence anti-clockwise by the arc of a circle radius 12 NM centred on 513428N 0004207E to
+514446N 0005158E -
+514440N 0005036E -
+514530N 0005026E
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            5500,
+            new Fix(0, 0),
+            southendCTA6.rotate(-20),
+            southendCTA6.vertices.length - 1
+        ));
+        this.gen.line(southendCTA6);
+
+        // Southend CTA 7 (D)
+        const southendCTA7 = AirspaceLines.fromAIP(`SOUTHEND CTA 7
+
+512757N 0002721E -
+512446N 0003202E -
+512528N 0003956E -
+513000N 0005000E -
+512120N 0005000E -
+512046N 0003338E -
+512757N 0002721E
+
+Upper limit: 3500 FT ALT
+
+Lower limit: 2500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            3500,
+            new Fix(51.4082, 0.6700),
+            southendCTA7.rotate(-4),
+            5
+        ));
+        this.gen.line(southendCTA7);
+
+        // Southend CTA 8 (D)
+        this.aipArea(
+            "MC",
+            5500,
+            new Fix(51.4398, 0.8618),
+            `SOUTHEND CTA 8
+
+512829N 0005000E -
+512555N 0005625E -
+512124N 0005144E -
+512120N 0005000E -
+512829N 0005000E
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`,
+            2
+        );
+
+        // Southend CTA 9 (D)
+        const southendCTA9 = AirspaceLines.fromAIP(`SOUTHEND CTA 9
+
+514506N 0004514E -
+514716N 0005005E -
+514530N 0005026E -
+514506N 0004514E
+
+Upper limit: 4500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`, [0x30, 0x30, 0x30]);
+        this.gen.area(new Area(
+            "MC",
+            4500,
+            new Fix(0, 0),
+            southendCTA9.rotate(0),
+            3
+        ));
+        this.gen.line(southendCTA9);
+
+        // Southend CTA 10 (D)
+        this.aipArea(
+            "MC",
+            5500,
+            new Fix(51.7542, 1.1529),
+            `SOUTHEND CTA 10
+
+514716N 0005005E -
+515032N 0005922E -
+515158N 0011450E -
+514921N 0012014E -
+514212N 0012127E -
+513836N 0011744E -
+513751N 0010627E -
+513653N 0010414E thence anti-clockwise by the arc of a circle radius 14 NM centred on 513428N 0004207E to
+514551N 0005510E -
+514530N 0005026E -
+514716N 0005005E
+
+Upper limit: 5500 FT ALT
+
+Lower limit: 3500 FT ALT
+
+Class: D`,
+            22,
+        );
+
         this.aipLine(`LONDON TMA 1
 
 513451N 0005516W -
@@ -1047,6 +1217,16 @@ Class: A`, [0x14, 0x14, 0x14]);
 
     private aipLine(aip: string, colour?: Line.Colour) {
         this.gen.line(AirspaceLines.fromAIP(aip, colour));
+    }
+
+    private aipArea(name: string | null, altitude: number, labelPosition: Fix, aip: string, draw?: number, rotate = 0) {
+        this.gen.area(new Area<Polygon>(
+            name,
+            altitude,
+            labelPosition,
+            AirspaceLines.fromAIP(aip).rotate(rotate),
+            draw
+        ));
     }
 
     private static fromAIP(aip: string, colour?: Line.Colour): Line {
