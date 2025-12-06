@@ -52,6 +52,7 @@ export default class EGLL {
 				[
 					...new Array(3).fill(new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000)),
 					...new Array(3).fill(new Airport.EntryPoint(319, Generator.getInstance().beacon("TOBID"), 15000)),
+                    ...(process.argv.includes("--debug-entry") ? Array.from({length: 360}, (_, i) => new Airport.EntryPoint(i)) : []),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
 				[
