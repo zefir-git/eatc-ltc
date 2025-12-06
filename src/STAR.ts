@@ -140,7 +140,7 @@ class STAR {
 		for (let iteration = 0; iteration < 20000; ++iteration) {
 			bearing += Δθ > 0 ? .0025 : -.0025;
 			// intersect boundary on this headings
-			const bi = boundary.intersection(airspace.center, bearing);
+			const bi = boundary.intersection(airspace.center, bearing, -1);
 			if (bi === null)
 				throw new Error(`Cannot find boundary intersection from ${airspace.center.toString()} on bearing ${bearing}°.`);
 			// intersect inbound bearing and centre bearing

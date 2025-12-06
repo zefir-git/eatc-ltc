@@ -9,35 +9,6 @@ import Polygon from "../../src/Polygon.js";
 export default class AirspaceLines {
 	protected readonly gen = Generator.getInstance();
 	public constructor() {
-		/**
-		 * EGLL Vectoring Area (Heathrow Director)
-		 */
-		this.gen.line(new Line([
-			this.gen.beacon("BNN"),
-			this.gen.beacon("BNN")
-				.bearingIntersection(
-					115, this.gen.beacon("LAM"), 270
-				),
-			this.gen.beacon("LAM"),
-			this.gen.runway("lc").position
-				.destination(
-					this.gen.runway("lc").heading,
-					this.gen.runway("lc").length * Fix.FT / Fix.NMI / 2
-				),
-			this.gen.beacon("BIG"),
-			this.gen.beacon("OCK"),
-			this.gen.beacon("OCK")
-				.destination(270, 18),
-			this.gen.beacon("OCK")
-				.destination(270, 18)
-				.destination(337, 7),
-			this.gen.beacon("OCK")
-				.destination(270, 18)
-				.destination(337, 7)
-				.destination(360, 7.5),
-			this.gen.beacon("BNN"),
-		], [0x30, 0x30, 0x30]));
-
 		// London CTR (D)
 		this.aipArea(
             null,
@@ -926,7 +897,7 @@ Lower limit: 5500 FT ALT
 
 Class: A`, [0x14, 0x14, 0x14]);
 
-        this.aipLine(`LONDON TMA 11
+        const londonTMA11 = AirspaceLines.fromAIP(`LONDON TMA 11
 
 513423N 0011138W -
 513302N 0010000W -
@@ -943,6 +914,7 @@ Upper limit: FL195
 Lower limit: 4500 FT ALT
 
 Class: A`, [0x14, 0x14, 0x14]);
+        this.gen.line(londonTMA11);
 
         this.aipLine(`LONDON TMA 13
 
@@ -1201,6 +1173,49 @@ Class: A`, [0x14, 0x14, 0x14]);
             Fix.fromDMS("513905N", "0012500E"),
             Fix.fromDMS("515222N", "0012635E"),
         ], [0x22, 0x22, 0x22]));
+
+        /**
+         * London RMA
+         */
+        this.gen.line(new Line([
+            this.gen.beacon("BNN"),
+            this.gen.fix("ARP-TR", "513921N", "0001933W"),
+            this.gen.beacon("LAM"),
+            this.gen.runway("lc").position
+                .destination(
+                    this.gen.runway("lc").heading,
+                    this.gen.runway("lc").length * Fix.FT / Fix.NMI / 2
+                ),
+            this.gen.beacon("BIG"),
+            this.gen.beacon("OCK"),
+            londonTMA11.intersection(this.gen.beacon("OCK"), 270)!,
+            Fix.fromDMS("512430N", "0010000W"), // point from LTMA 11
+            londonTMA11.intersection(this.gen.beacon("BNN"), 235)!,
+            this.gen.beacon("BNN"),
+        ], [0x3f, 0x3f, 0x3f]), 0);
+
+        // Easterly RMA guides
+        this.gen.line(new Line([
+            this.gen.beacon("BNN"),
+            this.gen.beacon("BNN").bearingIntersection(
+                150,
+                this.gen.fix("ARP-TR", "513921N", "0001933W"),
+                270
+            ),
+            this.gen.fix("ARP-TR", "513921N", "0001933W"),
+        ], [0x26, 0x26, 0x26]));
+        // this.gen.line(new Line([
+        //     this.gen.beacon("LAM"),
+        //     this.gen.fix("ARP-LL"),
+        //     this.gen.beacon("BIG"),
+        // ], [0x22, 0x22, 0x22]));
+        //
+        // // Westerly RMA guides
+        // this.gen.line(new Line([
+        //     this.gen.beacon("BNN"),
+        //     this.gen.fix("ARP-LL"),
+        //     this.gen.beacon("OCK"),
+        // ], [0x22, 0x22, 0x22]));
     }
 
     public async withCoastline() {
