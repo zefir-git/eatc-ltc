@@ -106,14 +106,7 @@ gen.airspace(
 			Beacon.fromDMS("504912.00N", "0005618.05W", "AVANT", "Avant"),
 			Beacon.fromDMS("504723.71N", "0002530.03E", "UNDUG", "Undug", 319),
 			Beacon.fromDMS("504645.67N", "0012800.00E", "SOVAT", "Sovat"),
-			/**
-			 * KONAN: moved closer to GODLU to fit within airspace.
-			 * Use this beacon only for KONAN 1C.
-			 */
-			Beacon.from("KONAN", "Konan",
-				gen.fix("GODLU", "510958.44N", "0011704.26E")
-				   .destination(94, 20)
-			),
+			Beacon.fromDMS("510750.75N", "0020000.00E","KONAN", "Konan"),
 			Beacon.fromDMS("520748.00N", "0010043.20W", "TIXEX", "Tixex"),
 			Beacon.fromDMS("504338.76N", "0005839.48W", "BIDVA", "Bidva"),
 			Beacon.fromDMS("505718.90N", "0012042.20W", "SAM", "Southampton"),

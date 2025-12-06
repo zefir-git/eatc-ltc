@@ -50,7 +50,7 @@ export default class EGKK {
 					),
 				],
 				[
-					new Airport.EntryPoint(105, Generator.getInstance().beacon("ARNUN"), 14000),
+					new Airport.EntryPoint(102, Generator.getInstance().beacon("KONAN"), 22000),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGKK.txt", "utf8")),
 				[
@@ -130,6 +130,26 @@ export default class EGKK {
 		));
 
 		Generator.getInstance().arrival(new STAR(
+			...Generator.getInstance().pronounce("KONAN", "2G"),
+			[Generator.getInstance().runway("kkn"), Generator.getInstance().runway("kks")],
+			true,
+			Generator.getInstance().beacon("KONAN"),
+			264,
+			[
+                Generator.getInstance().beacon("KONAN"),
+				Generator.getInstance().beacon("ARNUN"),
+				Generator.getInstance().fix("KKE63", "505856.70N", "0004051.78E", void 0, 250),
+				Generator.getInstance().fix("LARCK", "505441.83N", "0002647.93E", void 0, 250),
+				Generator.getInstance().beacon("TIMBA", 7000, 220)
+			],
+			{end: "hold"}
+		));
+
+        /**
+         * This arrival is to enable continuation on KONAN 2G if
+         * interrupted with HOLD at ARNUN.
+         */
+        Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("KONAN", "2G"),
 			[Generator.getInstance().runway("kkn"), Generator.getInstance().runway("kks")],
 			true,
@@ -825,7 +845,7 @@ export default class EGKK {
 				Generator.getInstance().fix("DVR").destination(258, 36),
 				Generator.getInstance().fix("WIZAD"),
                 Generator.getInstance().fix("DVR"), // L9
-                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
+                Generator.getInstance().fix("KONAN") // L9
 			]
 		));
 
@@ -841,7 +861,7 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("DVR").destination(258, 36),
 				Generator.getInstance().fix("WIZAD"), // L9
-                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
+                Generator.getInstance().fix("KONAN") // L9
 			]
 		));
 
@@ -856,7 +876,7 @@ export default class EGKK {
 				Generator.getInstance().beacon("MAY"),
 				Generator.getInstance().fix("KKS33", "510327.27N", "0002657.12E"),
 				Generator.getInstance().fix("WIZAD"), // L9
-                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
+                Generator.getInstance().fix("KONAN") // L9
 			]
 		));
 
@@ -900,7 +920,7 @@ export default class EGKK {
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
 				Generator.getInstance().fix("DVR"),
-                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
+                Generator.getInstance().fix("KONAN") // L9
 			],
 			true
 		));
@@ -913,7 +933,7 @@ export default class EGKK {
 				Generator.getInstance().fix("TUNBY", Generator.getInstance().fix("DVR").destination(269, 39.1)),
 				Generator.getInstance().fix("DVR").destination(269, 33),
 				Generator.getInstance().fix("DVR"),
-                Fix.fromDMS("510750.75N", "0020000.00E") // L9 (KONAN)
+                Generator.getInstance().fix("KONAN") // L9
 			],
 			true
 		));

@@ -45,6 +45,7 @@ export default class EGLC {
 				],
 				[
 					new Airport.EntryPoint(138, Generator.getInstance().beacon("SOXUX"), 10000),
+					new Airport.EntryPoint(103, Generator.getInstance().beacon("KONAN"), 10000),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLC.txt", "utf8")),
 				[
@@ -116,8 +117,7 @@ export default class EGLC {
 					.destination(94, 8.1),
 				Generator.getInstance().beacon("GODLU", 10000, 210)
 			],
-			{end: "hold"})
-		.withEntry(10000, 274));
+			{end: "hold"}));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("SOVAT", "1C"),
