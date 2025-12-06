@@ -147,8 +147,18 @@ gen.airspace(
             Fix.fromDMS("515745N", "0011126W"),
 
             // extension…
-            new Fix(52.0653, -0.6576),
-            new Fix(52.1233, -0.5606),
+            Polygon.intersection(
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W"),
+                Generator.getInstance().fix("EDCOX", "521259.68N", "0002419.92W"),
+                Fix.fromDMS("515745N", "0011126W"),
+                Fix.fromDMS("520421N", "0003712W"),
+            )!,
+            Polygon.intersection(
+                Generator.getInstance().fix("WOBUN", "520110.27N", "0004400.00W"),
+                Generator.getInstance().fix("EDCOX", "521259.68N", "0002419.92W"),
+                Fix.fromDMS("520316N", "0003441W"),
+                Fix.fromDMS("521403N", "0010009W"),
+            )!,
 
             // DAVENTRY CTA 25 (C)
             Fix.fromDMS("521118N", "0003323W"),
