@@ -78,13 +78,17 @@ export default class Polygon {
 		return null;
 	}
 
+    public static edgeIntersection(a: Fix, b: Fix, origin: Fix, bearing: number) {
+        const d = origin.destination(bearing, Math.max(a.distance(origin), b.distance(origin)) / Fix.NMI);
+        return Polygon.intersection(a, b, origin, d);
+    }
+
 	public intersection(origin: Fix, bearing: number, nth = 0) {
 		const intersections: Fix[] = [];
 		for (let i = 0; i < this.vertices.length; ++i) {
 			const a = this.vertices[i]!;
 			const b = this.vertices[i + 1] ?? this.vertices[0]!;
-			const d = origin.destination(bearing, Math.max(a.distance(origin), b.distance(origin)) / Fix.NMI);
-			const intersection = Polygon.intersection(a, b, origin, d);
+			const intersection = Polygon.edgeIntersection(a, b, origin, bearing);
 			if (intersection !== null)
 				intersections.push(intersection);
 		}
