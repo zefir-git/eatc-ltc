@@ -50,7 +50,7 @@ export default class EGKK {
 					),
 				],
 				[
-					new Airport.EntryPoint(102, Generator.getInstance().beacon("KONAN"), 22000),
+					new Airport.EntryPoint(102, Generator.getInstance().beacon("KONAN"), 14000),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGKK.txt", "utf8")),
 				[
