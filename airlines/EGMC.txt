@@ -1,30 +1,287 @@
 	EZY, 10.00, a20n, Easy, s
-	EJU, 2.00, a320, Alpine, s
-	EZY, 1.75, a20n, Easy, e
-	G-ABCD, 1.75, ac11/c152/c172/cruz/p210/pa34/pa38, 0, w
-	EJU, 1.25, a319, Alpine, s
-	EJU, 1.00, a320, Alpine, e
-	EZE, 1.00, at72, Eastflight, w
-	G-ABCD, 1.00, c152/c172/p28r/r200, 0, n
-	G-ABCD, 1.00, p28a, 0, w
-	G-ABCD, 0.75, a20n/c182/p28a, 0, s
-	2-ABCD, 0.50, k100/tbm9, 0, w
-	EZE, 0.50, at76/e190, Eastflight, w
-	EZE, 0.50, at76, Eastflight, nw
-	G-ABCD, 0.50, hr20, 0, n
-	G-ABCD, 0.50, c152, 0, s
-	N-123AB, 0.50, be9l, 0, w
-	SLS, 0.50, pc12, Power Blade, sw
-	T7-ABC, 0.50, p180, 0, e
-	BZE, 0.25, lj75, Zenstar, w
-	DWW, 0.25, e55p, Private Jet, w
-	EJU, 0.25, a319, Alpine, e
-	FJO, 0.25, e550, Flex Europe, s
-	IRL, 0.25, pc12, Irish, w
-	LJC, 0.25, c55b, Little Jet, n
-	LRQ, 0.25, lj45, Lux Rescue, s
-	M-ABCD, 0.25, be20, 0, s
-	N-123AB, 0.25, sr22, 0, w
-	NJE, 0.25, f2th, Fraction, e
-	VJH, 0.25, fa7x, Vista Germany, w
-	VJH, 0.25, c56x, Vista Germany, s
+	G-ABCD, 2.17, p28a, 0, w
+	EJU, 1.95, a320, Alpine, s
+	EZY, 1.79, a20n, Easy, e
+	EJU, 1.37, a319, Alpine, s
+	EZE, 0.97, at76, Eastflight, w
+	G-ABCD, 0.84, p28a, 0, s
+	G-ABCD, 0.71, c152, 0, s
+	EJU, 0.68, a320, Alpine, e
+	G-ABCD, 0.47, c152, 0, w
+	STL, 0.46, da42/p28r, Stapleford, w
+	G-ABCD, 0.45, p28a, 0, n
+	EJU, 0.42, a20n, Alpine, e
+	G-ABCD, 0.37, c152, 0, n
+	M-ABCD, 0.34, be20, 0, s
+	T7-ABC, 0.34, p180, 0, e
+	2-ABCD, 0.32, k100, 0, w
+	EZE, 0.30, at72, Eastflight, w
+	G-ABCD, 0.30, da40/p28r, 0, w
+	G-ABCD, 0.30, aa5/c182/eupa/p210/pc12, 0, w
+	EZS, 0.29, a320, Topswiss, s
+	EJU, 0.27, a319, Alpine, e
+	EZY, 0.27, a320, Easy, s
+	EJU, 0.24, a20n, Alpine, s
+	2-ABCD, 0.21, tbm9, 0, w
+	G-ABCD, 0.19, be36/c210/c303/c55b/dr40/efox/jpro/m20p/p28b/p28t/p28u/pa38/pa46/pivi/r200/rv8/rv9/skra/twen, 0, w
+	G-ABCD, 0.18, hr20, 0, n
+	2-ABCD, 0.17, tbm9, 0, s
+	G-ABCD, 0.17, da42, 0, w
+	G-ABCD, 0.16, ac11/p28a, 0, e
+	G-ABCD, 0.16, be76/p68, 0, w
+	G-ABCD, 0.16, c42/ev97/lj40/p32t/pa32/s22t/tb20/toba, 0, w
+	RVR, 0.16, p68, Raven, w
+	G-ABCD, 0.15, be76/c172/da42/eupa/p28r, 0, s
+	G-ABCD, 0.14, ac11/cruz, 0, w
+	G-ABCD, 0.14, c172, 0, w
+	KLM, 0.14, da42, KLM, e
+	CFE, 0.13, e190, Flyer, w
+	G-ABCD, 0.13, c210/c310/da40/m20p/m600/pa30/pa31/pivi/s05r/spit/sr20/sr22/toba, 0, n
+	G-ABCD, 0.12, c172/r200, 0, n
+	G-ABCD, 0.12, c525/da62/pa34/sr22, 0, w
+	LJC, 0.12, c55b, Little Jet, w
+	BRO, 0.11, r722, Broadsword, w
+	G-ABCD, 0.11, ac11, 0, s
+	G-ABCD, 0.11, m600, 0, w
+	G-ABCD, 0.10, c150/jpro/p28r/p28u/rv7, 0, n
+	G-ABCD, 0.10, c525/clon/cruz/lj40/rf6, 0, s
+	G-ABCD, 0.09, be33/c210/c310/da62/dr40/lj45/m600/pa32/tb20, 0, s
+	G-ABCD, 0.09, sr20, 0, w
+	N-123AB, 0.09, be9l, 0, w
+	N-123AB, 0.09, p180, 0, e
+	D-ABCD, 0.08, bt36/c172/c510/p28a/pa46/r90r/sr22/tb20, 0, e
+	G-ABCD, 0.08, c182/p28t, 0, s
+	G-ABCD, 0.08, eupa, 0, n
+	N-12AB, 0.08, pa31, 0, n
+	VCG, 0.08, e55p, Thunder Cat, sw
+	BIO, 0.07, p68, Bioflight, w
+	CFE, 0.07, e190, Flyer, s
+	EZY, 0.07, a320, Easy, e
+	G-ABCD, 0.07, c182, 0, n
+	M-ABCD, 0.07, be20, 0, w
+	N-123AB, 0.07, sr22, 0, w
+	SRD, 0.07, da62, Coastguard, s
+	AJO, 0.06, glex, Aviate Jet, s
+	CFE, 0.06, e190, Flyer, e
+	D-ABCD, 0.06, c25a/p46t/pc12, 0, e
+	ECA, 0.06, c25a, Dark Knight, es
+	ENT, 0.06, b738, Enter, e
+	EZY, 0.06, a320, Easy, w
+	N-123AB, 0.06, c77r/p32r/sr20, 0, w
+	NJE, 0.06, cl35/cl60/e55p, Fraction, s
+	NJE, 0.06, cl35, Fraction, esw
+	PTN, 0.06, pc24, Platoon, new
+	VJH, 0.06, e35l, Vista Germany, sw
+	BRO, 0.05, r722, Broadsword, n
+	EZE, 0.05, e170, Eastflight, w
+	EZY, 0.05, a20n, Easy, w
+	EZY, 0.05, a319, Easy, s
+	G-ABCD, 0.05, p28s, 0, w
+	G-ABCD, 0.05, pa32, 0, n
+	IRL, 0.05, pc12, Irish, w
+	LFA, 0.05, da42, Bucky, w
+	LJC, 0.05, c55b, Little Jet, n
+	M-ABCD, 0.05, lj45, 0, w
+	N-123AB, 0.05, b350/be9l/p28u/pa46/pay3, 0, n
+	N-123AB, 0.05, be33/c210/glex/p180/t210, 0, w
+	N-123AB, 0.05, m20p, 0, e
+	SRD, 0.05, b350, Coastguard, n
+	2-ABCD, 0.04, k100, 0, ns
+	AJO, 0.04, glex, Aviate Jet, w
+	AXY, 0.04, crj2, Legend, es
+	BZE, 0.04, lj45/lj75, Zenstar, w
+	CBM, 0.04, c55b, Cambrian, nw
+	FJO, 0.04, e550, Flex Europe, e
+	G-ABCD, 0.04, c152/da42/m600/sr22, 0, e
+	G-ABCD, 0.04, da42, 0, n
+	G-ABCD, 0.04, p32r, 0, w
+	N-123A, 0.04, s22t, 0, w
+	N-123AB, 0.04, c77r/sr22, 0, n
+	N-12AB, 0.04, pa31, 0, w
+	NJU, 0.04, c56x, Artisan, ns
+	PH-ABC, 0.04, da62/p28a, 0, e
+	PTN, 0.04, pc24, Platoon, s
+	SAH, 0.04, be40, Smart Jet, e
+	SXN, 0.04, lj40/lj45, Saxonair, w
+	VJT, 0.04, cl35, Vista, ew
+	AWC, 0.03, a21n/a321/e190, Zap, n
+	D-ABCD, 0.03, p28a, 0, nes
+	EMC, 0.03, pc12, Nightingale, w
+	EXM, 0.03, p28r, Exam, w
+	EZY, 0.03, a20n, Easy, n
+	FJO, 0.03, e550, Flex Europe, s
+	G-ABCD, 0.03, ac11, 0, n
+	G-ABCD, 0.03, c182, 0, e
+	HAT, 0.03, b734, Sky Runner, nes
+	HB-ABC, 0.03, da40/da50/sr22, 0, e
+	INV, 0.03, p28t, India November Victor, s
+	LJC, 0.03, c550, Little Jet, n
+	M-ABCD, 0.03, lj45, 0, s
+	N-123AB, 0.03, be9l/sr20/tbm8, 0, e
+	N-12AB, 0.03, c340, 0, s
+	NJE, 0.03, c56x/c68a/glex, Fraction, s
+	NJE, 0.03, c56x/e55p/glex, Fraction, n
+	NJE, 0.03, c68a/cl60/glex, Fraction, w
+	NJE, 0.03, c56x, Fraction, nes
+	NJE, 0.03, e55p, Fraction, e
+	NJU, 0.03, c56x, Artisan, w
+	PAV, 0.03, c25a, Brilliant, esw
+	PH-ABC, 0.03, da50/f900/pc12, 0, e
+	RVL, 0.03, be20, Air Vallee, s
+	SLS, 0.03, pc12, Power Blade, s
+	SXN, 0.03, c525, Saxonair, w
+	VCG, 0.03, e55p, Thunder Cat, n
+	VJT, 0.03, crj2/gl7t/glex, Vista, w
+	VJT, 0.03, glex, Vista, esw
+	VJT, 0.03, cl35, Vista, s
+	2-ABCD, 0.02, pc12, 0, sw
+	2-ABCD, 0.02, tbm9, 0, e
+	2-ABCD, 0.02, sr22, 0, w
+	9H-ABC, 0.02, gl7t/glf6, 0, w
+	9H-ABC, 0.02, sr22, 0, s
+	AGR, 0.02, e135, Ace Europe, ew
+	AOS, 0.02, da42, Aeros, w
+	AWC, 0.02, a21n, Zap, ns
+	AXY, 0.02, crj2/e35l, Legend, n
+	AXY, 0.02, crj2, Legend, nw
+	BCP, 0.02, pc24, Sybajet, ns
+	BRO, 0.02, b737/da62, Broadsword, s
+	BRO, 0.02, da62, Broadsword, sw
+	BRO, 0.02, b350, Broadsword, n
+	CAT, 0.02, b738, Aircat, e
+	CBM, 0.02, be20, Cambrian, nw
+	CFE, 0.02, e190, Flyer, n
+	CLF, 0.02, e550, Clifton, ns
+	D-ABCD, 0.02, p28a/pc12, 0, s
+	DWW, 0.02, e55p, Private Jet, nw
+	ECA, 0.02, c25b/c25c, Dark Knight, e
+	ECA, 0.02, c25b, Dark Knight, es
+	EDC, 0.02, e135, Saltire, n
+	EJU, 0.02, a21n, Alpine, es
+	ENT, 0.02, b38m, Enter, e
+	EXM, 0.02, da42/p28a, Exam, w
+	F-ABCD, 0.02, da62/sr22, 0, s
+	FJO, 0.02, e550, Flex Europe, w
+	FSE, 0.02, c25m, Falco, e
+	GAC, 0.02, c510, Dream Team, s
+	GMA, 0.02, cl60, Gama, w
+	HAT, 0.02, b734, Sky Runner, w
+	HB-ABC, 0.02, da50, 0, ew
+	INV, 0.02, c152, India November Victor, s
+	IRL, 0.02, pc12, Irish, n
+	JFA, 0.02, pc24, Mosquito, s
+	JNJ, 0.02, cl35, Join Jet, ew
+	KLM, 0.02, e190, KLM, e
+	LAV, 0.02, b738, Albastar, s
+	LGL, 0.02, dh8d, Luxair, e
+	M-ABCD, 0.02, c25c/lj40, 0, w
+	M-ABCD, 0.02, lj40, 0, sw
+	M-ABCD, 0.02, be20, 0, n
+	M-ABCD, 0.02, c750, 0, w
+	N-12345, 0.02, sr22, 0, e
+	N-1234A, 0.02, be23, 0, w
+	N-1234A, 0.02, aa5, 0, s
+	N-123AB, 0.02, be9l/p180, 0, s
+	N-123AB, 0.02, tbm9, 0, e
+	N-12AB, 0.02, ga7c/s22t, 0, s
+	N-12AB, 0.02, c310/c340, 0, w
+	N-12AB, 0.02, s22t, 0, w
+	OAV, 0.02, lj40, Omni, ew
+	OO-ABC, 0.02, da62, 0, e
+	P-A123, 0.02, lanc, 0, n
+	PAV, 0.02, e55p, Brilliant, s
+	PH-ABC, 0.02, be20/p28a, 0, n
+	PH-ABC, 0.02, p28a, 0, nw
+	REV, 0.02, be20, Endurance, w
+	SAH, 0.02, be40, Smart Jet, w
+	SJI, 0.02, c56x, Rhino, s
+	SRD, 0.02, be20, Coastguard, w
+	SXN, 0.02, lj40/lj45, Saxonair, n
+	SXN, 0.02, lj40, Saxonair, ns
+	T7-ABC, 0.02, p180, 0, s
+	TJD, 0.02, h25b, Aliserio, e
+	TVS, 0.02, a320/b738, Skytravel, e
+	TVS, 0.02, a320, Skytravel, es
+	TYW, 0.02, astr, Tyrol Ambulance, e
+	UNI, 0.02, lj45, Unicair, e
+	VCG, 0.02, c25m, Thunder Cat, w
+	VCG, 0.02, c25a, Thunder Cat, n
+	VCG, 0.02, e55p, Thunder Cat, e
+	VJH, 0.02, c56x/e550, Vista Germany, e
+	VJH, 0.02, c56x, Vista Germany, es
+	VJH, 0.02, e35l, Vista Germany, e
+	VJT, 0.02, crj2, Vista, s
+	2-ABCD, 0.01, ea50, 0, n
+	9H-ABC, 0.01, pc12, 0, e
+	AMB, 0.01, c680, Civil Air Ambulance, e
+	APX, 0.01, da62, Apex, n
+	ARL, 0.01, c550, Airlec, s
+	AXY, 0.01, e190, Legend, e
+	BAW, 0.01, e190, Speedbird, w
+	BEJ, 0.01, e55p, Beejet, w
+	BIO, 0.01, p68, Bioflight, n
+	BRO, 0.01, pa31, Broadsword, n
+	C-ABCD, 0.01, sr22, 0, w
+	CS-ABC, 0.01, lj40, 0, s
+	CWY, 0.01, be20, Causeway, w
+	D-ABCD, 0.01, c25a, 0, w
+	ECA, 0.01, c25a, Dark Knight, w
+	EJU, 0.01, a320, Alpine, w
+	ELG, 0.01, f2th, Elangeni, s
+	EMC, 0.01, pc12, Nightingale, s
+	EZE, 0.01, e190, Eastflight, w
+	EZE, 0.01, at76, Eastflight, n
+	EZY, 0.01, a319, Easy, e
+	F-ABCD, 0.01, p28a, 0, e
+	FSE, 0.01, c25m, Falco, s
+	FSF, 0.01, pc12, Rocky, e
+	GAC, 0.01, c510, Dream Team, w
+	GMA, 0.01, c510, Gama, s
+	GMA, 0.01, cl60, Gama, n
+	HMJ, 0.01, f900, Harmony Jets, s
+	INI, 0.01, c550, Initium, s
+	JAF, 0.01, b738, Beauty, e
+	JAS, 0.01, glf5, Jet Setter, w
+	JEI, 0.01, lj35, Jet Executive, e
+	JEI, 0.01, lj55, Jet Executive, s
+	JFA, 0.01, pc12, Mosquito, s
+	KLM, 0.01, da42, KLM, w
+	LAV, 0.01, b738, Albastar, n
+	LDG, 0.01, da40, Edge, w
+	LNX, 0.01, e550, Lonex, n
+	LUA, 0.01, c56x, Luminair, s
+	LX-ABC, 0.01, p210, 0, e
+	LXJ, 0.01, e550, Flexjet, e
+	MDI, 0.01, be20, Medops, n
+	MGB, 0.01, p28a, Mockingbird, w
+	MGH, 0.01, b738, Mavi, e
+	MHV, 0.01, cl60, Snowcap, s
+	N-1234, 0.01, p46t, 0, n
+	N-12A, 0.01, da62, 0, e
+	N-12AB, 0.01, b737, 0, e
+	N-1AB, 0.01, pa30, 0, w
+	OK-ABC, 0.01, mu2, 0, e
+	OO-ABC, 0.01, c510, 0, e
+	OYO, 0.01, p180, Rogue, s
+	P-A123, 0.01, spit, 0, w
+	PVG, 0.01, b734, Privilege, s
+	PYN, 0.01, be20, Poyston, s
+	REV, 0.01, be20, Endurance, s
+	RRR, 0.01, b350, Ascot/Kittyhawk, n
+	RVL, 0.01, be20, Air Vallee, w
+	SLS, 0.01, pc12, Power Blade, w
+	SRD, 0.01, be20, Coastguard, n
+	STL, 0.01, p28a, Stapleford, w
+	SXN, 0.01, c525, Saxonair, e
+	T7-ABC, 0.01, p180, 0, w
+	TDR, 0.01, a320, Tradeair, s
+	TEU, 0.01, cl60, TAG Malta, e
+	TYW, 0.01, c55b, Tyrol Ambulance, e
+	TYW, 0.01, astr, Tyrol Ambulance, s
+	UNI, 0.01, lj35, Unicair, e
+	VCG, 0.01, c25m, Thunder Cat, s
+	VJH, 0.01, fa7x, Vista Germany, w
+	VKG, 0.01, a321, Viking, e
+	VLJ, 0.01, c525, Valjet, s
+	VTB, 0.01, c650, Suxair, s
+	XGO, 0.01, p180, Pastis, s

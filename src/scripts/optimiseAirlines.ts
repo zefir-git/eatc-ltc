@@ -105,7 +105,7 @@ function groupAirlines(airlines: Airline[]): Airline[] {
     return result;
 }
 
-const files = await fs.readdir("airlines");
+const files = (await fs.readdir("airlines")).filter(file => path.extname(file) === ".txt");
 for (const file of files) {
     const airlines = parseAirlines(await fs.readFile(path.join("airlines", file), "utf8"));
     const grouped = groupAirlines(airlines);
