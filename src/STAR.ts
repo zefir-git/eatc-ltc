@@ -207,11 +207,6 @@ namespace STAR {
 		) {
 			this.entries = Array.isArray(entries) ? entries : [entries];
 		}
-
-		public repeated(times: number): StarWithEntry {
-			const entries = this.entries.flatMap(e => new Array(times).fill(e));
-			return new StarWithEntry(this.star, entries);
-		}
 	}
 }
 

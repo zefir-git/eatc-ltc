@@ -244,6 +244,20 @@ export default class AircraftTypes {
         ));
 
         gen.aircraft(new Aircraft(
+            "EFOX",
+            "Aeropro",
+            Aircraft.WTC.LIGHT,
+            [90, 125],
+            [60, 105],
+            [1.1, 1.2],
+            [600, 800],
+            [800, 1000],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
             "EUPA",
             "Europa",
             Aircraft.WTC.LIGHT,
@@ -384,6 +398,20 @@ export default class AircraftTypes {
         ));
 
         gen.aircraft(new Aircraft(
+            "JPRO",
+            "B A C",
+            Aircraft.WTC.LIGHT,
+            [160, 300],
+            [120, 130],
+            [1.1, 1.2],
+            [1500, 2000],
+            [2500, 4000],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
             "K100",
             "Daher",
             Aircraft.WTC.LIGHT,
@@ -448,6 +476,20 @@ export default class AircraftTypes {
             [1.1, 1.2],
             [1400, 1600],
             [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "MU2",
+            "Mitsubishi",
+            Aircraft.WTC.LIGHT,
+            [160, 300],
+            [100, 120],
+            [1.1, 1.2],
+            [1500, 2000],
+            [1500, 2000],
             [25, 30],
             [5, 7],
             [2.9, 3.1]
@@ -549,6 +591,20 @@ export default class AircraftTypes {
             [25, 30],
             [5, 7],
             [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "PRM1",
+            "Beechcraft",
+            Aircraft.WTC.LIGHT,
+            [160, 300],
+            95,
+            [1.2, 1.3],
+            [1500, 2500],
+            [2000, 3100],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1],
         ));
 
         gen.aircraft(new Aircraft(
@@ -672,6 +728,20 @@ export default class AircraftTypes {
             [1.1, 1.2],
             [1400, 1600],
             [2000, 2200],
+            [25, 30],
+            [5, 7],
+            [2.9, 3.1]
+        ));
+
+        gen.aircraft(new Aircraft(
+            "SKRA",
+            "Best Off",
+            Aircraft.WTC.LIGHT,
+            [60, 100],
+            [50, 60],
+            [1.1, 1.2],
+            [400, 600],
+            [800, 900],
             [25, 30],
             [5, 7],
             [2.9, 3.1]
