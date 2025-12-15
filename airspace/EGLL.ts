@@ -52,6 +52,8 @@ export default class EGLL {
 				[
 					new Airport.EntryPoint(220, Generator.getInstance().beacon("HAZEL"), 13000),
 					new Airport.EntryPoint(319, Generator.getInstance().beacon("TOBID"), 15000),
+					new Airport.EntryPoint(217, Generator.getInstance().beacon("BEGTO"), 16000),
+					new Airport.EntryPoint(213, Generator.getInstance().beacon("BEGTO"), 16000),
                     ...(process.argv.includes("--debug-entry") ? Array.from({length: 360}, (_, i) => new Airport.EntryPoint(i)) : []),
 				],
 				Airport.Airline.raw(await fs.readFile("./airlines/EGLL.txt", "utf8")),
@@ -84,23 +86,21 @@ export default class EGLL {
 				Generator.getInstance().fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
 				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
-			{end: "hold"})
-		.withEntry(16000));
+			{end: "hold"}));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("ROXOG1H"),
 			[Generator.getInstance().runway("lln"), Generator.getInstance().runway("lls")],
 			true,
 			Generator.getInstance().beacon("BEGTO"),
-			17,
+			28,
 			[
 				Generator.getInstance().beacon("BEGTO"),
 				Generator.getInstance().beacon("HAZEL", 13000),
 				Generator.getInstance().fix("LLS01", "511021.99N", "0004108.43W", void 0, 250),
 				Generator.getInstance().beacon("OCK", 7000, 220)
 			],
-			{end: "hold"})
-		.withEntry(16000));
+			{end: "hold"}));
 
 		Generator.getInstance().arrival(new STAR(
 			...Generator.getInstance().pronounce("ALESO1H"),
