@@ -28,7 +28,7 @@
     "optimise": "node --enable-source-maps dist/src/scripts/optimiseAirlines.js"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
+    "@types/node": "^25.0.2",
     "typescript": "^5.9.3"
   }
 }
